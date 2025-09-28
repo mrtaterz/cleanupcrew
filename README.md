@@ -3,9 +3,13 @@ a Zandronum multiplayer mod that focuses on asymmetric gameplay with a focus on 
 
 made by some friends on a Discord server on their spare time:
 scripted_m
+
 goosejelly
+
 XLightningStormL
+
 Craneo
+
 inkoalawetrust
 
 there is no "download" for an official release at the moment as everything is currently indev.
