@@ -1,0 +1,14 @@
+#library "chairspe"
+#include "zcommon.acs"
+
+Script "chairspecial" (void)
+{
+	if(checkinventory("ChairNoiseCooldown") > 0)
+	{
+		terminate;
+	}
+	playsound(0,"misc/chairmove");
+	giveinventory("ChairNoiseCooldown",1);
+	delay(24);
+	terminate;
+}
