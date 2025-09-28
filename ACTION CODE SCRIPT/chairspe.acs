@@ -1,7 +1,7 @@
 #library "chairspe"
 #include "zcommon.acs"
 
-Script "chairspecial" (void)
+Script "chairspe" (void)
 {
 	if(checkinventory("ChairNoiseCooldown") > 0)
 	{
