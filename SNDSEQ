@@ -1,0 +1,5 @@
+:HeavyPlat
+	PlayTime world/heavyplat/start 47
+	PlayRepeat world/heavyplat/loop
+	StopSound world/heavyplat/end
+end

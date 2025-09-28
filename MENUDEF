@@ -1,0 +1,70 @@
+OptionMenu ZA_JoinTeamMenu
+{
+	Title "JOIN THE HUNT"
+	
+	//StaticText "Select \"Quick play\" to jump right into the action."
+	StaticText " "
+	StaticText " "
+	StaticText " "
+	StaticText "Unseen is a game of deception and subterfuge."
+	StaticText "If this is your first time playing, you should definitely"
+	Command "read this!","menu_help"
+	StaticText " "
+
+	StaticText "Select the human class you wish to play as."
+	Option "Preferred human class:","us_humanclass","usHumanClasses"
+	StaticText " "
+	Command "Join the action!","us_joingamecustom"
+	StaticText " "
+	//StaticText "And if you don't wish to be the Unseen at round start:"
+	//Command "Join as human","us_joingamehuman"
+}
+
+OptionMenu UsOptions
+{
+	Title "UNSEEN TWEAKS"
+	
+	StaticText "Select your preferred human class."
+	StaticText "After you lose a round as the Threat"
+	StaticText "you will switch to this class."
+	Option "Preferred human class:","us_humanclass","usHumanClasses"
+	StaticText " "
+	StaticText "Current player class"
+	StaticText "When you die you will switch to this class."
+	Option "Playerclass:","playerclass","usHumanClassesPC"
+	StaticText " "
+	StaticText "Tap to throw short, hold to throw long."
+	Control "Demon heart hotkey","+usHotkeyGrenade"
+	StaticText " "
+	StaticText "Bullet casing lifetime"
+	StaticText "(If your PC can handle it, try higher values!)"
+	Slider "in seconds:","us_casinglife",0,600,5
+	Command "Apply","us_recache"
+}
+
+OptionValue usHumanClasses
+{
+	-1,"Random"
+	0,"Assault"
+	1,"Technician"
+	2,"Tracker"
+}
+
+OptionString usHumanClassesPC
+{
+	"Random","Random"
+	"Assault","Assault"
+	"Technician","Technician"
+	"Tracker","Tracker"
+}
+
+ListMenu "MainMenu"
+{
+	STATICPATCH 85,0,"M_DOOM" //it will always be doom.
+	POSITION 92,72
+	
+	TextItem "Tweaks","T","UsOptions"
+	TextItem "Read this!","R","ReadThisMenu"
+	TextItem "Options","O","OptionsMenu"
+	TextItem "Quit Game","Q","QuitMenu"
+}

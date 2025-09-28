@@ -1,0 +1,469 @@
+object usRocket //the rocket is replaced in unseen to give a self obit, so we have to add gldefs back too
+{
+    frame MISLA { light ROCKET    }
+
+    frame MISLB { light ROCKET_X1 }
+    frame MISLC { light ROCKET_X2 }
+    frame MISLD { light ROCKET_X3 }
+}
+
+//same for the grenade
+object usGrenade
+{
+    frame SGRN { light GRENADE    }
+
+    frame MISLB { light GRENADE_X1 }
+    frame MISLC { light GRENADE_X2 }
+    frame MISLD { light GRENADE_X3 }
+}
+
+
+//borrowed from final doomer
+flickerlight MushExp1
+{
+    color 1.0 0.2 0.0
+    size 24
+    secondarySize 32
+    chance 0.5
+}
+
+flickerlight MushExp2
+{
+    color 1.0 0.7 0.0
+    size 32
+    secondarySize 48
+    chance 0.5
+}
+
+flickerlight MushExp3
+{
+    color 1.0 0.6 0.0
+    size 72
+	offset 0 20 0
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight MushExp4
+{
+    color 0.9 0.3 0.0
+    size 72
+	offset 0 40 0
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight MushExp5
+{
+    color 0.9 0.3 0.0
+    size 72
+	offset 0 60 0
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight MushExp6
+{
+    color 0.9 0.3 0.0
+    size 72
+	offset 0 80 0
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight MushExp7
+{
+    color 0.7 0.1 0.0
+    size 66
+	offset 0 82 0
+    secondarySize 70
+    chance 0.5
+}
+
+flickerlight MushExp8
+{
+    color 0.4 0.0 0.0
+    size 60
+	offset 0 84 0
+    secondarySize 66
+    chance 0.5
+}
+
+flickerlight MushExp9
+{
+    color 0.3 0.0 0.0
+    size 54
+	offset 0 86 0
+    secondarySize 60
+    chance 0.5
+}
+
+flickerlight MushExp10
+{
+    color 0.1 0.0 0.0
+    size 48
+	offset 0 88 0
+    secondarySize 54
+    chance 0.5
+}
+
+flickerlight BIGROCKET_X1
+{
+    color 1.0 0.7 0.0
+    size 96
+    secondarySize 108
+    chance 0.3
+}
+
+flickerlight BIGROCKET_X2
+{
+    color 0.5 0.1 0.0
+    size 120
+    secondarySize 132
+    chance 0.3
+}
+
+flickerlight BIGROCKET_X3
+{
+    color 0.3 0.0 0.0
+    size 144
+    secondarySize 156
+    chance 0.3
+}
+
+object HEATRocket //big exp
+{
+    frame MISLA { light ROCKET    }
+
+	frame MISLB { light BIGROCKET_X1 }
+    frame MISLC { light BIGROCKET_X2 }
+    frame MISLD { light BIGROCKET_X3 }
+}
+
+
+object MercHEAT //different but same object
+{
+    frame MISLA { light ROCKET    }
+	
+	frame MISLB { light BIGROCKET_X1 }
+    frame MISLC { light BIGROCKET_X2 }
+    frame MISLD { light BIGROCKET_X3 }
+}
+
+//the barrel
+object usExplosiveBarrel
+{
+    frame BAR1  { light BARREL    }
+
+    frame BEXPC { light ROCKET_X1 }
+    frame BEXPD { light ROCKET_X2 }
+    frame BEXPE { light ROCKET_X3 }
+}
+
+//signal flares
+flickerlight FLARE
+{
+	color 1.0 0.608 0.608
+	size 120
+	secondarysize 136
+	chance 0.6
+}
+
+object LitFlareStick
+{
+	frame FLAR	{ light FLARE }
+}
+
+//flamenuts
+
+pointlight FLAMEBALL
+{
+    color 1.0 0.5 0.1
+    size 56
+}
+
+flickerlight FLAMEX1
+{
+	color 1.0 0.7 0.48
+	size 24
+	secondarysize 34
+	chance 0.3
+    offset 0 8 0
+}
+
+flickerlight FLAMEX2
+{
+    color 1.0 0.5 0.1
+    size 40
+    secondarySize 48
+    chance 0.3
+    //offset 0 24 0
+}
+
+flickerlight FLAMEX3
+{
+    color 0.87 0.4 0.05
+    size 48
+    secondarySize 56
+    chance 0.3
+    //offset 0 24 0
+}
+
+flickerlight FLAMEX4
+{
+    color 0.7 0.28 0.0
+    size 32
+    secondarySize 40
+    chance 0.3
+    //offset 0 24 0
+}
+
+flickerlight FLAMEX5
+{
+    color 0.35 0.14 0.0
+    size 16
+    secondarySize 24
+    chance 0.3
+    //offset 0 32 0
+}
+
+object FlameBall
+{
+	frame FLBLA { light FLAMEBALL }
+	frame FLBLB { light FLAMEBALL }
+	frame FLBLC { light FLAMEBALL }
+	frame FLBLD { light FLAMEBALL }
+	
+	frame FLBLE { light FLAMEX1 }
+	frame FLBLF { light FLAMEX2 }
+	frame FLBLG { light FLAMEX3 }
+	frame FLBLH { light FLAMEX4 }
+	frame FLBLI { light FLAMEX5 }
+}
+
+//smoulders
+flickerlight SPUFF1
+{
+    color 1 0.5 0.0
+    size 12
+    secondarySize 16
+    chance 0.8
+}
+
+flickerlight SPUFF2
+{
+    color 1 0.5 0.0
+    size 6
+    secondarySize 8
+    chance 0.8
+}
+
+object SmoulderPuff
+{
+    frame EMBRA { light SPUFF1 }
+    frame EMBRB { light SPUFF2 }
+}
+
+
+//other fires
+object OilFire
+{
+    frame FIREA { light ARCHFIRE1 }
+    frame FIREB { light ARCHFIRE2 }
+    frame FIREC { light ARCHFIRE3 }
+    frame FIRED { light ARCHFIRE4 }
+    frame FIREE { light ARCHFIRE5 }
+    frame FIREF { light ARCHFIRE6 }
+    frame FIREG { light ARCHFIRE7 }
+    frame FIREH { light ARCHFIRE8 }
+}
+
+object usBurningBarrel
+{
+    frame FCAN { light FIREBARREL }
+	frame FEXPC { light ROCKET_X1 }
+    frame FEXPD { light ROCKET_X2 }
+    frame FEXPE { light ROCKET_X3 }
+}
+
+//sensors
+pointlight SENSOR
+{
+	color 0 0.8 0
+	size 32
+}
+
+pointlight BROKESENSOR
+{
+	color 0 0.5 0
+	size 16
+}
+
+object ProxSensor
+{
+	frame SENSD { light SENSOR }
+	frame SENSF { light BROKESENSOR }
+}
+
+//mines
+
+pointlight MINE1
+{
+	color 0.6 0 0
+	size 28
+}
+
+pointlight MINE2
+{
+	color 0.4 0 0
+	size 24
+}
+
+pointlight MINE3
+{
+	color 0.2 0 0
+	size 20
+}
+
+object ProxMine
+{
+	frame PROXA { light MINE1 }
+	frame PROXB { light MINE2 }
+	frame PROXC { light MINE3 }
+	
+	frame MISLB { light ROCKET_X1 }
+    frame MISLC { light ROCKET_X2 }
+    frame MISLD { light ROCKET_X3 }
+	
+	frame LEXPA { light MushExp1 }
+	frame LEXPB { light MushExp2 }
+    frame LEXPC { light MushExp3 }
+    frame LEXPD { light MushExp4 }
+	frame LEXPE { light MushExp5 }
+	frame LEXPF { light MushExp6 }
+	frame LEXPG { light MushExp7 }
+    frame LEXPH { light MushExp8 }
+	frame LEXPI { light MushExp9 }
+	frame LEXPJ { light MushExp10 }
+}
+
+//nades
+
+flickerlight HEART_X1
+{
+    color 1.0 0.2 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+
+flickerlight HEART_X2
+{
+    color 0.5 0.1 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight HEART_X3
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+
+object FlyingNade
+{
+	frame HGRNG { light HEART_X1 }
+    frame HGRNH { light HEART_X2 }
+    frame HGRNI { light HEART_X3 }
+}
+
+object SlowNade
+{
+	frame HGRNG { light HEART_X1 }
+    frame HGRNH { light HEART_X2 }
+    frame HGRNI { light HEART_X3 }
+}
+
+//puffs
+
+object EvilPuff
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+
+object AbhorrentPuff
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+
+object SpecialPuff
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+
+object MercPuff
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+
+object MercSGPuff
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+
+object PuffPlus
+{
+    frame PUFFA { light BPUFF1 }
+    frame PUFFB { light BPUFF2 }
+}
+//decore
+
+PointLight GreyLamp
+{
+Color 0.6 0.6 0.6
+Size 56
+Offset 0 48 0
+}
+
+Object GreyLamp
+{
+Frame GLMP { Light GreyLamp }
+}
+
+object usColumn
+{
+    frame COLU { light LAMP }
+}
+object usTechLamp
+{
+    frame TLMP { light BIGLAMP }
+}
+object usTechLamp2
+{
+    frame TLP2 { light SMALLLAMP }
+}
+pointlight LAMPFLASH
+{
+    color 0.9 0.9 1.0
+    size 128
+    offset 0 44 0
+}
+
+//bfug barrel asplode
+object TechBarrel
+{
+    frame BFE1A { light BFGBALL_X1 }
+    frame BFE1B { light BFGBALL_X2 }
+    frame BFE1C { light BFGBALL_X3 }
+    frame BFE1D { light BFGBALL_X1 }
+    frame BFE1E { light BFGBALL_X4 }
+    frame BFE1F { light BFGBALL_X5 }
+}

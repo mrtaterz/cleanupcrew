@@ -1,0 +1,23 @@
+//scriptedmarine why is the filename weird
+//FUCK YOU
+
+clearteams
+
+Team "Cleanup Crew"
+{
+	PlayerStartThingNumber 5080
+	TextColor "White" //"Detachment"
+	AllowCustomPlayerColor
+	//PlayerColor "4F 4F BC" //this doesn't work. why doesn't it work?
+	//because it does, silly.
+	//commented out anyway.
+	logo "4fmen"
+}
+
+Team "The Threat"
+{
+	PlayerStartThingNumber 5081
+	TextColor "Red"
+	AllowCustomPlayerColor
+	logo "usmen"
+}

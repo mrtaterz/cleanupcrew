@@ -1,0 +1,2 @@
+user int us_humanclass = -1;
+user int us_casinglife = 30;

@@ -1,0 +1,135 @@
+/*
+1 - Florescent light hum 1
+2 - Florescent light hum 2
+3 - Florescent light buzz
+4 - Wind light
+5 - Wind heavy 1
+6 - Wind heavy 2
+7 - Hallway/Computers droning
+8 - Computers 1
+9 - Computers 2
+10 - Computers 3
+11 - Computers 4
+12 - Computers 5
+13 - Computers random periodical
+14 - Machine hum
+15 - Transformer hum
+16 - Static 1
+17 - Static 2
+18 - Teleporter beckoning 1
+19 - Teleporter beckoning 1 reverse
+20 - Teleporter beckoning 2
+21 - Teleporter beckoning 2 reverse
+22 - Metal structure creaking periodical [unimplemented]
+23 - Pipeworks small
+24 - Pipeworks large
+25 - Water flow small stream
+26 - Water flow small pipe
+27 - Water flow large stream
+28 - Water flow dripping 1
+29 - Water flow dripping 2
+30 - Water tank 1
+31 - Water tank 2
+32 - Water falls 1
+33 - Water falls 2
+34 - Sludge flow large
+35 - Sludge flow small
+36 - Sludge bubbling small
+37 - Sludge bubbling large
+38 - Sludge bubbling periodical [unimplemented]
+39 - Sludge falls
+40 - Vent fan
+*/
+
+//lights
+amby/florescent1 ceilite1
+$ambient 1 amby/florescent1 point continuous 1
+amby/florescent2 ceilite2
+$ambient 2 amby/florescent2 point continuous 1
+amby/florescent3 ceilite3
+$ambient 3 amby/florescent3 point continuous 1
+//wind
+amby/windlite windlite
+$ambient 4 amby/windlite world continuous 1
+amby/windhev1 windhev1
+$ambient 5 amby/windhev1 world continuous 1
+amby/windhev2 windhev2
+$ambient 6 amby/windhev2 world continuous 1
+amby/halldrone hallnois
+$ambient 7 amby/halldrone world continuous 1
+//computers
+amby/compst1 compst1
+$ambient 8 amby/compst1 point random 10.5 11.5 1
+amby/compst2 compst2
+$ambient 9 amby/compst2 point random 5.5 6.5 1
+amby/compst3 compst3
+$ambient 10 amby/compst3 point random 9.5 10.5 1
+amby/compst4 compst4
+$ambient 11 amby/compst4 point random 6.5 7.5 1
+amby/compst5 compst5
+$ambient 12 amby/compst5 point random 6.5 7.5 1
+$random amby/compstr {amby/compst1,amby/compst2,amby/compst3,amby/compst4,amby/compst5}
+$ambient 13 amby/compstr point random 11.0 11.5 1
+//machinery
+amby/comphum comphum
+$ambient 14 amby/comphum point continuous 1
+amby/transhum transhum
+$ambient 15 amby/transhum point continuous 1
+amby/static1 static1
+$ambient 16 amby/static1 point continuous 1
+amby/static2 static2
+$ambient 17 amby/static2 point continuous 1
+//teleporters
+amby/tele1 fltele1
+$ambient 18 amby/tele1 point continuous 1
+amby/tele2 fltele2
+$ambient 19 amby/tele2 point continuous 1
+amby/tele3 fltele3
+$ambient 20 amby/tele3 point continuous 1
+amby/tele4 fltele4
+$ambient 21 amby/tele4 point continuous 1
+//22 reserved currently
+//liquids
+//pipes
+amby/pipess pipess
+$ambient 23 amby/pipess point continuous 1
+amby/pipesl pipesl
+$ambient 24 amby/pipesl point continuous 1
+//water flows
+amby/wtrflows wtrflows
+$ambient 25 amby/wtrflows point continuous 1
+amby/wtrflowsp wtrflwsp
+$ambient 26 amby/waterflowsp point continuous 1
+amby/wtrflowl wtrflowl
+$ambient 27 amby/waterflowl point continuous 1
+amby/wtrdrip1 sladrip1
+$ambient 28 amby/wtrdrip1 point continuous 1
+amby/wtrdrip2 sladrip2
+//water tank
+$ambient 29 amby/wtrdrip2 point continuous 1
+amby/xwat1 xwat1
+$ambient 30 amby/xwat1 point continuous 1
+amby/xwat2 xwat2
+$ambient 31 amby/xwat2 point continuous 1
+//water falls
+amby/watfall1 watfall1
+$ambient 32 amby/watfall1 point continuous 1
+amby/watfall2 watfall2
+$ambient 33 amby/watfall2 point continuous 1
+//sludge flows
+amby/gooflows goofs
+$ambient 34 amby/gooflows point continuous 1
+amby/gooflowl goofl
+$ambient 35 amby/gooflowl point continuous 1
+//sludge bubbles
+amby/goobubs goos
+$ambient 36 amby/goobubs point continuous 1
+amby/goobubl gool
+$ambient 37 amby/goobubl point continuous 1
+//38 reserved
+//sludge falls
+amby/goofall1 goofall1
+$ambient 39 amby/goofall1 point continuous 1
+//vents
+amby/ventfan ventfan
+$ambient 40 amby/ventfan point continuous 1

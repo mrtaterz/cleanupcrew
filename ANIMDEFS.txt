@@ -1,0 +1,11 @@
+texture VENTFAN1
+pic VENTFAN1 tics 2
+pic VENTFAN2 tics 2
+pic VENTFAN3 tics 2
+pic VENTFAN4 tics 2
+
+texture WFALL5
+pic WFALL5 tics 3
+pic WFALL6 tics 3
+pic WFALL7 tics 3
+pic WFALL8 tics 3

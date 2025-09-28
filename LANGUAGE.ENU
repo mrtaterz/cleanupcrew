@@ -1,0 +1,131 @@
+//to make the thing localization and reskin friendly
+[enu default]
+
+//class names
+
+//unseens
+NAME_UNSEEN="Unseen Threat"; //unseen class
+
+//humans
+NAME_ASSAULT="Assault"; //assault class
+NAME_SUPPORT="Support"; //support class
+NAME_SAPPER="Sapper"; //sapper class
+
+//obits
+
+//unseens
+OB_STABBED="%o's cries were finally silenced."; //primary cuts
+OB_SLASHED="%o didn't get to say goodbye."; //altfire cuts
+
+OB_UGREN="%o's escape was denied."; //nades
+
+OB_S_UGREN="The body of the Threat was found half-disintegrated."; //self nades
+
+//these are fucked up, are the wrong way around
+//thanks zandronum
+OB_S_UNSEENMINES="%o's technology couldn't save them."; //proximity mines blown up by nades
+OB_UNSEENMINES="The Threat's recklessness cost it its life."; //self mines
+
+
+//vanilla weapon overrides
+OB_MPSHOTGUN="%k spread the Threat apart."; //shotty
+OB_MPSSHOTGUN="%k splattered the Threat's entrails onto the walls."; //super shotty, unused
+OB_MPCHAINGUN="%k filled the Threat with holes."; //chaingun, unused
+OB_MPROCKET="The last of the Threat's presence was wiped by %k's rocket."; //rockets
+OB_GRENADE = "The last of the Threat's presence was wiped by %k's grenade."; //grenades
+OB_GRENADE_SELF = "%o caught about a pound of Composition B with their face.";
+OB_MPPISTOL="%k's backup weapon proved useful against the Threat."; //handgun, unused
+OB_MPFIST="%k killed the Threat in a final act of desparation."; //fisting
+OB_MPBFG="%k's BFG prototype is on its way to widespread adoption."; //bfg, unused
+
+//humans
+OB_ASSAULTED="%k sent a pound of steel through the Threat's skull."; //assault fist, unused
+OB_RIFLE="$k shot the Threat dead."; //semi-auto rifle, unused
+OB_MG="%k suppressed the Threat sufficiently."; //assault mg
+OB_S_ROCKET="%k tried and failed."; //self rockets
+
+OB_SMG="%k filled the Threat with holes.";  //sub-machinegun, unused
+OB_ASSAULTSHOTGUN="%k splattered the Threat's entrails onto the walls."; //assault shotgun
+OB_CHEMGUN="%k made sure the Threat's heart could no longer summon the energy to beat."; //poisonous chemical gun
+OB_SENSORS="The Threat was unwittingly bapped by %k's sensors."; //ko
+
+OB_FLAMER="%k sent the Threat back to the place they belong."; //flame-thrower
+OB_S_FLAMER="%k is no longer a water-based organism."; //self flames
+OB_MINES="The Threat was blown sky-high by %k's mines."; //proximity mines
+OB_RAREMINES="The Threat slipped on a banan."; //da-dun do-dodedoo
+OB_S_MINES="A mine went off and %k was killed in the blast."; //self mines
+OB_S_RAREMINES="%k didn't know what they were doing!"; //rip stefan karl
+
+OB_BURNINGBARREL="%o died a horrible, crispy death."; //cover yourself in barrel
+OB_TECHBARREL="%o's flesh was resonated straight off the bone."; //bfg barrel
+
+//mercenaries
+OB_MERCMG = "%o was riddled with bullets by a mercenary.";
+OB_MERCSG = "A mercenary spread %o apart.";
+OB_MERCRL = "A mercenary erased %o.";
+OB_MERCSMG = "A mercenary put a few extra holes in %o."
+
+//these don't work! why?
+OB_MERCSHOT = "%o was riddled with bullets by a mercenary.";
+OB_MERCMELEE = "%o didn't respect a mercenary's personal space.";
+OB_MERCKICK = "A mercenary kicked %o's ass.";
+OB_MERCROCKET = "The last of %o's presence was wiped by a mercenary's rocket.";
+
+//UNUSED
+OB_BURNDAMAGE="The Threat's body was found charred and smoking.";
+OB_MPBURNDAMAGE="%k's flames burnt the Threat to a crisp."; //flame-thrower damage over time
+
+//D2
+OB_RAT = "%o thought it was a good idea to extract through D2.";
+
+//tags
+
+//unseens
+TAG_SLASHER="Claws"; //slasher
+TAG_UGREN="Demon Hearts"; //nades
+
+//humans
+TAG_FIST="Unarmed"; //kungfu
+
+TAG_HYDROFIST="Hydraulic Gauntlet"; //hydrofist punch thing, unused
+TAG_RIFLE="Rifle"; //semi-auto rifle, unused
+TAG_MG="Machinegun"; //machine gun
+TAG_GRENADEGUN="Grenade Launcher"; //grenade launcher
+
+TAG_SMG="Sub-Machinegun"; //sub-machinegun, unused
+TAG_CHEMGUN="ChemGun"; //poisonous chemical gun, unused
+TAG_SENSOR="Proximity Sensor deployer"; //proximity sensors
+TAG_ASSAULTSHOTGUN="Assault shotgun"; //assault shotgun
+
+TAG_FLAMER="Flame-thrower"; //flame-thrower
+TAG_MINES="Mine launcher"; //proximity mine layer
+
+TAG_FLARE="Flares"; //signal flares
+
+TAG_BFG="BFG-XM8000"; //bfg prototype, unused
+
+TAG_MINEAMMO = "M67 Proximity HE";
+TAG_MINECOUNT = "Current mines deployed";
+TAG_SENSORAMMO = "Proxensor Mk. II";
+
+//todo: find a way to use these
+TAG_CLIP = "7.62x51mm UAC-S";
+TAG_SHELL = "12g 00";
+TAG_ROCKETAMMO = "40x46mm HEDP";
+TAG_CELL = "Napalm";
+
+//pickups
+PICKUP_AMMOBAG="Picked up some ammo."; //counter-intuitively, for the ammo can
+PICKUP_AMMOBELT="Picked a belt with ammo."; //merc-drop ammo belt
+PICKUP_FLARECRATE="Picked up a crate of flares."; //box of flares
+GOTFLARE="Picked up a flare."; //single flare
+GOTNADE="\c[w8]THEIR FLESH IS THEIR DEMISE\c-"; //demon heart (ugren)
+
+//unused for now
+GOTCLIP="Picked up a clip with 10mm bullets.";
+GOTPISTOLCLIP="Picked up a clip for your pistol.";
+GOTRIFLECLIP="Picked up a rifle clip.";
+GOTMINE="Picked up a proximity mine.";
+GOTRAREMINE="Picked up a proximity mine that bears more than a passing semblance to a banana peel.";
+GOTSENSOR="Picked up a proximity sensor.";
+GOTFUEL="Picked up a jerrycan.";

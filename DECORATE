@@ -1,0 +1,22 @@
+#include "ACTORS/mapitem.dec"
+#include "ACTORS/uselessdeco.dec"
+#include "ACTORS/usefuldeco.dec"
+
+#include "ACTORS/HIDDEN/player.dec"
+#include "ACTORS/HIDDEN/slasher.dec"
+#include "ACTORS/HIDDEN/grenades.dec"
+#include "ACTORS/HIDDEN/beastvision.dec"
+
+#include "ACTORS/HUMAN/global.dec"
+
+#include "ACTORS/HUMAN/ASSAULT/player.dec"
+#include "ACTORS/HUMAN/ASSAULT/weapons.dec"
+
+#include "ACTORS/HUMAN/TECHNICIAN/player.dec"
+#include "ACTORS/HUMAN/TECHNICIAN/weapons.dec"
+
+#include "ACTORS/HUMAN/TRACKER/player.dec"
+#include "ACTORS/HUMAN/TRACKER/weapons.dec"
+
+#include "ACTORS/mercs.dec"
+#include "ACTORS/demon.dec"

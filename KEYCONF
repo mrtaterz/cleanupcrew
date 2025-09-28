@@ -1,0 +1,16 @@
+clearplayerclasses
+
+addplayerclass "unseen"
+addplayerclass "assault"
+addplayerclass "sapper"
+addplayerclass "support"
+
+alias +usHotkeyGrenade "pukename n_grenadeHotkey+"
+alias -usHotkeyGrenade "pukename n_grenadeHotkey-"
+
+alias us_joingamecustom "pukename joincustom"
+alias us_joingamehuman "pukename joinhuman"
+alias us_recache "pukename c_recache"
+
+addkeysection "unseen controls" "unseen"
+addmenukey "grenade hotkey" "+usHotkeyGrenade"

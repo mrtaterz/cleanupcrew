@@ -1,0 +1,273 @@
+//for mod compatibility. why, scriptedmarine, why? i have no fucking clue.
+//i guess in the future i'll make a sound mod for my own fucking game
+//because i'm that fucking sad
+
+//unseen noises
+unseen/yell1 DSUSATK1
+unseen/yell2 DSUSATK2
+$random unseen/yell		{unseen/yell1 unseen/yell2}
+
+unseen/pin		dspin //unused
+unseen/beat		dsbeat
+$alias			unseen/toss		skeleton/swing
+unseen/bounce	dshertb
+unseen/boom		dsblex
+
+//$pitchset unseen/pin 0.9
+//$pitchset unseen/bounce		2.5
+//pitchset is not present in zandronum, which is a big sad.
+
+unseen/knife	knfwoosh
+unseen/hit		knifehit
+unseen/wall		knifwall
+$alias unseen/xknife	unseen/toss
+$alias unseen/xwallu	unseen/wall
+unseen/xwall1	SAWSCRA1
+unseen/xwall2	SAWSCRA2
+unseen/xwall3	SAWSCRA3
+$random unseen/xwall {unseen/xwall1 unseen/xwall2 unseen/xwall3}
+
+unseen/burn		dsflam2
+$attenuation unseen/burn 2
+$volume unseen/burn	0.5
+
+unseen/armortear	dsclaw
+
+//unseen/oof dsoof
+//$pitchset		unseen/oof 0.7 0.0
+
+unseen/taunt1 DSUSTNT1
+unseen/taunt2 DSUSTNT2
+$random unseen/taunt {unseen/taunt1 unseen/taunt2}
+
+unseen/land1 DSUSLD1
+unseen/land2 DSUSLD2
+unseen/land3 DSUSLD3
+$random unseen/land {unseen/land1 unseen/land2 unseen/land3}
+$attenuation unseen/land 2
+
+unseen/death1 DSUSDIE1
+unseen/death2 DSUSDIE2
+$random unseen/death {unseen/death1 unseen/death2}
+
+$playeralias	unseen	male	*death		unseen/death
+$playersounddup	unseen	male	*xdeath		*death
+$playeralias	unseen	male	*gibbed		skeleton/death
+$playersound	unseen	male	*pain100	dsuspain
+$playersounddup	unseen	male	*pain75		*pain100
+$playersounddup	unseen	male	*pain50		*pain100
+$playersounddup	unseen	male	*pain25		*pain100
+$playeralias	unseen	male	*grunt		unseen/land
+$playersounddup	unseen	male	*land		*grunt
+//$playersound	unseen	male	*jump		dsjump //leaving undefined makes it silent?
+$playersound	unseen	male	*fist		dspunch
+$playeralias	unseen	male	*usefail	skeleton/pain
+// [BC] New player sound for Skulltag: taunt.
+$playeralias	unseen	male	*taunt		unseen/taunt //skeleton/active
+
+//inventory
+items/flare/light dsflal
+items/flare/burn dsflab
+$limit items/flare/light 0
+$limit items/flare/burn 0
+
+$attenuation items/flare/burn 1.5
+
+//guns
+//weapons/hydrofist/charge dsipchar
+//weapons/hydrofist/hit dsiphit
+//weapons/hydrofist/miss dsipmiss
+
+weapons/bullethit1 dsbhit1
+weappns/bullethit2 dsbhit2
+$random weapons/bullethit { weapons/bullethit1 weappns/bullethit2 }
+$volume weapons/bullethit 0.5
+
+weapons/SMG	dspistol
+weapons/SMGdist dspistd
+$attenuation weapons/SMGdist 0.3
+
+weapons/machinegunold dsmgun //debugging
+weapons/machinegun	dsmgunc
+weapons/machinegundist	dsmgund
+$attenuation weapons/machinegundist 0.3
+$limit weapons/machinegundist 0
+weapons/machinegun/ready dsmgrdy
+weapons/mguncase1 mgcase1
+weapons/mguncase2 mgcase2
+weapons/mguncase3 mgcase3
+$random weapons/machinegun/casebounce {weapons/mguncase1 weapons/mguncase2 weapons/mguncase3}
+$attenuation weapons/machinegun/casebounce 3
+
+$alias weapons/pistol/casebounce weapons/machinegun/casebounce
+
+weapons/grenlf	dsdshtgn
+weapons/grenlx	dsbexp2
+weapons/grbnce	dsbounce
+$limit weapons/grenlx 0
+
+weapons/grncase1 40mm1
+weapons/grncase2 40mm2
+weapons/grncase3 40mm3
+$random weapons/grenadecase {weapons/grncase1 weapons/grncase2 weapons/grncase3}
+$attenuation weapons/grenadecase 3
+
+weapons/distantx	dsdisexp
+$attenuation weapons/distantx 0.25
+$limit weapons/distantx 0
+weapons/bigdistantx	EXPLODFL
+$attenuation weapons/bigdistantx 0.25
+$limit weapons/bigdistantx 0
+$volume weapons/bigdistantx 0.3
+weapons/distantbfgx	dsdisrxp
+$attenuation weapons/dsdisrxp 0.25
+//weapons/chemgun		spifir
+
+weapons/atrlexp explodcl
+$alias weapons/atrldrop weapons/grbnce
+
+weapons/minegun		thump
+weapons/minegun/fail	dsbsod
+
+$alias weapons/sensorgun weapons/minegun
+
+weapons/minegun/arming	dsmines
+
+weapons/minegun/armed	dsmine //don't fucking QUESTION WHY THESE HAVE TO BE SEPARATE
+$attenuation weapons/minegun/armed 2
+$attenuation weapons/minegun/arming 1
+
+weapons/minegun/detonate dsminez
+weapons/minegun/boom	explodcl//dsbarexp
+
+$alias weapons/flamer	vile/firecrkl
+weapons/flamerstart		FLMFIRE
+weapons/flamerx1		DSFIED1
+weapons/flamerx2		DSFIED2
+weapons/flamerx3		DSFIED3
+$random weapons/flamerx	{weapons/flamerx1 weapons/flamerx2 weapons/flamerx3}
+$limit weapons/flamerx 8
+weapons/flamerwater		dsflamw
+$limit weapons/flamerwater 8
+
+$alias world/oilwater		weapons/flamerwater
+$limit world/oilwater 8 //is this necessary?
+
+weapons/assaultshotgun	ASHTFIRC
+weapons/assaultshotgundist	ASHTFIRD
+$attenuation weapons/assaultshotgundist 0.25 //shotguns are loud
+weapons/assaultshotgunpump	DSDSHTGC
+//weapons/doubleshotgunsingle DSDSHOTG
+weapons/shotcase1 DSSHELL1
+weapons/shotcase2 DSSHELL2
+weapons/shotcase3 DSSHELL3
+$random weapons/shotgun/casebounce {weapons/shotcase1 weapons/shotcase2 weapons/shotcase3}
+$attenuation weapons/shotgun/casebounce 3
+
+//if only it could be up there
+$alias unseen/extinguish weapons/flamerwater
+
+//other bullshit
+misc/prox	dsboop
+misc/proxdie	dssendie
+misc/proxxdie	dssended
+
+misc/body1 body1
+misc/body2 body2
+misc/body3 body3
+misc/body4 body4
+$random misc/body {misc/body1 misc/body2 misc/body3 misc/body4}
+
+demon/pissed DSSARGRY
+
+//sm 1/2/24 (that's a SANE timestamp format btw) i can't believe the amount of
+//effort that has been put into this mod just for the sake of BARRELS
+//BARRELS
+misc/barrelmove dsmetal
+//CHAIRS
+misc/chairmove dschair
+
+misc/boxdestroy dsboxdie
+
+$alias misc/barrelfire vile/firecrkl
+$limit misc/barrelfire 0
+
+$alias bfgbarrel/charge weapons/bfgf
+$alias bfgbarrel/explode weapons/bfgx //dsrxpl2
+$limit bfgbarrel/charge 0
+$limit bfgbarrel/explode 0
+
+//mercenaries
+$alias mercs/explo weapons/grenlx
+
+mercs/death1 DSSODTH1
+mercs/death2 DSSODTH2
+mercs/death3 DSSODTH3
+mercs/death4 DSSODTH4
+$random mercs/death {mercs/death1 mercs/death2 mercs/death3 mercs/death4}
+
+//mercs/pain1 DSSOPN1
+//mercs/pain2 DSSOPN2
+//$random mercs/pain {mercs/pain1 mercs/pain2}
+mercs/pain dsplpain
+
+$random mercs/sight {mercs/sight1 mercs/sight2 mercs/sight3 mercs/sight4 mercs/sight5 mercs/sight6 mercs/sight7}
+mercs/sight1 Sight1
+mercs/sight2 Sight2
+mercs/sight3 Sight3
+mercs/sight4 Sight4
+mercs/sight5 Sight5
+mercs/sight6 Sight6
+mercs/sight7 Sight7
+
+$random mercs/active {mercs/active1 mercs/active2}
+mercs/active1 DSSACTV1
+mercs/active2 DSSACTV2
+
+//splash
+world/drip gloop
+world/watersplash gloop
+world/lavasizzle acid5
+world/sludgegloop muck5
+
+//world
+world/heavyplat/start dshvplts
+world/heavyplat/loop dshvpltl
+world/heavyplat/end dshvplte
+
+$attenuation world/heavyplat/start 0.2
+$attenuation world/heavyplat/loop 0.2
+$attenuation world/heavyplat/end 0.2
+
+world/ricochet1 ric1
+world/ricochet2 ric2
+world/ricochet3 ric3
+
+$random world/ricochet {world/ricochet1 world/ricochet2 world/ricochet3}
+$limit world/ricochet 0
+
+//deco
+world/barrelx dsbexp2
+
+world/brklamp1 brklamp1
+world/brklamp2 brklamp2
+world/brklamp3 brklamp3
+world/brklamp4 brklamp4
+world/brklamp5 brklamp5
+$random world/lampbreak {world/brklamp1 world/brklamp2 world/brklamp3 world/brklamp4 world/brklamp5}
+
+world/bulbfiz1 bulbfiz1
+world/bulbfiz2 bulbfiz2
+
+world/bulbhum techlit1
+$attenuation world/bulbhum 3
+$limit world/bulbhum 0
+
+Rat/Sight RATSPAWN
+Rat/Pain RATHIT
+Rat/Attack RATATTAC
+Rat/Death RATDEAD
+$attenuation Rat/Sight 2
+$attenuation Rat/Pain 2
+$attenuation Rat/Attack 2
+$attenuation Rat/Death 2

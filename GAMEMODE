@@ -1,0 +1,19 @@
+TeamLMS {
+	removeflag DONTSPAWNMAPTHINGS
+	removeflag DEATHMATCH
+	AddFlag PLAYERSEARNWINS
+	AddFlag TEAMGAME
+	AddFlag MAPRESETS
+	AddFlag DEADSPECTATORS
+	AddFlag PLAYERSONTEAMS
+	AddFlag USEMAXLIVES
+	AddFlag MAPRESET_RESETS_MAPTIME
+	name "The Unseen"
+	shortname "UNSN"
+	GameSettings
+    {
+		lms_spectatorchat = true
+		sv_lmscountdowntime = 20
+		sv_itemrespawn = true
+    }
+}
