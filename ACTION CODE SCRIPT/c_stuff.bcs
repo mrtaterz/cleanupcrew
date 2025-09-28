@@ -1,0 +1,23 @@
+#library "c_stuff"
+#import "zcommon.bcs"
+
+#import "usconsts.acs"
+
+private int cachedcasinglife = 30; //bcs rulz
+private int cachedclawlock = 0;
+//cvar indexing
+script "c_GetCasingLife" (void) clientside
+{
+	SetResultValue(cachedcasinglife);
+}
+
+script "c_GrabCasingLife" (void) open clientside
+{
+	int pnum = ConsolePlayerNumber();
+	cachedcasinglife = GetUserCvar(pnum,"us_casinglife");
+}
+
+script "c_recache" (void) net clientside
+{
+	ACS_NamedExecuteWithResult("c_GrabCasingLife");
+}

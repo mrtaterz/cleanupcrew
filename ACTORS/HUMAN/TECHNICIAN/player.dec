@@ -1,0 +1,92 @@
+//the human sapper class and its corpses
+
+//UAC Detachment 4F Technician--
+//Detachment 4F's sappers are drawn from the various combat engineer units under
+//the UAC. Although typically trained in explosives handling, Detachment 4F sees
+//to it that they recieve training in all kinds of heavy weaponry in the event
+//they might need to use it.
+//For this task, alongside their typical mine laying device they are also issued
+//a flame-thrower to sweep large areas with to clear them out.
+//And anything that runs may just trip- perhaps over a UAC M67 fragmentation
+//mine.
+
+//"Okay, what about temperature? What happens if we change it?"
+
+Actor Sapper : PlayerPawn
+{
+	limitedtoteam 0
+	//speed 0.9
+	Player.StartItem "Flamer"
+	Player.StartItem "usFist"
+	Player.StartItem "MineLauncher"
+	Player.StartItem "usClip", 50
+	Player.StartItem "usCell", 100
+	Player.StartItem "Mines", 5
+	Player.StartItem "GreenArmor"
+	Player.StartItem "FlareStick", 5
+	Player.WeaponSlot 1, usFist
+	Player.WeaponSlot 2, Flamer
+	Player.WeaponSlot 3, MineLauncher
+	Player.SoundClass "Sapper"
+	player.DisplayName "Technician"
+	Player.ColorRange 112, 127
+	Player.scoreIcon "TECHI"
+	+USEDAMAGEEVENTSCRIPT
+	States
+	{
+	Spawn:
+		SAPR A -1
+		Loop
+	See:
+		SAPR ABCD 4 
+		Loop
+	Missile:
+		SAPR E 12
+		Goto Spawn
+	Melee:
+		SAPR F 6 BRIGHT Light("ZOMBIEATK")
+		Goto Missile
+	Pain:
+		SAPR G 4 
+		SAPR G 4 A_Pain
+		Goto Spawn
+	death.darken:
+	death.suicide:
+	Death:
+		SAPR H 8
+		SAPR I 8 A_PlayerScream
+		SAPR J 8 A_NoBlocking
+		SAPR KL 8 //M 8
+		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	XDeath:
+		SAPR O 5
+		SAPR P 5 A_XScream
+		SAPR Q 5 A_NoBlocking
+		SAPR RSTUV 5
+		SAPR W -1 //A_SpawnItemEx("GibbedSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	}
+}
+
+Actor DeadSapper : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			SAPR N 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+Actor GibbedSapper : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			SAPR W 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}

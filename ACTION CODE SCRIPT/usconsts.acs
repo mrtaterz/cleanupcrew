@@ -1,0 +1,34 @@
+//this is technically a BCS module but it is compiled in ACS mode,
+//which requires it to have the .acs extension
+
+#Library "usconsts"
+#Import "zcommon.bcs"
+
+//various constants for Unseen
+
+//global
+#libdefine MAXPLAYERS 128
+//playerclasses
+//threats
+#libdefine US_THREAT_UNSEEN 0
+//humans
+#libdefine US_HUMAN_ASSAULT 1
+#libdefine US_HUMAN_SAPPER 2
+#libdefine US_HUMAN_SUPPORT 3
+
+#libdefine US_HUMANCLASSTOTAL 3
+//teams
+#libdefine US_TEAM_HUMAN 0
+#libdefine US_TEAM_THREAT 1
+
+//scripts
+#libdefine US_PICKUPEQUIPMENT 141
+#libdefine US_MOVEBARREL 142
+#libdefine US_MOVECHAIR 143
+
+//gameplay
+#libdefine US_BEASTVISION_MAX_TICS 2100
+
+//fuck
+//#libdefine false 0
+//#libdefine true 1

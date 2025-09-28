@@ -1,0 +1,193 @@
+//the melee weapon for the Unseen
+
+//UAC standard-issue "throat slasher" knife--
+//Despite the gruesome name, its main applications are opening beer bottles
+//and cans of spam.
+
+//The experiment carried with him a knife at all times, issued to him by his
+//caretakers. Wouldn't want to lose the triumph of modern technology to
+//a violent outburst.
+
+//They didn't count on him not being the one doing the violence.
+
+actor Slasher : Weapon
+{
+	+Weapon.cheatnotweapon
+	+Weapon.meleeweapon
+	+noalert
+	tag "$TAG_SLASHER"
+	Inventory.icon "CLAPA0"
+	Weapon.ammoType1 "nades" //allow the player to view nade number with knife
+	Weapon.bobStyle "alpha"
+	Weapon.bobSpeed 2
+	states
+	{
+		spawn:
+			TNT1 A -1
+			stop
+		select:
+			CLAW A 1 A_Raise
+			loop
+		deselect:
+			CLAW A 1 A_Lower
+			loop
+		ready:
+			CLAW A 1 A_WeaponReady
+			loop
+		fire:
+			CLAW A 0 A_Jump(128,"fire2") //random animation
+			CLAW BCDE 1
+			TNT1 A 0 A_PlaySound("unseen/knife")
+			CLAW F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,72)
+			CLAW GHI 2
+			CLAW JKLMNO 2
+			goto ready
+		fire2:
+			CLAL BCDE 1
+			TNT1 A 0 A_PlaySound("unseen/knife")
+			CLAL F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,72)
+			CLAL GHI 2
+			CLAL JKLMNO 2
+			goto ready
+		altfire:
+			CLAX A 2 A_PlaySound("unseen/yell",1)
+			CLAX BCD 4
+			CLAX D 1 offset(2,32) //why? as always the answer is "netcode"
+			CLAX D 1 offset(-2,32)
+			CLAX D 1 offset(2,32)
+			CLAX D 1 offset(-2,32)
+			CLAX D 1 offset(2,32)
+			CLAX D 1 offset(-2,32)
+			CLAX E 1 offset(3,32)
+			CLAX E 1 offset(-3,32)
+			CLAX E 1 offset(3,32)
+			CLAX E 1 offset(-3,32)
+			CLAX E 1 offset(3,32)
+			CLAX E 1 offset(-3,32)
+			CLAX F 1 offset(4,32)
+			CLAX F 1 offset(-4,32)
+			CLAX F 1 offset(4,32)
+			CLAX F 1 offset(-4,32)
+			CLAX F 1 offset(4,32)
+			CLAX F 1 offset(-4,32)
+			CLAX F 1 offset(4,32)
+			CLAX F 1 offset(-4,32)
+			CLAX F 6 offset(1,32) //god this is so FUCKING STUPID
+			CLAX G 1
+			TNT1 A 0 A_PlaySound("unseen/xknife")
+			CLAX H 1 A_FireBullets(0,0,1,1000,"AbhorrentPuff",FBF_Norandom | FBF_NOFLASH,64)
+			CLAX IJ 1
+			CLAX KLMNOP 2
+			goto ready
+	}
+}
+
+actor EvilPuff : BulletPuff //NOT A testing actor
+{
+	damageType "Dark"
+	seeSound "unseen/hit"
+	attackSound "unseen/wall"
+	obituary "$OB_STABBED"
+	+puffonactors
+	+noextremedeath
+	+puffGetsOwner
+	+hitTracer
+	states
+	{
+		crash:
+			goto super::spawn //HACKING
+		spawn:
+			TNT1 A 1 NoDelay A_PlaySound("unseen/wall")
+			stop
+		xdeath:
+			TNT1 AAA 1 A_CustomMissile("SpecialBloodSlow",0,0,frandom(-20,20),0,-20-frandom(-10,30))
+			TNT1 A 1 A_CustomMissile("SpecialBloodSlow2",0,0,frandom(-20,20),0,-20-frandom(-10,30))
+			TNT1 A 70 //obit buffer
+			stop
+	}
+}
+
+actor AbhorrentPuff : EvilPuff
+{
+	obituary "$OB_SLASHED"
+	damageType "Darken"
+	states
+	{
+		crash:
+			TNT1 A 0 A_PlaySound("unseen/xwall",CHAN_WEAPON)
+			TNT1 AAAA 1 A_CustomMissile("SpecialPuff",0,0,frandom(-10,10),0,frandom(-10,10))
+			goto super::crash
+		spawn:
+			TNT1 A 0 NoDelay A_PlaySound("unseen/wall")
+			TNT1 AAAA 1 A_CustomMissile("SpecialPuff",0,0,frandom(-10,10),0,frandom(-10,10))
+			goto super::crash
+		xdeath:
+			TNT1 AAAAAA 1 A_CustomMissile("SpecialBlood",0,0,frandom(-20,20),0,-20-frandom(-10,30))
+			TNT1 AA 1 A_CustomMissile("SpecialBlood2",0,0,frandom(-20,20),0,-20-frandom(-10,30))
+			TNT1 A 70 //obit buffer
+			stop
+	}
+}
+
+actor SpecialPuff : BulletPuff //with extra speed and being a different actor
+{
+	speed 6
+	-nonetid
+	+noclip
+	+nointeraction
+	states
+	{
+		spawn:
+			PUFF A 0 Bright NoDelay A_ChangeVelocity(0,0,2)
+			PUFF A 2 Bright A_ScaleVelocity(frandom(0.5,2))
+			PUFF B 2 Bright
+			PUFF CD 2
+		stop
+	}
+}
+
+actor SpecialBlood : Blood //with extra speed and being a different blood
+{
+	speed 8
+	projectile
+	-nogravity
+	damage 0
+	decal "bloodsplat"
+	radius 2
+	height 4
+	+thruactors
+	states
+	{
+		spawn:
+			BLUD A 0 NoDelay A_ChangeVelocity(0,0,6)
+			BLUD C 6 A_ScaleVelocity(frandom(0.5,2))
+			BLUD B 6
+			BLUD A 6
+			stop
+		death:
+			BL0D A 4
+			BL0D BC 4
+			stop
+	}
+}
+
+actor SpecialBlood2 : SpecialBlood //with smears
+{
+	decal "bloodsmear"
+}
+
+actor SpecialBloodSlow : SpecialBlood //with less speed
+{
+	speed 4
+	states
+	{
+		spawn:
+			BLUD A 0 NoDelay A_ChangeVelocity(0,0,3)
+			goto super::spawn+1
+	}
+}
+
+actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
+{
+	decal "bloodsmear"
+}

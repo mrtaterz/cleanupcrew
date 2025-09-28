@@ -1,0 +1,420 @@
+//sapper class's weapons
+
+//Flame-thrower--
+//A self-contained flame-thrower based on the traditional design.
+//Capable of lobbing napalm over 60 meters, resulting in what is usually
+//described as "the worst barbecue meat I've ever had the pleasure of smelling."
+//Has special usage for this assignment- the flames left by a burning target
+//reveal their position.
+
+Actor Flamer : DoomWeapon
+{
+	Obituary "$OB_Flamer"
+	Weapon.AmmoType "usCell"
+	Weapon.AmmoUse 1
+	Inventory.icon "FLMRA0"
+	Tag "$TAG_FLAMER"
+	states
+	{
+		select:
+			FLRG A 0 A_Raise
+			FLRG A 1 A_Raise
+			loop
+		deselect:
+			FLRG A 0 A_Lower
+			FLRG A 1 A_Lower
+			loop
+		ready:
+			FLRG A 0 A_JumpIf(args[0]!=1,"inspect")
+			xloop:
+			FLRG A 1 A_WeaponReady
+			loop
+		inspect:
+			FLRG A 0 A_SetArg(0,1)
+			FLRG A 5 A_SetTics(random(4,10))
+			FLRG A 4 Offset(0,34)
+			FLRG A 3 Offset(0,36)
+			FLRG A 2 Bright A_PlaySound("weapons/flamerstart",CHAN_WEAPON)
+			FLRG EEEE 1 Bright A_FireCustomMissile("FlameStartSmoke",random(-10,10),0,0,0,0,random(-5,5))
+			FLRG FFFF 1 Bright A_FireCustomMissile("SmallSteam",random(-10,10),0,0,0,0,random(-5,5))
+			FLRG A 4 Offset(0,36)
+			FLRG A 3 Offset(0,34)
+			goto ready
+		fire:
+			//FLRG C 0 A_GunFlash
+			FLRG B 2 Bright A_PlaySound("weapons/flamerstart",CHAN_WEAPON)
+			FLRG C 2 Bright
+			FLRG A 0 A_FireCustomMissile("GrenadierSteam")
+			FLRG D 1 Bright A_FireCustomMissile("FlameBall",0,1,0,0,0,10)
+			goto refire
+		hold:
+			FLRG A 0 A_GunFlash
+			//FLRG A 0 A_FireCustomMissile("FlamerVomitSmoke",0,0)
+			FLRG E 3 Bright A_FireCustomMissile("FlameBall",0,1,0,0,0,10)
+			//now pick a random offset
+			TNT1 A 0 A_Jump(256,2,3,4,5)
+			TNT1 A 0 Offset(0,34) //this will be fell through to due to netcode but never chosen by the jump
+			goto refire
+			TNT1 A 0 Offset(-2,33)
+			goto refire
+			TNT1 A 0 Offset(2,33)
+			goto refire
+			TNT1 A 0 Offset(-1,31)
+			goto refire
+			TNT1 A 0 Offset(1,31)
+		refire:
+			FLRG F 5 A_Refire
+			FLRG FFF 5 A_FireCustomMissile("SmallSteam",random(-10,10),0,0,0,0,random(-5,5))
+			goto ready
+		flash:
+			TNT1 A 0 A_Jump(128,"flash2")
+			TNT1 A 3 A_Light2
+			goto LightDone
+		flash2:
+			TNT1 A 3 A_Light1
+			goto LightDone
+	}
+}
+
+
+Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
+//which you did btw
+{
+	-noGravity
+	+noDamageThrust
+	gravity 0.5
+	damage 2
+	seeSound "weapons/flamer"
+	deathSound "weapons/flamerx"
+	obituary "$OB_Flamer"
+	selfObituary "$OB_S_Flamer"
+	damageType "Burns"
+	decal "FlamerScorch"
+	scale 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ACS_NamedExecuteWithResult("waterdie")
+		TNT1 A 0 A_Jump(256,"s1","s2","s3") //pick a random sprite
+		s1:
+		FLBL A 1 Bright A_SpawnItemEx("FlameSmoke",frandom(-13,13),frandom(0,8),frandom(-13,13),0,0,1)
+		FLBL AAA 1 Bright ACS_NamedExecuteWithResult("waterdie")
+		TNT1 A 0 ACS_NamedExecuteWithResult("waterdie") //this script jumps to the waterdie state when this projectile enters water
+		s2:
+		FLBL B 1 Bright A_SpawnItemEx("FlameSmoke",frandom(-13,13),frandom(0,8),frandom(-13,13),0,0,1)
+		FLBL BBB 1 Bright ACS_NamedExecuteWithResult("waterdie")
+		TNT1 A 0 ACS_NamedExecuteWithResult("waterdie")
+		s3:
+		FLBL C 1 Bright A_SpawnItemEx("FlameSmoke",frandom(-13,13),frandom(0,8),frandom(-13,13),0,0,1)
+		FLBL CCC 1 Bright ACS_NamedExecuteWithResult("waterdie")
+		TNT1 A 0 ACS_NamedExecuteWithResult("waterdie")
+		//FLBL D 1 Bright A_SpawnItemEx("FlameSmoke",frandom(-13,13),frandom(0,8),frandom(-13,13))
+		//FLBL DDD 1 Bright ACS_NamedExecuteWithResult("waterdie")
+		goto s1
+	WaterDie:
+		TNT1 A 0 A_Jump(256,1,2,3) //random 6-8 projectiles
+		TNT1 AAAAAAAA 0 A_CustomMissile("FlameDieSteam",8,0,random(0,360),CMF_aimDirection,random(0,-90))
+		TNT1 A 0 A_PlaySound("weapons/flamerwater")
+	Die:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_ChangeFlag("Missile",false)
+		FLBL DEF 2 Bright A_Explode(2,32)
+		FLBL EFGH 2
+		stop
+	Death:
+		//FLBL EFG 2 Bright A_Explode(2,32)
+		//FLBL HI 2 Bright
+		TNT1 A 0 A_Jump(256,1,2,3) //random 2-4 projectiles
+		TNT1 AAAA 0 A_CustomMissile("FlameDieSmoke",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+		smokeless:
+		FLBL DEF 2 Bright A_Explode(2,32)
+		FLBL GH 2
+		Stop
+	}
+}
+
+actor FlameSmoke : RevenantTracerSmoke //almost no reason to inherit anymore lmao
+{
+	vSpeed 1
+	+clientsideOnly
+	+noNetId
+	+randomize
+	states
+	{
+	spawn:
+		TNT1 A 0 NoDelay A_Jump(200,"die")
+		EMBR ABABC 4
+		stop
+		//goto super::spawn
+	die:
+		TNT1 A 0
+		stop
+	}
+}
+
+//Proximity mine layer--
+//The proximity mine layer is standard-issue for sappers under the UAC, being
+//the easiest method of arming and deploying the UAC's M67 Proximity Mine.
+//Should it sense the presence of a living thing- or at least, a living thing
+//not carrying the proper IFF tag- it explodes, proving to be the most efficient
+//method of dispensing shrapnel to unwitting passers-by.
+//The mines placed by the launcher constantly emit ultrasonic tones and radio
+//pulses- the former for detecting proximity, and the latter for IFF and
+//reminding the placer of its location.
+//Though it's possible the tones could be heard by someone with, say,
+//artificially enhanced senses...
+
+Actor MineLauncher : DoomWeapon //ammo is in human/global.dec
+{
+	weapon.ammouse 1
+	weapon.ammotype "Mines"
+	weapon.ammotype2 "MineCount"
+	Tag "$TAG_MINES"
+	Inventory.icon "PRXPA0"
+	weapon.selectionOrder 3800
+	states
+	{
+		select:
+			PRXG A 0 A_Raise
+			PRXG A 1 A_Raise
+			loop
+		deselect:
+			PRXG A 0 A_Lower
+			PRXG A 1 A_Lower
+			loop
+		ready:
+			PRXG A 1 A_WeaponReady
+			loop
+		fire:
+			PRXG A 0 A_JumpIfInventory("MineCount",4,"bsod")
+			PRXG B 8
+			PRXG C 0 A_GiveInventory("MineCount",1)
+			PRXG C 3 A_FireCustomMissile("FlyingProxMine",0,1)
+			PRXG D 6
+			PRXG B 3
+			PRXG A 5
+			goto ready
+		bsod:
+			PRXG E 8 A_PlaySound("weapons/minegun/fail",CHAN_WEAPON)
+			PRXG A 8
+			PRXG E 8
+			PRXG A 8
+			goto ready
+	}
+}
+
+Actor MineCount : Ammo //prevents you from placing too many mines token
+{
+	Inventory.MaxAmount 4
+	Inventory.Icon "PROXA0"
+	tag "$TAG_MINECOUNT"
+}
+
+Actor FlyingProxMine
+{
+	var int user_selftid;
+	SeeSound "weapons/minegun"
+	radius 16
+	height 8
+	projectile
+	speed 10
+	-nogravity
+	+skyexplode
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_SetUserVar("user_selftid",ACS_NamedExecuteWithResult("SetFreeTid"))
+			fly:
+			PROX D 0 A_SpawnItemEx("GrenadeSmokeTrail")
+			PROX DDDD 1 ACS_NamedExecuteWithResult("waterdie")
+			loop
+		waterdie:
+		die:
+			TNT1 A 0 A_ChangeFlag("missile",0)
+			TNT1 A 0 A_Stop
+		death:
+			PROX D 1 A_SpawnItemEx("ProxMine",0,0,0,0,0,0,0,SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
+			TNT1 A 0 ACS_NamedExecuteWithResult("TransferTracer",user_selftid)
+			TNT1 A 0 A_TransferPointer(AAPTR_Default,AAPTR_Tracer,AAPTR_Target,AAPTR_FriendPlayer)
+			stop
+	}
+}
+
+Actor ProxMine : Equipment
+{
+	radius 16
+	height 8
+	speed 0
+	+friendly
+	+lookallaround
+	+ismonster
+	-nogravity
+	+usespecial
+	+seeinvisible
+	damagefactor "proxfire",1
+	//obituary "$OB_MINES"
+	states
+	{
+		spawn:
+			PROX D 1 NoDelay ACS_NamedExecuteWithResult("EquipmentUseSpecial")//make this thing able to be picked up // A_Log(tid) //fuck!!
+			PROX DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 ACS_NamedExecuteWithResult("waterfloat",10)//49 d
+			PROX C 1 A_PlaySound("weapons/minegun/arming")
+			PROX BA 1 ACS_NamedExecuteWithResult("waterfloat",10)
+			PROX C 1 A_PlaySound("weapons/minegun/arming")
+			PROX BA 1 ACS_NamedExecuteWithResult("ClearTid")
+		lookloop:
+			TNT1 A 0 A_PlaySound("weapons/minegun/armed")
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360) //why so much looking? A_Look finding invisible actors is chance-based and this can't be changed
+			PROX A 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX A 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX A 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX B 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX B 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX B 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX C 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX C 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_TakeInventory("Clip",1)
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			//TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,64,0,360)
+			PROX C 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_DONTCHASEGOAL,0,128,0,360)
+			TNT1 A 0 A_JumpIf(CallACS("friendplayerexists")==0,"detonate") //remove if player left game
+			loop
+		forget: //laziness
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			PROX A 1 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			PROX B 1 A_ClearTarget
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterfloat",10)
+			PROX C 1 A_ClearTarget
+			goto lookloop
+		see:
+			TNT1 A 0 A_JumpIfInventory("Clip",1,"lookloop")
+			TNT1 A 0 A_JumpIfCloser(128,"detonate")
+			goto forget
+		detonate:
+			TNT1 A 0 A_TransferPointer(AAPTR_Default,AAPTR_Default,AAPTR_FriendPlayer,AAPTR_Target)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("TakeMineToken")
+			PROX C 3 A_PlaySound("weapons/minegun/detonate")
+			PROX BA 3
+			PROX C 1
+			PROX C 0 A_Die("proxfire") //it'd be quite humiliating to allow picking up explosions
+			death.proxfire:
+			PROX C 1 ACS_NamedExecuteWithResult("TakeMineToken")
+			PROX BA 2
+			TNT1 A 0 A_ChangeFlag("Vulnerable",0)
+			TNT1 A 0 A_SpawnItemEx("MineBoom")
+			goto cont
+			death.grenade:
+			TNT1 A 0 ACS_NamedExecuteWithResult("TakeMineToken")
+			//TNT1 A 0 A_TransferPointer(AAPTR_Default,AAPTR_Default,AAPTR_Target,AAPTR_FriendPlayer)
+			TNT1 A 0 A_ChangeFlag("Vulnerable",0)
+			TNT1 A 0 A_SpawnItemEx("DarkBoom")
+			cont:
+			TNT1 A 0 A_SpawnItemEx("BigExploQuakeMaker")
+			TNT1 A 0 A_PlaySound("weapons/minegun/boom")
+			TNT1 A 0 A_SetScale(2,2)
+			LEXP A 2 bright
+			LEXP BCD 2 bright
+			LEXP EFGHIJ 4 bright
+			//MISL BCD 5 bright
+			stop
+		picked:
+			TNT1 A 0 ACS_NamedExecuteWithResult("TakeMineToken")
+			TNT1 A 0 A_GiveToTarget("PickedMine",1)
+			stop
+	}
+}
+
+Actor MineBoom //[mine boom]
+{
+	Obituary "$OB_MINES"
+	SelfObituary "$OB_S_MINES"
+	damageType "proxfire"
+	+extremedeath
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Explode(128,256)
+			stop
+	}
+}
+
+Actor DarkBoom : MineBoom
+{
+	Obituary "$OB_UNSEENMINES"
+	SelfObituary "$OB_S_UNSEENMINES"
+}
+
+Actor PickedMine : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_GiveInventory("Mines",1)
+			TNT1 A 0 A_SpawnItemEx("FakePickedMine",0,0,0,0,0,0)
+			TNT1 A 0 A_Recoil(-0.1)
+			stop
+	}
+}
+
+Actor FakePickedMine : CustomInventory
+{
+	Inventory.PickupMessage "$GOTMINE"
+	+Inventory.AlwaysPickup
+	States
+	{
+		Spawn:
+			TNT1 A 35
+			stop
+		Pickup:
+			TNT1 A 0 A_RailWait //prolonging the death of A_RailWait since 2012
+			stop
+	}
+}
+
+
+actor DebugMine : ProxMine //always explodes
+{
+	States
+	{
+		Spawn:
+			PROX D 50 NoDelay ACS_NamedExecuteWithResult("EquipmentUseSpecial")//make this thing able to be picked up // A_Log(tid) //fuck!!
+			PROX C 1 A_PlaySound("weapons/minegun/arming")
+			PROX BA 1
+			PROX C 1 A_PlaySound("weapons/minegun/arming")
+		goto See
+	}
+}

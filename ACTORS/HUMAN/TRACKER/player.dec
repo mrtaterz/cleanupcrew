@@ -1,0 +1,98 @@
+//the human support class and its corpses
+
+//UAC Detachment 4F Support Trooper--
+//The Support Troop of Detachment 4F normally functions in much the way you'd 
+//expect any support soldier to do- bearing the munitions and providing
+//suppressive fire.
+//Exceptional times, however, call for exceptional measures: here, they've been 
+//issued a modified air rifle--  a "chemical gun," as the engineers and
+//scientists who developed it say. It's capable of delivering high dosages of
+//potent depressants and several other substances in the blink of an eye, which
+//will prove useful against an otherwise superhuman threat.
+//They're also issued several proximity sensors that beep loudly when they
+//detect a living target.
+//Oh yes, and there's also the double-barrel shotgun.
+
+//"I dunno what the hell's in there, but it's weird and pissed off, whatever it is."
+
+Actor Support : PlayerPawn
+{
+	limitedtoteam 0
+	//Player.StartItem "Chemgun"
+	Player.StartItem "AssaultShotgun"
+	Player.StartItem "usFist"
+	Player.StartItem "ProxSensors"
+	Player.StartItem "GreenArmor"
+	//Player.StartItem "Backpack"
+	Player.StartItem "usShell", 20 //4 given by backpack
+	Player.StartItem "usClip", 100 //10 given by backpack
+	Player.StartItem "Sensors", 3 //1 given by backpack, but capped at... oh whatever hard to explain
+	//so basically the maximum amount of sensors is 2, but then the backpack takes effect after
+	//everything is given, but then the backpack gives 1 sensor? i think? idk, my brain hurts.
+	Player.StartItem "FlareStick", 5
+	Player.WeaponSlot 1, usFist
+	Player.WeaponSlot 2, AssaultShotgun
+	Player.WeaponSlot 3, ProxSensors
+	Player.SoundClass "Support"
+	player.DisplayName "Tracker"
+	Player.ColorRange 112, 127
+	Player.scoreIcon "TRACI"
+	+USEDAMAGEEVENTSCRIPT
+	States
+	{
+	Spawn:
+		SPRT A -1
+		Loop
+	See:
+		SPRT ABCD 4 
+		Loop
+	Missile:
+		SPRT E 12
+		Goto Spawn
+	Melee:
+		SPRT F 2 BRIGHT Light("ZOMBIEATK")
+		Goto Missile
+	Pain:
+		SPRT H 4 
+		SPRT H 4 A_Pain
+		Goto Spawn
+	death.darken:
+	death.suicide:
+	Death:
+		SPRT H 8
+		SPRT I 8 A_PlayerScream
+		SPRT J 8 A_NoBlocking
+		SPRT KL 8
+		SPRT M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	XDeath:
+		PGIB A 5
+		PGIB B 5 A_XScream
+		PGIB C 5 A_NoBlocking
+		PGIB D 5
+		PGIB E -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	}
+}
+
+Actor DeadSupport : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			SPRT M 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+Actor GibbedSupport : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			SPRT E 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}

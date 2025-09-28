@@ -1,0 +1,762 @@
+//items that spawn on the map, usable by both teams alike
+
+
+//a corpse that can be fed off of by the unseen.
+Actor CorpseGeneric// replaces DeadMarine
+{
+	radius 24
+	height 8
+	health 300
+	damagefactor "None",0
+	//damagefactor "Fire",0 //i heard rockets do fire damage
+	//damagefactor "Poison",0
+	damagefactor "Dark",1
+	+shootable
+	+notautoaimed
+//+dontthrust
+	mass 10000000 //lol... lmao...
+	painchance 256
+	painchance "Dark",256
+	dropItem "Nades" //defined in unseen grenade.dec
+	states
+	{
+		spawn:
+			PLAY N 1 //NoDelay A_GiveInventory("Clip",5) //clips will count how much armor can be taken
+			goto bedead
+		bedead:
+			"####" "#" 0 A_PlaySound("misc/body")
+		verydead:
+			"####" "#" -1
+			stop
+		pain:
+			goto verydead
+		pain.Dark:
+			"####" "#" 1 A_ChangeVelocity(0,0,4)
+			"####" "#" 0 A_GiveToTarget("Health",10)
+			"####" "#" 0 A_PlaySound("unseen/armortear")
+			//"####" "#" 0 A_JumpIfInventory("Clip",1,2) //roundabout lol
+			//"####" "#" 0 A_Jump(256,"bedead")
+			"####" "#" 0 A_GiveToTarget("ArmorGiver",1)
+			"####" "#" 0 A_TakeInventory("Clip",1)
+			goto verydead
+		death:
+			"####" "#" 0 A_GiveToTarget("Health",10)
+			"####" "#" 0 A_PlaySound("unseen/armortear")
+			//"####" "#" 0 A_JumpIfInventory("Clip",1,2) //roundabout lol
+			//"####" "#" 0 A_Jump(256,3)
+			"####" "#" 0 A_GiveToTarget("ArmorGiver",1)
+			"####" "#" 0 A_TakeInventory("Clip",1)
+			"####" "#" 1 A_ChangeVelocity(0,0,4) //self note: this is the jump target
+			PGIB A 3 A_XScream
+			PGIB BCDE 3
+			PGIB E -1 A_NoBlocking //already doesn't block whatever
+			stop
+	}
+}
+
+//doesn't make fwlump sound on spawn.
+Actor CorpseMapPlaced : CorpseGeneric replaces DeadMarine
+{
+	states
+	{
+		spawn:
+			PLAY N 1
+			"####" "#" -1
+			stop
+	}
+}
+
+Actor usDeadDoomImp : CorpseGeneric replaces DeadDoomImp
+{
+	states
+	{
+		spawn:
+			TROO M -1
+			stop
+	}
+}
+
+Actor usDeadDemon : CorpseGeneric replaces DeadDemon
+{
+	states
+	{
+		spawn:
+			SARG N -1
+			stop
+	}
+}
+
+actor usDeadCacodemon : CorpseGeneric replaces DeadCacodemon
+{
+	states
+	{
+		spawn:
+			HEAD L -1
+		death:
+			"####" "#" 0 A_GiveToTarget("Health",10)
+			"####" "#" 0 A_PlaySound("unseen/armortear")
+			//"####" "#" 0 A_JumpIfInventory("Clip",1,2) //roundabout lol
+			//"####" "#" 0 A_Jump(256,3)
+			"####" "#" 0 A_GiveToTarget("ArmorGiver",1)
+			"####" "#" 0 A_TakeInventory("Clip",1)
+			"####" "#" 1 A_ChangeVelocity(0,0,4) //self note: this is the jump target
+			CACX A 3 A_XScream
+			CACX BCDEFGHI 3
+			CACX J -1 A_NoBlocking //already doesn't block whatever
+			stop
+	}
+}
+
+actor ArmorGiver : CustomInventory //it gives you (the unseen) armor
+{
+	+inventory.autoactivate
+	states
+	{
+	use:
+		TNT1 A 0 A_GiveInventory("EvilArmorBonus",1)
+		TNT1 A 0 ACS_NamedExecuteAlways("ArmorCheck")
+		stop
+	}
+}
+
+
+
+//when a player dies, it drops this.
+//no it doesn't because zandronum lacks transferspriteframe, instead it drops
+//a Dead[Classname]
+Actor DeadPlayer : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			"####" "#" 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+
+//demons don't get to use medikits.
+actor usMedikit : Medikit replaces Medikit
+{
+	+neverrespawn
+	inventory.forbiddento "Unseen"
+}
+
+actor usStimpack : Stimpack replaces Stimpack 2011
+{
+	+neverrespawn
+	inventory.forbiddento "Unseen"
+}
+
+//actor MedikitSpawner 2012 //this has to be done to properly spawn items in TLMS
+						//no it doesn't
+//{
+//	states
+//	{
+//		spawn:
+//			TNT1 A 0 NoDelay A_SpawnItemEx("Medikit")
+//			stop
+//	}
+//}
+
+//actor StimpackSpawner 2011
+//{
+//	states
+//	{
+//		spawn:
+//			TNT1 A 0 NoDelay A_SpawnItemEx("Stimpack")
+//			stop
+//	}
+//}
+
+
+//base wreckable pickup actor
+actor WreckablePickup : CustomInventory
+{
+	Health 5000
+	damagefactor "None",0
+	damagefactor "Fire",0 //i heard rockets do fire damage
+	damagefactor "Poison",0
+	damagefactor "Dark",1
+	damagefactor "Darken",1
+	mass 10000000
+	painChance 256
+	DeathSound "misc/boxdestroy"
+	DeathHeight 20
+	+shootable
+	+dontcorpse
+	+noblood
+	states
+	{
+		Spawn:
+			AMMO A -1
+			stop
+		Pain:
+		Death:
+			TNT1 A 0 A_GiveInventory("Health",5000)
+			TNT1 A 0 A_ChangeFlag("special",false)
+			TNT1 A 0 A_ChangeFlag("shootable",false)
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_ChangeVelocity(0,0,4)
+			AMWR A 1 A_Jump(256,"Wrecked") //dynamic to let it be redefined
+			goto Wrecked //fallback
+		Wrecked:
+			AMWR A 0 A_SpawnDebris("AmmoWreckDebris")
+		BeDead:
+			"####" A 50
+			"####" AAAAAAAAAA 5 A_FadeOut(0.1,0)
+			TNT1 A 950 A_SetTranslucent(1.0)
+			TNT1 A 0 A_ChangeFlag("shootable",true)
+			TNT1 A 0 A_RestoreSpecialPosition
+			TNT1 A 1 A_RestoreSpecialDoomThing
+			goto spawn //fallback
+		HideDoomish:
+			TNT1 A 1050 A_ChangeFlag("shootable",false)
+			TNT1 A 0 A_ChangeFlag("shootable",true)
+			TNT1 A 0 A_RestoreSpecialPosition
+			TNT1 A 1 A_RestoreSpecialDoomThing
+			Stop
+	}
+}
+
+//Ammo can--
+//To assist the detachment in their mission, ammunition is teleported to several
+//pre-designated locations in the site.
+actor AmmoBag : WreckablePickup Replaces Clipbox 8 //hax!
+{
+	//+inventory.alwaysrespawn
+	//until zandronum implements alwaysrespawn we can't do that
+	inventory.pickupmessage "$PICKUP_AMMOBAG"
+	inventory.forbiddenTo "unseen"
+	states
+	{
+		spawn:
+			AMMO A -1
+			stop
+		pickup:
+			TNT1 A 0 A_GiveInventory("usClip",50)
+			//TNT1 A 0 A_GiveInventory("PistolClip",50)
+			//TNT1 A 0 A_GiveInventory("RifleClip",50)
+			TNT1 A 0 A_GiveInventory("usShell",20)
+			TNT1 A 0 A_GiveInventory("usRocketAmmo",5)//was 5
+			TNT1 A 0 A_GiveInventory("usCell",100)
+			TNT1 A 0 A_GiveInventory("Mines",1)//was 5
+			TNT1 A 0 A_GiveInventory("Sensors",1)
+			//TNT1 A 0 A_GiveInventory("Nades",1)
+			//TNT1 A 0 A_JumpIfInventory("Slasher",1,"end")
+			//add human exclusive items here
+		end:
+			TNT1 A 0
+			stop
+		
+	}
+}
+
+actor AmmoBelt : CustomInventory
+{
+	inventory.pickupmessage "$PICKUP_AMMOBELT"
+	inventory.forbiddenTo "unseen"
+	states
+	{
+		spawn:
+			ABLT A -1
+			stop
+		pickup:
+			TNT1 A 0 A_GiveInventory("usClip",25)
+			//TNT1 A 0 A_GiveInventory("PistolClip",25)
+			//TNT1 A 0 A_GiveInventory("RifleClip",25)
+			TNT1 A 0 A_GiveInventory("usShell",10)
+			TNT1 A 0 A_GiveInventory("usRocketAmmo",1)
+			TNT1 A 0 A_GiveInventory("usCell",50)
+			TNT1 A 0 A_GiveInventory("Mines",1)//was 5
+			TNT1 A 0 A_GiveInventory("Sensors",1)
+			//TNT1 A 0 A_GiveInventory("Nades",1)
+			//TNT1 A 0 A_JumpIfInventory("Slasher",1,"end")
+			//add human exclusive items here
+		end:
+			TNT1 A 0
+			stop
+		
+	}
+}
+
+//debris actor
+actor AmmoWreckDebris
+{
+	projectile
+	damage 0
+	bounceFactor 0.4
+	bounceType Doom
+	+clientsideOnly
+	//+bounceonactors
+	+thruactors
+	-nogravity
+	Health 8
+	scale 0.5
+	States
+	{
+		Spawn:
+			DEB2 ABCDEFGH 2
+			loop
+		Death:
+			TNT1 A 1
+			stop
+	}
+}
+
+//Flare crate--
+//Illumination is usually sparse in the facilities the Threat tends to find
+//itself in. In order to help with that, the UAC also provides crates of flares
+//to provide a source of portable illumination.
+actor FlareCrate : WreckablePickup 101
+{
+	//$Title Crate of Flares
+	//$Category Ammo
+	inventory.pickupmessage "$PICKUP_FLARECRATE"
+	inventory.forbiddento "unseen"
+	states
+	{
+		spawn:
+			FLAR C -1
+		pickup:
+			TNT1 A 0 A_JumpIfInventory("FlareStick",0,"nope")
+			TNT1 A 0 A_GiveInventory("FlareStick",5)
+			stop
+		Wrecked:
+			FLAW A 0 A_SpawnDebris("FlareWreckDebris")
+			goto BeDead
+		nope:
+			TNT1 A 0
+			fail
+	}
+	
+}
+
+actor FlareWreckDebris : AmmoWreckDebris
+{
+	States
+	{
+		Spawn:
+			DEB1 ABCDEFGH 2
+			loop
+	}
+}
+
+//the barrel... but it's noisy when you push it. or bump it.
+//and it's quite bouyant.
+actor usExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
+{
+	+pushable
+	+bumpspecial
+	+canpass //stacking ~~paper~~ barrels to the ceiling
+	mass 200
+	height 32
+	activation THINGSPEC_TRIGGERACTS | THINGSPEC_TRIGGERTARGETS | THINGSPEC_NODEATHSPECIAL
+	states
+	{
+		spawn:
+			BAR1 A 0 NoDelay ACS_NamedExecuteWithResult("barrelspecial")
+			BAR1 A 0 A_Jump(256,1,2,3,4)
+		xloop:
+			BAR1 BBBBBB 1 ACS_NamedExecuteWithResult("waterfloat",13)
+			BAR1 AAAAAA 1 ACS_NamedExecuteWithResult("waterfloat",13)
+			goto xloop
+		Death:
+			BEXP A 5 Bright A_SetSpecial(0)
+			BEXP B 0 Bright A_SpawnItemEx("DistantExploMaker")
+			BEXP B 5 Bright A_Scream
+			BEXP C 5 Bright
+			BEXP D 0 Bright A_SpawnItemEx("ExploQuakemakerSilent")
+			BEXP D 5 Bright A_Explode
+			BEXP E 10 Bright
+			TNT1 A 1050 Bright A_BarrelDestroy
+			TNT1 A 5 A_Respawn
+			Wait
+	}
+}
+
+//an actor that tracks the amount of "buoyancy" a floating object has accumulated.
+//used by the waterfloat script.
+Actor BuoyancyTracker : Inventory
+{
+	Inventory.maxAmount 128
+	Inventory.amount 1
+}
+
+//a barrel full of gretchenfrage.
+ACTOR TechBarrel : ExplosiveBarrel 127
+{
+	//$Title Tech Barrel Gray
+	//$Category Obstacles
+	DeathSound "bfgbarrel/explode"
+	DamageType "BFGBarrelSplash"
+	+pushable
+	+bumpspecial
+	+useDamageEventScript
+	mass 400
+	obituary "$OB_TECHBARREL"
+	Scale 0.9
+	activation THINGSPEC_thingActs | THINGSPEC_noDeathSpecial
+		States
+		{
+			Spawn:
+			BART A 6 NoDelay ACS_NamedExecuteWithResult("barrelspecial")
+			BART A -1
+			Stop
+			Death:
+				BARX A 0 Bright A_SetSpecial(0)
+				BARX A 5 Bright A_PlaySound("bfgbarrel/charge",CHAN_Voice)
+				BARX BC 5 Bright
+				TNT1 A 0 A_Scream
+				TNT1 A 0 A_SpawnItemEx("BigExploQuakeMaker")
+				TNT1 A 0 A_SpawnItemEx("TechBarrelAsplode")
+				BFE1 ABCDEF 3 Bright
+				TNT1 A 1054 A_BarrelDestroy
+				TNT1 A 5 A_Respawn
+				Wait
+		}
+}
+
+//actual damage dealer item
+Actor TechBarrelAsplode
+{
+	damageType "BFGBarrelSplash"
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Explode
+			stop
+	}
+}
+
+
+
+
+//a barrel full of oil... that's on fire.
+//knocking it over would probably spell disaster for those around.
+actor usBurningBarrel : usExplosiveBarrel replaces BurningBarrel
+{
+	obituary "$OB_BURNINGBARREL"
+	damageType "burns"
+	health 300
+	+invulnerable
+	states
+	{
+		spawn:
+			FCAN A 4 NoDelay ACS_NamedExecuteWithResult("barrelspecial")
+			FCAN BC 4 Bright
+		xloop:
+			FCAN ABC 4 Bright
+			loop
+		death:
+			FEXP B 10 Bright A_Scream
+			FEXP C 5 Bright A_ChangeFlag("noBlockmap",true) //don't get pushed by our own asplode
+			FEXP D 5 Bright A_Mushroom("oil",2) //was 20
+			FEXP E 10 Bright
+			TNT1 A 1050 Bright A_BarrelDestroy
+			TNT1 A 5 A_Respawn
+			wait
+	}
+}
+
+//some flames.
+actor oilfire
+{
+	//speed 10
+	+noblockmonst
+	+noblockmap
+	renderStyle "Add"
+	alpha 0.8
+	damagetype "burns"
+	
+	states
+	{
+		spawn:
+			//TNT1 A 0 NoDelay A_GiveInventory("fireloops",random(20,40))
+			//TNT1 A 60 A_SetTics(random(1,60))
+		xloop:
+			FIRE A 2 BRIGHT  A_PlaySound("misc/barrelfire")
+			FIRE BAB 2 BRIGHT A_Explode(8,32)
+			FIRE C 2 BRIGHT  A_PlaySound("misc/barrelfire")
+			FIRE BCBCDCDCDEDED 2 BRIGHT A_Explode(8,32)
+			FIRE E 2 BRIGHT  A_PlaySound("misc/barrelfire")
+			FIRE FEFEFGHGHGH 2 BRIGHT A_Explode(8,32)
+			//TNT1 A 0 A_TakeInventory("fireloops",1)
+			//TNT1 A 0 A_ChangeVelocity(frandom(-2,2),frandom(-2,2),frandom(0,4))
+			//TNT1 A 0 A_JumpIfInventory("fireloops",1,"xloop")
+			stop
+	}
+}
+
+//some oil.
+actor oil
+{
+	speed 15
+	bouncefactor 0
+	radius 8
+	+noblockmonst
+	+noblockmap
+	+clientsideonly
+	+missile
+	+doombounce
+	+usebouncestate
+	+noblood
+	bloodcolor 20, 8, 4
+	states
+	{
+		spawn:
+			TNT1 A 2 NoDelay A_SpawnItemEx("blood",frandom(-2,2),frandom(-2,2),2,frandom(-2,2),frandom(-2,2),0,0,SXF_useBloodColor)
+			TNT1 A 0 A_SpawnItemEx("BulletPuff",frandom(-2,2),frandom(-2,2),2)
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterdie")
+			loop
+		bounce.floor:
+		death:
+			TNT1 A 0 A_ChangeFlag("missile",0)
+			TNT1 A 0 A_ChangeFlag("doombounce",0)
+			TNT1 A 60 A_SetTics(random(1,60))
+			TNT1 A 0 A_GiveInventory("fireloops",random(2,8)) //was 10,40
+		xloop:
+			TNT1 A 0 A_SpawnItemEx("oilfire")
+			TNT1 A 0 A_TakeInventory("fireloops",1)
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_GiveInventory("funcDoFireSpawn") //30 A
+			TNT1 A 0 A_ChangeVelocity(frandom(-2,2),frandom(-2,2),frandom(0,4))
+			TNT1 A 0 A_JumpIfInventory("fireloops",1,"xloop")
+			stop
+		waterdie:
+			TNT1 A 0 A_Jump(256,1,2,3) //random 6-8 projectiles
+			TNT1 AAAAAAAA 0 A_CustomMissile("FlameDieSteam",8,0,random(0,360),CMF_aimDirection,random(0,-90)) //flamediesteam in tech's weapons file, i should move it
+			TNT1 A 0 A_PlaySound("world/oilwater")
+			stop
+	}
+}
+
+//spawn some blood and die in water
+actor funcDoFireSpawn : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_SpawnItemEx("blood",(frandom(0,32)-frandom(0,32)),(frandom(0,32)-frandom(0,32)),frandom(0,4),frandom(-4,4),frandom(-4,4),frandom(0,8),0,SXF_useBloodColor)
+			TNT1 A 0 ACS_NamedExecuteWithResult("waterdie")
+			stop
+	}
+}
+//track amount of fire left
+actor fireloops : Inventory
+{
+	Inventory.maxAmount 50
+}
+
+//debounce barrel noise
+actor powerBarrelNoiseCooldown : Powerup
+{
+	Powerup.duration 17
+}
+
+//explosion quake exploder thing
+//TODO: move to more reasonable file
+actor ExploQuakeMaker
+{
+	+nointeraction
+	+nogravity
+	+noblockmap
+	states
+	{
+		spawn:
+		TNT1 A 0 NoDelay A_SpawnItemEx("DistantExploMaker")
+		TNT1 A 0 A_Quake(1,18,0,512,0)
+		TNT1 A 0 A_Quake(0.5,34,0,511,0)
+		TNT1 A 0 A_Quake(2,24,0,256,0)
+		TNT1 A 0 A_Quake(9,12,0,64,0)
+		TNT1 A 36 A_Quake(6,12,0,128,0)
+		stop
+	}
+}
+
+actor BigExploQuakeMaker : ExploQuakeMaker
+{
+	states
+	{
+		spawn:
+		TNT1 A 0 NoDelay A_SpawnItemEx("BigDistantExploMaker")
+		TNT1 A 0 A_Quake(1.5,27,0,768,0)
+		TNT1 A 0 A_Quake(0.75,51,0,787,0)
+		TNT1 A 0 A_Quake(0.5,70,0,786,0)
+		TNT1 A 0 A_Quake(3,36,0,512,0)
+		TNT1 A 0 A_Quake(10,18,0,128,0)
+		TNT1 A 36 A_Quake(7,18,0,256,0)
+		stop
+	}
+}
+
+actor ExploQuakeMakerSilent : ExploQuakeMaker
+{
+	states
+	{
+		spawn:
+		goto super::spawn + 1
+	}
+}
+
+
+actor DistantExploMaker : ExploQuakeMaker
+{
+	states
+	{
+		spawn:
+		TNT1 A 256 NoDelay A_PlaySound("weapons/distantx")
+		stop
+	}
+}
+
+actor BigDistantExploMaker : ExploQuakeMaker
+{
+	states
+	{
+		spawn:
+		TNT1 A 256 NoDelay A_PlaySound("weapons/bigdistantx")
+		stop
+	}
+}
+
+actor ComicallyLargeExploQuakeMaker : ExploQuakeMaker
+{
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_SpawnItemEx("BigDistantExploMaker")
+			TNT1 A 0 A_Quake(1.5,70,0,1024,0)
+			TNT1 A 0 A_Quake(0.75,140,0,1023,0)
+			TNT1 A 0 A_Quake(0.5,180,0,1022,0)
+			TNT1 A 0 A_Quake(3,72,0,768,0)
+			TNT1 A 0 A_Quake(10,60,0,256,0)
+			TNT1 A 36 A_Quake(7,64,0,512,0)
+			stop
+	}
+}
+
+
+//mud by MagicWizard
+ACTOR MudChunk
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP 
+	+MISSILE 
+	+DROPOFF
+	+NOTELEPORT
+	+LOWGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		MUDS ABCD 8
+		Stop
+	Death:
+		MUDS D 6
+		Stop
+	}
+}
+
+ACTOR MudSplash
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		MUDS EFGH 6
+		Stop
+	}
+}
+
+
+//test imp
+//i love him
+actor InvertyImp : DoomImp
+{
+RenderStyle Subtract
+Alpha 0.05
+States
+	{
+	Spawn:
+		TRIN AB 10 A_Look
+		Loop
+	See:
+		TRIN AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		TRIN EF 8 A_FaceTarget
+		TRIN G 6 A_Pain
+		Goto See
+	Pain:
+		TRIN H 2
+		TRIN H 2 A_Pain
+		Goto See
+	Death:
+		TRIN I 8
+		TRIN J 8 A_Scream
+		TRIN K 6
+		TRIN L 6 A_NoBlocking
+		TRIN M -1
+		Stop
+	XDeath:
+		TRIN N 5
+		TRIN O 5 A_XScream
+		TRIN P 5
+		TRIN Q 5 A_NoBlocking
+		TRIN RST 5
+		TRIN U -1
+		Stop
+	Raise:
+		TRIN ML 8
+		TRIN KJI 6
+		Goto See
+	}
+}
+
+actor Nuller //remove mapitems
+{
+	states
+	{
+		spawn:
+			TNT1 A 1
+			stop
+	}
+}
+
+//this is redundant and not terribly useful but juuuuuust in caaaaase?
+//will be removed on request
+
+actor ShotgunNuller : Nuller replaces Shotgun
+{}
+
+actor SuperShotgunNuller : Nuller replaces SuperShotgun
+{}
+
+actor ChaingunNuller : Nuller replaces Chaingun
+{}
+
+//actor RocketLauncherNuller : Nuller replaces RocketLauncher
+//{}
+
+actor PlasmaRifleNuller : Nuller replaces PlasmaRifle
+{}
+
+actor BFG9000Nuller : Nuller replaces BFG9000
+{}
+
+actor GreenArmorNuller : Nuller replaces GreenArmor
+{}
+
+
+actor BlueArmorNuller : Nuller replaces BlueArmor
+{}
+
+
+//the rat is in usefuldeco

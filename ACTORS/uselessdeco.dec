@@ -1,0 +1,72 @@
+actor PhobosRock1 30354
+{
+	//$Category Decoration
+Radius 24
+Height 16
++SOLID
+States
+{
+Spawn:
+ROK1 A -1
+Loop
+}
+}
+
+actor PhobosRock2 30355
+{
+	//$Category Decoration
+Radius 24
+Height 16
++SOLID
+States
+{
+Spawn:
+ROK2 A -1
+Loop
+}
+}
+
+actor PhobosRockSmall 30356
+{
+	//$Category Decoration
+Radius 1
+Height 1
+States
+{
+Spawn:
+ROK3 A -1
+Loop
+}
+}
+
+
+
+actor WolfTable4 2101
+{
+  //$Title "Metal Table"
+  //$Category Decoration
+  Radius 22
+  Height 26
+  +SOLID
+  States
+  {
+  Spawn:
+    WTBL D -1
+	Stop
+  }
+}
+
+actor WolfChair1 2102
+{
+  //$Title "Metal Chair"
+  //$Category Decoration
+  Radius 9
+  Height 28
+  +SOLID
+  States
+  {
+  Spawn:
+    WCHR A -1
+	Stop
+  }
+}

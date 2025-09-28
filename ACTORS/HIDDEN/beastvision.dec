@@ -1,0 +1,37 @@
+//Beast Vision--
+//write lore here sm you dumbass
+//name and function shamelessly ripped from blood lmao
+
+actor BeastVision : CustomInventory
+{
+	+Inventory.invbar
+	Inventory.maxAmount 100
+	Inventory.icon "BEASA0"
+	states
+	{
+		use:
+			TNT1 A 0 A_JumpIfInventory("BeastVisionIndicator",1,"turnitoffdammit")
+			TNT1 A 0 A_GiveInventory("BeastVisionIndicator",1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("activebeastvision")
+			fail
+		turnitoffdammit:
+			TNT1 A 0 A_TakeInventory("BeastVisionIndicator",2)
+			fail
+	}
+}
+
+//the token that actually handles this
+actor BeastVisionCounter : Inventory
+{
+	Inventory.maxAmount 2100
+}
+
+//the secondary token that handles toggling
+actor BeastVisionIndicator : Indicator
+{}
+
+//the powerup
+actor PowerBeastVision : PowerLightAmp
+{
+	Powerup.Color RedMap
+}

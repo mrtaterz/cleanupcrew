@@ -1,0 +1,775 @@
+//The men out for blood and money
+actor Mercenary
+{
+	//var int user_memory;
+	var int user_angle;
+	health 100
+	radius 16
+	height 56
+	speed 12
+	painChance 180 //they don't *actually* feel all too much pain
+	painChance "melee",256
+	painChance "kick",256
+	painChance "burns",256
+	damageFactor "merc",0
+	//i feel dirty writing this because i don't think
+	//you're supposed to use player sounds that way
+	//oh well more abuse follows
+	//(when did i change these to NOT be player sounds?)
+	painSound "mercs/pain"
+	deathSound "mercs/death"
+	seeSound "mercs/sight"
+	activeSound "mercs/active"
+	monster
+	species "Mercenary"
+	+quicktoretaliate
+	+missilemore
+	+usedamageeventscript
+	+dontharmspecies
+	+dropoff
+	//+noblockmonst
+	+jumpdown
+	obituary "$OB_MERCMG"
+	hitObituary "$OB_MERCKICK"
+	dropItem "AmmoBelt"
+	states
+	{
+		forget:
+			"####" A 0 A_ClearTarget //become disinterested
+			"####" A 0 A_Jump(256,"lookloop")
+			goto lookloop
+		Spawn:
+			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			lookloop: //wander AABBCCDD 3
+			TNT1 A 0 A_Look
+			MERC A 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC A 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC B 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC B 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC C 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC C 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC D 3 A_Wander
+			TNT1 A 0 A_Look
+			MERC D 3 A_Wander
+			Loop
+		See:
+			TNT1 A 0 A_SetArg(4,100)
+			uncrouch:
+			TNT1 A 0 //ACS_NamedExecuteWithResult("MercUncroucher")
+			chaseloop:
+			MERC AABBCCDD 2 A_GiveInventory("funcMercChase",1)
+			TNT1 A 0 A_JumpIf(args[4]<=0,"forget")
+			Loop
+		dodgechase:
+			//"####" A 0 A_Jump(96,"dodgecrouch")
+			"####" A 0 A_FaceTarget //make sure we dodge in the right direction
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_Jump(256,"chaseloop") //required redunancy
+			goto chaseloop
+		dodgecrouch:
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_ChangeVelocity(0,0,4)
+			"####" E 16 ACS_NamedExecuteWithResult("MercCroucher")
+			TNT1 A 0 A_JumpIfTargetInLOS("trycrouchmissile")
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redunancy
+			goto uncrouch
+		trycrouchmissile:
+			TNT1 A 0 A_ChangeVelocity(0,4-8*random(0,1),0,CVF_RELATIVE)
+			MERC E 4 A_Jump(128,"uncrouch")
+		crouchmissile:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercCroucher")
+			MERC E 8 A_FaceTarget
+			instacrouchmissile:
+			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)//A_CustomMissile("DistantMachineGunMaker",0,0,0,CMF_AIMDIRECTION)
+			TNT1 A 0 A_FaceTarget(7.5)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-7.5,7.5))
+			TNT1 A 0 A_CustomMissile("7milCaseSpawner",16,0,0,CMF_AIMDIRECTION)
+			MERC F 2 bright A_CustomBulletAttack(5.4*(1+CallACS("shadowtarget")*2),0,1,5,"MercPuff",0,CBAF_AIMFACING)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"uncrouch")
+			MERC E 1 A_Jump(16,"uncrouch")
+			TNT1 A 0 A_JumpIfTargetInLOS("instacrouchmissile")
+			TNT1 A 0 A_MonsterRefire(32,"uncrouch")
+			Goto crouchmissile+1
+		xmissile:
+			MERC E 1
+			goto mgMissile + 1
+		Missile:
+			MERC E 8 A_JumpIfCloser(768,"mgMissile")
+			Goto mgMissile
+			//orphaned state sequence for grenade launcher
+			TNT1 A 0 A_SetArg(4,args[4]-20) //fire and forget
+			MERC EE 4 A_FaceTarget
+			MERC E 0 A_CustomMissile("GrenadierSteam")
+			MERC E 0 A_CustomMissile("Grenade",32,0,0,CMF_OFFSETPITCH,6.25)
+			MERC AABBCCDD 2 A_Wander
+			MERC AA 2 A_Wander
+			MERC B 1 A_Wander
+			TNT1 A 0 A_PlaySound("weapons/sshoto")
+			TNT1 A 0 A_CustomMissile("40milCaseSpawner",32,0,0,CMF_AIMDIRECTION)
+			MERC B 1
+			MERC CCDDAA 2 A_Wander
+			
+		mgMissile:
+			MERC E 8 A_FaceTarget
+			instamissile:
+			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)//A_CustomMissile("DistantMachineGunMaker",0,0,0,CMF_AIMDIRECTION)
+			TNT1 A 0 A_FaceTarget(17.5)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-8.75,8.75))
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			TNT1 A 0 A_CustomMissile("7milCaseSpawner",32,0,0,CMF_AIMDIRECTION)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			MERC F 2 bright Light("ZOMBIEATK") A_CustomBulletAttack(11.2*(1+CallACS("shadowtarget")),0,1,5,"MercPuff",0,CBAF_AIMFACING) //spread was 6.1
+			TNT1 A 0 A_ChangeVelocity(0,2-4*random(0,1),0,CVF_RELATIVE)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"melee")
+			TNT1 A 0 A_JumpIfCloser(128,"xmissile")
+			MERC E 1 A_Jump(32,"dodgechase")
+			TNT1 A 0 A_JumpIfTargetInLOS("instamissile")
+			TNT1 A 0 A_MonsterRefire(128,"chaseloop")
+			Goto mgMissile+1
+		Melee:
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 0 A_SetArg(4,100) //melee attacks refresh memory
+			TNT1 A 0 A_JumpIfInventory("meleetoken",0,"AssKick")
+			MERC R 6 A_GiveInventory("meleetoken",1) //A_Jump(64,"AssKick")
+			MERC E 6 A_CustomBulletAttack(5.6,0,1,6,"mercPunchPuff",32)
+			MERC E 0 A_JumpIfCloser(48,"Melee")
+			MERC E 0 A_TakeInventory("meleetoken",3)
+			goto See
+		AssKick:
+			MERC A 3 A_TakeInventory("meleetoken",3)
+			MERC B 3
+			MERC C 4 A_CustomBulletAttack(5.6,0,1,15,"MercKickPuff",86)
+			Goto mgMissile
+		Pain.Kick:
+			"####" H 4
+		Pain.Melee:
+			"####" H 4
+		Pain:
+			"####" H 4 A_AlertMonsters(512) //A_Jump(128,"dodgecrouch")//sound handled by acs
+			"####" A 0 A_Jump(192,"dodgechase")
+			"####" A 0 A_TakeInventory("meleetoken",3)
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redundancy
+			Goto uncrouch
+		Pain.burns:
+			"####" H 8 A_Jump(128,"dodgechase")
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redundancy
+			Goto uncrouch
+		death.darken:
+		Death:
+			"####" H 6
+			"####" I 6 A_Scream
+			"####" J 6 A_NoBlocking
+			"####" KL 6
+			"####" M 1 A_SpawnItemEx("DeadMGMerc",0,0,0,0,0,0,0,SXF_TransferTranslation)
+			TNT1 A -1
+			Stop
+		XDeath:
+			PGIB A 5
+			PGIB B 5 A_XScream
+			PGIB C 5 A_NoBlocking
+			PGIB D 5
+			PGIB E -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+			TNT1 A -1
+			Stop
+	}
+}
+
+actor DeadMGMerc : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			MERC M 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+actor DeadHelmetMerc : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			SOL3 M 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+//armed with only an MG
+actor MGMerc : Mercenary 300
+{
+	//$Title "Machinegun merc"
+	states
+	{
+		Missile:
+			goto mgMissile //crouchmissile
+	}
+}
+
+//armed with a shotgun
+actor SGMerc : Mercenary 301
+{
+	//$Title "Shotgun merc"
+	obituary "$OB_SGMERC"
+	states
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			lookloop: //wander AABBCCDD 3
+			TNT1 A 0 A_Look
+			SOL3 A 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 A 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 B 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 B 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 C 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 C 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 D 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL3 D 3 A_Wander
+			Loop
+		See:
+			TNT1 A 0 A_SetArg(4,100)
+			uncrouch:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercUncroucher")
+			chaseloop:
+			SOL3 AABBCCDD 2 A_GiveInventory("funcMercChase",1)
+			TNT1 A 0 A_JumpIf(args[4]<=0,"forget")
+			Loop
+			//these next two shouldn't have to be here
+			//but i like to take precautions
+		dodgechase:
+			"####" A 0 //A_Jump(96,"dodgecrouch")
+			"####" A 0 A_FaceTarget //make sure we dodge in the right direction
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_Jump(256,"chaseloop") //required redunancy
+			goto chaseloop
+		dodgecrouch:
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_ChangeVelocity(0,0,4)
+			"####" E 16 ACS_NamedExecuteWithResult("MercCroucher")
+			TNT1 A 0 A_JumpIfTargetInLOS("trycrouchmissile")
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redunancy
+			goto uncrouch
+		Missile:
+			SOL3 E 8 A_JumpIfCloser(768,"sgMissile")
+			goto sgmissile //crouchmissile
+		sgMissile: //aim at the target
+			SOL3 E 4 A_FaceTarget
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			SOL3 E 2 A_FaceTarget(25)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-12.5,12.5))
+			TNT1 A 0 A_JumpIfTargetInLOS("shoot",8+8*CallACS("shadowtarget")) //if we're aiming at the target, shoot him
+			TNT1 A 0 A_ChangeVelocity(0,2-4*random(0,1),0,CVF_RELATIVE)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"melee")
+			TNT1 A 0 A_JumpIfCloser(256,"shoot") //shoot in a panic
+			SOL3 E 1 A_Jump(16,"dodgechase") //give up
+			goto sgMissile + 1
+		shoot:
+			SOL3 E 2 A_Jump(32*CallACS("ShadowTarget"),"dodgechase")
+			TNT1 A 0 A_FaceTarget(25)
+			TNT1 A 0 A_PlaySound("weapons/assaultshotgun",CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/assaultshotgundist",CHAN_5)
+			SOL3 F 2 Bright Light("ZOMBIEATK") A_CustomBulletAttack(11.2,0,6,4,"mercsgpuff",0,CBAF_AIMFACING)
+			TNT1 A 0 A_CustomMissile("12gCaseSpawner",32,0,0,CMF_AIMDIRECTION)
+			SOL3 E 6
+			SOL3 DD 2 A_Wander
+			goto dodgechase
+		trycrouchmissile:
+			TNT1 A 0 A_ChangeVelocity(0,4-8*random(0,1),0,CVF_RELATIVE)
+			SOL3 E 4 A_Jump(128,"uncrouch")
+		crouchmissile:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercCroucher")
+			SOL3 E 8 A_FaceTarget
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			SOL3 E 2 A_FaceTarget(7.5)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-7.5,7.5))
+			TNT1 A 0 A_JumpIfTargetInLOS("crouchshoot",3 + 5*CallACS("shadowtarget")) //if we're aiming at the target, shoot him-- be more confident
+			//TNT1 A 0 A_SetAngle(user_angle)
+			SOL3 E 0 A_JumpIfCloser(128,"uncrouch") //get up ya doofus
+			SOL3 E 1 A_Jump(4,"uncrouch") //give up (more persistent)
+			goto crouchMissile + 1
+		crouchshoot:
+			SOL3 E 2
+			TNT1 A 0 A_PlaySound("weapons/shotgf",CHAN_WEAPON)
+			SOL3 F 2 Bright Light("ZOMBIEATK") A_CustomBulletAttack(5.6,0,7,5,"mercpuff",0,CBAF_AIMFACING)
+			SOL3 E 4 A_CustomMissile("12gCaseSpawner",16,0,0,CMF_AIMDIRECTION)
+			goto uncrouch
+		Melee:
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 0 A_SetArg(4,100) //melee attacks refresh memory
+			TNT1 A 0 A_JumpIfInventory("meleetoken",0,"AssKick")
+			SOL3 R 6 A_GiveInventory("meleetoken",1) //A_Jump(64,"AssKick")
+			SOL3 E 6 A_CustomBulletAttack(5.6,0,1,6,"mercPunchPuff",32)
+			SOL3 E 0 A_JumpIfCloser(48,"Melee")
+			SOL3 E 0 A_TakeInventory("meleetoken",3)
+			goto See
+		AssKick:
+			SOL3 A 3 A_TakeInventory("meleetoken",3)
+			SOL3 B 3
+			SOL3 C 4 A_CustomBulletAttack(5.6,0,1,15,"MercKickPuff",86)
+			Goto sgMissile
+		Death.darken:
+		Death:
+			"####" H 6
+			"####" I 6 A_Scream
+			"####" J 6 A_NoBlocking
+			"####" KL 6
+			"####" M 1 A_SpawnItemEx("DeadHelmetMerc",0,0,0,0,0,0,0,SXF_TransferTranslation)
+			TNT1 A -1
+			Stop
+	}
+}
+
+//armed with an SMG.
+actor SMGMerc : Mercenary 302
+{
+	//$Title "SMG merc"
+	states
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			lookloop: //wander AABBCCDD 3
+			TNT1 A 0 A_Look
+			SOL5 A 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 A 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 B 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 B 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 C 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 C 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 D 3 A_Wander
+			TNT1 A 0 A_Look
+			SOL5 D 3 A_Wander
+			Loop
+		See:
+			TNT1 A 0 A_SetArg(4,100)
+			uncrouch:
+			//TNT1 A 0 ACS_NamedExecuteWithResult("MercUncroucher")
+			chaseloop:
+			SOL5 AABBCCDD 2 A_GiveInventory("funcMercChase",1)
+			TNT1 A 0 A_JumpIf(args[4]<=0,"forget")
+			Loop
+			//these next two shouldn't have to be here
+			//but i like to take precautions
+		dodgechase:
+			"####" A 0 //A_Jump(96,"dodgecrouch")
+			"####" A 0 A_FaceTarget //make sure we dodge in the right direction
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_Jump(256,"chaseloop") //required redunancy
+			goto chaseloop
+		dodgecrouch:
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_ChangeVelocity(0,0,4)
+			"####" E 16 ACS_NamedExecuteWithResult("MercCroucher")
+			TNT1 A 0 A_JumpIfTargetInLOS("trycrouchmissile")
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redunancy
+			goto uncrouch
+		Missile:
+			SOL5 E 8 A_JumpIfCloser(768,"smgMissile")
+			goto smgmissile //crouchmissile
+		smgMissile:
+			SOL5 E 4 A_FaceTarget
+			instamissile:
+			TNT1 A 0 A_PlaySound("weapons/SMG",CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/SMGdist",CHAN_5)
+			TNT1 A 0 A_FaceTarget(25)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-12.5,12.5))
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			TNT1 A 0 A_CustomMissile("9milCaseSpawner",32,0,0,CMF_AIMDIRECTION)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			SOL5 F 2 bright Light("ZOMBIEATK") A_CustomBulletAttack(11.2*(1+CallACS("shadowtarget")),0,1,5,"MercPuff",0,CBAF_AIMFACING) //spread was 6.1
+			TNT1 A 0 A_ChangeVelocity(0,4-8*random(0,1),0,CVF_RELATIVE)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"melee")
+			TNT1 A 0 A_JumpIfCloser(128,"xmissile")
+			SOL5 E 3 A_Jump(48,"dodgechase")
+			TNT1 A 0 A_JumpIfTargetInLOS("instamissile")
+			TNT1 A 0 A_MonsterRefire(128,"chaseloop")
+			Goto smgMissile+1
+		trycrouchmissile:
+			TNT1 A 0 A_ChangeVelocity(0,4-8*random(0,1),0,CVF_RELATIVE)
+			SOL5 E 4 A_Jump(128,"uncrouch")
+			goto uncrouch
+		crouchmissile:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercCroucher")
+			SOL5 E 4 A_FaceTarget
+			instacrouchmissile:
+			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
+			TNT1 A 0 A_FaceTarget(10)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-12.5,12.5))
+			TNT1 A 0 A_CustomMissile("9milCaseSpawner",16,0,0,CMF_AIMDIRECTION)
+			SOL5 F 2 bright A_CustomBulletAttack(5.4*(1+CallACS("shadowtarget")*2),0,1,5,"MercPuff",0,CBAF_AIMFACING)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"uncrouch")
+			SOL5 E 3 A_Jump(16,"uncrouch")
+			TNT1 A 0 A_JumpIfTargetInLOS("instacrouchmissile")
+			TNT1 A 0 A_MonsterRefire(32,"uncrouch")
+			Goto crouchmissile+1
+		xmissile:
+			SOL5 E 3
+			goto smgMissile + 1
+		Melee:
+			SOL5 A 0 A_FaceTarget
+			SOL5 A 0 A_SetArg(4,100) //melee attacks refresh memory
+			SOL5 A 0 A_JumpIfInventory("meleetoken",0,"AssKick")
+			SOL5 R 6 A_GiveInventory("meleetoken",1) //A_Jump(64,"AssKick")
+			SOL5 E 6 A_CustomBulletAttack(5.6,0,1,6,"mercPunchPuff",32)
+			SOL5 E 0 A_JumpIfCloser(48,"Melee")
+			SOL5 E 0 A_TakeInventory("meleetoken",3)
+			goto See
+		AssKick:
+			SOL5 A 3 A_TakeInventory("meleetoken",3)
+			SOL5 B 3
+			SOL5 C 4 A_CustomBulletAttack(5.6,0,1,15,"MercKickPuff",86)
+			Goto smgMissile
+		Death.darken:
+		Death: //intentionally uses SOL3 instead of SOL5
+			SOL5 H 6
+			SOL3 I 6 A_Scream
+			SOL3 J 6 A_NoBlocking
+			SOL3 KL 6
+			SOL3 M 1 A_SpawnItemEx("DeadHelmetMerc",0,0,0,0,0,0,0,SXF_TransferTranslation)
+			TNT1 A -1
+			Stop
+	}
+}
+
+//armed with a rocket launcher??!!
+actor RLMerc : SMGMerc 303
+{
+	//$Title "ATRL merc"
+	obituary "$OB_MERCRL"
+	states
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			lookloop: //wander AABBCCDD 3
+			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::lookloop")
+			TNT1 A 0 A_Look
+			ROC1 A 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 A 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 B 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 B 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 C 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 C 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 D 3 A_Wander
+			TNT1 A 0 A_Look
+			ROC1 D 3 A_Wander
+			Loop
+		See:
+			TNT1 A 0 A_SetArg(4,100)
+			uncrouch:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercUncroucher")
+			chaseloop:
+			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::chaseloop")
+			ROC1 AABBCCDD 2 A_GiveInventory("funcMercChase",1)
+			TNT1 A 0 A_JumpIf(args[4]<=0,"forget")
+			Loop
+		//these next two shouldn't have to be here
+		//but i like to take precautions
+		dodgechase:
+			"####" A 0 //A_Jump(96,"dodgecrouch")
+			"####" A 0 A_FaceTarget //make sure we dodge in the right direction
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_Jump(256,"chaseloop") //required redunancy
+			goto chaseloop
+		dodgecrouch:
+			"####" A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			"####" A 0 A_ChangeVelocity(0,0,4)
+			"####" E 16 ACS_NamedExecuteWithResult("MercCroucher")
+			TNT1 A 0 A_JumpIfTargetInLOS("trycrouchmissile")
+			TNT1 A 0 A_Jump(256,"uncrouch") //required redunancy
+			goto uncrouch
+		Missile:
+			ROC1 E 8 A_JumpIfCloser(768,"tryrlMissile")
+			goto tryrlMissile //crouchmissile
+		tryrlMissile:
+			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"smgMissile")
+		rlMissile: //aim at the target
+			ROC1 E 8 A_FaceTarget
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			ROC1 E 2 A_FaceTarget(20,179)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-7.5,7.5))
+			TNT1 A 0 A_JumpIfTargetInLOS("shoot",5+5*CallACS("shadowtarget")) //if we're aiming at the target, shoot him
+			TNT1 A 0 A_ChangeVelocity(0,2-4*random(0,1),0,CVF_RELATIVE)
+			//TNT1 A 0 A_SetAngle(user_angle)
+			TNT1 A 0 A_JumpIfCloser(64,"melee")
+			TNT1 A 0 A_JumpIfCloser(256,"super::missile") //unsafe to shoot in this range, shoot the smg instead
+			ROC1 E 1 A_Jump(8,"dodgechase") //give up
+			goto rlMissile + 1
+		shoot:
+			ROC1 E 2 A_Jump(32*CallACS("ShadowTarget"),"dodgechase")
+			TNT1 A 0 A_FaceTarget(15)
+			TNT1 A 0 A_TakeInventory("AbortToken")
+			TNT1 A 0 A_CustomBulletAttack(0,0,1,0,"FriendlyFireCheckerPuff",0,CBAF_AIMFACING)
+			TNT1 A 0 A_JumpIfInventory("AbortToken",1,"dodgechase")
+			ROC1 G 2 Bright Light("ZOMBIEATK") A_CustomMissile("MercHEAT",32,0,20*CallACS("shadowtarget"),CMF_AIMDIRECTION,pitch)
+			ROC1 E 8 A_GiveInventory("ATRLFiredToken",1)
+			TNT1 A 0 A_CustomMissile("DroppedATRLSpawner",32,0,-45,CMF_AIMDIRECTION)
+			SOL5 DD 2 A_Wander
+			goto dodgechase
+		trycrouchmissile:
+			TNT1 A 0 A_ChangeVelocity(0,4-8*random(0,1),0,CVF_RELATIVE)
+			ROC1 E 4 A_Jump(128,"uncrouch")
+		crouchmissile:
+			TNT1 A 0 ACS_NamedExecuteWithResult("MercCroucher")
+			ROC1 E 8 A_FaceTarget
+			//TNT1 A 0 A_SetUserVar("user_angle",angle)
+			//TNT1 A 0 ACS_NamedExecuteWithResult("c_mercfacefixer")
+			ROC1 E 2 A_FaceTarget(7.5)
+			TNT1 A 0 A_SetAngle(angle+CallACS("shadowtarget")*frandom(-7.5,7.5))
+			TNT1 A 0 A_JumpIfTargetInLOS("crouchshoot",3 + 5*CallACS("shadowtarget")) //if we're aiming at the target, shoot him-- be more confident
+			//TNT1 A 0 A_SetAngle(user_angle)
+			ROC1 E 0 A_JumpIfCloser(256,"uncrouch") //get up ya doofus
+			ROC1 E 1 A_Jump(4,"uncrouch") //give up (more persistent)
+			goto crouchMissile + 1
+		crouchshoot:
+			ROC1 E 2
+			ROC1 G 2 Bright Light("ZOMBIEATK") A_CustomMissile("MercHEAT",32,0,20*CallACS("shadowtarget"),CMF_AIMDIRECTION)
+			ROC1 E 8
+			goto uncrouch
+		Melee: //asskick only LMAO
+			ROC1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::melee")
+		AssKick:
+			"####" A 3 A_TakeInventory("meleetoken",3)
+			"####" B 3
+			"####" C 4 A_CustomBulletAttack(5.6,0,1,15,"MercKickPuff",86)
+			Goto tryrlMissile
+		Death:
+			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::death")
+			TNT1 A 0 A_DropItem("ATRL",1)
+			goto super::death
+		XDeath:
+			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::xdeath")
+			TNT1 A 0 A_DropItem("ATRL",1)
+			goto super::xdeath
+	}
+}
+
+
+
+actor MercPuff : PuffPlus
+{
+	damageType "merc"
+	obituary "$OB_MERCSHOT"
+}
+
+actor MercSGPuff : MercPuff
+{
+	obituary "$OB_MERCSHOT"
+}
+
+actor MercKickPuff : BulletPuff
+{
+	damageType "melee"
+	seeSound "player/male/fist"
+	projectileKickBack 500
+	obituary "$OB_MERCKICK"
+	+puffonactors
+	states
+	{
+		spawn:
+		goto melee
+		xdeath:
+			TNT1 A 10
+			stop
+	}
+}
+
+actor MercPunchPuff : MercKickPuff
+{
+	obituary "$OB_MERCMELEE"
+	projectileKickBack 100
+}
+
+actor MercHEAT : HEATRocket
+{
+	obituary "$OB_MERCRL"
+	//deathSound "mercs/explo"
+}
+
+Actor funcMercWander : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_Wander
+			TNT1 A 0 A_Look
+			stop
+	}
+}
+
+actor mercJumpPuff
+{
+	var int user_height;
+	+nogravity
+	+noblockmap
+	+thruactors
+	+puffgetsowner
+	+bloodlessimpact
+	+dontsplash
+	+noclip
+	radius 0
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_SetUserVar("user_height",z)
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 2 A_Recoil(8)
+			TNT1 A 1 A_JumpIf(user_height < z,"jumptime")
+			stop
+		jumptime:
+			TNT1 A 1 A_GiveToTarget("JumpToken",1)
+			stop
+	}
+}
+
+actor friendlyFireCheckerPuff : mercJumpPuff
+{
+	states
+	{
+		spawn:
+			TNT1 A 1
+			stop
+		XDeath:
+			TNT1 A 1 A_JumpIfInTargetInventory("MercToken",1,"AbandonShip")
+			stop
+		AbandonShip:
+			TNT1 A 1 A_GiveToTarget("AbortToken",1)
+			stop
+	}
+}
+
+Actor funcMercChase : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 ACS_NamedExecuteWithResult("c_MercChaser")
+			TNT1 A 0 A_JumpIfInventory("ThrustToken",1,"ThrustChase")
+			TNT1 A 0 A_JumpIfHealthLower(50,"FrightenedChase")
+			goto NormalChase
+		FrightenedChase:
+			TNT1 A 0 A_Jump(((50-health)/50)*192,2)
+			TNT1 A 0 A_JumpIfTargetInLOS(1,360)
+			goto unFrightenedChase
+			TNT1 A 0 A_ChangeFlag("frightened",1)
+			TNT1 A 0 A_ChangeFlag("missileEvenMore",1)
+			goto NormalChase
+		UnFrightenedChase:
+			TNT1 A 0 A_ChangeFlag("frightened",0)
+			TNT1 A 0 A_ChangeFlag("missileEvenMore",0)
+		NormalChase:
+			TNT1 A 0 A_Chase
+			TNT1 A 0 A_JumpIfTargetInLOS("Remember")
+			goto Forget
+		Remember:
+			TNT1 A 0 A_SetArg(4,100)
+		Forget:
+			TNT1 A 0 A_SetArg(4,args[4]-1-(CallACS("shadowtarget")*2))
+			TNT1 A 0 A_SetPitch(0)
+			TNT1 A 0 A_CustomBulletAttack(0,0,1,0,"mercjumppuff",48,CBAF_AIMFACING | CBAF_NORANDOMPUFFZ)
+			TNT1 A 0 A_JumpIfInventory("JumpToken",1,"JumpChase")
+			TNT1 A 0 A_Jump(4,"DodgeChase")
+			stop
+		JumpChase:
+			TNT1 A 0 A_TakeInventory("JumpToken",1)
+			TNT1 A 0 A_GiveInventory("ThrustToken",1)
+			TNT1 A 0 A_JumpIfInventory("MercJumpCooldown",1,"end")
+			TNT1 A 0 A_ChangeVelocity(0,0,12)
+			TNT1 A 0 A_GiveInventory("MercJumpCooldown",1)
+			end:
+			TNT1 A 0
+			stop
+		ThrustChase:
+			TNT1 A 0 A_ChangeVelocity(0,4,0,CVF_RELATIVE)
+			TNT1 A 0 A_TakeInventory("ThrustToken",1)
+			stop
+		DodgeChase:
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 0 A_ChangeVelocity(0,8-16*random(0,1),0,CVF_RELATIVE)
+			stop
+	}
+}
+
+Actor c_FuncMercChase : funcMercChase
+{
+	states
+	{
+		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ThrustToken",1,"end")
+			TNT1 A 0 A_Chase("","")
+			stop
+	}
+}
+
+Actor c_FuncMercFaceFixer : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	states
+	{
+		Pickup:
+			TNT1 A 0 A_SetAngle(angle)
+			stop
+	}
+}
+
+actor MercToken : Inventory
+{
+	Inventory.amount 1
+	Inventory.maxAmount 1
+}
+
+actor JumpToken : MercToken
+{}
+
+actor ThrustToken : MercToken
+{}
+
+actor MeleeToken : MercToken
+{
+	Inventory.maxAmount 3
+}
+
+actor ATRLFiredToken : MercToken
+{}
+
+actor AbortToken : MercToken
+{}
+
+actor MercJumpCooldown : Powerup
+{
+	Powerup.duration 35
+}

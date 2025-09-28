@@ -1,0 +1,92 @@
+//the human assault class and its corpses
+
+//UAC Detachment 4F Assault Trooper--
+//The Assault Troop of Detachment 4F are hand-picked from the top ranks of the
+//Space Marines. Great all-round performers, they are armed with a light machine
+//gun which is capable of delivering great suppressive firepower. For this
+//assignment they have also been issued a grenade launcher, as its
+//indiscriminate nature makes it easier to target that what cannot be seen,
+//and its indirect fire capability lets it reach into those nooks and crannies
+//wher eother firearms are less reliable to hit.
+
+//"Come on in, you fuckers. Come on in. Ol' Painless is waitin'."
+
+Actor Assault : PlayerPawn
+{
+	limitedtoteam 0
+	//speed 0.8
+	Player.StartItem "MachineGun"
+	Player.StartItem "usFist"
+	Player.StartItem "usGrenadeLauncher"
+	Player.StartItem "GreenArmor"
+	Player.StartItem "usShell", 20
+	Player.StartItem "usClip", 100
+	Player.StartItem "usRocketAmmo", 5
+	Player.StartItem "FlareStick", 5
+	Player.WeaponSlot 1, usFist
+	Player.WeaponSlot 2, Machinegun
+	Player.WeaponSlot 3, usGrenadeLauncher
+	Player.SoundClass "Assault"
+	player.DisplayName "Assault"
+	Player.ColorRange 112, 127
+	player.scoreIcon "ASLTI"
+	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
+	+USEDAMAGEEVENTSCRIPT
+	States
+	{
+	Spawn:
+		ASLT A -1
+		Loop
+	See:
+		ASLT ABCD 4 
+		Loop
+	Missile:
+		ASLT E 12
+		Goto Spawn
+	Melee:
+		ASLT F 2 BRIGHT Light("ZOMBIEATK")
+		Goto Missile
+	Pain:
+		ASLT H 4 
+		ASLT H 4 A_Pain
+		Goto Spawn
+	death.darken:
+	death.suicide:
+	Death:
+		ASLT H 8
+		ASLT I 8 A_PlayerScream
+		ASLT J 8 A_NoBlocking
+		ASLT KL 8
+		ASLT M 1 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	XDeath:
+		PGIB A 5
+		PGIB B 5 A_XScream
+		PGIB C 5 A_NoBlocking
+		PGIB D 5
+		PGIB E -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		TNT1 A -1
+		Stop
+	}
+}
+
+Actor DeadAssault : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			ASLT M 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}
+
+Actor GibbedAssault : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			PGIB E 1 NoDelay A_GiveInventory("Clip",5)
+			goto bedead
+	}
+}

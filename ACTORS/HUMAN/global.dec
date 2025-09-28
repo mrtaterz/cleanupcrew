@@ -1,0 +1,801 @@
+//equipment base
+//sets up required shit for making a pickupable equipment
+
+actor Equipment
+{
+	+USESPECIAL
+	+VULNERABLE
+	+noBlood
+	Activation THINGSPEC_ThingActs | THINGSPEC_ThingTargets
+	Health 10
+	DamageFactor "None",0
+	DamageFactor "Fire",0
+	DamageFactor "Poison",0
+	DamageFactor "Grenade",1
+	States
+	{
+		Death.Grenade:
+			TNT1 A 1
+			Stop
+	}
+}
+
+//inventory items
+
+//flare--
+//A standard UAC-issued signal flare. Useful for signalling supply drops,
+//vehicle breakdowns, and, yes, providing light in the dark.
+actor FlareStick : CustomInventory
+{
+	tag "$TAG_FLARE"
+	+Inventory.invbar
+	Inventory.maxAmount 10
+	Inventory.amount 1
+	Inventory.icon "FLARE0" //happy accident
+	States
+	{
+		Use:
+			TNT1 A 0 A_FireCustomMissile("LitFlareStick",0,false)
+			Stop
+	}
+}
+
+//flare projectile thing
+actor LitFlareStick
+{
+	Speed 16
+	Radius 8
+	Height 4
+	+noblockmap
+	+noblockmonst
+	reactionTime 1050 //30s
+	States
+	{
+		Spawn:
+			FLAR A 0 NoDelay A_PlaySound("items/flare/light",CHAN_WEAPON)
+			FLAR B 1 A_PlaySound("items/flare/burn",CHAN_BODY,0.5,true)
+		xloop:
+			FLAR A 1 A_CountDown
+			FLAR B 1 A_CountDown
+			loop
+		Death:
+			TNT1 A 1
+			stop
+	}
+}
+
+//ammos
+
+//7.62x51mm UAC-S Machinegun magazine--
+//Ammunition for the Assault Troop's standard Machinegun.
+//This particular high-velocity load, while not as powerful as other
+//contemporary loads, is very lightweight and easy to control*, and allows the
+//Machinegun to fire with an extroadinarily high cyclic rate while still
+//offering satisfactory terminal performance.
+
+//* Easy to control for a 7.62x51mm.
+actor usClip : Ammo
+{
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	Tag "$TAG_CLIP"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+  }
+}
+
+//12-gauge 00 buckshot--
+//It's 100 years into the future and it's still the most common type of
+//ammunition in the world. Is there anything else to say?
+actor usShell : Ammo
+{
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELA0"
+	Tag "$TAG_SHELL"
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+  }
+}
+
+//40x46mm High-Explosive Dual-Purpose Grenades--
+//These highly explosive cans of copper-lined Comp B were originally designed
+//with usage against lightly armored vehicles in mind. Given the nature of the
+//Threat, and the load's fragmentation also proving sufficient for
+//anti-personnel use, this particular ammunition type was deemed warranted.
+actor usRocketAmmo : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "ROCKA0"
+	Tag "$TAG_ROCKETAMMO"
+	States
+	{
+	Spawn:
+		ROCK A -1
+		Stop
+  }
+}
+
+//Napalm--
+//Also known as styro-pyro.
+//Used as fuel for the flame-thrower.
+actor usCell : Ammo
+{
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "CELLA0"
+	Tag "$TAG_CELL"
+	States
+	{
+	Spawn:
+		CELL A -1
+		Stop
+  }
+}
+
+//9mm pistol magazine--
+//Standard issue pistol ammunition. Not much less stopping power than the
+//10mm, but easier to control in a handgun. Soon to be obsoleted by the 10mm.
+//Currently unused.
+actor PistolClip : Ammo
+{
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	Decal "BulletChip" //say wha
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+  }
+}
+
+//5.56mm rifle magazine--
+//Ammunition for the Assault Troop's Semi-Automatic rifle. Packs a punch
+//with minimal recoil. Currently unused.
+actor RifleClip : Ammo
+{
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+  }
+}
+
+//Grenades (unused) (ish!)
+actor GrenadeAmmo : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SGRNA8A2"
+	States
+	{
+	Spawn:
+		SGRN A -1
+		Stop
+  }
+}
+
+//Proximity mines
+actor Mines : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 20
+	Inventory.Icon "PROXD0"
+	tag "$TAG_MINEAMMO"
+	States
+	{
+	Spawn:
+		PROX D -1
+		Stop
+  }
+}
+
+//Proximity sensors
+actor Sensors : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 5
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 10
+	Inventory.Icon "SENSD0"
+	tag "$TAG_SENSORAMMO"
+	States
+	{
+		Spawn:
+			SENS C -1
+			stop
+	}
+}
+
+//guns
+
+//brass knuckles--
+//A melee weapon preferred by many marines under the UAC as a last resort due to
+//its ease of use, and Detachment 4F is no different in their preference.
+//Unlike most troops under the UAC, Detachment 4F are also proficient in kicks.
+actor usFist : Fist
+{
+	Inventory.icon "FISPA0"
+	AttackSound "*fist"
+	+Weapon.noAlert
+	states
+	{
+		select:
+			PUNG A 0 A_Raise
+			PUNG A 1 A_Raise
+			loop
+		deselect:
+			PUNG A 0 A_Lower
+			PUNG A 1 A_Lower
+			loop
+		Fire:
+			PUNG B 4
+			PUNG C 4 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
+			PUNG D 5
+			PUNG C 4
+			PUNG B 5 A_ReFire
+			Goto Ready
+		AltFire:
+			KICK A 4 A_GiveInventory("PowerKicking",1)
+			KICK B 5
+			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
+			KICK B 4
+			KICK A 4
+			KICK A 0 A_Refire
+			Goto Ready
+	}
+}
+
+actor usPunchPuff : BulletPuff //override puffplus
+{}
+
+actor KickPuff : BulletPuff //more knockback
+{
+	projectileKickback 500
+	damageType "kick"
+	+puffGetsOwner
+	+puffOnActors
+	states
+	{
+		Melee:
+		Spawn:
+			TNT1 A 0 NoDelay A_GiveToTarget("funcKickRecoil",1)
+		Crash:
+			goto super::melee
+	}
+}
+
+actor PowerKicking : PowerSpeed //stop the player when kicking
+{
+	Powerup.duration 18
+	speed 0.3
+	+PowerSpeed.noTrail
+}
+
+actor funcKickRecoil : CustomInventory //knock back the player if they kick something
+{
+	+Inventory.alwaysPickup
+	states
+	{
+		pickup:
+			TNT1 A 0 A_Recoil(5)
+			stop
+	}
+}
+
+//boingy boi
+actor CaseBase
+{
+	+clientsideonly
+	bounceType doom
+	bounceFactor 0.6
+	damage 0
+	+bounceonactors
+	projectile
+	-nogravity
+	radius 2
+	height 4
+	states
+	{
+		spawn:
+			BAL1 A 1
+			loop
+		death:
+		bedead:
+			"####" "#" 35 A_SetTics(CallACS("c_getcasinglife")*35)
+		fade:
+			"####" "#" 1 A_FadeOut(0.1)
+			loop
+	}
+}
+
+//boingy boi maker
+//this is a trick i learned from hexeretic
+actor CaseSpawnerBase
+{
+	projectile
+	speed 6
+	damage 0
+	radius 2
+	height 4
+	+clientsideonly
+	states
+	{
+	spawn:
+		TNT1 A 1 NoDelay A_SpawnItemEx("CaseBase",0,0,0,0,-3,4)
+		stop
+	}
+}
+
+actor CasingSteamer
+{
+	radius 2
+	height 4
+	+clientsideonly
+	+noblockmap
+	+nosector
+	states
+	{
+		spawn:
+			TNT1 A 35 NoDelay A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 0 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+			TNT1 A 35 A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 0 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+			TNT1 A 35 A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 1 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+			TNT1 A 35 A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 0 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+			TNT1 A 35 A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 0 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+			TNT1 A 35 A_SetTics(random(5,20))
+			TNT1 A 0 A_Warp(AAPTR_TRACER)
+			TNT1 A 1 A_CustomMissile("CaseSteam",0,0,random(0,360),CMF_aimDirection,random(0,-90))
+
+			stop
+	}
+}
+
+//9mm pistol--
+//A useful sidearm based off of the M92 issued to all units under the UAC.
+//Trials are underway to adopt a 10mm variant of the weapon, so far showing
+//promise. Currently unused in favor of the 10mm pistol... :trol_foce:
+actor usPistol : Pistol
+{
+	Weapon.AmmoType "PistolClip"
+}
+
+actor 9MilCase : CaseBase
+{
+	scale 0.25
+	bouncesound "weapons/pistol/casebounce"
+	states
+	{
+		spawn:
+			CAS3 A 0 NoDelay ACS_NamedExecuteWithResult("attachcasingsteamer")
+			CAS3 A 3 A_Jump(256,"xloop","yloop","zloop")
+		xloop:
+			CAS3 ABCDEFGH 3
+			loop
+		yloop:
+			CAS3 ABCDEFGH 2
+			loop
+		zloop:
+			CAS3 ABCDEFGH 1
+			loop
+		death:
+			CAS3 E 1 A_Jump(256,"d1","d2")
+		d1:
+			CAS3 E 1
+			goto bedead
+		d2:
+			CAS3 F 1
+			goto bedead
+	}
+}
+
+actor 9MilCaseSpawner : CaseSpawnerBase
+{
+	speed 8
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_Stop
+			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+			TNT1 A 1 A_SpawnItemEx("9MilCase",0,0,0,2*cos(angle-100) + velx *1.1 + frandom(-1,1),2*sin(angle-100) + vely*1.1 + frandom(-1,1),frandom(3,5) + velz,0,SXF_ABSOLUTEVELOCITY)
+			stop
+	}
+}
+
+actor puffplus : bulletpuff replaces bulletpuff //i forgot why this exists 10/10/22
+{
+	+puffgetsowner
+	+puffonactors
+	seeSound "weapons/bullethit"
+	states
+	{
+		spawn:
+			PUFF A 0 noDelay A_FaceTarget
+			PUFF A 0 A_Jump(128,"tryRicochet")
+			PUFF A 0 A_CustomMissile("BulletImpactSmoke",0,0,random(-90,90),CMF_AIMDIRECTION,random(0,-90))
+			tryRicochet:
+			PUFF A 0 A_Jump(224,"super::spawn")
+			//PUFF A 0 A_CustomMissile("SpecialPuff",0,0,random(-60,60),CMF_AIMDIRECTION,random(-60,60))
+			PUFF A 0 A_CustomMissile("BulletRicochetSmoke",0,0,random(-90,90),CMF_AIMDIRECTION,random(0,-90))
+			PUFF A 0 A_PlaySound("world/ricochet")
+			goto super::spawn
+		xdeath:
+			goto null
+	}
+}
+//it's here so the rifle makes decals but it didn't work so forget it 10/25/22
+//now brought back for extra fx
+
+
+//Anti-Tank rocket launcher--
+//lore goes here
+actor ATRL : RocketLauncher
+{
+	Inventory.forbiddenTo "unseen"
+	Weapon.selectionOrder 9000 //this is NOT your last resort
+	Weapon.slotNumber 4
+	Weapon.ammoType ""
+	+Weapon.ammo_optional
+	states
+	{
+		pickup:
+			TNT1 A 0 A_JumpIfInventory("Slasher",1,"lmao")
+			stop
+		lmao:
+			TNT1 A 0
+			fail
+		fire:
+			MISG A 3 A_GunFlash
+			MISG B 5
+			MISG B 12 A_FireCustomMissile("HEATRocket",0,0)
+			MISG AAAAAAA 1 A_Lower
+			goto Discard
+		deselect:
+			MISG A 1 A_Lower
+			wait
+		Discard:
+			MISG A 0 A_FireCustomMissile("DroppedATRLSpawner",0,0)
+			MISG A 5 A_TakeInventory("ATRL",1)
+			goto deselect
+	}
+}
+
+//prevent respawning
+actor ATRLSpawner replaces RocketLauncher
+{
+	+noInteraction
+	+noBlockmap
+	+noSector
+	states
+	{
+		spawn:
+			TNT1 A 1 A_SpawnItemEx("ATRL")
+			stop
+	}
+}
+
+actor DroppedATRLSpawner : CaseSpawnerBase
+{
+	speed 6
+	-nogravity
+	radius 16
+	height 8
+	states
+	{
+		spawn:
+		TNT1 A 0 NoDelay A_Stop
+		TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+		TNT1 A 1 A_SpawnItemEx("DroppedATRL",0,0,0,6*cos(angle) + velx *1.1 + frandom(-0.5,0.5),6*sin(angle) + vely*1.1 + frandom(-1,1),velz,0,SXF_ABSOLUTEVELOCITY)
+		stop
+	}
+}
+
+actor DroppedATRL : CaseBase
+{
+	radius 16
+	height 8
+	bounceSound "weapons/atrldrop"
+	bounceFactor "0.4"
+	states
+	{
+		spawn:
+			LAUN B -1 nodelay ACS_NamedExecuteWithResult("attachcasingsteamer")
+			wait
+	}
+}
+
+//very unused
+actor ChaingunEmplacementWeapon : Chaingun
+{
+	+Weapon.cheatnotweapon
+	+Weapon.ammo_Optional
+	weapon.ammoType ""
+	attackSound "weapons/machinegun"//"weapons/chngun"
+	states
+	{
+		fire:
+			CHGG A 4 A_GiveInventory("funcFireCGunA",1)
+			CHGG B 4 A_GiveInventory("funcFireCGunB",1)
+			CHGG A 3 A_GiveInventory("funcFireCGunA",1)
+			CHGG B 3 A_GiveInventory("funcFireCGunB",1)
+			CHGG A 3 A_GiveInventory("funcFireCGunA",1)
+			CHGG B 3 A_GiveInventory("funcFireCGunB",1)
+			hold:
+			CHGG A 2 A_GiveInventory("funcFireCGunA",1)
+			CHGG B 2 A_GiveInventory("funcFireCGunB",1)
+			CHGG A 0 A_Refire
+			goto ready
+		flash:
+			CHGF A 1 bright A_Light2
+			//CHGF A 1 bright A_Light1
+			goto LightDone
+		flash2:
+			CHGF B 1 bright A_Light1
+			//CHGF A 1 bright A_Light1
+			goto LightDone
+		deselect:
+			CHGG AAAAAAA 1 A_Lower
+			CHGG A 5 A_TakeInventory ("ChaingunEmplacementWeapon",2)
+			stop
+	}
+}
+
+actor funcFireCGunA : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_FireBullets(5.6,0,1,5)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
+			TNT1 A 0 A_GunFlash
+			TNT1 A 0 A_Quake(0.5,2,0,8,0)
+			stop
+	}
+}
+
+actor funcFireCGunB : funcFireCGunA
+{
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_FireBullets(5.6,0,1,5)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
+			TNT1 A 0 A_GunFlash("flash2")
+			TNT1 A 0 A_Quake(0.1,2,0,8,0)
+			stop
+		flash2:
+			CHGF B 1 bright A_Light1
+			goto LightDone
+	}
+}
+
+//it portrays you as incompotent when you kill yourself with it
+//unused
+actor usRocket : Rocket replaces Rocket
+{
+	selfObituary "$OB_S_ROCKET"
+}
+
+
+//not unused
+actor HEATRocket : usRocket
+{
+	//damage 112 //lmao
+	//-nogravity
+	//+lowgravity
+	//explosionRadius 256
+	//scale 1.5
+	+extremedeath
+	radius 4
+	height 8
+	speed 30
+	damage 25
+	deathSound "weapons/ATRLExp"
+	states
+	{
+		spawn:
+			MISL A 0 NoDelay A_CustomMissile("GrenadierSteam",0,0,0,CMF_AIMDIRECTION,pitch)
+			MISL A 0 A_CustomMissile("GrenadierSteam",0,0,180,CMF_AIMDIRECTION,-pitch)
+			xloop:
+			MISL A 2 A_SpawnItemEx("FlameDieSmoke",0,0,0,frandom(-5,0),frandom(-3,3))
+			loop
+		death:
+			TNT1 A 0 A_SpawnItemEx("ComicallyLargeExploQuakeMaker")
+			TNT1 A 0 A_SetScale(2,2)
+			MISL B 2 bright A_Explode(155,128,XF_HURTSOURCE,0,64)
+			MISL CBCBCB 1 bright
+			MISL C 8 bright
+			MISL D 6 bright
+			//LEXP A 3 bright
+			//LEXP BCD 3 bright
+			//LEXP EFGHIJ 5 bright
+			stop
+	}
+}
+
+//smokes
+actor FlameDieSteam : RocketSmokeTrail
+{
+	renderStyle "add"
+	alpha 0.6
+	vSpeed 0
+	speed 1
+	+clientsideonly
+	+noblockmap
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_ChangeVelocity(0,0,frandom(0,2))
+			TNT1 A 0 A_SetScale(scalex-random(0,1)*scalex*2,scaley)
+			RSMK A 5 A_SetTics(random(2,5))
+			goto super::spawn+1
+	}
+}
+
+actor SmallSteam : FlameDieSteam //fp only
+{
+	scale 0.5
+	speed 2
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_ChangeVelocity(0,0,frandom(0,2))
+			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+			//RSMK A 5 A_SetTics(random(2,5))
+			goto super::spawn+1
+	}
+}
+
+actor CaseSteam : FlameDieSteam
+{
+	scale 0.25
+	alpha 0.2
+	radius 2
+	height 4
+	vspeed 0.25
+}
+
+actor FlameDieSmoke : FlameDieSteam //i hate inheritance with a passion
+{
+	renderStyle "translucent"
+	alpha 0.2
+}
+
+
+actor FlameStartSmoke : FlameDieSmoke //fp variant
+{
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_ChangeVelocity(0,0,frandom(0,2))
+			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+			//
+			RSMK A 5 A_SetTics(random(2,5))
+			goto super::spawn+1
+	}
+}
+
+actor BulletImpactSmoke : FlameDieSmoke
+{
+	+nointeraction
+	-clientsideonly
+	scale 1
+	alpha 0
+	speed 2
+	states
+	{
+		spawn:
+			RSMK A 0 NoDelay A_SetScale(scalex-random(0,1)*scalex*2,scaley)
+			TNT1 A 0 A_ChangeVelocity(0,0,frandom(0,3))
+			RSMK AAAAAA 1 A_GiveInventory("funcSmokeStart",1)
+			RSMK BBBBBBCCCCCCDDDDDDEEEEEE 1 A_GiveInventory("funcSmokeGrow",1)
+			stop
+	}
+}
+actor BulletRicochetSmoke : BulletImpactSmoke
+{
+	speed 4
+}
+
+actor funcSmokeStart : CustomInventory
+{
+	+Inventory.alwaysPickup
+	states
+	{
+		pickup:
+			TNT1 A 0 A_SetScale(scalex+(scalex/abs(scalex))*0.025,scaley+0.025)
+			TNT1 A 0 A_ChangeVelocity(0,0,-0.125)
+			TNT1 A 0 A_FadeIn(0.05)
+			stop
+	}
+}
+
+actor funcSmokeGrow : CustomInventory
+{
+	+Inventory.alwaysPickup
+	states
+	{
+		pickup:
+			TNT1 A 0 A_SetScale(scalex+(scalex/abs(scalex))*0.025,scaley+0.025)
+			TNT1 A 0 A_ChangeVelocity(0,0,-0.125)
+			TNT1 A 0 A_FadeOut(0.015+frandom(-0.05,0.05))
+			stop
+	}
+}
+
+actor GrenadierSteam : SmallSteam
+{
+	speed 6
+	states
+	{
+		spawn:
+			RSMK A 0 NoDelay A_SetScale(scalex-random(0,1)*scalex*2,scaley)
+			RSMK A 0 A_ChangeVelocity(0,0,frandom(0,2))
+			RSMK ABCDE 3
+			stop
+	}
+}
+
+actor FlamerVomitSmoke : GrenadierSteam
+{
+	renderStyle "translucent"
+	alpha 0.3
+	speed 8
+}
+
+actor DistantGunMaker : DistantExploMaker
+{
+	PainSound "weapons/machinegundist"
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_Pain
+			BAL1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_Warp(AAPTR_TARGET,0,0,0,0,WARPF_NOCHECKPOSITION)
+			stop
+	}
+}
+
+actor DistantMachineGunMaker : DistantGunMaker
+{
+	PainSound "weapons/machinegundist"
+}

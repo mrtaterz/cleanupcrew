@@ -1,0 +1,59 @@
+//stuff for maps scripting that's it
+#library "mapstuff"
+#import "zcommon.bcs" //bcs now
+
+#import "usconsts.acs"
+
+script US_MOVEBARREL (void) //note the name is a const instead of a string
+{
+	//SetActivator(0,AAPTR_TARGET);
+	delay(1);
+	if(checkinventory("powerbarrelnoisecooldown") > 0)
+	{
+		terminate;
+	}
+	int x = getactorvelx(0);
+	int y = getactorvely(0);
+	int z = getactorvelz(0);
+	
+	int silly = fixedsqrt((x*x + y*y + z*z));
+	//silly = silly >> 16;
+	//printbold(i:silly);
+	if(silly > (32 << 16))
+	{
+		playsound(0,"misc/barrelmove");
+		giveinventory("powerbarrelnoisecooldown",1);
+	}
+}
+
+script US_MOVECHAIR (void)
+{
+	delay(1);
+	if(checkinventory("powerbarrelnoisecooldown") > 0)
+	{
+		terminate;
+	}
+	int x = getactorvelx(0);
+	int y = getactorvely(0);
+	int z = getactorvelz(0);
+	
+	int silly = fixedsqrt((x*x + y*y + z*z));
+	//silly = silly >> 16;
+	//printbold(i:silly);
+	if(silly > (32 << 16))
+	{
+		playsound(0,"misc/chairmove");
+		//setactorstate(0,"bumped");
+		giveinventory("powerbarrelnoisecooldown",1);
+	}
+}
+
+script "barrelspecial" (void) //callable
+{
+	SetThingSpecial(0,ACS_ExecuteWithResult,US_MOVEBARREL);
+}
+
+script "chairspecial" (void) //callable
+{
+	SetThingSpecial(0,ACS_ExecuteWithResult,US_MOVECHAIR);
+}

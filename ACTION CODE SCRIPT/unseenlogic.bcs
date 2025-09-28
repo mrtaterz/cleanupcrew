@@ -1,0 +1,210 @@
+#library "unseen"
+#import "zcommon.bcs"
+
+#import "usconsts.acs"
+
+int timeexpected=0;
+
+script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostalgically inclined)
+{
+	int pnum=PlayerNumber();
+	SetActorProperty(0,APROP_Alpha,0.04); //since "shadow" is the default render style and it's the only one effected by alpha, we must set this
+	SetActorProperty(0,APROP_RenderStyle,STYLE_Subtract); //reveal him
+	//though we're not using the fuzz anymore, instead we're setting it to 0.04
+	NamedExecuteClientScript("c_revealunseen", pnum);
+ 	if((timer()+tics)>timeexpected) //if we're revealing him for longer than an existing reveal, set the existing reveal to this one
+	{
+		timeexpected=timer()+tics-10; //leniency time of 10 tics because netcode is fucky wucky
+	}
+	Delay(tics); //do the actual waiting
+	if((timer()>timeexpected)&&(GetActorProperty(0,APROP_Health)>0)) //if another reveal happened, make sure not to make them visible again. also make sure they're alive lmao
+	{
+		SetActorProperty(0,APROP_Alpha,0.02); //back to default
+		SetActorProperty(0,APROP_RenderStyle,STYLE_Subtract);
+		NamedExecuteClientScript("c_hideunseen", pnum);
+	}
+}
+
+int stime; //"smoulder time"
+//bool curfire; //track whether we were already on fire
+
+script "smoulders" (int tics) //smouldering particles (similar to reveal)
+{
+ 	if((timer()+tics-10)>stime)
+	{
+		stime=timer()+tics; //leniency time of 10 tics because netcode is fucky wucky
+	}
+	if(CheckInventory("burning")>0)
+	{
+		Terminate;
+	}
+	GiveInventory("burning",1);
+	/*
+	int burnerTid=0;
+	int selftid=ActivatorTid();
+	SetActivator(selftid,AAPTR_Target);
+	int targettid=ActivatorTid();
+	SetActivator(selftid,AAPTR_Default);
+	*/
+	while(timer()<stime)
+	{
+		//delay(5); //no more hacks
+		if((stime-timer())%2==0)
+		{
+			Spawn("SmoulderPuff",GetActorX(0)+(random(-16,16)<<16),GetActorY(0)+(random(-16,16)<<16),GetActorZ(0)+(random(0,56)<<16));
+		}
+		if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava") || CheckInventory("burning") <= 0)
+		{
+			Spawn("FlameDieSteam",GetActorX(0),GetActorY(0),GetActorZ(0)+32.,0);
+			//PrintBold(s:GetActorFloorTerrain(0));
+			PlaySound(0,"unseen/extinguish");
+			TakeInventory("burning",2);
+			Terminate;
+		}
+		
+		if((stime-timer())%35==0 && GetActorProperty(0,APROP_HEALTH) > 0)
+			{	
+				/*
+				burnerTid=UniqueTid(1);
+				SpawnProjectile(0,"UnseenBurner",0,0,0,0,burnerTid);
+				SetActorProperty(burnerTid,APROP_TargetTid,targetTid);
+				SetActorProperty(burnerTid,APROP_TracerTid,selftid);
+				*/
+				SetActorState(0,"pain.afterburn");
+			}
+		
+		delay(1);
+	}
+	TakeInventory("burning",2);
+}
+
+script "activebeastvision" (void) //activate the night vision
+{
+	//so the way this shit is gonna work is that every tic of beastvision
+	//active, it takes 2, and then passively recharges 1 per tic while not
+	//active. hopefully it works
+	
+	//it does
+	int pnum=PlayerNumber();
+	NamedExecuteClientScript("c_beastvisionup",pnum);
+	while(CheckInventory("BeastVisionCounter") > 0 && CheckInventory("BeastVisionIndicator") > 0) //while the item is active
+	{
+		TakeInventory("BeastVisionCounter",2); //take 2
+		updateBeastVisionInvAmount();
+		Delay(1);
+	}
+	NamedExecuteClientScript("c_beastvisiondown",pnum);
+	TakeInventory("BeastVisionIndicator",1);
+	while(CheckInventory("BeastVisionCounter") < US_BEASTVISION_MAX_TICS && CheckInventory("BeastVisionIndicator") <= 0 ) //after the item has deactivated
+	{
+		Delay(1);
+		GiveInventory("BeastVisionCounter",1); //give 1
+		updateBeastVisionInvAmount();
+	}
+}
+
+//these are necessary because if it's not clientside only, the unseen turns blue
+script "c_beastvisionup" (void) clientside
+{
+	if (ConsolePlayerNumber() == PlayerNumber())
+	{
+		GiveInventory("PowerBeastVision",1);
+	}
+}
+
+script "c_beastvisiondown" (void) clientside
+{
+	if (ConsolePlayerNumber() == PlayerNumber())
+	{
+		TakeInventory("PowerBeastVision",1);
+	}
+}
+
+//update the count in your inventory bar
+function void updateBeastVisionInvAmount(void)
+{
+	GiveInventory("BeastVision",100);
+	int theAmount = 100 - ((CheckInventory("BeastVisionCounter") * 100 / 2100));
+	TakeInventory("BeastVision",theAmount);
+}
+
+//unused script
+script "bepoison" (void) //bepoison the unseen
+{
+	//SetActorProperty(0,APROP_JumpZ,4.0);
+	while(GetActorPowerupTics(0,"PowerPoison")>175)
+	{
+		print(s:"You are poisoned for ",i:(((GetActorPowerupTics(0,"PowerPoison")-175)/35)+1),s:" seconds");
+		delay(5); //AAAAAAAAAAAAA it'll be fine.
+	}
+	print(s:" ");
+	TakeInventory("PowerPoison",1);
+	//SetActorProperty(0,APROP_JumpZ,16.0);
+	//TakeInventory("PowerCrippleJump",1);
+}
+//modders- execute this ONLY WITH NamedExecute, NEVER Always.
+//scriptedmarine, when will you add variable duration poison?
+//SHUT UP.
+//diy lol
+
+
+script "armorcheck" (void) //check the unseen's armor count and adjust savepercent accordingly
+{
+    int armor;
+    armor=CheckInventory("BasicArmor");
+    //print(i:armor,s:":",f:GetArmorInfo(Armorinfo_SavePercent));
+    if((armor>200)&&(GetArmorInfo(Armorinfo_SavePercent)<=0.75))
+    {
+        //print(s:"i'll have you know i served top of my class in the US Navy Seals");
+        TakeInventory("BasicArmor",300); //flush it down the toiler
+        GiveInventory("VileArmor",1); //give him his equivalent of a red armor
+        //GiveInventory("BasicArmor",100); //push it to the max
+        TakeInventory("BasicArmor",300-armor);//restore his original armor amount
+    }
+    if((armor>100)&&(armor<=200))//&&(GetArmorInfo(Armorinfo_SavePercent)>=0.5))
+    {
+        TakeInventory("BasicArmor",300); //flush it down the toiler
+        GiveInventory("AbhorrentArmor",1); //give him his equivalent of a blue armor
+        TakeInventory("BasicArmor",200-armor);//restore his original armor amount
+    }
+    if((armor<=100)&&(GetArmorInfo(Armorinfo_SavePercent)>=0.33335))
+    {
+        //print(s:"listen here motherfucker");
+        TakeInventory("BasicArmor",300); //flush it down the toiler
+        GiveInventory("EvilArmor",1); //give him his equivalent of a green armor
+        //GiveInventory("BasicArmor",100); //push it to the max
+        TakeInventory("BasicArmor",100-armor);//restore his original armor amount
+    }
+}//GOD I HOPE THIS FUCKING WORKS
+//it does
+//MUHAHAHAHAAHA XL FUCKED THIS SHIT UP, PLAY IT AND WEEP COCKSUCKER!
+//thanks xl :3
+
+script "n_grenadeHotkey+" (void) net //throw some grenades with a convenient and easy hotkey
+{
+	if(PlayerClass(0)==US_THREAT_UNSEEN && CheckInventory("Nades")>0 )
+	{
+		GiveInventory("doGrenadeHotkey",1); //defined in grenades.dec
+		SetWeapon("Grenades");
+	}
+	
+	GiveInventory("doGrenadeHolding",1);
+}
+
+script "n_grenadeHotkey-" (void) net //don't throw some grenades with a convenient and easy hotkey
+{
+	TakeInventory("doGrenadeHolding",1);
+}
+
+//clientside only
+script "c_revealunseen" (void) clientside //allow visible hands
+{
+	SetActorProperty(0,APROP_RenderStyle,STYLE_Translucent); //reveal him
+	SetActorProperty(0,APROP_Alpha,0.5);
+}
+
+script "c_hideunseen" (void) clientside //allow visible hands
+{
+	SetActorProperty(0,APROP_RenderStyle,STYLE_FUZZY); //hide him
+	SetActorProperty(0,APROP_Alpha,1.0);
+}

@@ -1,0 +1,66 @@
+#library "help"
+#import "zcommon.bcs"
+
+#import "usconsts.acs"
+
+script "inherittargvel" (void) //does what it says on the tin and pitch, too
+{
+	int oldtid=ACS_NamedExecuteWithResult("SetFreeTid"); //so we can return
+	SetActivator(0,AAPTR_TARGET);
+	int xv = GetActorVelX(0);
+	int yv = GetActorVelY(0);
+	int zv = GetActorVelZ(0);
+	int pv = GetActorPitch(0);
+	SetActorVelocity(oldtid,xv,yv,zv,1,0);
+	SetActorPitch(oldtid,pv);
+}
+
+script "attachcasingsteamer" (void) //does what it says on the tin
+{
+	int selftid = ACS_NamedExecuteWithResult("SetFreeTid");
+	int newtid = ACS_NamedExecuteWithResult("GetFreeTid");
+	SpawnProjectile(0,"CasingSteamer",0,0,0,0,newtid);
+	SetActivator(newtid,AAPTR_DEFAULT);
+	SetPointer(AAPTR_TRACER,selftid);
+}
+
+script "c_mercchaser" (void) clientside //forces clients to execute merc chase
+{
+	if(!SinglePlayer())
+	{
+		GiveInventory("c_funcMercChase",1);
+	}
+}
+
+//DO NOT USE THE MERC CROUCHER SCRIPTS, THEY DO NTO WORK
+script "merccroucher" (void) clientside //crouches a merc
+{
+	SetActorProperty(0,APROP_HEIGHT,28);
+	SetActorProperty(0,APROP_SCALEY,0.5);
+}
+
+script "mercuncroucher" (void) clientside //uncrouches a merc
+{
+	SetActorProperty(0,APROP_HEIGHT,56);
+	SetActorProperty(0,APROP_SCALEY,1.0);
+}
+
+script "shadowtarget" (void) //returns true if the target is a shadow
+{
+	SetActivator(0,AAPTR_TARGET);
+	if(CheckFlag(0,"shadow") == 1)
+	{
+		SetResultValue(1);
+		terminate;
+	}
+	SetResultValue(0);
+}
+
+script "friendplayerexists" (void) //returns true if the friendplayer of this thing still exists
+{
+	if(IsPointerEqual(AAPTR_FRIENDPLAYER,AAPTR_NULL,0,0))
+	{
+		SetResultValue(0);
+	}
+	SetResultValue(1);
+}

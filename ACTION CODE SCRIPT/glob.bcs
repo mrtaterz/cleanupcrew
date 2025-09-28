@@ -1,0 +1,413 @@
+#library "glob"
+#import "zcommon.bcs"
+
+#import "usconsts.acs"
+
+int pnumUnseen=-1; //-1 will signify that the unseen is unchosen
+int pnumLastUnseen=-1; //the last unseen pnum just in case
+//hopefully that will not break later
+int JustKickedGuy=-1;//whoever gets kicked is here so that we won't print "unseen has left" message
+bool SwappingTeams=0; //track whether we're swapping unseen and human to prevent team collision
+
+int pTids[MAXPLAYERS]; //please increase this in the future --sm
+
+str humanClassNames[3]={"assault","technician","tracker"}; //class names for quickjoin
+str threatClassNames[1]={"unseen"};
+
+//on join game
+script "UNSEENMOTHERFUCKERS" enter //you can name a script anything you want if it's not gonna be puked directly, right
+{
+	int pnum=PlayerNumber();
+	pTids[pnum]=ACS_NamedExecuteWithResult("SetFreeTid");
+	if(PlayerClass(pnum)==US_THREAT_UNSEEN) //handle unseen
+	{
+		if(GetTeamProperty(1,TPROP_NumPlayers)>1)
+		{
+			JustKickedGuy=pnum;
+			KickFromGame(pnum,StrParam(s:"You cannot become the Unseen if there already is one!"));
+			terminate;
+		}
+		pnumUnseen=pnum;
+		pnumLastUnseen=pnum;
+		delay(5); //be reasonable
+		ACS_NamedExecuteWithResult("revealunseen",2); //do it cleanly
+		//delay(5); //why
+		//NamedExecuteClientScript("c_revealunseen",pnum); //read below comment. this is making me lose sanity
+		//delay(1); //just why
+		//NamedExecuteClientScript("c_hideunseen",pnum); //defined in unseen.acs. forces client hands to render properly
+		//EXCEPT IT APPARENTLY MEANT c_revealunseen FOR SOME REASON
+		//SO I HAVE TO DO A SILLY DANCE WHERE I REVEAL AND THEN HIDE
+		//INSTEAD OF JUST
+		//FUCKING HIDING
+		//at least it worked
+		//KIND OF!!
+		//TODO: Fix unseen using c_revealunseen transparency when going spec and rejoining game.
+		//somehow.
+		//IT'S BEEN FIXED! 2023/10/20
+		//no it hasn't been lma
+		
+		//TODO: handle the beastvision logick!
+		//That's done too! in another file!
+	}
+	/*if(PlayerTeam()==US_TEAM_HUMAN) //handle humans, fallback just in case
+	{
+		//TODO: functionify
+		if((GetTeamProperty(US_TEAM_THREAT,TPROP_NumPlayers)==0) && (pnumUnseen == pnum) && !SwappingTeams)
+		{
+			SwappingTeams=1;
+			SetActivatorToPlayer(pnumLastUnseen);
+			Player_SetTeam(0);
+			delay(1);
+			DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
+			SetActivatorToPlayer(pnum);
+			Player_SetTeam(1);
+			delay(1);
+			Log(n:0,s:" has become The Unseen!");
+			DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
+			pnumLastUnseen=pnum;
+			SwappingTeams=0;
+		}
+	}*/
+}
+
+//now scripto, you could've just done another script "c_UNSEENMOTHERFUCKERS"
+//to correct this stupid issue, but since that's something you didn't do
+//TODO: migrate the unseen client shit to a c_UNSEENMOTHERFUCKERS
+
+//on respawn
+script "UNSEENREFUCKERS" respawn
+{
+	ACS_NamedExecuteWithResult("UNSEENMOTHERFUCKERS");
+}
+
+//on event
+script "SHITHAPPENS" (int type, int arg1, int arg2) event
+{
+	int pnum=-1;
+	if(type==GAMEEVENT_PLAYERFRAGS) //handle killing
+	{
+		pnum=PlayerNumber();
+		if(PlayerTeam()==US_TEAM_HUMAN && GetGameModeState() != GAMESTATE_COUNTDOWN && arg1 == pnumLastUnseen) //handle humans
+		{ //currently this assumes all human player frags will be
+			//on the unseen, which is not necessarily true...
+			//TODO: make sure of that
+			//should be resolved
+			delay(65); //this *should* be safe right???
+			ACS_NamedExecuteWithResult("doUnseenSwap");
+			/*
+			//TODO: functionify
+			SwappingTeams=1;
+			SetActivatorToPlayer(pnumLastUnseen);
+			NamedExecuteClientScript("changeclass",pnumLastUnseen);
+			delay(5);
+			Player_SetTeam(US_TEAM_HUMAN);
+			delay(1);
+			DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
+			SetActivatorToPlayer(pnum);
+			Player_SetTeam(US_TEAM_THREAT);
+			delay(1);
+			Log(n:0,s:" has become The Unseen!");
+			DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
+			pnumLastUnseen=pnum;
+			SwappingTeams=0;
+			*/
+		}
+	}
+	else if(type==GAMEEVENT_ACTOR_DAMAGED) //handle pain
+	{
+		//TODO: refactor this shit. all the checks are in a very haphazard order
+		
+		int hp = GetActorProperty(0, APROP_HEALTH);
+		int killed = hp - arg1;
+		
+		pnum=PlayerNumber();
+		
+		if(pnum==-1 && CheckInventory("MercToken") > 0) //handle merc pain
+		{
+			if(killed > 0)
+			{
+				PlaySound(0,GetActorProperty(0,APROP_PAINSOUND),CHAN_VOICE);
+			}
+		}
+		
+		//bfg barrel splash damage spawns bfg extra on hit things
+		if(StrICmp("BFGBarrelSplash",arg2) == 0)
+		{
+			SpawnForced("BFGExtra",GetActorX(0),GetActorY(0),GetActorZ(0)+FixedDiv(GetActorProperty(0,APROP_Height),4.0));
+		}
+		
+		//now do player related shit
+		if(pnum==-1)
+		{
+			terminate;
+		}
+		
+		if(killed <= 0) //handle selfdeath
+		{
+			int pnumTemp = pnum;
+			
+			if(!(PlayerTeam()==US_TEAM_THREAT && IsPointerEqual(AAPTR_DEFAULT,AAPTR_DAMAGE_SOURCE)))
+			{
+				log(s:"not a selfkill");
+				SetActivator(0,AAPTR_DAMAGE_SOURCE);
+				if(PlayerNumber() != -1)
+				{
+					log(s:"is a player");
+					terminate;
+				}
+				if(!IsPointerEqual(AAPTR_FRIENDPLAYER,AAPTR_NULL,0,0))
+				{
+					log(s:"has friendplayer");
+					terminate;
+				}
+			}
+			SetActivator(0,AAPTR_DAMAGE_TARGET);
+			delay(70);
+			if(PlayerTeam()==US_TEAM_THREAT && GetGameModeState() != GAMESTATE_COUNTDOWN)
+			{
+				KickFromGame(pnumTemp,"Died as the Unseen!");
+				pnumUnseen=-1;
+				pnumLastUnseen=-1;	
+			}
+		}
+	}
+}
+
+//script takes 7 tics to do its job
+script "doUnseenSwap" (void)
+{
+	int pnum=PlayerNumber();
+	SwappingTeams=1;
+	SetActivatorToPlayer(pnumLastUnseen);
+	NamedExecuteClientScript("changeclass",pnumLastUnseen);
+	delay(5);
+	Player_SetTeam(US_TEAM_HUMAN);
+	delay(1);
+	DamageActor(0,AAPTR_Default,0,AAPTR_Null,10000,"DeadSpectate");
+	SetActivatorToPlayer(pnum);
+	Player_SetTeam(US_TEAM_THREAT);
+	SetPlayerClass(0,threatClassNames[0],false);
+	delay(1);
+	PrintBold(n:(pnum+1),s:" has become The Unseen!");
+	//DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
+	pnumLastUnseen=pnum;
+	SwappingTeams=0;
+}
+
+//pick a random human and put them on the unseen team
+//to be called whenever the unseen dies to nobody
+script "pickRandomUnseen" (void)
+{
+	//DID: functionality
+	int cnt = 0;
+	int pHumans[MAXPLAYERS];
+	for(int i = 0 ; i < MAXPLAYERS ; i++) //grub all the human player numbers and put them into the array
+	{
+		if(PlayerInGame(i) && PlayerIsSpectator(i)==0 && SetActivatorToPlayer(i) && PlayerTeam()==US_TEAM_HUMAN)
+		{
+			pHumans[cnt++] = i;
+		}
+	}
+	
+	if(cnt > 0) //if we grabbed at least one guy
+	{
+		SetActivatorToPlayer(pHumans[random(0,cnt-1)]); //pick a random dude
+		//printbold(s:"grabbed a human:",n:0);
+		ACS_NamedExecuteWithResult("doUnseenSwap"); //we do a little swapping
+	}
+}
+
+//on spec/discon
+script "GOODBYES" (int pnum) disconnect
+{
+	pTids[pnum]=0;
+	if(pnumUnseen==pnum)
+	{
+		pnumUnseen=-1;
+		pnumLastUnseen=-1;
+		if(JustKickedGuy==pnum)
+		{
+			JustKickedGuy=-1;
+			terminate;
+		}
+		//TODO: replace with pickRandomUnseen
+		PrintBold(s:"The Unseen spectated, disconnected, or killed themself! A random human has been selected to become the Unseen.");
+		delay(10);
+		ACS_NamedExecuteWithResult("pickRandomUnseen");
+	}
+}
+
+//kill projectiles that enter water (that need to die when they enter water)
+script "waterdie" (void)
+{
+	if(GetActorProperty(0,APROP_WaterLevel) > 1)
+	{
+		SetActorState(0,"WaterDie");
+	}
+}
+
+//float in water by setting the velocity
+//amt is ARBITRARY but good values are in the double digits
+script "waterfloat" (int amt)
+{
+	if(GetActorProperty(0,APROP_WaterLevel) > 1)
+	{
+		//printbold(f:GetActorVelZ(0));
+		//printbold(i:CheckInventory("BuoyancyTracker"));
+		GiveInventory("BuoyancyTracker",1);
+		//THIS IS A PILE OF MAGIC OKAY
+		//IT JUST WORKS DO NOT TOUCH IT
+		SetActorVelocity(0,0,0,FixedMul(CheckInventory("BuoyancyTracker")<<16,amt<<6),true,false);
+	}
+	else
+	{
+		TakeInventory("BuoyancyTracker",3);
+	}
+}
+
+//the quickplay button
+//which is all ONE GIANT HACK
+script "joincustom" (void) net 
+{
+	int pnum=PlayerNumber();
+	if(GetTeamProperty(US_TEAM_THREAT,TPROP_NumPlayers)==0) //if unseen slot is empty
+	{
+
+		SetPlayerClass(0,threatClassNames[0],false);
+		NamedExecuteClientScript("doRealJoining",pnum,US_TEAM_THREAT); //read below comment. this is making me lose sanity
+	}
+	else
+	{
+		ACS_NamedExecuteWithResult("joinhuman");
+	}
+}
+
+//this is all ONE GIANT HACK
+script "joinhuman" (void) net
+{
+	int pnum=PlayerNumber();
+
+
+	if(PlayerTeam() == US_TEAM_HUMAN)
+	{
+		int classnum = GetUserCVar(PlayerNumber(),"us_HumanClass");
+	
+		if(classnum >= 0 && classnum <= (US_HUMANCLASSTOTAL-1))
+		{
+			SetPlayerClass(0,humanClassNames[classnum],false);
+		}
+		else
+		{
+			SetPlayerClass(0,"random",false);
+		}
+	}
+	
+	NamedExecuteClientScript("doRealJoining",pnum,US_TEAM_HUMAN);
+	//ConsoleCommand("menu_joingamewithclass");
+}
+
+//WE HAVE REACHED DANGEROUS LEVELS OF HACK
+script "doRealJoining" (int tnum) net clientside
+{
+	if(tnum == US_TEAM_HUMAN)
+	{
+		ACS_NamedExecuteWithResult("changeClass");
+	}
+	
+	ConsoleCommand("closemenu");
+	delay(5); //THERE'S HACKS IN MY HACKS
+	ConsoleCommand(strParam(s:"team ",i:tnum));
+}
+
+script "changeClass" (void) clientside
+{
+	//TODO: less clientside and les consolecommand
+	int classnum = GetUserCVar(PlayerNumber(),"us_HumanClass");
+	
+	if(classnum >= 0 && classnum <= (US_HUMANCLASSTOTAL-1))
+	{
+		ConsoleCommand(strParam(s:"playerclass ",s:humanClassNames[classnum]));
+	}
+	else
+	{
+		ConsoleCommand(strParam(s:"playerclass random"));
+	}
+}
+
+//these are necessary because DECORATE sucks
+script "SetFreeTid" (void)
+{
+	int thetid=UniqueTid(1);
+	Thing_ChangeTid(0,thetid);
+	setresultvalue(thetid);
+}
+
+script "GetFreeTid" (void)
+{
+	int thetid=UniqueTid(1);
+	setresultvalue(thetid);
+}
+
+script "ClearTid" (void)
+{
+	Thing_ChangeTid(0,0);
+}
+
+//these are necessary because if it's not clientside only, the support turns green
+script "c_nightscopeup" (void) clientside
+{
+	if (ConsolePlayerNumber() == PlayerNumber())
+	{
+		GiveInventory("PowerNVG",1);
+	}
+}
+
+script "c_nightscopedown" (void) clientside
+{
+	if (ConsolePlayerNumber() == PlayerNumber())
+	{
+		TakeInventory("PowerNVG",1);
+	}
+}
+
+//for mines
+script "TransferTracer" (int tid)
+{
+	SetActorProperty(0,APROP_TracerTid,tid);
+}
+
+//also for mines
+//THIS IS DUMB !!
+script "TakeMineToken" (void)
+{
+	SetActivator(0,AAPTR_FRIENDPLAYER);
+	TakeInventory("MineCount",1);
+}
+
+//this is executed by equipments to set their special so they can be used to pick up
+script "EquipmentUseSpecial" (void) //so rediculously roundabout...
+{
+	SetThingSpecial(0,ACS_ExecuteWithResult,US_PICKUPEQUIPMENT);
+}
+
+script US_PICKUPEQUIPMENT (void) //set state to the pickup one
+{
+	if(GetActorProperty(0,APROP_Health)<=0)
+	{
+		terminate;
+	}
+	GiveInventory("Clip",1);
+	if(IsPointerEqual(AAPTR_FriendPlayer,AAPTR_Target))
+	{
+		SetActorState(0,"Picked");
+	}
+	SetActorProperty(0,APROP_TargetTid,0);
+}
+
+//does not what it says on the tin
+script "HealToFull" (void)
+{
+	SetActorProperty(0,APROP_Health,30);
+}
+
+
