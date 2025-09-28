@@ -186,23 +186,23 @@ actor Chair 106
 		//spin right
 		Moving:
 			CHAI A 0 A_Jump(128, "Moving2")
-			CHAI A 1 ACS_NamedExecuteWithResult("chairspecial")
+			CHAI A 1 ACS_NamedExecuteWithResult("chairspe")
 			CHAI A 0 A_SetArg(1,45)
 		Speen:
 			CHAI A 2 A_JumpIf(abs(velX) < 0.02 || abs(velY) < 0.02, "Spawn")
 			CHAI A 4 A_SetAngle(angle + args[1])
 			CHAI A 0 A_SetArg(1,args[1] + (args[1]/2))
-			CHAI A 0 ACS_NamedExecuteWithResult("chairspecial")
+			CHAI A 0 ACS_NamedExecuteWithResult("chairspe")
 			loop
 		//spin left
 		Moving2:
-			CHAI A 1 ACS_NamedExecuteWithResult("chairspecial")
+			CHAI A 1 ACS_NamedExecuteWithResult("chairspe")
 			CHAI A 0 A_SetArg(1,-45)
 		Speen2:
 			CHAI A 2 A_JumpIf(abs(velX) < 0.02 || abs(velY) < 0.02, "Spawn")
 			CHAI A 4 A_SetAngle(angle + args[1])
 			CHAI A 0 A_SetArg(1,args[1] + (args[1]/2))
-			CHAI A 0 ACS_NamedExecuteWithResult("chairspecial")
+			CHAI A 0 ACS_NamedExecuteWithResult("chairspe")
 			loop
 		Death:
 			TNT1 A 0 A_Scream
@@ -282,3 +282,4 @@ ACTOR Rat 9656
     }
 
 }
+
