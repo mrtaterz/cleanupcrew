@@ -1,6 +1,7 @@
 //Beast Vision--
 //write lore here sm you dumbass
 //name and function shamelessly ripped from blood lmao
+//MR BEAST!!!
 
 actor BeastVision : CustomInventory
 {
@@ -31,6 +32,9 @@ actor BeastVisionIndicator : Indicator
 {}
 
 //the powerup
+//1/10/25 XL - Attempted to disable the infrared effect and return to classic fullbright
+// it's not happening (even tried colormaps!!!), it's hardcoded, blurry fucking chicken man strikes again smh
+// and this isn't *even* his port!!!!!!
 actor PowerBeastVision : PowerLightAmp
 {
 	Powerup.Color RedMap
