@@ -70,3 +70,74 @@ actor WolfChair1 2102
 	Stop
   }
 }
+
+actor MoonRock1 9400
+{
+	//$Category Decoration
+	Radius 24
+	Height 16
+	+SOLID
+	States
+	{
+		Spawn:
+		ROK4 A -1
+		Loop
+	}
+}
+
+actor MoonRock2 9401
+{
+	//$Category Decoration
+	Radius 24
+	Height 16
+	+SOLID
+	States
+	{
+	Spawn:
+		ROK4 B -1
+		Loop
+	}
+}
+
+actor MoonRock3 9402
+{
+	//$Category Decoration
+	Radius 1
+	Height 1
+	States
+	{
+		Spawn:
+		ROK4 C -1
+		Loop
+	}
+}
+
+Actor Bush1 9403
+{
+	//$Title Bush
+	//$Category Decoration
+	Radius 12
+	Height 24
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 A -1
+		Stop
+	}
+}
+
+Actor Bush2 9404
+{
+	//$Title Tall Bush
+	//$Category Decoration
+	Radius 12
+	Height 36
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 B -1
+		Stop
+	}
+}
