@@ -39,38 +39,6 @@ Loop
 }
 }
 
-
-
-actor WolfTable4 2101
-{
-  //$Title "Metal Table"
-  //$Category Decoration
-  Radius 22
-  Height 26
-  +SOLID
-  States
-  {
-  Spawn:
-    WTBL D -1
-	Stop
-  }
-}
-
-actor WolfChair1 2102
-{
-  //$Title "Metal Chair"
-  //$Category Decoration
-  Radius 9
-  Height 28
-  +SOLID
-  States
-  {
-  Spawn:
-    WCHR A -1
-	Stop
-  }
-}
-
 actor MoonRock1 9400
 {
 	//$Category Decoration
