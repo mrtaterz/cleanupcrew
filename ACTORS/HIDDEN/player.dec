@@ -21,6 +21,16 @@
 //KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL
 //TAKE THE BLOOD OF THE MANY AND PRESENT IT TO US
 
+// I'm the man...in the box.
+// Buried in my shit!
+// Wont You come and save me
+// Feed my eyes! (Can you sew them shut?)
+// Jesus Christ! (Deny Your Maker)
+// He, who tries (Will be wasted)
+// Feed my eyes (Now you've sewed them)
+// I'm the dog that gets beat
+// Shove my nose in shit!
+
 ACTOR Unseen : PlayerPawn
 {
   limitedtoteam 1
@@ -291,4 +301,5 @@ actor EvilPistol : Pistol //testing actor
     PISG B 5 A_ReFire
     Goto Ready
   }
+
 }
