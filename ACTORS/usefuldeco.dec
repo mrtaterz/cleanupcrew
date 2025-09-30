@@ -159,9 +159,9 @@ actor Chair 106
 	//$Category Decoration
     Radius 15
     Height 30
-    Mass 5
+    Mass 15
     MaxStepHeight 4
-	health 30
+	health 50
     deathsound "misc/boxdestroy"
 	PushFactor 1
 	+FLOORCLIP
@@ -170,8 +170,6 @@ actor Chair 106
     +SHOOTABLE
 	+SOLID
     +CANPASS
-    +ACTLIKEBRIDGE
-
 	States
 	{
 		Spawn:
@@ -189,7 +187,7 @@ actor Chair 106
 			CHAI A 1 ACS_NamedExecuteWithResult("chairspe")
 			CHAI A 0 A_SetArg(1,45)
 		Speen:
-			CHAI A 2 A_JumpIf(abs(velX) < 0.02 || abs(velY) < 0.02, "Spawn")
+			CHAI A 2 A_JumpIf(abs(velX) < 0.01 || abs(velY) < 0.01, "Spawn")
 			CHAI A 4 A_SetAngle(angle + args[1])
 			CHAI A 0 A_SetArg(1,args[1] + (args[1]/2))
 			CHAI A 0 ACS_NamedExecuteWithResult("chairspe")
@@ -199,11 +197,88 @@ actor Chair 106
 			CHAI A 1 ACS_NamedExecuteWithResult("chairspe")
 			CHAI A 0 A_SetArg(1,-45)
 		Speen2:
-			CHAI A 2 A_JumpIf(abs(velX) < 0.02 || abs(velY) < 0.02, "Spawn")
+			CHAI A 2 A_JumpIf(abs(velX) < 0.01 || abs(velY) < 0.01, "Spawn")
 			CHAI A 4 A_SetAngle(angle + args[1])
 			CHAI A 0 A_SetArg(1,args[1] + (args[1]/2))
 			CHAI A 0 ACS_NamedExecuteWithResult("chairspe")
 			loop
+		Death:
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			/*
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			*/
+			Stop
+	}
+}
+
+actor WolfChair1 2102
+{
+	//$Category Decoration
+	//$Title "Metal Chair"
+    Radius 9
+    Height 28
+    Mass 50
+    MaxStepHeight 4
+	health 50
+    deathsound "misc/boxdestroy"
+	PushFactor 0.5
+	+FLOORCLIP
+    +PUSHABLE
+    +NOBLOOD
+    +SHOOTABLE
+	+SOLID
+    +CANPASS
+	States
+	{
+		Spawn:
+			WCHR A 1
+			goto pushing
+		pushing:
+			WCHR A 8 A_LookEx(LOF_NOSOUNDCHECK, 0, 64, 0, 360)
+			loop
+		See:
+			WCHR A 0 A_JumpIf(abs(velX) != 0 || abs(velY) != 0, "Moving")
+			goto Spawn
+		Moving:
+			WCHR A 25 A_PlaySound("misc/chairmove/2", CHAN_AUTO)
+			goto Spawn
+		Death:
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			/*
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			TNT1 A 0 A_SpawnItemEx ("ShrapnelParticle", 0, 0, random (3, 5), random (-5, 5), random (-5, 5), random (1, 2), 0, 0, 30)
+			*/
+			Stop
+	}
+}
+
+actor WolfTable4 2101
+{
+	//$Title "Metal Table"
+	//$Category Decoration
+	Radius 22
+	Height 26
+	health 80
+	mass 999999
+	deathsound "misc/boxdestroy"
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+	+CANPASS
+	States
+	{
+		Spawn:
+			WTBL D -1
+			Stop
 		Death:
 			TNT1 A 0 A_Scream
 			TNT1 A 0 A_NoBlocking
@@ -280,6 +355,4 @@ ACTOR Rat 9656
         Stop
 
     }
-
 }
-
