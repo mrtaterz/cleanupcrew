@@ -186,6 +186,7 @@ demon/pissed DSSARGRY
 misc/barrelmove dsmetal
 //CHAIRS
 misc/chairmove dschair
+misc/chairmove/2 dschair2
 
 misc/boxdestroy dsboxdie
 
@@ -270,4 +271,5 @@ Rat/Death RATDEAD
 $attenuation Rat/Sight 2
 $attenuation Rat/Pain 2
 $attenuation Rat/Attack 2
+
 $attenuation Rat/Death 2
