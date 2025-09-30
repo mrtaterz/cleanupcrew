@@ -20,7 +20,7 @@ Contact those guys on Discord!
 Custom Art: Craneo
 Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, and Assistance: XLightningStormL (Uhh Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
 
-Developed in close communication with TDRR.
+Aditional scripting help, and programming from TDRR.
 
 =====================================================================================================================================================================
 
@@ -82,14 +82,15 @@ Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
 
 Moon Textures by 3D Realms.
-VENT1, and VENTLITE by Lone2401, and XLightningStormL.
+VENT1 by Lone2401. VENTLITE based on VENT 1, edited by XLightningStormL.
 VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
 SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH by Nightmare.
 MIDGRAYW, and Dopefish by iD Software.
-CCONTxxx, SPW2Cxxx, GRAYTAL3, and SHAWN4 by iD Software, and XLightningStormL.
+CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
+VEND1 made by XLightningStormL. Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
 GRATE02 by Midway Entertainment.
 METALSIL by Enjay? (XL note: not too sure on this one)
 
