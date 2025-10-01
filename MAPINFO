@@ -40,7 +40,7 @@ map MAP06 "The Treatment Center"
 }
 map MAP07 "The Bunker"
 {
-	Sky1="SKY1"
+	Sky1="SKY5"
 	//music="BUNKER"
 	LightMode=8
 }
@@ -55,4 +55,5 @@ map MAP09 "Central Processing"
 {
 	Sky1="SKY4"
 	LightMode=8
+
 }
