@@ -45,7 +45,7 @@ map MAP07 "The Bunker"
 	LightMode=8
 }
 //XLightningStormL
-map MAP08 "Living Quarters"
+map MAP08 "Administration"
 {
     //music = "HAB"
     Sky1="SKY1"
@@ -55,5 +55,11 @@ map MAP09 "Central Processing"
 {
 	Sky1="SKY4"
 	LightMode=8
-
 }
+
+map MAP10 "Habitat"
+{
+	Sky1="SKY4"
+	LightMode=8
+}
+
