@@ -8,12 +8,13 @@ TeamLMS {
 	AddFlag PLAYERSONTEAMS
 	AddFlag USEMAXLIVES
 	AddFlag MAPRESET_RESETS_MAPTIME
-	name "The Unseen"
-	shortname "UNSN"
+	name "Clean-Up Crew"
+	shortname "CUC"
 	GameSettings
     {
 		lms_spectatorchat = true
 		sv_lmscountdowntime = 20
 		sv_itemrespawn = true
     }
+
 }
