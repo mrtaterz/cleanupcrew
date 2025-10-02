@@ -4,7 +4,7 @@
 //class names
 
 //unseens
-NAME_UNSEEN="Unseen Threat"; //unseen class
+NAME_UNSEEN="The Threat"; //hidden class
 
 //humans
 NAME_ASSAULT="Assault"; //assault class
@@ -128,4 +128,5 @@ GOTRIFLECLIP="Picked up a rifle clip.";
 GOTMINE="Picked up a proximity mine.";
 GOTRAREMINE="Picked up a proximity mine that bears more than a passing semblance to a banana peel.";
 GOTSENSOR="Picked up a proximity sensor.";
+
 GOTFUEL="Picked up a jerrycan.";
