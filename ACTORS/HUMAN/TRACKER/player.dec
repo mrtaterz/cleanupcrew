@@ -59,10 +59,11 @@ Actor Support : PlayerPawn
 	death.darken:
 	death.suicide:
 	Death:
-		SPRT H 8
-		SPRT I 8 A_PlayerScream
-		SPRT J 8 A_NoBlocking
-		SPRT KL 8
+		SPRT H 4 A_PlaySound("misc/flatline",16,1)
+		SPRT I 4 A_PlayerScream
+		SPRT J 4 A_NoBlocking
+		SPRT KL 4
+		SPRT L 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
 		SPRT M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -95,4 +96,5 @@ Actor GibbedSupport : CorpseGeneric
 			SPRT E 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
+
 }
