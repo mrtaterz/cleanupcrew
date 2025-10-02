@@ -44,7 +44,7 @@ ACTOR Unseen : PlayerPawn
   Gravity 0.833333
   Player.JumpZ 16
   PainChance 255
-  Player.DisplayName "Unseen Threat"
+  Player.DisplayName "The Threat"
   Player.ColorRange 112, 127 //colorey googles lol
   Player.SoundClass "Unseen"
   Player.StartItem "Slasher"
@@ -303,3 +303,4 @@ actor EvilPistol : Pistol //testing actor
   }
 
 }
+
