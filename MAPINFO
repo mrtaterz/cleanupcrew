@@ -1,5 +1,6 @@
 gameinfo {
 	InfoPage = "HELP","THREAT","CREW","CREDIT"
+	borderflat = "FLAT5_4"
 }
 
 map MAP01 "The Fueling Garrison"
@@ -62,4 +63,5 @@ map MAP10 "Habitat"
 	Sky1="SKY4"
 	LightMode=8
 }
+
 
