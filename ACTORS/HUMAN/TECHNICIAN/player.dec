@@ -53,10 +53,11 @@ Actor Sapper : PlayerPawn
 	death.darken:
 	death.suicide:
 	Death:
-		SAPR H 8
-		SAPR I 8 A_PlayerScream
-		SAPR J 8 A_NoBlocking
-		SAPR KL 8 //M 8
+		SAPR H 4 A_PlaySound("misc/flatline",16,1)
+		SAPR I 4 A_PlayerScream
+		SAPR J 4 A_NoBlocking
+		SAPR KL 4 //M 8
+		SAPR KL 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
 		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -89,4 +90,5 @@ Actor GibbedSapper : CorpseGeneric
 			SAPR W 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
+
 }
