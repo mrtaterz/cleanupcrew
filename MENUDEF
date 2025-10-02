@@ -6,7 +6,7 @@ OptionMenu ZA_JoinTeamMenu
 	StaticText " "
 	StaticText " "
 	StaticText " "
-	StaticText "Unseen is a game of deception and subterfuge."
+	StaticText "CLEAN-UP CREW is a game of deception and subterfuge."
 	StaticText "If this is your first time playing, you should definitely"
 	Command "read this!","menu_help"
 	StaticText " "
@@ -22,7 +22,7 @@ OptionMenu ZA_JoinTeamMenu
 
 OptionMenu UsOptions
 {
-	Title "UNSEEN TWEAKS"
+	Title "CLEAN-UP CREW TWEAKS"
 	
 	StaticText "Select your preferred human class."
 	StaticText "After you lose a round as the Threat"
@@ -67,4 +67,5 @@ ListMenu "MainMenu"
 	TextItem "Read this!","R","ReadThisMenu"
 	TextItem "Options","O","OptionsMenu"
 	TextItem "Quit Game","Q","QuitMenu"
+
 }
