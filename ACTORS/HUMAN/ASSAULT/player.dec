@@ -53,10 +53,11 @@ Actor Assault : PlayerPawn
 	death.darken:
 	death.suicide:
 	Death:
-		ASLT H 8
-		ASLT I 8 A_PlayerScream
-		ASLT J 8 A_NoBlocking
-		ASLT KL 8
+		ASLT H 4 A_PlaySound("misc/flatline",16,1)
+		ASLT I 4 A_PlayerScream
+		ASLT J 4 A_NoBlocking
+		ASLT KL 4 
+		ASLT L 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
 		ASLT M 1 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -89,4 +90,5 @@ Actor GibbedAssault : CorpseGeneric
 			PGIB E 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
+
 }
