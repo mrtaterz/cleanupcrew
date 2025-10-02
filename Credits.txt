@@ -48,7 +48,7 @@ All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack 
 d1gfxd2 compiled by SargeBaldy, and iD Software.
 Destructible decoration objects sourced from DestDec by Jaih1r0.
 Terrain Splashes by Raven Software, and Magic Wizard.
-
+Status Report font by Jimmy!
 ACS Scripts by scriptedmarine.
 Custom DECORATE by scriptedmarine, and XLightningStormL.
 armorcheck ACS script edit by XLightningStormL.
