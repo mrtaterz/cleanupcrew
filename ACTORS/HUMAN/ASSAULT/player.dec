@@ -56,8 +56,7 @@ Actor Assault : PlayerPawn
 		ASLT H 4 A_PlaySound("misc/flatline",16,1)
 		ASLT I 4 A_PlayerScream
 		ASLT J 4 A_NoBlocking
-		ASLT KL 4 
-		ASLT L 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
+		ASLT KL 4
 		ASLT M 1 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -92,3 +91,4 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
