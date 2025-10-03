@@ -1,6 +1,8 @@
 #library "unseen"
 #import "zcommon.bcs"
 
+#import "bcsutils.bcs"
+
 #include "usconsts.acs"
 #include "c_stuff.acs"
 #include "chairspe.acs"
