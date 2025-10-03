@@ -16,7 +16,7 @@ Actor Assault : PlayerPawn
 	limitedtoteam 0
 	//speed 0.8
 	Player.StartItem "MachineGun"
-	Player.StartItem "usFist"
+	Player.StartItem "AssaultFist"
 	Player.StartItem "usGrenadeLauncher"
 	Player.StartItem "GreenArmor"
 	Player.StartItem "usShell", 20
@@ -95,5 +95,6 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
