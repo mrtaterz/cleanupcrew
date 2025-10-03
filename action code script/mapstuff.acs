@@ -21,34 +21,19 @@ script US_MOVEBARREL (void) //note the name is a const instead of a string
 	}
 }
 
-script US_MOVECHAIR (void)
-{
-	delay(1);
-	if(checkinventory("powerbarrelnoisecooldown") > 0)
-	{
-		terminate;
-	}
-	int x = getactorvelx(0);
-	int y = getactorvely(0);
-	int z = getactorvelz(0);
-	
-	int silly = fixedsqrt((x*x + y*y + z*z));
-	//silly = silly >> 16;
-	//printbold(i:silly);
-	if(silly > (32 << 16))
-	{
-		playsound(0,"misc/chairmove");
-		//setactorstate(0,"bumped");
-		giveinventory("powerbarrelnoisecooldown",1);
-	}
-}
-
 script "barrelspecial" (void) //callable
 {
 	SetThingSpecial(0,ACS_ExecuteWithResult,US_MOVEBARREL);
 }
 
-script "chairspecial" (void) //callable
+Script "chairspe" (void)
 {
-	SetThingSpecial(0,ACS_ExecuteWithResult,US_MOVECHAIR);
+	if(checkinventory("ChairNoiseCooldown") > 0)
+	{
+		terminate;
+	}
+	playsound(0,"misc/chairmove");
+	giveinventory("ChairNoiseCooldown",1);
+	delay(24);
+	terminate;
 }
