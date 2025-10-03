@@ -7,7 +7,7 @@
 //assignment they have also been issued a grenade launcher, as its
 //indiscriminate nature makes it easier to target that what cannot be seen,
 //and its indirect fire capability lets it reach into those nooks and crannies
-//wher eother firearms are less reliable to hit.
+//where other firearms are less likely to hit.
 
 //"Come on in, you fuckers. Come on in. Ol' Painless is waitin'."
 
@@ -95,6 +95,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
