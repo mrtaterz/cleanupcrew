@@ -27,12 +27,16 @@ Actor Support : PlayerPawn
 	Player.StartItem "usShell", 20 //4 given by backpack
 	Player.StartItem "usClip", 100 //10 given by backpack
 	Player.StartItem "Sensors", 3 //1 given by backpack, but capped at... oh whatever hard to explain
+	Player.StartItem "usPistol"
+	Player.StartItem "PistolAmmo", 50
+	Player.StartItem "PistolMagazine", 10
 	//so basically the maximum amount of sensors is 2, but then the backpack takes effect after
 	//everything is given, but then the backpack gives 1 sensor? i think? idk, my brain hurts.
 	Player.StartItem "FlareStick", 5
 	Player.WeaponSlot 1, usFist
-	Player.WeaponSlot 2, AssaultShotgun
-	Player.WeaponSlot 3, ProxSensors
+    Player.WeaponSlot 2, usPistol
+	Player.WeaponSlot 3, AssaultShotgun
+	Player.WeaponSlot 4, ProxSensors
 	Player.SoundClass "Support"
 	player.DisplayName "Tracker"
 	Player.ColorRange 112, 127
@@ -97,4 +101,5 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
 
