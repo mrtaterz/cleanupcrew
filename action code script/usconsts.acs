@@ -21,7 +21,6 @@
 //scripts
 #libdefine US_PICKUPEQUIPMENT 141
 #libdefine US_MOVEBARREL 142
-#libdefine US_MOVECHAIR 143
 
 //gameplay
 #libdefine US_BEASTVISION_MAX_TICS 2100
