@@ -352,6 +352,29 @@ actor 7MilCaseSpawner : CaseSpawnerBase
 			stop
 	}
 }
+
+actor AssaultFist : usFist
+{
+	states
+	{
+		select:
+			BPNG A 0 A_Raise
+			BPNG A 1 A_Raise
+			loop
+		deselect:
+			BPNG A 0 A_Lower
+			BPNG A 1 A_Lower
+			loop
+		Fire:
+			BPNG B 4
+			BPNG C 4 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
+			BPNG D 5
+			BPNG C 4
+			BPNG B 5 A_ReFire
+			Goto Ready
+	}
+}
+
 actor PowerNVG : PowerLightAmp //TODO: make clientside
 {
 	Powerup.Duration 0x7FFFFFFF
@@ -376,4 +399,5 @@ actor LaserBeem //lazor
 			LAZR A 1 Bright NoDelay
 			stop
 	}
+
 }
