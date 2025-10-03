@@ -235,7 +235,7 @@ actor AmmoBag : WreckablePickup Replaces Clipbox 8 //hax!
 			stop
 		pickup:
 			TNT1 A 0 A_GiveInventory("usClip",50)
-			//TNT1 A 0 A_GiveInventory("PistolClip",50)
+			TNT1 A 0 A_GiveInventory("PistolAmmo",20)
 			//TNT1 A 0 A_GiveInventory("RifleClip",50)
 			TNT1 A 0 A_GiveInventory("usShell",20)
 			TNT1 A 0 A_GiveInventory("usRocketAmmo",5)//was 5
@@ -263,6 +263,7 @@ actor AmmoBelt : CustomInventory
 			stop
 		pickup:
 			TNT1 A 0 A_GiveInventory("usClip",25)
+			TNT1 A 0 A_GiveInventory("PistolAmmo",10)
 			//TNT1 A 0 A_GiveInventory("PistolClip",25)
 			//TNT1 A 0 A_GiveInventory("RifleClip",25)
 			TNT1 A 0 A_GiveInventory("usShell",10)
@@ -757,6 +758,7 @@ actor GreenArmorNuller : Nuller replaces GreenArmor
 
 actor BlueArmorNuller : Nuller replaces BlueArmor
 {}
+
 
 
 //the rat is in usefuldeco
