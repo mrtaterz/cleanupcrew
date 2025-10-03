@@ -9,3 +9,19 @@ pic WFALL5 tics 3
 pic WFALL6 tics 3
 pic WFALL7 tics 3
 pic WFALL8 tics 3
+
+texture SMONCA
+pic SMONCA tics 5
+pic SMONCB tics 5
+pic SMONCC tics 5
+pic SMONCD tics 5
+
+texture TVANI01
+pic TVANI01 tics 3
+pic TVANI02 tics 3
+pic TVANI03 tics 3
+
+texture SP2CLEN1
+pic SP2CLEN1 tics 3
+pic SP2CLEN2 tics 3
+pic SP2CLEN3 tics 3
