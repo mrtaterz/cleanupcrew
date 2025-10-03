@@ -66,14 +66,17 @@ actor LitFlareStick
 
 //ammos
 
-//7.62x51mm UAC-S Machinegun magazine--
-//Ammunition for the Assault Troop's standard Machinegun.
-//This particular high-velocity load, while not as powerful as other
-//contemporary loads, is very lightweight and easy to control*, and allows the
-//Machinegun to fire with an extroadinarily high cyclic rate while still
-//offering satisfactory terminal performance.
+/*
+7.62x51mm UAC-S Machinegun magazine--
+Ammunition for the Assault Troop's standard Machinegun.
+This particular high-velocity load, while not as powerful as other
+contemporary loads, is very lightweight and easy to control*, and allows the
+Machinegun to fire with an extroadinarily high cyclic rate while still
+offering satisfactory terminal performance.
+*/
+// use /**/ instead of // for long commented out code!
 
-//* Easy to control for a 7.62x51mm.
+// Easy to control for a 7.62x51mm.
 actor usClip : Ammo
 {
 	Inventory.Amount 10
@@ -82,6 +85,23 @@ actor usClip : Ammo
 	Ammo.BackpackMaxAmount 400
 	Inventory.Icon "CLIPA0"
 	Tag "$TAG_CLIP"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+  }
+}
+
+//9mm Ball pistol ammo
+actor PistolAmmo : Ammo
+{
+	Inventory.Amount 10
+	Inventory.MaxAmount 100
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 200
+	Inventory.Icon "CLIPA0"
+	Decal "BulletChip" //say wha
 	States
 	{
 	Spawn:
@@ -145,26 +165,6 @@ actor usCell : Ammo
 	{
 	Spawn:
 		CELL A -1
-		Stop
-  }
-}
-
-//9mm pistol magazine--
-//Standard issue pistol ammunition. Not much less stopping power than the
-//10mm, but easier to control in a handgun. Soon to be obsoleted by the 10mm.
-//Currently unused.
-actor PistolClip : Ammo
-{
-	Inventory.Amount 10
-	Inventory.MaxAmount 200
-	Ammo.BackpackAmount 10
-	Ammo.BackpackMaxAmount 400
-	Inventory.Icon "CLIPA0"
-	Decal "BulletChip" //say wha
-	States
-	{
-	Spawn:
-		CLIP A -1
 		Stop
   }
 }
@@ -390,13 +390,86 @@ actor CasingSteamer
 	}
 }
 
+//hacky zandro inventory tripe
+//i don't miss this shit, now the lore
+//refer to pistol ammo for actual ammo, and not this dummy item
+
+//9mm pistol magazine--
+//Standard issue pistol ammunition. Not much less stopping power than the
+//10mm, but easier to control in a handgun. Soon to be obsoleted by the 10mm.
+actor PistolMagazine : Ammo
+{
+	Inventory.Amount 0
+	Inventory.MaxAmount 10
+	Inventory.Icon "CLIPA0"
+	States
+	{
+		Spawn:
+			CLIP A -1
+			Stop
+	}
+}
+
 //9mm pistol--
 //A useful sidearm based off of the M92 issued to all units under the UAC.
 //Trials are underway to adopt a 10mm variant of the weapon, so far showing
 //promise. Currently unused in favor of the 10mm pistol... :trol_foce:
 actor usPistol : Pistol
 {
-	Weapon.AmmoType "PistolClip"
+	Weapon.AmmoType1 "PistolMagazine" //why tf was this called a clip it's not a fucking pre-schnellfuer mauser c96 IT USES A MAG!!!!
+	Weapon.AmmoType2 "PistolAmmo" 
+	+WEAPON.AMMO_OPTIONAL
+	States
+	{
+		Ready:
+			PISG A 1 A_WeaponReady
+			Loop
+		Deselect:
+			PISG A 1 A_Lower
+			Loop
+		Select:
+			PISG A 1 A_Raise
+			Loop
+		Fire:
+			TNT1 A 0 //hack hack hack, hacking all day long!
+			TNT1 A 0 A_JumpIfInventory("PistolMagazine", 1, 2)
+			goto Reload
+			PISG B 2 A_GunFlash //god i don't miss the ancient method of doing this, need this to be 8 frames length in total about 4.375 shots per second
+			TNT1 A 0 A_FireBullets((height==56) ? 1.28 : 1.28,1.28,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
+			TNT1 A 0 A_PlaySound ("weapons/pistol", CHAN_WEAPON)
+			PISG C 2 A_FireCustomMissile("9MilCaseSpawner",0,0)
+			PISG E 2
+			PISG B 2 
+			TNT1 A 0 A_ReFire
+			Goto Ready
+		Reload:
+			TNT1 A 0 A_JumpIfInventory("PistolAmmo", 1, 2)
+			goto Ready
+			PISG ABDE 3
+			TNT1 A 0 A_PlaySound("weapons/pistol/reload/1", CHAN_AUTO)
+			PISG D 5 //mag out
+			TNT1 A 0 A_PlaySound("weapons/pistol/reload/2", CHAN_AUTO)
+			PISG D 7
+			TNT1 A 0 A_PlaySound("weapons/pistol/reload/3", CHAN_AUTO)
+			PISG D 7
+			PISG E 5
+			TNT1 A 0 A_PlaySound("weapons/pistol/reload/4", CHAN_AUTO)
+		ReloadLoop:
+			TNT1 A 0 A_TakeInventory("PistolAmmo", 1)
+			TNT1 A 0 A_GiveInventory("PistolMagazine", 1)
+			TNT1 A 0 A_JumpIfInventory("PistolMagazine", 10, "ReloadEnd")
+			TNT1 A 0 A_JumpIfInventory("PistolAmmo", 1, "ReloadLoop")
+			goto ReloadEnd
+		ReloadEnd:
+			PISG DBA 3
+			goto Ready
+		Flash:
+			PISF A 2 Bright A_Light(4)
+			Goto LightDone
+		Spawn:
+			PIST A -1
+			Stop
+	}
 }
 
 actor 9MilCase : CaseBase
