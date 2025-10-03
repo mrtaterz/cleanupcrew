@@ -63,7 +63,6 @@ Actor Support : PlayerPawn
 		SPRT I 4 A_PlayerScream
 		SPRT J 4 A_NoBlocking
 		SPRT KL 4
-		SPRT L 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
 		SPRT M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -98,3 +97,4 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
