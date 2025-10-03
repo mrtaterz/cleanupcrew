@@ -1,8 +1,3 @@
-#library "glob"
-#import "zcommon.bcs"
-
-#import "usconsts.acs"
-
 int pnumUnseen=-1; //-1 will signify that the unseen is unchosen
 int pnumLastUnseen=-1; //the last unseen pnum just in case
 //hopefully that will not break later

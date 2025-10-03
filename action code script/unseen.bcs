@@ -1,0 +1,10 @@
+#library "unseen"
+#import "zcommon.bcs"
+
+#include "usconsts.acs"
+#include "c_stuff.acs"
+#include "chairspe.acs"
+#include "glob.acs"
+#include "help.acs"
+#include "mapstuff.acs"
+#include "unseenlogic.acs"

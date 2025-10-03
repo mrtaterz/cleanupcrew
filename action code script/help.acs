@@ -1,8 +1,3 @@
-#library "help"
-#import "zcommon.bcs"
-
-#import "usconsts.acs"
-
 script "inherittargvel" (void) //does what it says on the tin and pitch, too
 {
 	int oldtid=ACS_NamedExecuteWithResult("SetFreeTid"); //so we can return

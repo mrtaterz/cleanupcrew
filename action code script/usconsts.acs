@@ -1,9 +1,6 @@
 //this is technically a BCS module but it is compiled in ACS mode,
 //which requires it to have the .acs extension
 
-#Library "usconsts"
-#Import "zcommon.bcs"
-
 //various constants for Unseen
 
 //global

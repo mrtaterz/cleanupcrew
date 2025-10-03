@@ -1,8 +1,3 @@
-#library "unseen"
-#import "zcommon.bcs"
-
-#import "usconsts.acs"
-
 int timeexpected=0;
 
 script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostalgically inclined)
@@ -55,7 +50,7 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 		}
 		if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava") || CheckInventory("burning") <= 0)
 		{
-			Spawn("FlameDieSteam",GetActorX(0),GetActorY(0),GetActorZ(0)+32.,0);
+			Spawn("FlameDieSteam",GetActorX(0),GetActorY(0),GetActorZ(0)+32.0,0);
 			//PrintBold(s:GetActorFloorTerrain(0));
 			PlaySound(0,"unseen/extinguish");
 			TakeInventory("burning",2);

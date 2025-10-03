@@ -1,10 +1,6 @@
-#library "c_stuff"
-#import "zcommon.bcs"
-
-#import "usconsts.acs"
-
 private int cachedcasinglife = 30; //bcs rulz
 private int cachedclawlock = 0;
+
 //cvar indexing
 script "c_GetCasingLife" (void) clientside
 {
