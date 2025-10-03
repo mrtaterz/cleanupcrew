@@ -189,6 +189,7 @@ misc/chairmove dschair
 misc/chairmove/2 dschair2
 
 misc/boxdestroy dsboxdie
+$alias misc/chairdestroy misc/boxdestroy
 
 $alias misc/barrelfire vile/firecrkl
 $limit misc/barrelfire 0

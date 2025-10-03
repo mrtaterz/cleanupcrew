@@ -162,7 +162,7 @@ actor Chair 106
     Mass 15
     MaxStepHeight 4
 	health 50
-    deathsound "misc/boxdestroy"
+    deathsound "misc/chairdestroy"
 	PushFactor 1
 	+FLOORCLIP
     +PUSHABLE
