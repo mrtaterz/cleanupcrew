@@ -434,7 +434,8 @@ actor usPistol : Pistol
 			TNT1 A 0 //hack hack hack, hacking all day long!
 			TNT1 A 0 A_JumpIfInventory("PistolMagazine", 1, 2)
 			goto Reload
-			PISG B 2 A_GunFlash //god i don't miss the ancient method of doing this, need this to be 8 frames length in total about 4.375 shots per second
+			TNT1 A 0 //dirty hack otherwise zandro will skip the actual muzzle flash frame FOR SOME REASON???
+			PISF A 2 Bright A_Light(4) //god i don't miss the ancient method of doing this, need this to be 8 frames length in total about 4.375 shots per second
 			TNT1 A 0 A_FireBullets((height==56) ? 1.28 : 1.28,1.28,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
 			TNT1 A 0 A_PlaySound ("weapons/pistol", CHAN_WEAPON)
 			PISG C 2 A_FireCustomMissile("9MilCaseSpawner",0,0)
@@ -463,9 +464,6 @@ actor usPistol : Pistol
 		ReloadEnd:
 			PISG DBA 3
 			goto Ready
-		Flash:
-			PISF A 2 Bright A_Light(4)
-			Goto LightDone
 		Spawn:
 			PIST A -1
 			Stop
@@ -872,3 +870,4 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
