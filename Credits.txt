@@ -101,6 +101,8 @@ KITCHCAx by XLightningStormL, based on textures by iD Software
 DESK07 - DESK17 by XLightningStormL from textures sourced from iD Software, Marsdoom, Hellcore 2.0, Mars3D, and the Blade of Agony team.
 COUNTER from Phobos.WAD by Roger Ritenour
 BEDx from ??? (I think from EDay, but unlikely Mark made the originals)
+TVANIxx, SP2CLENx by XLightningStormL based on textures by iD Software, and TeamTNT
+SMONCx by XLightningStormL based on textures by Midway Entertainment
 
 Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, and others (needs to be confirmed)
 dsminez edited by XLightningStormL
