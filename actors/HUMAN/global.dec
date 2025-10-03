@@ -438,6 +438,7 @@ actor usPistol : Pistol
 			PISF A 2 Bright A_Light(4) //god i don't miss the ancient method of doing this, need this to be 8 frames length in total about 4.375 shots per second
 			TNT1 A 0 A_FireBullets((height==56) ? 1.28 : 1.28,1.28,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
 			TNT1 A 0 A_PlaySound ("weapons/pistol", CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound ("weapons/pistol/fire/far", CHAN_5)
 			PISG C 2 A_FireCustomMissile("9MilCaseSpawner",0,0)
 			PISG E 2
 			PISG B 2 
@@ -870,4 +871,3 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
-
