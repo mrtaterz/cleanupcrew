@@ -57,7 +57,6 @@ Actor Sapper : PlayerPawn
 		SAPR I 4 A_PlayerScream
 		SAPR J 4 A_NoBlocking
 		SAPR KL 4 //M 8
-		SAPR KL 1 A_PlaySound("misc/body",4,1,false,ATTN_STATIC)
 		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
@@ -92,3 +91,4 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
