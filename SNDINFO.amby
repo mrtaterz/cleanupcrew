@@ -133,3 +133,5 @@ $ambient 39 amby/goofall1 point continuous 1
 //vents
 amby/ventfan ventfan
 $ambient 40 amby/ventfan point continuous 1
+amby/drips drips
+$ambient 41 amby/drips point continuous 1
