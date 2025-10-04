@@ -109,11 +109,13 @@ LITERED3 by FuzzballFox
 GRAY8 originally by ??? (the textures have been around a long time and used in a bunch of mods, i don't really know where from originally)
 GRNBIGx and GRNSMALx by Jimmy
 COMPSERV by demo_the_doomer
+
 All non-MONITORS textures in textures/pc folder based on textures from phobos.wad by Roger Ritenour, and edited by XLightningStormL
 
-Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, and others (needs to be confirmed)
+Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, Doom 3, and others (needs to be confirmed)
 dsminez edited by XLightningStormL
 dschairm2 by XLightningStormL; sourced from CHAIRMO from Divine Frequency TC Demo (which itself is sourced from unknown)
+COMPST5, and DRIPs from Half-Life by Valve
 [SOUND CREDITS UNDER CONSTRUCTION. PLEASE BE PATIENT...]
 
 Special Thanks
