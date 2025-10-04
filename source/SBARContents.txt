@@ -1,0 +1,46 @@
+// Common stuff
+DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
+
+// Human HUD
+InInventory not Slasher
+{
+    DrawMugshot 5, -22 + center, -47;
+    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
+
+    // Armor graphics
+    DrawImage armoricon, -47 + center, -17;
+
+    // Weapon graphics
+    // Unseen
+    DrawWeapon(Slasher, "CLAPA0")
+    DrawWeapon(Grenades, "HERTA0")
+
+    // Humans
+    DrawWeapon(usFist, "FISPA0")
+    DrawWeapon(usPistol, "PISTA0")
+
+    // Assault
+    DrawWeapon(usGrenadeLauncher, "GLPPA0")
+    DrawWeapon(MachineGun, "MGPPA0")
+
+    // Technician
+    DrawWeapon_Low(Flamer, "FLMRA0")
+    DrawWeapon(MineLauncher, "PRXPA0")
+
+    // Tracker
+    DrawWeapon(proxsensors, "SENPA0")
+    DrawWeapon(AssaultShotgun, "SGPPA0")
+}
+
+// Unseen HUD
+InInventory Slasher
+{
+    DrawImage "STIMA0", -117 + center, -30;
+    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
+
+    DrawImage armoricon, 93 + center, -26;
+    DrawNumber 3, HUDFONT_DOOM, DarkRed, Armor, whennotzero, alignment(left), drawshadow, 107 + center, -42;
+
+    DrawImage "HERTA0", -20, 50;
+    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
+}

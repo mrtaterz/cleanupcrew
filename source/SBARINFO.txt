@@ -1,0 +1,22 @@
+// Source SBARINFO before preprocessing
+// Actual SBAR commands are inside SBARContents.txt to avoid duplication
+monospacefonts true, "0";
+
+#define WEAPON_X 45 + center //205
+#define WEAPON_Y -16 //184
+#define WEAPON_Y_LOW -10 //190
+
+#define DrawImageIfInventory(item, image, x, y) InInventory item, 1 { DrawImage image, x, y; }
+#define DrawArmor(armorActor, image, x, y) DrawSwitchableImage armortype armorActor, image, "", x, y;
+#define DrawWeapon(weaponActor, image) IsSelected weaponActor { DrawImage image, WEAPON_X, WEAPON_Y; }
+#define DrawWeapon_Low(weaponActor, image) IsSelected weaponActor { DrawImage image, WEAPON_X, WEAPON_Y_LOW; }
+
+statusbar fullscreen, fullscreenoffsets
+{
+    #include "SBARContents.txt"
+}
+
+statusbar normal, fullscreenoffsets
+{
+    #include "SBARContents.txt"
+}
