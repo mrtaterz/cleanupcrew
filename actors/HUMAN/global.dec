@@ -413,13 +413,15 @@ actor PistolMagazine : Ammo
 //9mm pistol--
 //A useful sidearm based off of the M92 issued to all units under the UAC.
 //Trials are underway to adopt a 10mm variant of the weapon, so far showing
-//promise. Currently unused in favor of the 10mm pistol... :trol_foce:
+//promise. Currently USED in TOTAL ABANDONMENT of the 10mm pistol... :trol_foce:
 actor usPistol : Pistol
 {
 	Weapon.AmmoType1 "PistolMagazine" //why tf was this called a clip it's not a fucking pre-schnellfuer mauser c96 IT USES A MAG!!!!
-	Weapon.AmmoType2 "PistolAmmo" 
+	//because we're making a BAD DOOM MOD THEMED DOOM MOD and that comes complete with improper terminology.
+	//but oh well, you changed it and i'm not gonna change it back LOL
+	Weapon.AmmoType "PistolAmmo" 
 	+WEAPON.AMMO_OPTIONAL
-	+WEAPON.NOAUTOFIRE
+	//+WEAPON.NOAUTOFIRE
 	States
 	{
 		Ready:
@@ -432,20 +434,20 @@ actor usPistol : Pistol
 			PISG A 1 A_Raise
 			Loop
 		Fire:
-			TNT1 A 0 //hack hack hack, hacking all day long!
-			TNT1 A 0 A_JumpIfInventory("PistolMagazine", 1, 2)
-			goto Reload
-			TNT1 A 0 //dirty hack otherwise zandro will skip the actual muzzle flash frame FOR SOME REASON???
+			PISF A 0 A_JumpIfInventory("PistolMagazine",0,"Reload")
 			PISF A 2 Bright A_Light(4) //god i don't miss the ancient method of doing this, need this to be 8 frames length in total about 4.375 shots per second
-			TNT1 A 0 A_FireBullets((height==56) ? 1.28 : 1.28,1.28,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
-			TNT1 A 0 A_PlaySound ("weapons/pistol", CHAN_WEAPON)
-			TNT1 A 0 A_PlaySound ("weapons/pistol/fire/far", CHAN_5)
-			PISG C 2 A_FireCustomMissile("9MilCaseSpawner",0,0)
+			PISG A 0 A_GiveInventroy("PistolMagazine",1)
+			PISG A 0 A_FireBullets(1.28,1.28,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
+			PISG A 0 A_PlaySound ("weapons/pistolx", CHAN_WEAPON)
+			PISG A 0 A_PlaySound ("weapons/pistol/firedist", CHAN_5)
+			PISG A 0 A_FireCustomMissile("9MilCaseSpawner",0,0)
+			PISG C 2 A_Light(2)
 			PISG EB 2
 			Goto Ready
 		Reload:
 			TNT1 A 0 A_JumpIfInventory("PistolAmmo", 1, 2)
 			goto Ready
+			PISG A 0 A_TakeInventory("PistolMagazine",10)
 			PISG ABDE 3
 			TNT1 A 0 A_PlaySound("weapons/pistol/reload/1", CHAN_AUTO)
 			PISG D 5 //mag out
@@ -870,4 +872,5 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
