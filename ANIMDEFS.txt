@@ -25,3 +25,9 @@ texture SP2CLEN1
 pic SP2CLEN1 tics 3
 pic SP2CLEN2 tics 3
 pic SP2CLEN3 tics 3
+
+texture COMPFUZ1
+pic COMPFUZ1 tics 4
+pic COMPFUZ2 tics 4
+pic COMPFUZ3 tics 4
+pic COMPFUZ4 tics 4

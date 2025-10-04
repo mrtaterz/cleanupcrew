@@ -87,22 +87,29 @@ VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
-SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH by Nightmare.
+SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx by Nightmare.
 MIDGRAYW, and Dopefish by iD Software.
 CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
 VEND1 made by XLightningStormL. Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
 CABTOPK1 sourced from Doom 3, by hidfan for Doom 3 Textures.
 GRATE02 by Midway Entertainment.
 METALSIL by Enjay? (XL note: not too sure on this one)
-DESK1 originally by Cage for Evil Unleashed, DESK3/3A (based on DESK1) edited by XLightningStormL
+DESK1, and DESKTOP1 originally by Cage for Evil Unleashed, DESK3/3A (based on DESK1) edited by XLightningStormL
 TABLEx based on textures originally by Scuba Steve (from Action Doom), edited by XLightningStormL
 FURNxx by XLightningStormL based on textures sourced from SgtMarkIV's Extermination Day (unlikely he is the author however) and iD Software
 KITCHCAx by XLightningStormL, based on textures by iD Software
 DESK07 - DESK17 by XLightningStormL from textures sourced from iD Software, Marsdoom, Hellcore 2.0, Mars3D, and the Blade of Agony team.
-COUNTER from Phobos.WAD by Roger Ritenour
+COUNTER, and MONITORS from Phobos.WAD by Roger Ritenour
 BEDx from ??? (I think from EDay, but unlikely Mark made the originals)
 TVANIxx, SP2CLENx by XLightningStormL based on textures by iD Software, and TeamTNT
 SMONCx by XLightningStormL based on textures by Midway Entertainment
+CMPLTBT1 by XLightningStormL based on textures by David Szymanski for DUSK (pls dont sue us New Blood)
+LITERED1, and LITERED2 by TeamTNT
+LITERED3 by FuzzballFox
+GRAY8 originally by ??? (the textures have been around a long time and used in a bunch of mods, i don't really know where from originally)
+GRNBIGx and GRNSMALx by Jimmy
+COMPSERV by demo_the_doomer
+All non-MONITORS textures in textures/pc folder based on textures from phobos.wad by Roger Ritenour, and edited by XLightningStormL
 
 Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, and others (needs to be confirmed)
 dsminez edited by XLightningStormL
