@@ -26,7 +26,7 @@ Actor Assault : PlayerPawn
 	Player.StartItem "usPistol"
 	Player.StartItem "PistolAmmo", 50
 	Player.StartItem "PistolMagazine", 10
-	Player.WeaponSlot 1, usFist
+	Player.WeaponSlot 1, AssaultFist
 	Player.WeaponSlot 2, usPistol
 	Player.WeaponSlot 3, Machinegun
 	Player.WeaponSlot 4, usGrenadeLauncher
@@ -96,6 +96,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
