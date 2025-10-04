@@ -88,8 +88,9 @@ weapons/SMGdist dspistd
 $attenuation weapons/SMGdist 0.3
 
 //pistol
-weapons/pistol/fire/far PISTFIRD
-$attenuation weapons/pistol/fire/far 0.3
+weapons/pistolx PISTFIRC
+weapons/pistoldist PISTFIRD
+$attenuation weapons/pistoldist 0.3
 $limit weapons/pistol/fire/far 0
 
 weapons/pistol/reload/1 PISTREL1 //slide back
@@ -284,4 +285,5 @@ $attenuation Rat/Pain 2
 $attenuation Rat/Attack 2
 
 $attenuation Rat/Death 2
+
 
