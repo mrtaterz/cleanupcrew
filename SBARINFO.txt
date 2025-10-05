@@ -1,5 +1,7 @@
+//Written by TDRR, with additional adjustments by scriptedmarine, and xlightningstorml
 monospacefonts true, "0";
 
+// FULLSCREEN
 statusbar fullscreen, fullscreenoffsets
 {
 	DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
@@ -41,10 +43,10 @@ statusbar fullscreen, fullscreenoffsets
 	    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
 	}
 }
-	
+
+// NORMAL
 statusbar normal, fullscreenoffsets
 {
-	
 	DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
 	
 	InInventory not Slasher
