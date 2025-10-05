@@ -13,8 +13,8 @@ statusbar fullscreen, fullscreenoffsets
 	
 	    DrawImage armoricon, -47 + center, -17;
 
-	    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
-	    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
+	    //IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
+	    //IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
 	
 	    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
 	    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
@@ -56,8 +56,8 @@ statusbar normal, fullscreenoffsets
 	
 	    DrawImage armoricon, -47 + center, -17;
 	    
-	    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
-	    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
+	    //IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
+	    //IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
 	    
 	    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
 	    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
