@@ -88,15 +88,16 @@ weapons/SMGdist dspistd
 $attenuation weapons/SMGdist 0.3
 
 //pistol
-weapons/pistolx PISTFIRC
+weapons/pistolx xspistol
 weapons/pistoldist PISTFIRD
 $attenuation weapons/pistoldist 0.3
 $limit weapons/pistol/fire/far 0
 
-weapons/pistol/reload/1 PISTREL1 //slide back
-weapons/pistol/reload/2 PISTREL2 //mag out
-weapons/pistol/reload/3 PISTREL3 //mag drop -- should be combined with pistrel2
-weapons/pistol/reload/4 PISTREL4 //mag in
+weapons/pistol/slide PISTREL1 //slide forward
+weapons/pistol/magout PISTREL2 //mag out
+weapons/pistol/magdrop PISTREL3 //mag drop -- should be combined with pistrel2
+weapons/pistol/magin PISTREL4 //mag in
+weapons/pistol/magslide PISTREL5 //mag slide
 
 weapons/machinegunold dsmgun //debugging
 weapons/machinegun	dsmgunc

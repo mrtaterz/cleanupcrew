@@ -11,33 +11,33 @@ Graphic "GLB2", 59, 105
 	Patch "GLS", -127, -11
 }
 
-Texture "GLX1", 43, 57
+Graphic "GLX1", 43, 57
 {
 	Patch "GLS", -103, -217
 }
 
-Texture "GLX2", 44, 42
+Graphic "GLX2", 44, 42
 {
 	Patch "GLS", -480, -312
 }
 
-Texture "GLX3", 44, 42
+Graphic "GLX3", 44, 42
 {
 	Patch "GLS", -545, -235
 }
 
-Texture "GLH5", 122, 98
+Graphic "GLH5", 122, 98
 {
 	Patch "GLS", -29, -287
 	Patch "GLX1", 77, 0
 }
 
-Texture "GLH6", 122, 114
+Graphic "GLH6", 122, 114
 {
 	Patch "GLS", -169, -271
 }
 
-Texture "GLH7", 82, 102
+Graphic "GLH7", 82, 102
 {
 	Patch "GLS", -289, -283
 }

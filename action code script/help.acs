@@ -19,6 +19,11 @@ script "attachcasingsteamer" (void) //does what it says on the tin
 	SetPointer(AAPTR_TRACER,selftid);
 }
 
+script "checkpistolreload" (void) //does what it says on the tin
+{
+	SetResultValue(CheckInventory("PistolAmmo")%10 == 0);
+}
+
 script "c_mercchaser" (void) clientside //forces clients to execute merc chase
 {
 	if(!SinglePlayer())

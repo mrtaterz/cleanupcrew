@@ -39,6 +39,7 @@
 38 - Sludge bubbling periodical [unimplemented]
 39 - Sludge falls
 40 - Vent fan
+41 - Dripping
 */
 
 //lights
@@ -133,5 +134,6 @@ $ambient 39 amby/goofall1 point continuous 1
 //vents
 amby/ventfan ventfan
 $ambient 40 amby/ventfan point continuous 1
+//drip
 amby/drips drips
 $ambient 41 amby/drips point continuous 1
