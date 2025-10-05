@@ -2,106 +2,87 @@ monospacefonts true, "0";
 
 statusbar fullscreen, fullscreenoffsets
 {
-    
+	DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
+	
+	InInventory not Slasher
+	{
+	    DrawMugshot 5, -22 + center, -47;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
+	
+	    DrawImage armoricon, -47 + center, -17;
 
-DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
+	    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
+	    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
+	
+	    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
+	    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+		IsSelected assaultPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+		IsSelected assaultFist { DrawImage  "FISPA0", 45 + center , -16 ; }
+	    
+	    IsSelected usGrenadeLauncher { DrawImage  "GLPPA0", 45 + center , -16 ; }
+	    IsSelected MachineGun { DrawImage  "MGPPA0", 45 + center , -16 ; }
+	    
+	    IsSelected Flamer { DrawImage  "FLMRA0", 45 + center , -10 ; }
+	    IsSelected MineLauncher { DrawImage  "PRXPA0", 45 + center , -16 ; }
+	    
+	    IsSelected proxsensors { DrawImage  "SENPA0", 45 + center , -16 ; }
+	    IsSelected AssaultShotgun { DrawImage  "SGPPA0", 45 + center , -16 ; }
+	}
 
-
-InInventory not Slasher
-{
-    DrawMugshot 5, -22 + center, -47;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
-
-    
-    DrawImage armoricon, -47 + center, -17;
-
-    
-    
-    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
-    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
-
-    
-    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
-    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
-	IsSelected assaultPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
-	IsSelected assaultFist { DrawImage  "FISPA0", 45 + center , -16 ; }
-    
-    IsSelected usGrenadeLauncher { DrawImage  "GLPPA0", 45 + center , -16 ; }
-    IsSelected MachineGun { DrawImage  "MGPPA0", 45 + center , -16 ; }
-
-    
-    IsSelected Flamer { DrawImage  "FLMRA0", 45 + center , -10 ; }
-    IsSelected MineLauncher { DrawImage  "PRXPA0", 45 + center , -16 ; }
-
-    
-    IsSelected proxsensors { DrawImage  "SENPA0", 45 + center , -16 ; }
-    IsSelected AssaultShotgun { DrawImage  "SGPPA0", 45 + center , -16 ; }
+	InInventory Slasher
+	{
+	    DrawImage "STIMA0", -117 + center, -30;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
+	
+	    DrawImage armoricon, 93 + center, -26;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Armor, whennotzero, alignment(left), drawshadow, 107 + center, -42;
+	
+	    DrawImage "HERTA0", -20, 50;
+	    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
+	}
 }
-
-
-InInventory Slasher
-{
-    DrawImage "STIMA0", -117 + center, -30;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
-
-    DrawImage armoricon, 93 + center, -26;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Armor, whennotzero, alignment(left), drawshadow, 107 + center, -42;
-
-    DrawImage "HERTA0", -20, 50;
-    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
-}
-}
-
+	
 statusbar normal, fullscreenoffsets
 {
-    
-
-DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
-
-
-InInventory not Slasher
-{
-    DrawMugshot 5, -22 + center, -47;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
-
-    
-    DrawImage armoricon, -47 + center, -17;
-
-    
-    
-    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
-    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
-
-    
-    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
-    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
-	IsSelected assaultPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
-	IsSelected assaultFist { DrawImage  "FISPA0", 45 + center , -16 ; }
-
-    
-    IsSelected usGrenadeLauncher { DrawImage  "GLPPA0", 45 + center , -16 ; }
-    IsSelected MachineGun { DrawImage  "MGPPA0", 45 + center , -16 ; }
-
-    
-    IsSelected Flamer { DrawImage  "FLMRA0", 45 + center , -10 ; }
-    IsSelected MineLauncher { DrawImage  "PRXPA0", 45 + center , -16 ; }
-
-    
-    IsSelected proxsensors { DrawImage  "SENPA0", 45 + center , -16 ; }
-    IsSelected AssaultShotgun { DrawImage  "SGPPA0", 45 + center , -16 ; }
-}
-
-
-InInventory Slasher
-{
-    DrawImage "STIMA0", -117 + center, -30;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
-
-    DrawImage armoricon, 93 + center, -26;
-    DrawNumber 3, HUDFONT_DOOM, DarkRed, Armor, whennotzero, alignment(left), drawshadow, 107 + center, -42;
-
-    DrawImage "HERTA0", -20, 50;
-    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
-}
+	
+	DrawSelectedInventory drawshadow, alwaysshowcounter, INDEXFONT, -36, 2, -34, 12, DarkGray;
+	
+	InInventory not Slasher
+	{
+	    DrawMugshot 5, -22 + center, -47;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
+	
+	    DrawImage armoricon, -47 + center, -17;
+	    
+	    IsSelected Slasher { DrawImage  "CLAPA0", 45 + center , -16 ; }
+	    IsSelected Grenades { DrawImage  "HERTA0", 45 + center , -16 ; }
+	    
+	    IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
+	    IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+		IsSelected assaultPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+		IsSelected assaultFist { DrawImage  "FISPA0", 45 + center , -16 ; }
+	
+	    IsSelected usGrenadeLauncher { DrawImage  "GLPPA0", 45 + center , -16 ; }
+	    IsSelected MachineGun { DrawImage  "MGPPA0", 45 + center , -16 ; }
+	
+	    IsSelected Flamer { DrawImage  "FLMRA0", 45 + center , -10 ; }
+	    IsSelected MineLauncher { DrawImage  "PRXPA0", 45 + center , -16 ; }
+	
+	    IsSelected proxsensors { DrawImage  "SENPA0", 45 + center , -16 ; }
+	    IsSelected AssaultShotgun { DrawImage  "SGPPA0", 45 + center , -16 ; }
+	}
+	
+	
+	InInventory Slasher
+	{
+	    DrawImage "STIMA0", -117 + center, -30;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
+	
+	    DrawImage armoricon, 93 + center, -26;
+	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Armor, whennotzero, alignment(left), drawshadow, 107 + center, -42;
+	
+	    DrawImage "HERTA0", -20, 50;
+	    DrawNumber 3, INDEXFONT, DarkGray, Ammo1, -34, 36;
+	}
 }
 
