@@ -12,17 +12,17 @@
 The Clean Up Crew dev team are:
 ===============================
 
-Lead Designer, Balance Lead, Map Design Lead, and Additional Art: Goosejelly
+Lead Designer, Balance Lead, Map Design Lead, and Additional Art: mrtaterz (Discord: Goosejelly)
 Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedmarine! (Discord: scripted_m)
 
 Contact those guys on Discord!
 
 Custom Art: Craneo
-Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Uhh Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
-Aditional scripting help, Programming (especially for SBARINFO) from TDRR.
+Additional Scripting Help, Additional Programming, and Skyboxes: inkoalawetrust
+Aditional Scripting Help, Additional Programming (especially for SBARINFO): TDRR.
+Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
 
 =====================================================================================================================================================================
-
 Below are the extended, and/or specific credits.
 
 If we miss any credits please let us know, we would like to be thorough and make sure we get everyone the proper credit they deserve.
@@ -39,10 +39,11 @@ MAP05 by GooseJelly, based on Doom E1M1/E1M2 by John Romero. Further edits by XL
 MAP06 by GooseJelly, based on Doom E1M3 by John Romero. Further edits by XLightningStormL.
 MAP07 by GooseJelly, based on Doom 2 MAP01 by Sandy Petersen. Further edits by XLightningStormL.
 MAP08 by XLightningStormL, based on Doom E2M5 by Sandy Petersen. Further edits by GooseJelly.
-MAP09 by GooseJelly, based on Doom E1M6 by John Romero.
-MAP10 by XLightningStormL. Further edits by GooseJelly.
+MAP09 by GooseJelly, based on Doom E1M6 by John Romero. Further edits by XLightningStormL.
+MAP10 by XLightningStormL. Further edits by GooseJelly, and scriptedmarine.
 All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy.
 
+Art
 ==
 d1gfxd2 compiled by SargeBaldy, and iD Software.
 Destructible decoration objects sourced from DestDec by Jaih1r0.
@@ -114,6 +115,8 @@ COUCHx by XLightningStormL, based on textures on Scuba Steve
 
 All non-MONITORS textures in textures/pc folder based on textures from phobos.wad by Roger Ritenour, and edited by XLightningStormL
 
+Sounds
+==
 Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, Doom 3, and others (needs to be confirmed)
 dsminez edited by XLightningStormL
 dschairm2 by XLightningStormL; sourced from CHAIRMO from Divine Frequency TC Demo (which itself is sourced from unknown)
@@ -122,9 +125,10 @@ COMPST5, and DRIPs from Half-Life by Valve
 
 Special Thanks
 ==
-Inkoalawetrust (Assistance)
 Neoworm (inspired the Unseen's Heart Grenades)
 The Wasteland Discord and it's denizens (The GooseJelly will not be televised Matt!)
 Realm667
+Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye - XL)
+
 
 
