@@ -80,16 +80,18 @@ Tables and Chairs by iD Software, and MagicWizard.
 Broken Techlamp sprites by hexereticdoom.
 Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
+(probably temp) pistol world sprite by GZDoom team.
 
 Moon Textures by 3D Realms.
-VENT1 by Lone2401. VENTLITE based on VENT 1, edited by XLightningStormL.
+BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
+VENT1 by Lone2401. VENTLITE based on VENT1, edited by XLightningStormL.
 VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
-SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx by Nightmare.
+SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare.
 MIDGRAYW, and Dopefish by iD Software.
-CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
+CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, VNYTILE0, TILES3, SUPPRT1A, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
 VEND1 made by XLightningStormL. Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
 CABTOPK1 sourced from Doom 3, by hidfan for Doom 3 Textures.
 GRATE02 by Midway Entertainment.
@@ -109,6 +111,7 @@ LITERED3 by FuzzballFox
 GRAY8 originally by ??? (the textures have been around a long time and used in a bunch of mods, i don't really know where from originally)
 GRNBIGx and GRNSMALx by Jimmy
 COMPSERV by demo_the_doomer
+COUCHx by XLightningStormL, based on textures on Scuba Steve
 
 All non-MONITORS textures in textures/pc folder based on textures from phobos.wad by Roger Ritenour, and edited by XLightningStormL
 
@@ -124,3 +127,4 @@ Inkoalawetrust (Assistance)
 Neoworm (inspired the Unseen's Heart Grenades)
 The Wasteland Discord and it's denizens (The GooseJelly will not be televised Matt!)
 Realm667
+
