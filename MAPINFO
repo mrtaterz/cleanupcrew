@@ -23,7 +23,7 @@ map MAP03 "The Maintenence Halls"
 }
 map MAP04 "The Data Construct"
 {
-	Sky1="SKY1"
+	Sky1="SKY4"
 	//music="DATAC"
 	LightMode=8
 }
