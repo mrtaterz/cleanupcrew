@@ -3,7 +3,7 @@ The Clean Up Crew dev team are:
 
 Lead Designer, Balance Lead, Map Design Lead, and Additional Art: Goosejelly
 
-Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedmarine! (Discord: scripted_m)
+Programming Lead, Second Unit Design, Map Passes, and Additional Art: scriptedmarine! (Discord: scripted_m)
 
 Additional Support: XLightningStormL, inkoalawetrust, popguy12, Craneo, Tesefy
 
