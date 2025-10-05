@@ -19,8 +19,7 @@ Contact those guys on Discord!
 
 Custom Art: Craneo
 Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Uhh Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
-
-Aditional scripting help, and programming from TDRR.
+Aditional scripting help, Programming (especially for SBARINFO) from TDRR.
 
 =====================================================================================================================================================================
 
@@ -127,4 +126,5 @@ Inkoalawetrust (Assistance)
 Neoworm (inspired the Unseen's Heart Grenades)
 The Wasteland Discord and it's denizens (The GooseJelly will not be televised Matt!)
 Realm667
+
 
