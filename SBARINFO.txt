@@ -1,15 +1,4 @@
-
-
 monospacefonts true, "0";
-
-
-
-
-
-
-
-
-
 
 statusbar fullscreen, fullscreenoffsets
 {
@@ -86,6 +75,8 @@ InInventory not Slasher
     
     IsSelected usFist { DrawImage  "FISPA0", 45 + center , -16 ; }
     IsSelected usPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+	IsSelected assaultPistol { DrawImage  "PISTA0", 45 + center , -16 ; }
+	IsSelected assaultFist { DrawImage  "FISPA0", 45 + center , -16 ; }
 
     
     IsSelected usGrenadeLauncher { DrawImage  "GLPPA0", 45 + center , -16 ; }
