@@ -7,3 +7,37 @@ decal FlamerScorch //identical to scorch idk
 	randomflipx
 	randomflipy
 }
+
+//Decorative decals
+
+Decal CCTVNotice 66
+{
+	Pic CCTVSIGN
+	X-Scale 0.5
+	Y-Scale 0.5
+	Solid
+}
+
+Decal StaffOnlySign 67
+{
+	Pic ONLYSTAF
+	X-Scale 0.4
+	Y-Scale 0.4
+	Solid
+}
+
+Decal Kilroy 68
+{
+	Pic KILROY
+	X-Scale 0.4
+	Y-Scale 0.4
+	Solid
+}
+
+Decal RadSign 69 //SEX WARNING
+{
+	Pic RADDANG
+	X-Scale 0.4
+	Y-Scale 0.4
+	Solid
+}

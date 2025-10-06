@@ -54,6 +54,10 @@ Custom DECORATE by scriptedmarine, and XLightningStormL.
 armorcheck edit, and chairspe ACS Scripts by XLightningStormL.
 Rat DECORATE code based on various code sources from Ghastly_dragon, Tormentor667, and TheDoomedArchvile
 Chair DECORATE originally by Ghastly_Dragon, modified by ScriptedMarine, and XLightningStorml. Sprites by iD Software.
+Television textures by XLightningStormL.
+Arcade textures by kwc.
+Radiation sign and UAC logo decal by id Software
+Staff only, CCTV, and Kilroy decals by inkoalawetrust.
 
 Prox Mine Explosion GLDEFs by yholl.
 Machine Gun sprites by grotski, Craneo, tsf, and scripted_m; Only reuse with permission from Craneo and tsf.

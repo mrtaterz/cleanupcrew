@@ -31,3 +31,12 @@ pic COMPFUZ1 tics 4
 pic COMPFUZ2 tics 4
 pic COMPFUZ3 tics 4
 pic COMPFUZ4 tics 4
+
+texture TVB1
+pic TVB1 tics 4
+pic TVB2 tics 4
+pic TVB3 tics 4
+
+texture TVD2
+pic TVD2 tics 4
+pic TVD3 tics 4
