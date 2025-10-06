@@ -10,26 +10,7 @@ InInventory not Slasher
     // Armor graphics
     DrawImage armoricon, -47 + center, -17;
 
-    // Weapon graphics
-    // Unseen
-    DrawWeapon(Slasher, "CLAPA0")
-    DrawWeapon(Grenades, "HERTA0")
-
-    // Humans
-    DrawWeapon(usFist, "FISPA0")
-    DrawWeapon(usPistol, "PISTA0")
-
-    // Assault
-    DrawWeapon(usGrenadeLauncher, "GLPPA0")
-    DrawWeapon(MachineGun, "MGPPA0")
-
-    // Technician
-    DrawWeapon_Low(Flamer, "FLMRA0")
-    DrawWeapon(MineLauncher, "PRXPA0")
-
-    // Tracker
-    DrawWeapon(proxsensors, "SENPA0")
-    DrawWeapon(AssaultShotgun, "SGPPA0")
+    DrawWeapon(weaponicon)
 }
 
 // Unseen HUD
