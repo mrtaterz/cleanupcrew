@@ -8,7 +8,7 @@ monospacefonts true, "0";
 
 #define DrawImageIfInventory(item, image, x, y) InInventory item, 1 { DrawImage image, x, y; }
 #define DrawArmor(armorActor, image, x, y) DrawSwitchableImage armortype armorActor, image, "", x, y;
-#define DrawWeapon(weaponActor, image) IsSelected weaponActor { DrawImage image, WEAPON_X, WEAPON_Y; }
+#define DrawWeapon(weaponActor, image) { DrawImage image, WEAPON_X, WEAPON_Y; }
 #define DrawWeapon_Low(weaponActor, image) IsSelected weaponActor { DrawImage image, WEAPON_X, WEAPON_Y_LOW; }
 
 statusbar fullscreen, fullscreenoffsets
