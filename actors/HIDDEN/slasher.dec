@@ -1,12 +1,10 @@
 //the melee weapon for the Unseen
 
-//UAC standard-issue "throat slasher" knife--
-//Despite the gruesome name, its main applications are opening beer bottles
-//and cans of spam.
-
-//The experiment carried with him a knife at all times, issued to him by his
-//caretakers. Wouldn't want to lose the triumph of modern technology to
-//a violent outburst.
+// scary mutated demon hands!
+// the old lore was about a knife that is long since gone
+// press F for the scuba steve knife
+// that wasn't a knife
+// the absolute weapon inside my pants for ya mom is a knife
 
 //They didn't count on him not being the one doing the violence.
 
@@ -38,14 +36,14 @@ actor Slasher : Weapon
 			CLAW A 0 A_Jump(128,"fire2") //random animation
 			CLAW BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
-			CLAW F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,72)
+			CLAW F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
 			CLAW GHI 2
 			CLAW JKLMNO 2
 			goto ready
 		fire2:
 			CLAL BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
-			CLAL F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,72)
+			CLAL F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
 			CLAL GHI 2
 			CLAL JKLMNO 2
 			goto ready
@@ -191,3 +189,4 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
