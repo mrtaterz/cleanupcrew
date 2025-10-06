@@ -124,14 +124,16 @@ ACTOR Unseen : PlayerPawn
     SHDE I 10
 	TNT1 A 0 A_SetTranslucent(1,0)
     SHDE J 10 A_PlayerScream
+	TNT1 A 0 A_SpawnItemEx("UnseenGhost", 0, 0, 32, 0, 0, 0, 0, 128)
     SHDE K 10 A_NoBlocking
     SHDE L 10
     SHDE M -1
     Stop
   XDeath:
     SHDE N 5
-	TNT1 P 0 A_SetTranslucent(1,0)
+	TNT1 A 0 A_SetTranslucent(1,0)
     SHDE O 5 A_XScream
+	TNT1 A 0 A_SpawnItemEx("UnseenGhost", 0, 0, 32, 0, 0, 0, 0, 128)
     SHDE P 5 A_NoBlocking
     SHDE QR 5
     SHDE S -1
@@ -301,6 +303,25 @@ actor EvilPistol : Pistol //testing actor
     PISG B 5 A_ReFire
     Goto Ready
   }
+}
 
+actor UnseenGhost
+{
+    Radius 1
+    Height 1
+    Speed 0
+    PROJECTILE
+    RENDERSTYLE ADD
+    ALPHA 0.7
+    +NOCLIP
+    States
+    {
+    Spawn:
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("unseen/ghost")
+        ZFSL ABCDEFG 4 Bright
+        Stop
+    }
 }
 
