@@ -483,7 +483,7 @@ actor assaultPistol : usPistol
 			BPIS A 1 A_Raise
 			Loop
 		Fire:
-			BPIS A 0 A_FireBullets(2.4,1.514,-1,10) //why does zandro not have spawnheight yet? absolute rubbish source port smh
+			BPIS A 0 A_FireBullets(2.4,1.514,-1,5) //why does zandro not have spawnheight yet? absolute rubbish source port smh
 			BPIS A 0 A_PlaySound ("weapons/pistolx", CHAN_WEAPON)
 			BPIS A 0 A_PlaySound ("weapons/pistoldist", CHAN_5)
 			BPIS A 0 A_FireCustomMissile("9MilCaseSpawner",0,0)
@@ -592,6 +592,9 @@ actor ATRL : RocketLauncher
 	+Weapon.ammo_optional
 	states
 	{
+		Spawn:
+			LAUN A 1
+			loop
 		pickup:
 			TNT1 A 0 A_JumpIfInventory("Slasher",1,"lmao")
 			stop
@@ -617,12 +620,15 @@ actor ATRL : RocketLauncher
 //prevent respawning
 actor ATRLSpawner replaces RocketLauncher
 {
+	//$Sprite LAUNA0
+	//$Title Rocket Launcher
 	+noInteraction
 	+noBlockmap
 	+noSector
 	states
 	{
 		spawn:
+			TNT1 A 0
 			TNT1 A 1 A_SpawnItemEx("ATRL")
 			stop
 	}
@@ -948,7 +954,6 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
-
 
 
 
