@@ -52,7 +52,7 @@ map MAP08 "Administration"
     Sky1="SKY1"
 	LightMode=8
 }
-map MAP09 "Central Processing"
+map MAP09 "Recreation Center"
 {
 	Sky1="SKY4"
 	LightMode=8
@@ -63,6 +63,7 @@ map MAP10 "Habitat"
 	Sky1="SKY4"
 	LightMode=8
 }
+
 
 
 
