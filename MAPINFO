@@ -29,13 +29,13 @@ map MAP04 "The Data Construct"
 }
 map MAP05 "The Hangars"
 {
-	Sky1="SKY1"
+	Sky1="SKY4"
 	//music="HANGAR"
 	LightMode=8
 }
 map MAP06 "The Treatment Center"
 {
-	Sky1="SKY1"
+	Sky1="SKY4"
 	//music="TCENTER"
 	LightMode=8
 }
@@ -63,5 +63,6 @@ map MAP10 "Habitat"
 	Sky1="SKY4"
 	LightMode=8
 }
+
 
 
