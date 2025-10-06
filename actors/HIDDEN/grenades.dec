@@ -251,7 +251,7 @@ actor BloodDrippler : GrenadeBlood
 	}
 }
 
-actor BloodDrippler2 : GrenadeBlood
+actor BloodDrippler2 : BloodDrippler
 {
 	decal "bloodSmear"
 }

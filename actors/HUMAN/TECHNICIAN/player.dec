@@ -55,12 +55,13 @@ Actor Sapper : PlayerPawn
 		SAPR G 4 A_Pain
 		Goto Spawn
 	death.darken:
+		SAPR H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		SAPR H 4 A_PlaySound("misc/flatline",16,1)
-		SAPR I 4 A_PlayerScream
-		SAPR J 4 A_NoBlocking
-		SAPR KL 4 //M 8
+		SAPR H 8 A_PlaySound("misc/flatline",16,1)
+		SAPR I 8 A_PlayerScream
+		SAPR J 8 A_NoBlocking
+		SAPR KL 8 //M 8
 		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop

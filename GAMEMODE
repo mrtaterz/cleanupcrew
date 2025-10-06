@@ -1,5 +1,4 @@
-TeamLMS
-{
+TeamLMS {
 	removeflag DONTSPAWNMAPTHINGS
 	removeflag DEATHMATCH
 	AddFlag PLAYERSEARNWINS
@@ -17,4 +16,5 @@ TeamLMS
 		sv_lmscountdowntime = 20
 		sv_itemrespawn = true
     }
+
 }

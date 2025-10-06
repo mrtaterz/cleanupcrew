@@ -61,12 +61,13 @@ Actor Support : PlayerPawn
 		SPRT H 4 A_Pain
 		Goto Spawn
 	death.darken:
+		SPRT H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		SPRT H 4 A_PlaySound("misc/flatline",16,1)
-		SPRT I 4 A_PlayerScream
-		SPRT J 4 A_NoBlocking
-		SPRT KL 4
+		SPRT H 8 A_PlaySound("misc/flatline",16,1)
+		SPRT I 8 A_PlayerScream
+		SPRT J 8 A_NoBlocking
+		SPRT KL 8
 		SPRT M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop

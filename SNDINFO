@@ -190,6 +190,8 @@ misc/body3 body3
 misc/body4 body4
 $random misc/body {misc/body1 misc/body2 misc/body3 misc/body4}
 
+misc/excessivegore dsgore
+
 demon/pissed DSSARGRY
 
 //sm 1/2/24 (that's a SANE timestamp format btw) i can't believe the amount of

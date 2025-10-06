@@ -143,16 +143,16 @@ script "SHITHAPPENS" (int type, int arg1, int arg2) event
 			
 			if(!(PlayerTeam()==US_TEAM_THREAT && IsPointerEqual(AAPTR_DEFAULT,AAPTR_DAMAGE_SOURCE)))
 			{
-				log(s:"not a selfkill");
+				//log(s:"not a selfkill");
 				SetActivator(0,AAPTR_DAMAGE_SOURCE);
 				if(PlayerNumber() != -1)
 				{
-					log(s:"is a player");
+					//log(s:"is a player");
 					terminate;
 				}
 				if(!IsPointerEqual(AAPTR_FRIENDPLAYER,AAPTR_NULL,0,0))
 				{
-					log(s:"has friendplayer");
+					//log(s:"has friendplayer");
 					terminate;
 				}
 			}

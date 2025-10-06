@@ -56,12 +56,13 @@ Actor Assault : PlayerPawn
 		ASLT H 4 A_Pain
 		Goto Spawn
 	death.darken:
+		ASLT H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		ASLT H 4 A_PlaySound("misc/flatline",16,1)
-		ASLT I 4 A_PlayerScream
-		ASLT J 4 A_NoBlocking
-		ASLT KL 4
+		ASLT H 8 A_PlaySound("misc/flatline",16,1)
+		ASLT I 8 A_PlayerScream
+		ASLT J 8 A_NoBlocking
+		ASLT KL 8
 		ASLT M 1 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop

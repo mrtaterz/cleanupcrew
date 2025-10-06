@@ -498,13 +498,13 @@ actor assaultPistol : usPistol
 			BPIR ABCD 2
 			BPIR E 2 A_PlaySound("weapons/pistol/magout", CHAN_7)
 			BPIR FGH 2
-			BPIR I 2 A_PlaySound("weapons/pistol/magdrop",CHAN_WEAPON)
+			BPIR I 2 A_PlaySound("weapons/pistol/magdrop",CHAN_6)
 			BPIR JKLM 2
-			BPIR N 2 A_PlaySound("weapons/pistol/magslide",CHAN_WEAPON)
+			BPIR N 2 A_PlaySound("weapons/pistol/magslide",CHAN_7)
 			BPIR OPQ 2
-			BPIR R 2 A_PlaySound("weapons/pistol/magin",CHAN_WEAPON)
+			BPIR R 2 A_PlaySound("weapons/pistol/magin",CHAN_7)
 			BPIR ST 2
-			BPIR U 2 A_PlaySound("weapons/pistol/slide",CHAN_WEAPON)
+			BPIR U 2 A_PlaySound("weapons/pistol/slide",CHAN_7)
 			BPIR VWXYZ 2
 			BPIS IJ 2
 			goto Ready
@@ -907,6 +907,40 @@ actor DistantGunMaker : DistantExploMaker
 			TNT1 A 0 NoDelay A_Pain
 			BAL1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_Warp(AAPTR_TARGET,0,0,0,0,WARPF_NOCHECKPOSITION)
 			stop
+	}
+}
+
+actor BloodSpiller 
+{
+	radius 2
+	height 4
+	+clientsideonly
+	+noblockmap
+	+nosector
+	reactionTime 10
+	painSound "misc/excessivegore"
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_Pain
+			xloop:
+			TNT1 A 4 A_Warp(AAPTR_TARGET,0,0,32)
+			TNT1 A 0 A_CustomMissile("BloodSpill",0,0,random(0,360),CMF_aimDirection,random(0,90))
+			TNT1 A 0 A_CountDown
+			loop
+	}
+}
+
+actor BloodSpill : BloodDrippler //inherits from the unseen's grenade blood
+{
+	speed 16
+	var int user_speed;
+	states
+	{
+		spawn:
+			TNT1 A 0 nodelay A_SetUserVar("user_speed",random(8,16))
+			TNT1 A 0 A_ChangeVelocity(velx*user_speed/32.,vely*user_speed/32.,velz*user_speed/32.,CVF_REPLACE)
+			goto super::spawn
 	}
 }
 
