@@ -17,7 +17,7 @@ Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedma
 
 Contact those guys on Discord!
 
-Custom Art: Craneo
+Custom Art: Craneo (thx 4 the machine gun pookie)
 Additional Scripting Help, Additional Programming, Additional Mapping, and Skyboxes: inkoalawetrust (yes, he actually worked on the mod)
 Aditional Scripting Help, Additional Programming (especially for SBARINFO): TDRR.
 Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
@@ -133,7 +133,8 @@ Special Thanks
 Neoworm (inspired the Unseen's Heart Grenades)
 The Wasteland Discord and it's denizens (The GooseJelly will not be televised Matt!)
 Realm667
-Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye - XL)
+Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
+Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
 
 
 
