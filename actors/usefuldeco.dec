@@ -316,6 +316,7 @@ ACTOR Rat 9656
 	Forget:
 		TNT1 A 0 A_ClearTarget
     See:
+	xloop:
         RATA AAAABBBBCCCC 1 A_Wander
         TNT1 A 0 A_JumpIfCloser(64,"tryChase")
         TNT1 A 0 A_Jump(16,"Scanning")

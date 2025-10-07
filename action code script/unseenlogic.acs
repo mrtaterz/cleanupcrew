@@ -47,6 +47,7 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 		if((stime-timer())%2==0)
 		{
 			Spawn("SmoulderPuff",GetActorX(0)+(random(-16,16)<<16),GetActorY(0)+(random(-16,16)<<16),GetActorZ(0)+(random(0,56)<<16));
+			Spawn("FlamerVomitSmoke",GetActorX(0)+(random(-16,16)<<16),GetActorY(0)+(random(-16,16)<<16),GetActorZ(0)+(random(0,56)<<16));
 		}
 		if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava") || CheckInventory("burning") <= 0)
 		{
