@@ -749,7 +749,7 @@ actor HEATRocket : usRocket
 	radius 4
 	height 8
 	speed 30
-	damage 25
+	damage 50
 	deathSound "weapons/ATRLExp"
 	states
 	{
@@ -762,7 +762,7 @@ actor HEATRocket : usRocket
 		death:
 			TNT1 A 0 A_SpawnItemEx("ComicallyLargeExploQuakeMaker")
 			TNT1 A 0 A_SetScale(2,2)
-			MISL B 2 bright A_Explode(155,128,XF_HURTSOURCE,0,64)
+			MISL B 2 bright A_Explode(200,256,XF_HURTSOURCE,0,64)
 			MISL CBCBCB 1 bright
 			MISL C 8 bright
 			MISL D 6 bright
@@ -953,6 +953,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
