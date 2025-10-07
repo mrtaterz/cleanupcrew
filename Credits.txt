@@ -34,7 +34,7 @@ Maps
 MAP01 by GooseJelly, based on Doom 2 MAP10 by Tom Hall, and Sandy Petersen. Further edits by XLightningStormL, and inkoalawetrust.
 MAP02 by GooseJelly, based on Doom E2M2 by Tom Hall, and Sandy Petersen.
 MAP03 by GooseJelly, based on Doom 2 MAP02 by American McGee. Further edits by XLightningStormL.
-MAP04 by GooseJelly, based on Doom E1M2 by John Romero. Further edits by XLightningStormL, and inkoalawetrust.
+MAP04 by GooseJelly, based on Doom E1M2 by John Romero. Further edits by XLightningStormL, scriptedmarine and inkoalawetrust.
 MAP05 by GooseJelly, based on Doom E1M1/E1M2 by John Romero. Further edits by XLightningStormL.
 MAP06 by GooseJelly, based on Doom E1M3 by John Romero. Further edits by XLightningStormL.
 MAP07 by GooseJelly, based on Doom 2 MAP01 by Sandy Petersen. Further edits by XLightningStormL.
@@ -135,6 +135,7 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
+
 
 
 
