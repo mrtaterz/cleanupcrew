@@ -19,7 +19,7 @@ script "UNSEENMOTHERFUCKERS" enter //you can name a script anything you want if 
 		if(GetTeamProperty(1,TPROP_NumPlayers)>1)
 		{
 			JustKickedGuy=pnum;
-			KickFromGame(pnum,StrParam(s:"You cannot become the Unseen if there already is one!"));
+			KickFromGame(pnum,StrParam(s:"You cannot become the Threat if there already is one!"));
 			terminate;
 		}
 		pnumUnseen=pnum;
@@ -183,7 +183,7 @@ script "doUnseenSwap" (void)
 	Player_SetTeam(US_TEAM_THREAT);
 	SetPlayerClass(0,threatClassNames[0],false);
 	delay(1);
-	PrintBold(n:(pnum+1),s:" has become The Unseen!");
+	PrintBold(n:(pnum+1),s:" has become The Threat!");
 	//DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
 	pnumLastUnseen=pnum;
 	SwappingTeams=0;
@@ -226,7 +226,7 @@ script "GOODBYES" (int pnum) disconnect
 			terminate;
 		}
 		//TODO: replace with pickRandomUnseen
-		PrintBold(s:"The Unseen spectated, disconnected, or killed themself! A random human has been selected to become the Unseen.");
+		PrintBold(s:"The Threat spectated, disconnected, or killed themself! A random human has been selected to become the Threat.");
 		delay(10);
 		ACS_NamedExecuteWithResult("pickRandomUnseen");
 	}

@@ -40,6 +40,9 @@
 39 - Sludge falls
 40 - Vent fan
 41 - Dripping
+
+1000 - Gabber close
+1001 - Gabber far
 */
 
 //lights
@@ -137,3 +140,9 @@ $ambient 40 amby/ventfan point continuous 1
 //drip
 amby/drips drips
 $ambient 41 amby/drips point continuous 1
+
+//gabber!! yes, i know it's terror, shut up!
+amby/gabberclose gabrclos
+amby/gabberfar gabrfar
+$ambient 1000 amby/gabberclose world continuous 1
+$ambient 1001 amby/gabberfar world continuous 1
