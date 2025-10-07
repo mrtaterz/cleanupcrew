@@ -159,6 +159,7 @@ actor ChairNoiseCooldown : Powerup
 	Powerup.duration 24
 }
 
+//inkoalawetrust: vvvvvvvvvvv Average Doom modding experience vvvvvvvvvvvvvvvvvvvv
 // Scripted's old chair was hot fucking cheeks, completely rubbish and didn't work
 // i then resolved to fix it "as was" but it fucking nearly nuked my PC
 // almost lost my latest TLT.pk3 (that I spent dozens of hours cooking michelin
@@ -353,4 +354,24 @@ ACTOR Rat 9656
     }
 }
 
-
+//Camera prop, for some reason it needs to be explicitly set as having a valid angle.
+Actor UnseenCameraProp 9657
+{
+	//$Title CCTV Camera
+	//$Category Decoration
+	//$Angled
+	
+	+NOGRAVITY
+	+SOLID
+	Radius 12
+	Height 24
+	
+	States
+	{
+		//Speen
+		Spawn:
+			MRC1 BCDEFGH 6
+			MRC1 HGFEDCB 6
+			Loop
+	}
+}

@@ -1,0 +1,26 @@
+//Model index 0 is the camera base and camera itself. Index 1 is the cable.
+
+Model UnseenCameraProp
+{
+	Path "Models/"
+	Model 0 "Camera.md3"
+	SurfaceSkin 0 0 "Camera.png"
+	
+	//Just make the cable pitch black idfk.
+	Path "Textures/QuoteUnquoteOriginal/"
+	SurfaceSkin 0 1 "Desktop1.png"
+	
+	Scale 10 10 10
+	AngleOffset 90
+	
+	FrameIndex MRC1 A 0 0 //Resting frame
+	FrameIndex MRC1 B 0 1
+	FrameIndex MRC1 C 0 2
+	FrameIndex MRC1 D 0 3
+	FrameIndex MRC1 E 0 4
+	FrameIndex MRC1 F 0 5
+	FrameIndex MRC1 G 0 6
+	FrameIndex MRC1 H 0 7
+	FrameIndex MRC1 I 0 8
+	FrameIndex MRC1 J 0 9
+}

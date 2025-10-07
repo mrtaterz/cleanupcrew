@@ -85,6 +85,7 @@ Broken Techlamp sprites by hexereticdoom.
 Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
 (probably temp) pistol world sprite by GZDoom team.
+CCTV camera model made by inkoalawetrust, the textures are stitched together from Doom 2 textures.
 
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.

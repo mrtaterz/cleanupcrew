@@ -312,7 +312,7 @@ actor AmmoWreckDebris
 actor FlareCrate : WreckablePickup 101
 {
 	//$Title Crate of Flares
-	//$Category Ammo
+	//$Category Ammunition
 	inventory.pickupmessage "$PICKUP_FLARECRATE"
 	inventory.forbiddento "unseen"
 	states
