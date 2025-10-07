@@ -750,6 +750,7 @@ actor HEATRocket : usRocket
 	height 8
 	speed 30
 	damage 50
+    damagetype Fire
 	deathSound "weapons/ATRLExp"
 	states
 	{
@@ -953,6 +954,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
