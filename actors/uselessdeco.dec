@@ -110,5 +110,59 @@ Actor Bush2 9404
 	}
 }
 
+actor Grass 9405
+{
+	//$Category Decoration
+	//$Sprite GRSSD0
+	-SOLID
+	+NOCLIP
+	+NOINTERACTION
+	+NOTONAUTOMAP
+	+NOBLOCKMAP
+	+FLOORCLIP
+	Height 12
+	Radius 10
+    States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(256, "Spawn2", "Spawn3", "Spawn4")
+			GRSS A 1
+			GRSS A -1
+			Stop
+		Spawn2:
+			GRSS B 1
+			GRSS B -1
+			Stop
+		Spawn3:
+			GRSS C 1
+			GRSS C -1
+			Stop
+		Spawn4:
+			GRSS D 1
+			GRSS D -1
+			Stop
+	}
+}
+
+actor Bush : Grass 9406
+{
+	//$Category Decoration
+	//$Sprite BUS2A0
+	Radius 24
+	Height 32
+    States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(256, "Spawn2")
+			BUS2 A 1
+			BUS2 A -1
+			Stop
+		Spawn2:
+			BUS2 B 1
+			BUS2 B -1
+			Stop
+	}
+}
+
 
 
