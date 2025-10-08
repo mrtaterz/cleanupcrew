@@ -213,6 +213,8 @@ $alias bfgbarrel/explode weapons/bfgx //dsrxpl2
 $limit bfgbarrel/charge 0
 $limit bfgbarrel/explode 0
 
+world/cctvwarn "sounds/map/cctvwarn.wav"
+
 //mercenaries
 $alias mercs/explo weapons/grenlx
 
@@ -289,7 +291,9 @@ $attenuation Rat/Attack 2
 
 $attenuation Rat/Death 2
 
-
+World/Bubbles	DSBUBBLE
+$attenuation World/Bubbles 4
+$volume World/Bubbles 0.5
 
 
 
