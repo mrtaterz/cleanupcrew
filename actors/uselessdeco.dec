@@ -153,7 +153,7 @@ actor Bush : Grass 9406
     States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_Jump(256, "Spawn2")
+			TNT1 A 0 NoDelay A_Jump(128, "Spawn2")
 			BUS2 A 1
 			BUS2 A -1
 			Stop
@@ -163,6 +163,7 @@ actor Bush : Grass 9406
 			Stop
 	}
 }
+
 
 
 
