@@ -39,4 +39,7 @@ pic TVB3 tics 4
 
 texture TVD2
 pic TVD2 tics 4
+
 pic TVD3 tics 4
+
+warp2 texture sbuba0
