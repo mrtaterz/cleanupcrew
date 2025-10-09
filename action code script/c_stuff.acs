@@ -1,5 +1,5 @@
-private int cachedcasinglife = 30; //bcs rulz
-private int cachedclawlock = 0;
+internal int cachedcasinglife = 30; //bcs rulz
+internal int cachedclawlock = 0;
 
 //cvar indexing
 script "c_GetCasingLife" (void) clientside

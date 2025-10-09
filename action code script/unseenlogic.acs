@@ -46,8 +46,8 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 		//delay(5); //no more hacks
 		if((stime-timer())%2==0)
 		{
-			Spawn("SmoulderPuff",GetActorX(0)+(random(-16,16)<<16),GetActorY(0)+(random(-16,16)<<16),GetActorZ(0)+(random(0,56)<<16));
-			Spawn("FlamerVomitSmoke",GetActorX(0)+(random(-16,16)<<16),GetActorY(0)+(random(-16,16)<<16),GetActorZ(0)+(random(0,56)<<16));
+			Spawn("SmoulderPuff",GetActorX(0)+fixed(random(-16,16)),GetActorY(0)+fixed(random(-16,16)),GetActorZ(0)+fixed(random(0,56)));
+			Spawn("FlamerVomitSmoke",GetActorX(0)+fixed(random(-16,16)),GetActorY(0)+fixed(random(-16,16)),GetActorZ(0)+fixed(random(0,56)));
 		}
 		if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava") || CheckInventory("burning") <= 0)
 		{
@@ -149,7 +149,7 @@ script "armorcheck" (void) //check the unseen's armor count and adjust saveperce
     int armor;
     armor=CheckInventory("BasicArmor");
     //print(i:armor,s:":",f:GetArmorInfo(Armorinfo_SavePercent));
-    if((armor>200)&&(GetArmorInfo(Armorinfo_SavePercent)<=0.75))
+    if((armor>200)&&((fixed)GetArmorInfo(Armorinfo_SavePercent)<=0.75))
     {
         //print(s:"i'll have you know i served top of my class in the US Navy Seals");
         TakeInventory("BasicArmor",300); //flush it down the toiler
@@ -163,7 +163,7 @@ script "armorcheck" (void) //check the unseen's armor count and adjust saveperce
         GiveInventory("AbhorrentArmor",1); //give him his equivalent of a blue armor
         TakeInventory("BasicArmor",200-armor);//restore his original armor amount
     }
-    if((armor<=100)&&(GetArmorInfo(Armorinfo_SavePercent)>=0.33335))
+    if((armor<=100)&&((fixed)GetArmorInfo(Armorinfo_SavePercent)>=0.33335))
     {
         //print(s:"listen here motherfucker");
         TakeInventory("BasicArmor",300); //flush it down the toiler

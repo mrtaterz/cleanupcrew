@@ -2,11 +2,11 @@ script "inherittargvel" (void) //does what it says on the tin and pitch, too
 {
 	int oldtid=ACS_NamedExecuteWithResult("SetFreeTid"); //so we can return
 	SetActivator(0,AAPTR_TARGET);
-	int xv = GetActorVelX(0);
-	int yv = GetActorVelY(0);
-	int zv = GetActorVelZ(0);
-	int pv = GetActorPitch(0);
-	SetActorVelocity(oldtid,xv,yv,zv,1,0);
+	fixed xv = GetActorVelX(0);
+	fixed yv = GetActorVelY(0);
+	fixed zv = GetActorVelZ(0);
+	fixed pv = GetActorPitch(0);
+	SetActorVelocity(oldtid,xv,yv,zv,true,false);
 	SetActorPitch(oldtid,pv);
 }
 
@@ -21,7 +21,7 @@ script "attachcasingsteamer" (void) //does what it says on the tin
 
 script "checkpistolreload" (void) //does what it says on the tin
 {
-	SetResultValue(CheckInventory("PistolAmmo")%10 == 0);
+	SetResultValue((raw)(CheckInventory("PistolAmmo")%10 == 0));
 }
 
 script "c_mercchaser" (void) clientside //forces clients to execute merc chase
@@ -48,7 +48,7 @@ script "mercuncroucher" (void) clientside //uncrouches a merc
 script "shadowtarget" (void) //returns true if the target is a shadow
 {
 	SetActivator(0,AAPTR_TARGET);
-	if(CheckFlag(0,"shadow") == 1)
+	if(CheckFlag(0,"shadow") == true)
 	{
 		SetResultValue(1);
 		terminate;

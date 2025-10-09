@@ -7,14 +7,14 @@ script US_MOVEBARREL (void) //note the name is a const instead of a string
 	{
 		terminate;
 	}
-	int x = getactorvelx(0);
-	int y = getactorvely(0);
-	int z = getactorvelz(0);
+	fixed x = getactorvelx(0);
+	fixed y = getactorvely(0);
+	fixed z = getactorvelz(0);
 	
-	int silly = fixedsqrt((x*x + y*y + z*z));
+	fixed silly = fixedsqrt((x*x + y*y + z*z));
 	//silly = silly >> 16;
 	//printbold(i:silly);
-	if(silly > (32 << 16))
+	if(silly > 32.0)
 	{
 		playsound(0,"misc/barrelmove");
 		giveinventory("powerbarrelnoisecooldown",1);

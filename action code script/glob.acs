@@ -2,7 +2,7 @@ int pnumUnseen=-1; //-1 will signify that the unseen is unchosen
 int pnumLastUnseen=-1; //the last unseen pnum just in case
 //hopefully that will not break later
 int JustKickedGuy=-1;//whoever gets kicked is here so that we won't print "unseen has left" message
-bool SwappingTeams=0; //track whether we're swapping unseen and human to prevent team collision
+bool SwappingTeams=false; //track whether we're swapping unseen and human to prevent team collision
 
 int pTids[MAXPLAYERS]; //please increase this in the future --sm
 
@@ -126,7 +126,7 @@ script "SHITHAPPENS" (int type, int arg1, int arg2) event
 		}
 		
 		//bfg barrel splash damage spawns bfg extra on hit things
-		if(StrICmp("BFGBarrelSplash",arg2) == 0)
+		if(StrICmp("BFGBarrelSplash", (str)arg2) == 0)
 		{
 			SpawnForced("BFGExtra",GetActorX(0),GetActorY(0),GetActorZ(0)+FixedDiv(GetActorProperty(0,APROP_Height),4.0));
 		}
@@ -172,7 +172,7 @@ script "SHITHAPPENS" (int type, int arg1, int arg2) event
 script "doUnseenSwap" (void)
 {
 	int pnum=PlayerNumber();
-	SwappingTeams=1;
+	SwappingTeams=true;
 	SetActivatorToPlayer(pnumLastUnseen);
 	NamedExecuteClientScript("changeclass",pnumLastUnseen);
 	delay(5);
@@ -186,7 +186,7 @@ script "doUnseenSwap" (void)
 	PrintBold(n:(pnum+1),s:" has become The Threat!");
 	//DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
 	pnumLastUnseen=pnum;
-	SwappingTeams=0;
+	SwappingTeams=false;
 }
 
 //pick a random human and put them on the unseen team
@@ -252,7 +252,7 @@ script "waterfloat" (int amt)
 		GiveInventory("BuoyancyTracker",1);
 		//THIS IS A PILE OF MAGIC OKAY
 		//IT JUST WORKS DO NOT TOUCH IT
-		SetActorVelocity(0,0,0,FixedMul(CheckInventory("BuoyancyTracker")<<16,amt<<6),true,false);
+		SetActorVelocity(0,0.0,0.0,FixedMul((fixed)(CheckInventory("BuoyancyTracker")<<16),(fixed)(amt<<6)),true,false);
 	}
 	else
 	{

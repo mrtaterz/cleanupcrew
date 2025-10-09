@@ -4,26 +4,26 @@
 //various constants for Unseen
 
 //global
-#libdefine MAXPLAYERS 128
+#define MAXPLAYERS 128
 //playerclasses
 //threats
-#libdefine US_THREAT_UNSEEN 0
+#define US_THREAT_UNSEEN 0
 //humans
-#libdefine US_HUMAN_ASSAULT 1
-#libdefine US_HUMAN_SAPPER 2
-#libdefine US_HUMAN_SUPPORT 3
+#define US_HUMAN_ASSAULT 1
+#define US_HUMAN_SAPPER 2
+#define US_HUMAN_SUPPORT 3
 
-#libdefine US_HUMANCLASSTOTAL 3
+#define US_HUMANCLASSTOTAL 3
 //teams
-#libdefine US_TEAM_HUMAN 0
-#libdefine US_TEAM_THREAT 1
+#define US_TEAM_HUMAN 0
+#define US_TEAM_THREAT 1
 
 //scripts
-#libdefine US_PICKUPEQUIPMENT 141
-#libdefine US_MOVEBARREL 142
+#define US_PICKUPEQUIPMENT 141
+#define US_MOVEBARREL 142
 
 //gameplay
-#libdefine US_BEASTVISION_MAX_TICS 2100
+#define US_BEASTVISION_MAX_TICS 2100
 
 //fuck
 //#libdefine false 0

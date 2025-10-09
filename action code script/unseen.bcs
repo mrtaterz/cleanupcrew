@@ -3,9 +3,16 @@
 
 #import "bcsutils.bcs"
 
+#pragma raw define on
+#pragma raw include on
+
+strict namespace {
+
 #include "usconsts.acs"
 #include "c_stuff.acs"
 #include "glob.acs"
 #include "help.acs"
 #include "mapstuff.acs"
 #include "unseenlogic.acs"
+
+}
