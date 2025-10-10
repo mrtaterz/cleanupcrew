@@ -5,6 +5,7 @@
 ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
  ░▒▓██████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░              ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░░▒▓█████████████▓▒░  
+(this only looks outside of SLADE lmaoooo)
  
 														A MOD FOR ZANDRONUM INSPIRED BY THE HIDDEN: SOURCE
 =====================================================================================================================================================================
@@ -54,8 +55,8 @@ Custom DECORATE by scriptedmarine, and XLightningStormL.
 armorcheck edit, and chairspe ACS Scripts by XLightningStormL.
 Rat DECORATE code based on various code sources from Ghastly_dragon, Tormentor667, and TheDoomedArchvile
 Chair DECORATE originally by Ghastly_Dragon, modified by ScriptedMarine, and XLightningStorml. Sprites by iD Software.
-Television textures by XLightningStormL.
-Arcade textures by kwc.
+Vending Machine, Soda Can art and code by XLightningStormL. Vending Machine's Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
+
 Radiation sign and UAC logo decal by id Software
 Staff only, CCTV, and Kilroy decals by inkoalawetrust.
 
@@ -94,10 +95,9 @@ VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
-SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare.
+SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare/NMN, GRAY8, and ELOCKER1 also possibly by Nightmare/NMN.
 MIDGRAYW, and Dopefish by iD Software.
 CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, VNYTILE0, TILES3, SUPPRT1A, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
-VEND1 made by XLightningStormL. Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
 CABTOPK1 sourced from Doom 3, by hidfan for Doom 3 Textures.
 GRATE02 by Midway Entertainment.
 METALSIL by Enjay? (XL note: not too sure on this one)
@@ -113,12 +113,13 @@ SMONCx by XLightningStormL based on textures by Midway Entertainment
 CMPLTBT1 by XLightningStormL based on textures by David Szymanski for DUSK (pls dont sue us New Blood)
 LITERED1, and LITERED2 by TeamTNT
 LITERED3 by FuzzballFox
-GRAY8 originally by nmn? (once again, not sure)
 GRNBIGx and GRNSMALx by Jimmy
 COMPSERV by demo_the_doomer
 COUCHx by XLightningStormL, based on textures on Scuba Steve
-
-All non-MONITORS textures in textures/pc folder based on textures from phobos.wad by Roger Ritenour, and edited by XLightningStormL
+ATMBLU by XLightningStormL, based on textures by iD Software, Shams Young, SgtMarkIV, LookingGlass Technologies. Unknown source for the BSOD.
+TVxx by XLightningStormL, based on textures by 3D Realms.
+Arcade textures by kwc.
+All non-MONITORS textures in textures/pc folder by XLightningStormL, based on textures from phobos.wad by Roger Ritenour.
 
 Sounds
 ==
@@ -126,6 +127,7 @@ Ambience sounds from Fancy World by Kinsie; sourced from Quake, Quake II, Doom 3
 dsminez edited by XLightningStormL
 dschairm2 by XLightningStormL; sourced from CHAIRMO from Divine Frequency TC Demo (which itself is sourced from unknown)
 COMPST5, DRIPs, and cctvwarn.wav from Half-Life by Valve
+CANPKUP from Sound Ideas.com
 [SOUND CREDITS UNDER CONSTRUCTION. PLEASE BE PATIENT...]
 
 Special Thanks
@@ -135,8 +137,6 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
-
-
 
 
 
