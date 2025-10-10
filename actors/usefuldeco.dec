@@ -375,3 +375,107 @@ Actor UnseenCameraProp 9657
 			Loop
 	}
 }
+
+actor VendingMachine 9658
+{
+	//$Category Decoration
+	//$Title Vending Machine
+	tag "Vending Machine"
+	Health 50
+	Height 72
+	DeathHeight 78
+	Radius 24
+	Mass 1000000
+	//Activation THINGSPEC_Switch
+	deathsound "misc/boxdestroy"
+	+SOLID
+	+NOBLOOD
+	+NOBLOODDECALS
+	+NOTAUTOAIMED
+	+SHOOTABLE
+	+DONTSPLASH
+	+CANPASS
+	states
+	{
+		Spawn:
+			VEND A 1
+			Loop
+		Death:
+			VEND B 1 A_Scream
+			VEND B 0 A_SpawnItemEx("UnseenCanSpawner", 32)
+			VEND B -1
+			stop
+	}
+}
+
+actor UnseenCanSpawner
+{
+	+NOGRAVITY
+	+NOINTERACTION
+	+NOBLOCKMAP
+	-SOLID
+	+THRUACTORS
+	+CANPASS
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			TNT1 A 0 A_SpawnItemEx("UnseenCanProp", 0, random(-4,4), 5, frandom(6,12), 0, 0, frandom(-35, 35))
+			TNT1 A 2
+			TNT1 A 0 A_SpawnItemEx("UnseenCanProp", 0, random(-4,4), 5, frandom(6,12), 0, 0, frandom(-35, 35))
+			TNT1 A 2
+			TNT1 A 0 A_SpawnItemEx("UnseenCanProp", 0, random(-4,4), 5, frandom(6,12), 0, 0, frandom(-35, 35))
+			TNT1 A 2
+			TNT1 A 0 A_SpawnItemEx("UnseenCanProp", 0, random(-4,4), 5, frandom(6,12), 0, 0, frandom(-35, 35))
+			TNT1 A 2
+			TNT1 A 0 A_SpawnItemEx("UnseenCanProp", 0, random(-4,4), 5, frandom(6,12), 0, 0, frandom(-35, 35))
+			TNT1 A 2
+			TNT1 A -1
+			Stop
+	}
+}
+
+actor UnseenCanProp : SwitchableDecoration
+{
+	Radius 5
+	Height 5
+	Scale 0.5
+	Speed 6
+	Gravity 1.0
+	Mass 5
+	Activation THINGSPEC_ThingTargets|THINGSPEC_Switch
+	+BUMPSPECIAL
+	+SOLID
+	-NOGRAVITY
+	+PUSHABLE
+	+CANPASS
+	//+THRUACTORS
+	Pushfactor 1.0
+	States
+	{
+		Spawn:
+			CANC A 2
+			Loop
+		Inactive:
+		Active:
+			TNT1 A 0 A_GiveToTarget("UnseenCanDummy", 1)
+			TNT1 A 0 A_PlaySound("items/can", CHAN_AUTO)
+			TNT1 A 0 A_NoBlocking
+			TNT1 A -1
+			Stop
+	}
+}
+
+actor UnseenCanDummy : Health
+{
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 1
+	Inventory.MaxAmount 100
+	Inventory.PickupMessage "Picked up a can of soda"
+	States
+	{
+	Spawn:
+		CANA A 1
+		Loop
+	}
+}
