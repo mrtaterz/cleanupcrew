@@ -24,3 +24,27 @@ Model UnseenCameraProp
 	FrameIndex MRC1 I 0 8
 	FrameIndex MRC1 J 0 9
 }
+
+Model VendingMachine    
+{
+   Path "Models/"     
+   Model 0 "vend.MD3"     
+   Path "Models/"  
+   Skin 0 "vend.png"      
+   Scale 0.75 0.75 0.75          
+   ZOffset 0.0
+
+   FrameIndex VEND A 0 0         
+}
+
+Model VendingMachine    
+{
+   Path "Models/"     
+   Model 0 "vend.MD3"     
+   Path "Models/"  
+   Skin 0 "vend2.png"
+   Scale 0.75 0.75 0.75          
+   ZOffset 0.0
+
+   FrameIndex VEND B 0 0         
+}

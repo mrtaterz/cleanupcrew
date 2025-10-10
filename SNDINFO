@@ -295,5 +295,5 @@ World/Bubbles	DSBUBBLE
 $attenuation World/Bubbles 4
 $volume World/Bubbles 0.5
 
-
+items/can CANPKUP
 

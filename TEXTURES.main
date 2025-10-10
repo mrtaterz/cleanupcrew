@@ -407,4 +407,14 @@ Texture "SUPPORT2", 64, 128
 	Patch "SUPPORT2", 0, 0
 }
 
+Sprite "VENDA0", 115, 85
+{
+	Patch "MDL3A0", 0, 0
+}
+
+Sprite "VENDB0", 115, 85
+{
+	Patch "MDL3A0", 0, 0
+}
+
 // End of texture definitions
