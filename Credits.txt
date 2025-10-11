@@ -88,7 +88,8 @@ Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
 (probably temp) pistol world sprite by GZDoom team.
 CCTV camera model made by inkoalawetrust, the textures are stitched together from Doom 2 textures.
-
+Assault mugshot by Craneo
+Technician mugshot by Marcelus
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
 VENT1 by Lone2401. VENTLITE based on VENT1, edited by XLightningStormL.
@@ -138,6 +139,7 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
+
 
 
 
