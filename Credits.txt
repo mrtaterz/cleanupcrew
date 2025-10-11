@@ -64,6 +64,7 @@ Prox Mine Explosion GLDEFs by yholl.
 Machine Gun sprites by grotski, Craneo, tsf, and scripted_m; Only reuse with permission from Craneo and tsf.
 Kick sprites by Banjo Software
 Grenade Launcher sprites by tsf
+Chaingun and new muzzleflash sprites by tsf
 AT Rocket Launcher world, unused proximity sensor sprites by scripted_m
 Proximity mine weapon sprites by Xaser, Mechnadon, Vader, 3D Realms, GooseJelly, and Craneo
 Proximity mine projectiles by Mechadon + 3D Realms
@@ -137,6 +138,7 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
+
 
 
 
