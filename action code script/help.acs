@@ -64,3 +64,18 @@ script "friendplayerexists" (void) //returns true if the friendplayer of this th
 	}
 	SetResultValue(1);
 }
+
+bool CheckCustomFlag(int tid, str flag)
+{
+	str flagName = StrParam(s:"user_", s:flag);
+	SetUserVariable(tid, flag, 1);
+	return bool(GetUserVariable(tid, flag));
+}
+
+bool SetActorPositionForced(int tid, fixed x, fixed y, fixed z, bool fog)
+{
+	Warp(tid, x, y, z, 0.0, WARPF_MOVEPTR|WARPF_ABSOLUTEPOSITION|WARPF_NOCHECKPOSITION);
+	if (fog)
+		SpawnForced("TeleportFog", x, y, z);
+	return true;
+}

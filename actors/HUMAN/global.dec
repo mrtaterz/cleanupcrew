@@ -955,8 +955,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 	PainSound "weapons/machinegundist"
 }
 
-
-
-
-
-
+Actor us_CarryingObject : PowerSpeed
+{
+	Speed 0.5
+}
