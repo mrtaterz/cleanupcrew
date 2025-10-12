@@ -235,6 +235,11 @@ Script "us_physicspickuploop" ENTER
     DropObject();
 }
 
+Script "us_physicspickuploop_respawn" RESPAWN
+{
+    ACS_NamedExecuteWithResult("us_physicspickuploop");
+}
+
 Script "us_hideobject_client" (int pnum) CLIENTSIDE
 {
     if(pnum != ConsolePlayerNumber())
