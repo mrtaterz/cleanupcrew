@@ -47,4 +47,3 @@ pic MONITOR4 tics 4
 pic MONITOR5 tics 4
 pic MONITOR6 tics 4
 
-warp2 texture sbuba0
