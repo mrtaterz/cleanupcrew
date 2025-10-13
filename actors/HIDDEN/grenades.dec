@@ -20,6 +20,7 @@ actor Grenades : Weapon
 	Weapon.bobSpeed 2
 	+Weapon.alt_uses_both
 	+noAlert
+    +Inventory.Undroppable
 	states
 	{
 		spawn:
@@ -286,4 +287,5 @@ actor Nades:Ammo //the ammo for the grenades.
 			HERT A -1 Bright
 			Loop
 	}
+
 }
