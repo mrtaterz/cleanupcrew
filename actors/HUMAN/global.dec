@@ -821,28 +821,28 @@ ACTOR AssaultCannon : Chaingun
 		FireLoop:
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF A 1 A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF A 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
 			TNT1 A 0 A_Light(5)
 			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF B 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF C 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
 			TNT1 A 0 A_Light(3)
 			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF D 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF E 1 A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF E 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
 			TNT1 A 0 A_Light(2)
 			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF F 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF C 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
 			TNT1 A 0 A_Light(3)
 			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
@@ -850,12 +850,14 @@ ACTOR AssaultCannon : Chaingun
 			TNT1 A 0 A_ReFire("FireLoop")
 			Goto FireStop
 		FireStop:
+			TNT1 A 0 A_Light(0)
 			TNT1 A 0 A_PlaySound("doors/dr1_clos", CHAN_AUTO)
 			TNT1 A 0 A_TakeInventory("PowerSlowdownHalf", 1)
 			CHAG FED 2
 			CHAG CBA 3
 			Goto Ready
 		Discard:
+			TNT1 A 0 A_Light(0)
 			TNT1 A 0 A_PlaySound("doors/dr1_clos", CHAN_AUTO)
 			TNT1 A 0 A_TakeInventory("PowerSlowdownHalf", 1)
 			CHAG FED 2
@@ -1130,4 +1132,5 @@ Actor us_CarryingObject : PowerSpeed
 {
 	Speed 0.5
 }
+
 
