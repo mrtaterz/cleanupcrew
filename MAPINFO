@@ -1,4 +1,5 @@
-gameinfo {
+gameinfo 
+{
 	InfoPage = "HELP","THREAT","CREW","CREDIT"
 	borderflat = "FLAT5_4"
 }
@@ -6,61 +7,63 @@ gameinfo {
 map MAP01 "The Fueling Garrison"
 {
 	Sky1="SKY4"
-	//music="FUELING"
+	Music="d_map01"
 	LightMode=8
 }
 map MAP02 "The Cargo Warehouse"
 {
 	Sky1="SKY1"
-	//music="WAREHOUS"
+	Music="d_map02"
 	LightMode=8
 }
 map MAP03 "The Maintenence Halls"
 {
 	Sky1="SKY1"
-	//music="HALLS"
+	Music="d_map03"
 	LightMode=8
 }
 map MAP04 "The Data Construct"
 {
 	Sky1="SKY4"
-	//music="DATAC"
+	Music="d_map04"
 	LightMode=8
 }
 map MAP05 "The Hangars"
 {
 	Sky1="SKY4"
-	//music="HANGAR"
+	Music="d_map05"
 	LightMode=8
 }
 map MAP06 "The Treatment Center"
 {
 	Sky1="SKY4"
-	//music="TCENTER"
+	Music="d_map06"
 	LightMode=8
 }
 map MAP07 "The Bunker"
 {
 	Sky1="SKY5"
-	//music="BUNKER"
+	Music="d_map07"
 	LightMode=8
 }
 //XLightningStormL
 map MAP08 "Administration"
 {
-    //music = "HAB"
     Sky1="SKY1"
+	Music="d_map08"
 	LightMode=8
 }
 map MAP09 "Recreation Center"
 {
 	Sky1="SKY4"
+	Music="d_map09"
 	LightMode=8
 }
 
 map MAP10 "Habitat"
 {
 	Sky1="SKY4"
+	Music="d_map10"
 	LightMode=8
 }
 
