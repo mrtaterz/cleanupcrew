@@ -1,0 +1,93 @@
+/*HACK: This is just copy and pasted across maps, ideally it'd be one script (Or AT LEAST not copy and paste the required
+functions since AFAIK the BCC shit TDRR already added should have them already.) with a customizable range or set of
+camera tags. But I both don't know how to do that nor compile to whatever the hell TDRR is using.
+So someone else would have to go into all the maps with cameras and replace the script with a generic one or whatever.
+You know, so we don't have to copy and paste changes across who even fucking knows how many maps because this was a one
+time script for a single map I made.*/
+
+
+//inkoalawetrust: Shitty camera system I "wrote" for gz_bigcity, a GZDoom map designed for SINGLEplayer.
+//TODO: Night vision (Toggleable?) (Fire). This doesn't fuckin' work however and I'm not a level 100 Zandro wrangler to figure it out.
+//KLUDGE: I don't even know if the warn sound plays, it MIGHT play but I can't hear it.
+//===============================================================================================================
+Bool SystemUsedBefore; //This is only used to put the player on the first camera, when the monitor is first used.
+Int CurrentCamera; //Keeps track of which
+Bool CCTVNVEnabled;
+
+Script "FNAF" (Void)
+{
+	Delay (2);
+	Int Cameras[7] = {24, 25, 26, 27, 28, 32, 33};
+
+	SetPlayerProperty (0,On,PROP_TOTALLYFROZEN); //Freeze the player.
+	HudMessage (s:"\cjExit button: \cdUse key\n\cjNext camera: \cdRight move key\n\cjPrevious camera: \cdLeft move key\n\cjToggle night vision: \cdFire key\n\cjPlay alarm: \cdAltfire key"; HUDMSG_PLAIN|HUDMSG_NOTWITHFULLMAP, 1, CR_UNTRANSLATED, 0.0, 0.0, 0);
+
+	While (True) //Check if the player is alive first.
+	{
+		ChangeCamera (Cameras[CurrentCamera],False,False);
+
+		If (KeyPressed (BT_MOVERIGHT))
+		{
+			CurrentCamera = Mod (++CurrentCamera,7);
+			ChangeCamera (Cameras[CurrentCamera],False,False);
+		}
+		Else If (KeyPressed (BT_MOVELEFT))
+		{
+			CurrentCamera = Mod (--CurrentCamera,7);
+			ChangeCamera (Cameras[CurrentCamera],False,False);
+		}
+		Else If ((KeyPressed (BT_USE) || GetActorProperty(0,APROP_Health) <= 0)) //Player presses the use button to leave the system.
+		{
+			HudMessage (s:""; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.0, 0.0, 1); //Remove the instructions.
+			SetPlayerProperty (0,Off,PROP_TOTALLYFROZEN); //Freeze the player.
+			ChangeCamera (0,0,False); //Reset the players' view.
+			Delay (1);
+			Terminate; //End the script.
+		}
+		//FIXME: Right now, the NV toggle ONLY works when the camera is the player, literally the OPPOSITE of what it should do!
+		Else If (KeyPressed (BT_ATTACK))
+		{
+			If (!CCTVNVEnabled)
+			{
+				Print (s:"NV ON");
+				GiveActorInventory (Cameras[CurrentCamera],"PowerLightAmp",1);
+				CCTVNVEnabled = True;
+			}
+			Else
+			{
+				Print (s:"NV OFF");
+				TakeActorInventory (Cameras[CurrentCamera],"PowerLightAmp",1);
+				CCTVNVEnabled = False;
+			}
+		}
+		Else If (KeyPressed (BT_ALTATTACK))
+			PlaySound (Cameras[CurrentCamera],"World/CCTVWarn");
+		Delay (1);
+	}
+}
+
+////These two functions are copied from ACSUtils, literally just for the above camera script.
+
+function bool KeyPressed(int key)
+{
+	int buttons     = GetPlayerInput(-1, INPUT_BUTTONS);
+	int oldbuttons  = GetPlayerInput(-1, INPUT_OLDBUTTONS);
+	int newbuttons  = (buttons ^ oldbuttons) & buttons;
+
+	if ((newbuttons & key) == key) { return true; }
+		return false;
+}
+
+//This one had to have its data types changed to ints, num is apparently a BCS thing.
+function int mod(int a, int b)
+{
+    if (a < 0)
+    {
+        int rem = a % b;
+        if (rem != 0)
+            return b + (a % b);
+        return 0;
+    }
+
+    return a % b;
+}

@@ -370,8 +370,12 @@ Actor UnseenCameraProp 9657
 	{
 		//Speen
 		Spawn:
+			MRC1 B 0 NoDelay A_CheckFlag ("StandStill","Lazy")
 			MRC1 BCDEFGH 6
 			MRC1 HGFEDCB 6
+			Loop
+		Lazy:
+			MRC1 A -1
 			Loop
 	}
 }
@@ -435,8 +439,10 @@ actor UnseenCanSpawner
 	}
 }
 
-actor UnseenCanProp : SwitchableDecoration
+actor UnseenCanProp : SwitchableDecoration 9659
 {
+	//$Title Soda Can
+	//$Category Health and Armor
 	Radius 5
 	Height 5
 	Scale 0.5
