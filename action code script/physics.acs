@@ -97,10 +97,14 @@ Script "us_physicspickuploop" ENTER
 
     void MakeMissile (fixed speed)
     {
-        ACS_NamedExecuteWithResult("us_physicspickup_settarget", heldTID, ActivatorTID());
-        BCSUtils::SetActorSpeed(heldTID, speed);
-        BCSUtils::ChangeActorFlag(heldTID, "MISSILE", true);
         BCSUtils::SetActorGravity(heldTID, 1.0);
+
+        if(StriCmp(GetActorClass(0), "unseen") == 0)
+        {
+            ACS_NamedExecuteWithResult("us_physicspickup_settarget", heldTID, ActivatorTID());
+            BCSUtils::SetActorSpeed(heldTID, speed);
+            BCSUtils::ChangeActorFlag(heldTID, "MISSILE", true);
+        }
     }
 
     void DropObject()
