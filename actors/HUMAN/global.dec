@@ -97,9 +97,9 @@ actor usClip : Ammo
 actor PistolAmmo : Ammo
 {
 	Inventory.Amount 10
-	Inventory.MaxAmount 100
+	Inventory.MaxAmount 50
 	Ammo.BackpackAmount 10
-	Ammo.BackpackMaxAmount 200
+	Ammo.BackpackMaxAmount 100
 	Inventory.Icon "CLIPA0"
 	Decal "BulletChip" //say wha
 	States
@@ -116,9 +116,9 @@ actor PistolAmmo : Ammo
 actor usShell : Ammo
 {
 	Inventory.Amount 4
-	Inventory.MaxAmount 50
+	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 4
-	Ammo.BackpackMaxAmount 100
+	Ammo.BackpackMaxAmount 200
 	Inventory.Icon "SHELA0"
 	Tag "$TAG_SHELL"
 	States
@@ -155,10 +155,10 @@ actor usRocketAmmo : Ammo
 //Used as fuel for the flame-thrower.
 actor usCell : Ammo
 {
-	Inventory.Amount 20
-	Inventory.MaxAmount 300
-	Ammo.BackpackAmount 20
-	Ammo.BackpackMaxAmount 600
+	Inventory.Amount 50
+	Inventory.MaxAmount 400
+	Ammo.BackpackAmount 50
+	Ammo.BackpackMaxAmount 800
 	Inventory.Icon "CELLA0"
 	Tag "$TAG_CELL"
 	States
@@ -959,3 +959,4 @@ Actor us_CarryingObject : PowerSpeed
 {
 	Speed 0.5
 }
+
