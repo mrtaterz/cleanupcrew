@@ -421,6 +421,7 @@ actor usPistol : Pistol
 	//but oh well, you changed it and i'm not gonna change it back LOL
 	Weapon.AmmoType "PistolAmmo"
 	//+WEAPON.NOAUTOFIRE
+	Decal "BulletChip"
 	States
 	{
 		Ready:
@@ -469,6 +470,7 @@ actor usPistol : Pistol
 //variant with black hands used by assault
 actor assaultPistol : usPistol
 {
+	Decal "BulletChip"
 	States
 	{
 		Ready:
@@ -628,7 +630,7 @@ actor ATRL : RocketLauncher
 			ATRL C 3 A_Light(3)
 			ATRL D 4 A_FireCustomMissile("HEATRocket",0,0)
 			ATRL E 3 A_Light(2)
-			ATRL F 2
+			ATRL F 2 A_Light(0)
 			goto Discard
 		select:
 			ATRL A 1 A_Raise
@@ -802,6 +804,7 @@ ACTOR AssaultCannon : Chaingun
 	Tag "Assault Cannon"
 	+Weapon.ammo_optional
 	+inventory.undroppable
+	Decal "BulletChip"
 	States
 	{
 		Ready:
@@ -1136,6 +1139,4 @@ Actor us_CarryingObject : PowerSpeed
 {
 	Speed 0.5
 }
-
-
 
