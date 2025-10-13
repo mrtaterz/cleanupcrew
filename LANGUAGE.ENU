@@ -14,8 +14,8 @@ QUITMSG9 = "don't go now, there's a dimensional shambler waiting at the dos prom
 QUITMSG10 = "get outta here and go back to your boring programs.";
 QUITMSG11 = "if i were your boss, i'd deathmatch ya in a minute!";
 QUITMSG12 = "look, bud. you leave now and you forfeit your body count!";
-QUITMSG13 = "just leave. when you come back, i'll be waiting with a bat.";
-QUITMSG14 = "you're lucky i don't smack you for thinking about leaving.";
+QUITMSG13 = "Hey, Scripted! Can I say 'fuck' in this mod?"; //XL, forked from TLT's Quit Messages
+QUITMSG14 = "Did The Threat scare ya!? Get outta here and go play a Terry Wad, then we'll see who is scary!"; //XL, forked from TLT's Quit Messages
 
 //class names
 
@@ -146,3 +146,4 @@ GOTRAREMINE="Picked up a proximity mine that bears more than a passing semblance
 GOTSENSOR="Picked up a proximity sensor.";
 
 GOTFUEL="Picked up a jerrycan.";
+
