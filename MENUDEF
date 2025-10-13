@@ -1,3 +1,10 @@
+DEFAULTLISTMENU
+{
+	Font "BigFont", "White"
+	LineSpacing 18
+	Selector "M_SKULL1", -32, -5
+}
+
 OptionMenu ZA_JoinTeamMenu
 {
 	Title "JOIN THE HUNT"

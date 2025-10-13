@@ -2,6 +2,14 @@ gameinfo
 {
 	InfoPage = "HELP","THREAT","CREW","CREDIT"
 	borderflat = "FLAT5_4"
+	CursorPic = "cuccurs"
+	menufontcolor_title = "WHITE"
+	menufontcolor_label = "WHITE"
+	menufontcolor_value = "WHITE"   
+	menufontcolor_action = "WHITE"
+	menufontcolor_header = "WHITE"
+	menufontcolor_highlight = "WHITE"
+	menufontcolor_selection = "WHITE"
 }
 
 map MAP01 "The Fueling Garrison"
