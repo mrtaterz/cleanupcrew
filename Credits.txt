@@ -5,7 +5,7 @@
 ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
  ░▒▓██████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░              ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░░▒▓█████████████▓▒░  
-(this only looks outside of SLADE lmaoooo)
+(this only looks correct outside of SLADE lmaoooo)
  
 														A MOD FOR ZANDRONUM INSPIRED BY THE HIDDEN: SOURCE
 =====================================================================================================================================================================
@@ -59,12 +59,13 @@ Vending Machine, Soda Can art and code by XLightningStormL. Vending Machine's Ro
 
 Radiation sign and UAC logo decal by id Software
 Staff only, CCTV, and Kilroy decals by inkoalawetrust.
+CCTV camera model made by inkoalawetrust, the textures are stitched together from Doom 2 textures.
 
 Prox Mine Explosion GLDEFs by yholl.
 Machine Gun sprites by Mike12, muzzleflashes by GooseJelly
 Kick sprites by Banjo Software
-Grenade Launcher sprites by tsf
-Chaingun and new muzzleflash sprites by tsf
+Grenade Launcher, and Assault Cannon sprites by tsf
+AT Rocket Launcher sprites by Amuscaria (formerly Eriance)
 AT Rocket Launcher world, unused proximity sensor sprites by scripted_m
 Proximity mine weapon sprites by Xaser, Mechnadon, Vader, 3D Realms, GooseJelly, and Craneo
 Proximity mine projectiles by Mechadon + 3D Realms
@@ -87,9 +88,9 @@ Broken Techlamp sprites by hexereticdoom.
 Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
 (probably temp) pistol world sprite by GZDoom team.
-CCTV camera model made by inkoalawetrust, the textures are stitched together from Doom 2 textures.
 Assault mugshot by Craneo
 Technician mugshot by Marcelus
+
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
 VENT1 by Lone2401. VENTLITE based on VENT1, edited by XLightningStormL.
@@ -97,14 +98,14 @@ VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
-SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare/NMN, GRAY8, and ELOCKER1 also possibly by Nightmare/NMN.
-MIDGRAYW, and Dopefish by iD Software.
+SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare/NMN, and ELOCKER1 also possibly by Nightmare/NMN.
+MIDGRAYW, GRAY8, and Dopefish by iD Software.
 CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, VNYTILE0, TILES3, SUPPRT1A, STEP12, STEP17, and STEP24 based on textures by iD Software, made by XLightningStormL.
 CABTOPK1 sourced from Doom 3, by hidfan for Doom 3 Textures.
 GRATE02 by Midway Entertainment.
 METALSIL by Enjay? (XL note: not too sure on this one)
 DESK1, and DESKTOP1 originally by Cage for Evil Unleashed, DESK3/3A (based on DESK1) edited by XLightningStormL
-TABLEx based on textures originally by Scuba Steve (from Action Doom), edited by XLightningStormL
+TABLEx, and COUCHx based on textures originally by Scuba Steve (from Action Doom), edited by XLightningStormL
 FURNxx by XLightningStormL based on textures sourced from SgtMarkIV's Extermination Day (unlikely he is the author however) and iD Software
 KITCHCAx by XLightningStormL, based on textures by iD Software
 DESK07 - DESK17 by XLightningStormL from textures sourced from iD Software, Marsdoom, Hellcore 2.0, Mars3D, and the Blade of Agony team.
@@ -117,7 +118,6 @@ LITERED1, and LITERED2 by TeamTNT
 LITERED3 by FuzzballFox
 GRNBIGx and GRNSMALx by Jimmy
 COMPSERV by demo_the_doomer
-COUCHx by XLightningStormL, based on textures on Scuba Steve
 ATMBLU by XLightningStormL, based on textures by iD Software, Shams Young, SgtMarkIV, LookingGlass Technologies. Unknown source for the BSOD.
 TVxx by XLightningStormL, based on textures by 3D Realms.
 Arcade textures by kwc.
@@ -139,6 +139,7 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
+
 
 
 
