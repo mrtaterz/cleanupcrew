@@ -2,6 +2,20 @@
 //i guess in the future i'll make a sound mod for my own fucking game
 //because i'm that fucking sad
 
+//new menu sounds
+menu/activate		menuact	    // Activate a new menu
+menu/backup			menuback	// Backup to previous menu
+menu/prompt			menuact	    // Activate a prompt "menu"
+menu/cursor			menuchos	// Move cursor up/down
+menu/change			menuchng	// Select new value for option
+menu/invalid		menuerr		// Menu not available
+menu/dismiss		menuback	// Dismiss a prompt message
+menu/choose			menuact	// Choose a menu item
+menu/clear			menuback	// Close top menu
+
+//New Quit Sounds
+$random menu/quit2 { unseen/knife weapons/pistolx weapons/minegun/armed Rat/Pain unseen/taunt1 misc/prox }
+
 //unseen noises
 unseen/yell1 DSUSATK1
 unseen/yell2 DSUSATK2
