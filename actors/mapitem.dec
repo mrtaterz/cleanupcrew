@@ -237,9 +237,9 @@ actor AmmoBag : WreckablePickup Replaces Clipbox 8 //hax!
 			TNT1 A 0 A_GiveInventory("usClip",50)
 			TNT1 A 0 A_GiveInventory("PistolAmmo",10)
 			//TNT1 A 0 A_GiveInventory("RifleClip",50)
-			TNT1 A 0 A_GiveInventory("usShell",20)
+			TNT1 A 0 A_GiveInventory("usShell",10)
 			TNT1 A 0 A_GiveInventory("usRocketAmmo",5)//was 5
-			TNT1 A 0 A_GiveInventory("usCell",100)
+			TNT1 A 0 A_GiveInventory("usCell",50)
 			TNT1 A 0 A_GiveInventory("Mines",1)//was 5
 			TNT1 A 0 A_GiveInventory("Sensors",1)
 			//TNT1 A 0 A_GiveInventory("Nades",1)
@@ -266,9 +266,9 @@ actor AmmoBelt : CustomInventory
 			TNT1 A 0 A_GiveInventory("PistolAmmo",5)
 			//TNT1 A 0 A_GiveInventory("PistolClip",25)
 			//TNT1 A 0 A_GiveInventory("RifleClip",25)
-			TNT1 A 0 A_GiveInventory("usShell",10)
+			TNT1 A 0 A_GiveInventory("usShell",5)
 			TNT1 A 0 A_GiveInventory("usRocketAmmo",1)
-			TNT1 A 0 A_GiveInventory("usCell",50)
+			TNT1 A 0 A_GiveInventory("usCell",25)
 			TNT1 A 0 A_GiveInventory("Mines",1)//was 5
 			TNT1 A 0 A_GiveInventory("Sensors",1)
 			//TNT1 A 0 A_GiveInventory("Nades",1)
@@ -762,4 +762,5 @@ actor BlueArmorNuller : Nuller replaces BlueArmor
 
 
 //the rat is in usefuldeco
+
 
