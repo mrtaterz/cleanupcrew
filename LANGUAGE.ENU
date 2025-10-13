@@ -1,6 +1,22 @@
 //to make the thing localization and reskin friendly
 [enu default]
 
+//leave messages
+QUITMSG1 = "please don't leave, there's more demons to toast!";
+QUITMSG2 = "let's beat it -- this is turning into a bloodbath!";
+QUITMSG3 = "i wouldn't leave if i were you.dos is much worse.";
+QUITMSG4 = "you're trying to say you like dos better than me, right?";
+QUITMSG5 = "don't leave yet -- there's a demon around that corner!";
+QUITMSG6 = "ya know, next time you come in here i'm gonna toast ya.";
+QUITMSG7 = "go ahead and leave. see if i care.";
+QUITMSG8 = "you want to quit? then, thou hast lost an eighth!";
+QUITMSG9 = "don't go now, there's a dimensional shambler waiting at the dos prompt!";
+QUITMSG10 = "get outta here and go back to your boring programs.";
+QUITMSG11 = "if i were your boss, i'd deathmatch ya in a minute!";
+QUITMSG12 = "look, bud. you leave now and you forfeit your body count!";
+QUITMSG13 = "just leave. when you come back, i'll be waiting with a bat.";
+QUITMSG14 = "you're lucky i don't smack you for thinking about leaving.";
+
 //class names
 
 //unseens
