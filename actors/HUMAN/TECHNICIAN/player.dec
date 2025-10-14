@@ -35,6 +35,7 @@ Actor Sapper : PlayerPawn
 	player.DisplayName "Technician"
 	Player.ColorRange 112, 127
 	Player.scoreIcon "TECHI"
+	DamgeFactor Fire 0.5
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -96,6 +97,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
