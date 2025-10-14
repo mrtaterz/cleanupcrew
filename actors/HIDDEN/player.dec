@@ -87,7 +87,7 @@ ACTOR Unseen : PlayerPawn
 	SHDT H 0 A_Pain
 	//dontyell:
     SHDT H 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,8)
-    SHDT H 4 Bright
+    SHDT H 4 Bright A_Quake(1,10,0,1,"none")
     Goto Spawn
   Pain.Poison:
 	SHDT h 0 ACS_NamedExecuteAlways("ArmorCheck",0)
@@ -97,7 +97,7 @@ ACTOR Unseen : PlayerPawn
   	//SHDT A 0 A_GiveInventory("PowerCrippleJump",1)//zandronum doesn't have variable height PowerHighJump
 	//SHDT A 0 ACS_NamedExecute("bepoison") //we don't need to start and terminate this on the same frame ////we can't start and terminate this on the same frame
 	SHDT h 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,350)
-    SHDT h 4 Bright
+    SHDT h 4 Bright A_Quake(1,10,0,1,"none")
 	Goto Spawn
   Pain.fire:
   Pain.Burns:
@@ -105,12 +105,12 @@ ACTOR Unseen : PlayerPawn
 	SHDT H 0 A_Pain
 	SHDT H 0 ACS_NamedExecuteAlways("RevealUnseen",0,8)
 	SHDT H 4 Bright ACS_NamedExecuteAlways("Smoulders",0,175)
-    SHDT H 4 Bright
+    SHDT H 4 Bright A_Quake(1,10,0,1,"none")
 	Goto spawn
   Pain.Afterburn: //doesn't reveal
 	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
 	SHDT H 0 A_Pain
-	SHDT H 4
+	SHDT H 4 A_Quake(1,10,0,1,"none")
 	Goto spawn
   Pain.Justice: //unused
   	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
@@ -118,7 +118,7 @@ ACTOR Unseen : PlayerPawn
     SHDT A 0 A_TakeInventory("PowerJustice",1)
   	SHDT A 0 A_GiveInventory("PowerJustice",1)
 	SHDT H 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,16)
-    SHDT H 4 Bright
+    SHDT H 4 Bright A_Quake(1,10,0,1,"none")
 	Goto Spawn
   Death:
     SHDE I 10
@@ -130,7 +130,7 @@ ACTOR Unseen : PlayerPawn
     SHDE M -1
     Stop
   XDeath:
-    SHDE N 5
+    SHDE N 5 A_Quake(2,32,0,1,"none")
 	TNT1 A 0 A_SetTranslucent(1,0)
     SHDE O 5 A_XScream
 	TNT1 A 0 A_SpawnItemEx("UnseenGhost", 0, 0, 32, 0, 0, 0, 0, 128)
@@ -324,4 +324,5 @@ actor UnseenGhost
         Stop
     }
 }
+
 
