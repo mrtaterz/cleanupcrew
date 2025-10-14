@@ -57,7 +57,7 @@ Actor Support : PlayerPawn
 		SPRT F 2 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		SPRT H 4 A_Quake(1,1,0,1,"NONE")
+		SPRT H 4 A_Quake(1,10,0,1,"none")
 		SPRT H 4 A_Pain
 		Goto Spawn
 	death.darken:
@@ -72,7 +72,7 @@ Actor Support : PlayerPawn
 		TNT1 A -1
 		Stop
 	XDeath:
-		PGIB A 5
+		PGIB A 5 A_Quake(2,32,0,1,"none")
 		PGIB B 5 A_XScream
 		PGIB C 5 A_NoBlocking
 		PGIB D 5
@@ -102,6 +102,7 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
 
 
 
