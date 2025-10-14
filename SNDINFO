@@ -92,6 +92,8 @@ $attenuation items/flare/burn 1.5
 //weapons/hydrofist/hit dsiphit
 //weapons/hydrofist/miss dsipmiss
 
+pickup/heavyweapon dshwepup
+
 weapons/bullethit1 dsbhit1
 weappns/bullethit2 dsbhit2
 $random weapons/bullethit { weapons/bullethit1 weappns/bullethit2 }
@@ -151,6 +153,12 @@ $attenuation weapons/dsdisrxp 0.25
 
 weapons/atrlexp explodcl
 $alias weapons/atrldrop weapons/grbnce
+
+$alias weapons/assaultcannon/drop weapons/pistol/magdrop
+weapons/assaultcannon/start dschgu
+weapons/assaultcannon/fire dschgf
+weapons/assaultcannon/loop dschgl
+weapons/assaultcannon/stop dschgd
 
 weapons/minegun		thump
 weapons/minegun/fail	dsbsod

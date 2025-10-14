@@ -692,6 +692,7 @@ actor ATRLSpawner replaces RocketLauncher
 actor ATRLItem : CustomInventory
 {
 	Inventory.forbiddenTo "unseen"
+	Inventory.pickupSound "pickup/heavyweapon"
 	States
 	{
 		Spawn:
@@ -797,6 +798,7 @@ actor HEATRocket : usRocket
 // It costs $400,000 to fire this weapon for 12 seconds
 
 //idk ill let scripted or goose figure out how chonky the rounds are
+//7.62mm i think lmao --sm
 actor ChaingunAmmo : Ammo
 {
 	Inventory.Amount 200
@@ -826,7 +828,7 @@ ACTOR AssaultCannon : Chaingun
 	Weapon.selectionOrder 700
 	Weapon.slotNumber 5
 	Inventory.PickupMessage "Picked up an Assault Cannon"
-	Obituary "%o was perforated by %k's assault cannon"
+	Obituary "%k reduced the Threat to a steaming pile of flesh."
 	Tag "Assault Cannon"
 	+Weapon.ammo_optional
 	+inventory.undroppable
@@ -837,61 +839,64 @@ ACTOR AssaultCannon : Chaingun
 			CHAG A 1 A_WeaponReady
 			Loop
 		Deselect:
+			CHAG A 0 A_TakeInventory("PowerSlowdownHalf", 1)
+			CHAG A 0 A_StopSound(CHAN_6)
+			dloop:
 			CHAG A 1 A_Lower
 			Loop
 		Select:
 			CHAG A 1 A_Raise
 			Loop
 		Fire:
-			TNT1 A 0 A_PlaySound("plats/pt1_strt", CHAN_AUTO)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/start", CHAN_6)
 			CHAG ABC 3
 			CHAG DEF 2
 			TNT1 A 0 A_GiveInventory("PowerSlowdownHalf", 1)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/fire",CHAN_WEAPON,1,1)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/loop",CHAN_6,1,1)
 		FireLoop:
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF A 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF A 1 Bright A_FireBullets(5.6, 3.55, -1, 5)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(5)
-			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF B 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF C 1 Bright A_FireBullets(5.6, 3.55, -1, 5)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(3)
-			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF D 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF E 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF E 1 Bright A_FireBullets(5.6, 3.55, -1, 5)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(2)
-			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF F 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 Bright A_FireBullets(5.6, 5.6, -1, 5)
+			CHAF C 1 Bright A_FireBullets(5.6, 3.55, -1, 5)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(3)
-			TNT1 A 0 A_PlaySound("weapons/machinegun",CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF G 1
 			TNT1 A 0 A_ReFire("FireLoop")
 			Goto FireStop
 		FireStop:
 			TNT1 A 0 A_Light(0)
-			TNT1 A 0 A_PlaySound("doors/dr1_clos", CHAN_AUTO)
+			TTN1 A 0 A_StopSound(CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/stop", CHAN_6)
 			TNT1 A 0 A_TakeInventory("PowerSlowdownHalf", 1)
 			CHAG FED 2
 			CHAG CBA 3
 			Goto Ready
 		Discard:
 			TNT1 A 0 A_Light(0)
-			TNT1 A 0 A_PlaySound("doors/dr1_clos", CHAN_AUTO)
+			TTN1 A 0 A_StopSound(CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/stop", CHAN_6)
 			TNT1 A 0 A_TakeInventory("PowerSlowdownHalf", 1)
 			CHAG FED 2
 			CHAG CBA 3
@@ -925,6 +930,7 @@ actor ChaingunSpawner replaces Chaingun
 actor AssaultCannonItem : CustomInventory
 {
 	Inventory.forbiddenTo "unseen"
+	Inventory.pickupSound "pickup/heavyweapon"
 	States
 	{
 		Spawn:
