@@ -839,6 +839,9 @@ ACTOR AssaultCannon : Chaingun
 			CHAG A 1 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 A_Light(0)
+			TTN1 A 0 A_StopSound(CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("weapons/assaultcannon/stop", CHAN_6)
 			CHAG A 0 A_TakeInventory("PowerSlowdownHalf", 1)
 			CHAG A 0 A_StopSound(CHAN_6)
 			dloop:
@@ -1171,5 +1174,6 @@ Actor us_CarryingObject : PowerSpeed
 {
 	Speed 0.5
 }
+
 
 
