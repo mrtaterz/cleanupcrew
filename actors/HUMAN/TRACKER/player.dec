@@ -57,7 +57,7 @@ Actor Support : PlayerPawn
 		SPRT F 2 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		SPRT H 4 
+		SPRT H 4 A_Quake(1,1,0,1,"NONE")
 		SPRT H 4 A_Pain
 		Goto Spawn
 	death.darken:
@@ -102,5 +102,6 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
 
 
