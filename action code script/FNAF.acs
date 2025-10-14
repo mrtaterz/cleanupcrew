@@ -33,7 +33,7 @@ Script "FNAF" (Void)
 			CurrentCamera = bcsutils::mod (++CurrentCamera,CameraCount);
 			ChangeCamera (Cameras[CurrentCamera],0,0);
 		}
-		Else If ((fixed)GetPlayerInput(-1,INPUT_SIDEMOVE) < 0.1)
+		Else If ((fixed)GetPlayerInput(-1,INPUT_SIDEMOVE) < -0.1)
 		{
 			CurrentCamera = bcsutils::mod (--CurrentCamera,CameraCount);
 			ChangeCamera (Cameras[CurrentCamera],0,0);
