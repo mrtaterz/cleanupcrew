@@ -51,7 +51,7 @@ Actor Sapper : PlayerPawn
 		SAPR F 6 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		SAPR G 4 
+		SAPR G 4 A_Quake(1,10,0,1,"none")
 		SAPR G 4 A_Pain
 		Goto Spawn
 	death.darken:
@@ -66,7 +66,7 @@ Actor Sapper : PlayerPawn
 		TNT1 A -1
 		Stop
 	XDeath:
-		SAPR O 5
+		SAPR O 5 A_Quake(2,32,0,1,"none")
 		SAPR P 5 A_XScream
 		SAPR Q 5 A_NoBlocking
 		SAPR RSTUV 5
@@ -96,5 +96,6 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
