@@ -44,6 +44,7 @@ ACTOR Unseen : PlayerPawn
   Gravity 0.833333
   Player.JumpZ 16
   PainChance 255
+  Player.AirCapacity 0
   Player.DisplayName "The Threat"
   Player.ColorRange 112, 127 //colorey googles lol
   Player.SoundClass "Unseen"
@@ -324,5 +325,6 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
