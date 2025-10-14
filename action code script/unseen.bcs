@@ -15,5 +15,6 @@ strict namespace {
 #include "mapstuff.acs"
 #include "unseenlogic.acs"
 #include "physics.acs"
+#include "FNAF.acs"
 
 }
