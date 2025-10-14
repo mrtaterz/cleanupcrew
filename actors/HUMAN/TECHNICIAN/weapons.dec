@@ -83,7 +83,9 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	-noGravity
 	+noDamageThrust
 	gravity 0.5
-	damage 2
+	damage 1
+	poisondamage 1, 5, 0
+	poisondamagetype Fire
 	seeSound "weapons/flamer"
 	deathSound "weapons/flamerx"
 	obituary "$OB_Flamer"
@@ -417,4 +419,5 @@ actor DebugMine : ProxMine //always explodes
 			PROX C 1 A_PlaySound("weapons/minegun/arming")
 		goto See
 	}
+
 }
