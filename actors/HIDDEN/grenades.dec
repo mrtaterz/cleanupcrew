@@ -2,10 +2,10 @@
 
 //The Heart of Aamon--
 //A small token of life from which the Demon can draw power from.
-// Amon, or Aamon, great and powerful marquis of the infernal empire.
-// He has the face ofa  wold, with a snake's tail; he vomits flame;
-// When he takes human form, he has only the body of man;
-// His head resembles that of an owl and his beak shows very reckless canine teeth.
+//Amon, or Aamon, great and powerful marquis of the infernal empire.
+//He has the face of a wold, with a snake's tail; he vomits flame;
+//When he takes human form, he has only the body of man;
+//His head resembles that of an owl and his beak shows very reckless canine teeth.
 
 
 actor Grenades : Weapon
@@ -289,6 +289,7 @@ actor Nades:Ammo //the ammo for the grenades.
 	}
 
 }
+
 
 
 
