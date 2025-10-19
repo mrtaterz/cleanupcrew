@@ -174,10 +174,10 @@ actor usCell : Ammo
 //with minimal recoil. Currently unused.
 actor RifleClip : Ammo
 {
-	Inventory.Amount 10
-	Inventory.MaxAmount 200
-	Ammo.BackpackAmount 10
-	Ammo.BackpackMaxAmount 400
+	Inventory.Amount 50
+	Inventory.MaxAmount 250
+	Ammo.BackpackAmount 59
+	Ammo.BackpackMaxAmount 500
 	Inventory.Icon "CLIPA0"
 	States
 	{
@@ -1169,4 +1169,5 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
