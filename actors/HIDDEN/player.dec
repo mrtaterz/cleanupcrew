@@ -248,7 +248,7 @@ Actor EvilArmorBonus : BasicArmorBonus //armor bonus
 {
 	Inventory.Icon "ARM1A0"
 	Armor.SavePercent 50 //up from 33%
-	Armor.SaveAmount 10
+	Armor.SaveAmount 5
 	Armor.MaxSaveAmount 300
 }
 
@@ -325,6 +325,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
