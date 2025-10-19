@@ -1,12 +1,12 @@
 //the explosive weapon for the Unseen, an anti-camping option mostly
 
-//UAC standard-issue fragmentation grenades--
-//A small improvement made on the iconic "pineapple with included pin,"
-//the UAC Mk. 2 hand grenade is standard issue across all UAC forces.
-//Pull the pin, toss through the doorway, watch the enemy scream.
+//The Heart of Aamon--
+//A small token of life from which the Demon can draw power from.
+// Amon, or Aamon, great and powerful marquis of the infernal empire.
+// He has the face ofa  wold, with a snake's tail; he vomits flame;
+// When he takes human form, he has only the body of man;
+// His head resembles that of an owl and his beak shows very reckless canine teeth.
 
-//It is not known exactly where the threat acquired these- it is suspected they 
-//were taken from one of the armories stationed on-site.
 
 actor Grenades : Weapon
 {
@@ -289,5 +289,6 @@ actor Nades:Ammo //the ammo for the grenades.
 	}
 
 }
+
 
 
