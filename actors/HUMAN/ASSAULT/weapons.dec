@@ -241,7 +241,7 @@ actor MachineGun : DoomWeapon //light machine gun
 	Decal "BulletChip"
 	Weapon.ammoType "usClip"
 	Weapon.ammoUse 1
-	Weapon.Kickback 10
+	Weapon.Kickback 25
 	Tag "$TAG_MG"
 	Obituary "$OB_MG"
 	Inventory.icon "MGPPA0"
@@ -415,6 +415,7 @@ actor LaserBeem //lazor
 	}
 
 }
+
 
 
 
