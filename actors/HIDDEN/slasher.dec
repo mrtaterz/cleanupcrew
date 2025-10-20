@@ -31,14 +31,14 @@ actor Slasher : Weapon
 			CLAW BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
 			CLAW F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
-			CLAW GHI 2
+			CLAW GHI 1
 			CLAW JKLMNO 2
 			goto ready
 		fire2:
 			CLAL BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
 			CLAL F 2 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
-			CLAL GHI 2
+			CLAL GHI 1
 			CLAL JKLMNO 2
 			goto ready
 		altfire:
@@ -186,6 +186,7 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
 
 
