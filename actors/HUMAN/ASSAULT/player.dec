@@ -1,13 +1,21 @@
 //the human assault class and its corpses
 
-//UAC Detachment 4F Assault Trooper--
+//Peter "Superfly" Johnson--
 //The Assault Troop of Detachment 4F are hand-picked from the top ranks of the
-//Space Marines. Great all-round performers, they are armed with a light machine
+//Crimson Guard. Great all-round performers, they are armed with a light machine
 //gun which is capable of delivering great suppressive firepower. For this
 //assignment they have also been issued a grenade launcher, as its
 //indiscriminate nature makes it easier to target that what cannot be seen,
 //and its indirect fire capability lets it reach into those nooks and crannies
 //where other firearms are less likely to hit.
+//Peter "Superfly" Johnson comes from a humble Chicago background
+//doing odd jobs in their late teens and early twenties until they finally
+//struck gold with a hardcore pornography gig (called "Superfly's Johnson")
+//that gave them the funds they needed to move their family out of West Englewood.
+//Shortly after this stint in the pornography industry, Peter "Superfly" Johnson
+//used their physical talents and high testosterone for a more noble purpose; killing space bugs.
+//Peter was recognized by the Crimson Guard for their ruthlessness and efficiency in combat
+//and was recommended for a promotion to a more specialized job that required certain discretions: Human Resources.
 
 //"Come on in, you fuckers. Come on in. Ol' Painless is waitin'."
 
@@ -97,6 +105,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
