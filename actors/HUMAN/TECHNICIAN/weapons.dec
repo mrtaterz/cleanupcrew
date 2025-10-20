@@ -84,6 +84,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	+noDamageThrust
 	gravity 0.5
 	damage 1
+	ProjectileKickBack 0
 	poisondamage 1, 5, 0
 	poisondamagetype Fire
 	seeSound "weapons/flamer"
@@ -421,3 +422,4 @@ actor DebugMine : ProxMine //always explodes
 	}
 
 }
+
