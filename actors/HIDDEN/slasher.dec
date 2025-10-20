@@ -12,6 +12,7 @@ actor Slasher : Weapon
 	Weapon.ammoType1 "nades" //allow the player to view nade number with knife
 	Weapon.bobStyle "alpha"
 	Weapon.bobSpeed 2
+	Weapon.Kickback 0
 	states
 	{
 		spawn:
@@ -186,6 +187,7 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
 
 
