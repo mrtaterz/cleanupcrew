@@ -27,7 +27,7 @@ Actor Assault : PlayerPawn
 	Player.StartItem "AssaultFist"
 	Player.StartItem "usGrenadeLauncher"
 	Player.StartItem "GreenArmor"
-	Player.StartItem "usShell", 20
+	Player.StartItem "usShell", 10
 	Player.StartItem "usClip", 100
 	Player.StartItem "usRocketAmmo", 5
 	Player.StartItem "FlareStick", 5
@@ -105,6 +105,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
