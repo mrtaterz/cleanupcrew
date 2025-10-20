@@ -219,7 +219,7 @@ actor AssaultShotgun : DoomWeapon
 	Inventory.icon "SGPPA0"
 	Weapon.ammoType "usShell"
 	Weapon.ammoUse 1
-	Weapon.Kickback 20
+	Weapon.Kickback 100
 	tag "$TAG_ASSAULTSHOTGUN"
 	obituary "$OB_ASSAULTSHOTGUN"
 	+Weapon.noAutoFire
@@ -267,7 +267,7 @@ actor AssaultShotgun : DoomWeapon
 
 actor ShotgunPuff : BulletPuff //more knockback
 {
-	projectileKickback 200
+	projectileKickback 300
 	+puffGetsOwner
 	+puffOnActors
 	states
@@ -340,6 +340,7 @@ actor 12gCaseSpawner2 : CaseSpawnerBase
 			stop
 	}
 }
+
 
 
 
