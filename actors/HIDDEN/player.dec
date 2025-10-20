@@ -40,7 +40,7 @@ ACTOR Unseen : PlayerPawn
   Player.MaxHealth 300
   Radius 16
   Height 56
-  Mass 100
+  Mass 90
   Gravity 0.833333
   Player.JumpZ 16
   PainChance 255
@@ -50,9 +50,7 @@ ACTOR Unseen : PlayerPawn
   Player.SoundClass "Unseen"
   Player.StartItem "Slasher"
   Player.StartItem "Grenades"
-  Player.StartItem "Nades", 3
-  Player.StartItem "RedSkull" //doesn't work because everyone already starts
-  //with all keys. todo: fix that
+  Player.StartItem "Nades", 2
   Player.StartItem "EvilArmor"
   Player.StartItem "BeastVision", 100 //the activator / indicator
   Player.StartItem "BeastVisionCounter", 2100 //the timer
@@ -325,6 +323,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
