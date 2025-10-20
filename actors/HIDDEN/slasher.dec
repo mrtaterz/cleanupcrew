@@ -80,6 +80,7 @@ actor EvilPuff : BulletPuff //NOT A testing actor
 	seeSound "unseen/hit"
 	attackSound "unseen/wall"
 	obituary "$OB_STABBED"
+	ProjectileKickback 0
 	-noNetId //IMPORTANT!!!!!
 	-clientSideOnly //was that even here before? oh well! IMPORTANT!!!!!
 	+puffonactors
@@ -185,5 +186,6 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
 
