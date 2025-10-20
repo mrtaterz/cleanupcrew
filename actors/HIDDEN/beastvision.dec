@@ -1,7 +1,5 @@
-//Beast Vision--
-//write lore here sm you dumbass
-//name and function shamelessly ripped from blood lmao
-//MR BEAST!!!
+//Beast Vision - Night Vision goggles for The Threat
+// "You're not afraid of the dark, are you?"
 
 actor BeastVision : CustomInventory
 {
@@ -39,4 +37,5 @@ actor PowerBeastVision : PowerLightAmp
 {
 	Powerup.Color None //RedMap
 }
+
 
