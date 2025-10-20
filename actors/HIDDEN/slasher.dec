@@ -1,12 +1,6 @@
 //the melee weapon for the Unseen
 
-// scary mutated demon hands!
-// the old lore was about a knife that is long since gone
-// press F for the scuba steve knife
-// that wasn't a knife
-// the absolute weapon inside my pants for ya mom is a knife
-
-//They didn't count on him not being the one doing the violence.
+// These hands know not what they do.
 
 actor Slasher : Weapon
 {
@@ -191,4 +185,5 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
