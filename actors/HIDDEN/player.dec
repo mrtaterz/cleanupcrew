@@ -1,35 +1,11 @@
 //base Unseen player class and things that effect it
 
-//the unseen threat--
-//After harsh experiments involving neural implants and a new technology
-//known formally as BlrS and otherwise as "that wacky stealth thing,"
-//a UAC agent- perhaps now an experiment of its own-
-//gained superhuman strength, stamina, and metabolism. He was able to endure
-//many gunshot wounds and in one case a high-explosive rocket to the chest.
-//He can sprint at speeds that break records three times over, and an artifical
-//filtration system works in tandem with the already enhanced immune system
-//to provide great protection against biological weapons.
-//A teleportation experiment was scheduled and he was the subject- deploying
-//an invisible unit remotely would prove to be a great tool should it be safe.
-//But he didn't come out the other end- or so they thought.
+//An unknown entity that appears to shimmer in the light.
+//They say it came from the moon, and worships King Aamon.
+//They feed on the dead to bring life to the undead;
+//This knowledge of unlife is given to those who wish to seek it's power;
+//But only if you renounce your Self and pledge your fealty to King Aamon.
 
-//His mind already on the edge, his brain bombarded with artificial hormones,
-//the visions of the fires, the faces, the voices, the place he's seen before
-//he's pushed off the edge
-//And now, he can bring it all to this world- in their words, all he needs to do...
-
-//KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL KILL
-//TAKE THE BLOOD OF THE MANY AND PRESENT IT TO US
-
-// I'm the man...in the box.
-// Buried in my shit!
-// Wont You come and save me
-// Feed my eyes! (Can you sew them shut?)
-// Jesus Christ! (Deny Your Maker)
-// He, who tries (Will be wasted)
-// Feed my eyes (Now you've sewed them)
-// I'm the dog that gets beat
-// Shove my nose in shit!
 
 ACTOR Unseen : PlayerPawn
 {
@@ -323,6 +299,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
