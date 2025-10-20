@@ -12,7 +12,7 @@ actor Slasher : Weapon
 	Weapon.ammoType1 "nades" //allow the player to view nade number with knife
 	Weapon.bobStyle "alpha"
 	Weapon.bobSpeed 2
-	Weapon.Kickback 0
+	Weapon.Kickback 1
 	states
 	{
 		spawn:
@@ -107,6 +107,7 @@ actor AbhorrentPuff : EvilPuff
 {
 	obituary "$OB_SLASHED"
 	damageType "Darken"
+	ProjectileKickback 1000
 	states
 	{
 		crash:
@@ -187,6 +188,7 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
 
 
