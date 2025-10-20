@@ -267,7 +267,7 @@ actor AssaultShotgun : DoomWeapon
 
 actor ShotgunPuff : BulletPuff //more knockback
 {
-	projectileKickback 100
+	projectileKickback 200
 	+puffGetsOwner
 	+puffOnActors
 	states
@@ -340,6 +340,7 @@ actor 12gCaseSpawner2 : CaseSpawnerBase
 			stop
 	}
 }
+
 
 
 
