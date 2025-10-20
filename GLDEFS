@@ -245,16 +245,16 @@ object FlameBall
 flickerlight SPUFF1
 {
     color 1 0.5 0.0
-    size 12
-    secondarySize 16
+    size 16
+    secondarySize 24
     chance 0.8
 }
 
 flickerlight SPUFF2
 {
     color 1 0.5 0.0
-    size 6
-    secondarySize 8
+    size 8
+    secondarySize 12
     chance 0.8
 }
 
@@ -466,4 +466,5 @@ object TechBarrel
     frame BFE1D { light BFGBALL_X1 }
     frame BFE1E { light BFGBALL_X4 }
     frame BFE1F { light BFGBALL_X5 }
+
 }
