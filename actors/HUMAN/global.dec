@@ -80,9 +80,9 @@ offering satisfactory terminal performance.
 actor usClip : Ammo
 {
 	Inventory.Amount 10
-	Inventory.MaxAmount 200
+	Inventory.MaxAmount 250
 	Ammo.BackpackAmount 10
-	Ammo.BackpackMaxAmount 400
+	Ammo.BackpackMaxAmount 500
 	Inventory.Icon "CLIPA0"
 	Tag "$TAG_CLIP"
 	States
@@ -1169,5 +1169,6 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
