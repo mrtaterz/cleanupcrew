@@ -434,6 +434,7 @@ actor usPistol : Pistol
 	//Weapon.AmmoType1 "PistolMagazine" //why tf was this called a clip it's not a fucking pre-schnellfuer mauser c96 IT USES A MAG!!!!
 	//because we're making a BAD DOOM MOD THEMED DOOM MOD and that comes complete with improper terminology.
 	//but oh well, you changed it and i'm not gonna change it back LOL
+	Weapon.Kickback 2
 	Weapon.AmmoType "PistolAmmo"
 	//+WEAPON.NOAUTOFIRE
 	Decal "BulletChip"
@@ -1169,6 +1170,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
