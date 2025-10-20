@@ -46,6 +46,7 @@ actor usGrenadeLauncher : DoomWeapon
 	Weapon.ammoType "usRocketAmmo"
 	Weapon.ammoGive 2
 	Weapon.ammoUse 1
+    Weapon.Kickback 300
 	Inventory.icon "GLPPA0"
 	tag "$TAG_GRENADEGUN"
 	states
@@ -240,6 +241,7 @@ actor MachineGun : DoomWeapon //light machine gun
 	Decal "BulletChip"
 	Weapon.ammoType "usClip"
 	Weapon.ammoUse 1
+	Weapon.Kickback 10
 	Tag "$TAG_MG"
 	Obituary "$OB_MG"
 	Inventory.icon "MGPPA0"
@@ -413,5 +415,6 @@ actor LaserBeem //lazor
 	}
 
 }
+
 
 
