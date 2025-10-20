@@ -828,6 +828,7 @@ ACTOR AssaultCannon : Chaingun
 	Inventory.forbiddenTo "unseen"
 	Weapon.selectionOrder 700
 	Weapon.slotNumber 5
+	Weapon.Kickback 150
 	Inventory.PickupMessage "Picked up an Assault Cannon"
 	Obituary "%k reduced the Threat to a steaming pile of flesh."
 	Tag "Assault Cannon"
@@ -1170,6 +1171,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
