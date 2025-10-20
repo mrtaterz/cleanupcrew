@@ -194,7 +194,7 @@ actor FlyingNade //the projectile grenade.
 	+bounceonwalls
 	+bounceonceilings
 	+bounceautooff
-	-allowbounceonactors
+	+allowbounceonactors
 	seeSound "unseen/toss"
 	deathSound "unseen/boom"
 	bounceSound "unseen/bounce"
@@ -289,6 +289,7 @@ actor Nades:Ammo //the ammo for the grenades.
 	}
 
 }
+
 
 
 
