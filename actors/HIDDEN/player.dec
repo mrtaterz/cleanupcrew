@@ -34,7 +34,7 @@ ACTOR Unseen : PlayerPawn
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
   RenderStyle "Subtract"
-  Alpha 0.02
+  Alpha 0.03
   player.scoreicon "unsni"
   +shadow
   +USEDAMAGEEVENTSCRIPT
@@ -299,6 +299,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
