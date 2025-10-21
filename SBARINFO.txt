@@ -9,11 +9,11 @@ statusbar fullscreen, fullscreenoffsets
 	InInventory not Slasher
 	{
 	    DrawMugshot 5, -22 + center, -47;
-	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
 	
 	    DrawImage armoricon, -47 + center, -17;
 
-	    drawimage weaponicon, 45 + center , -16 ;
+	    drawimage weaponicon, 45 + center , -16;
+		DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
 	}
 
 	InInventory Slasher
@@ -37,11 +37,11 @@ statusbar normal, fullscreenoffsets
 	InInventory not Slasher
 	{
 	    DrawMugshot 5, -22 + center, -47;
-	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
-	
+	    
 	    DrawImage armoricon, -47 + center, -17;
 	    
-	    drawimage weaponicon, 45 + center , -16 ;
+	    drawimage weaponicon, 45 + center , -16;
+		DrawNumber 3, HUDFONT_DOOM, DarkRed, Ammo1, whennotzero, alignment(left), drawshadow, 33 + center, -43;
 	}
 	
 	
