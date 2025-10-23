@@ -40,7 +40,7 @@ Actor CorpseGeneric// replaces DeadMarine
 			"####" "#" 0 A_TakeInventory("Clip",1)
 			goto verydead
 		death:
-			"####" "#" 0 A_GiveToTarget("Health",10)
+			"####" "#" 0 A_GiveToTarget("Health",5)
 			"####" "#" 0 A_PlaySound("unseen/armortear")
 			//"####" "#" 0 A_JumpIfInventory("Clip",1,2) //roundabout lol
 			//"####" "#" 0 A_Jump(256,3)
@@ -762,6 +762,7 @@ actor BlueArmorNuller : Nuller replaces BlueArmor
 
 
 //the rat is in usefuldeco
+
 
 
 
