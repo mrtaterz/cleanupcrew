@@ -1,4 +1,3 @@
-clearskills
 clearepisodes
 
 gameinfo 
@@ -13,6 +12,11 @@ gameinfo
 	menufontcolor_header = "WHITE"
 	menufontcolor_highlight = "WHITE"
 	menufontcolor_selection = "WHITE"
+}
+
+episode MAP01
+{
+	name  = "Unseen"
 }
 
 map MAP01 "The Fueling Garrison"

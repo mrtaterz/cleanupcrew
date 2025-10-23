@@ -47,6 +47,8 @@ $volume unseen/burn	0.5
 
 unseen/armortear	dsclaw
 
+unseen/ghost UNSEGOST
+
 //unseen/oof dsoof
 //$pitchset		unseen/oof 0.7 0.0
 
