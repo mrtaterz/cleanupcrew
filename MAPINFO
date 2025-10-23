@@ -1,3 +1,6 @@
+clearskills
+clearepisodes
+
 gameinfo 
 {
 	InfoPage = "HELP","THREAT","CREW","CREDIT"
@@ -74,6 +77,7 @@ map MAP10 "Habitat"
 	Music="d_map10"
 	LightMode=8
 }
+
 
 
 
