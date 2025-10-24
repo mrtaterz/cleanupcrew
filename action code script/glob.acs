@@ -186,6 +186,7 @@ script "doUnseenSwap" (void)
 	PrintBold(n:(pnum+1),s:" has become The Threat!");
 	//DamageActor(0,AAPTR_Default,0,AAPTR_Null,1000,"None");
 	pnumLastUnseen=pnum;
+	pnumUnseen = pnum;
 	SwappingTeams=false;
 }
 
