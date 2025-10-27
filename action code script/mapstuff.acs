@@ -11,10 +11,11 @@ script US_MOVEBARREL (void) //note the name is a const instead of a string
 	fixed y = getactorvely(0);
 	fixed z = getactorvelz(0);
 	
-	fixed silly = fixedsqrt((x*x + y*y + z*z));
+	fixed silly = fixedsqrt((fixedmul(x,x) + fixedmul(y,y) + fixedmul(z,z)));
 	//silly = silly >> 16;
 	//printbold(i:silly);
-	if(silly > 32.0)
+	//printbold(f:silly);
+	if(silly > 0.5)
 	{
 		playsound(0,"misc/barrelmove");
 		giveinventory("powerbarrelnoisecooldown",1);
