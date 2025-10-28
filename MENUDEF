@@ -69,10 +69,11 @@ ListMenu "MainMenu"
 {
 	STATICPATCH 85,0,"M_DOOM" //it will always be doom.
 	POSITION 92,72
-	
+	TextItem "Multiplayer","M","ZA_MultiplayerOptions"
+	TextItem "Options","O","OptionsMenu"
 	TextItem "Tweaks","T","UsOptions"
 	TextItem "Read this!","R","ReadThisMenu"
-	TextItem "Options","O","OptionsMenu"
 	TextItem "Quit Game","Q","QuitMenu"
 
 }
+
