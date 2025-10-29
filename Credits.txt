@@ -111,7 +111,7 @@ KITCHCAx by XLightningStormL, based on textures by iD Software
 DESK07 - DESK17 by XLightningStormL from textures sourced from iD Software, Marsdoom, Hellcore 2.0, Mars3D, and the Blade of Agony team.
 COUNTER, and MONITORS from Phobos.WAD by Roger Ritenour
 BEDx from ??? (I think from EDay, but unlikely Mark made the originals)
-TVANIxx, SP2CLENx by XLightningStormL based on textures by iD Software, and TeamTNT
+TVANIxx, SP2CLENx by XLightningStormL based on textures by iD Software, and Williams Entertainment
 SMONCx by XLightningStormL based on textures by Midway Entertainment
 CMPLTBT1 by XLightningStormL based on textures by David Szymanski for DUSK (pls dont sue us New Blood)
 LITERED1, and LITERED2 by TeamTNT
@@ -141,6 +141,7 @@ The Wasteland Discord and it's denizens (The GooseJelly will not be televised Ma
 Realm667
 Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL + inkoalawetrust)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
+
 
 
 
