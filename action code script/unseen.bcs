@@ -14,5 +14,6 @@ strict namespace {
 #include "help.acs"
 #include "mapstuff.acs"
 #include "unseenlogic.acs"
+#include "fnaf.acs"
 
 }
