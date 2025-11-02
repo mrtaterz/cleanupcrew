@@ -3,7 +3,7 @@ clearepisodes
 gameinfo 
 {
 	InfoPage = "HELP","THREAT","CREW","CREDIT"
-	borderflat = "FLAT5_4"
+	borderflat = "BLACK"
 	CursorPic = "cuccurs"
 	menufontcolor_title = "WHITE"
 	menufontcolor_label = "WHITE"
@@ -81,6 +81,7 @@ map MAP10 "Habitat"
 	Music="d_map10"
 	LightMode=8
 }
+
 
 
 
