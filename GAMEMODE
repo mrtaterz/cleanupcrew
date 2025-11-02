@@ -6,6 +6,7 @@ TeamLMS {
 	AddFlag MAPRESETS
 	AddFlag DEADSPECTATORS
 	AddFlag PLAYERSONTEAMS
+	AddFlag DONTPRINTPLAYERSLEFT
 	AddFlag USEMAXLIVES
 	AddFlag MAPRESET_RESETS_MAPTIME
 	name "Clean-Up Crew"
@@ -15,6 +16,8 @@ TeamLMS {
 		lms_spectatorchat = true
 		sv_lmscountdowntime = 20
 		sv_itemrespawn = true
+		sv_noidentifytarget = true
     }
 
 }
+
