@@ -5,7 +5,7 @@
 actor usGrenade : Grenade replaces Grenade
 {
 	//bounceCount 2
-	radius 8
+	radius 4
 	height 8
 	speed 30
 	gravity 0.3
@@ -336,6 +336,7 @@ actor LaserBeem //lazor
 	}
 
 }
+
 
 
 
