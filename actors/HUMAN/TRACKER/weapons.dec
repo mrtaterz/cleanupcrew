@@ -37,6 +37,14 @@ actor proxsensors : doomweapon
 			SENL B 3
 			SENL A 5
 			goto ready
+		AltFire:
+			KICK A 4 A_GiveInventory("PowerKicking",1)
+			KICK B 5
+			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
+			KICK B 4
+			KICK A 4
+			KICK A 0 A_Refire
+			Goto Ready
 	}
 }
 
@@ -253,6 +261,14 @@ actor AssaultShotgun : DoomWeapon
 			ASHF D 0 A_WeaponReady(WRF_NOBOB)
 			ASHT AAAA 1 A_WeaponReady(WRF_NOBOB | WRF_ALLOWRElOAD)
 			goto ready
+		AltFire:
+			KICK A 4 A_GiveInventory("PowerKicking",1)
+			KICK B 5
+			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
+			KICK B 4
+			KICK A 4
+			KICK A 0 A_Refire
+			Goto Ready
 		inspect:
 			ASHT A 0 A_SetArg(0,1)
 			ASHT A 5 A_SetTics(random(4,10))
@@ -340,6 +356,7 @@ actor 12gCaseSpawner2 : CaseSpawnerBase
 			stop
 	}
 }
+
 
 
 
