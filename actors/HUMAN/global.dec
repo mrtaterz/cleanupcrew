@@ -448,7 +448,7 @@ actor WeaponCurrentlyZoomed : Inventory
 //10mm pistol--
 //A useful sidearm based off of the M92 issued to all units under the UAC.
 //Packs a considerable punch, at least as far as pistols go.
-actor usPistol : Pistol
+actor usPistol : usWeapon
 {
 	//Weapon.AmmoType1 "PistolMagazine" //why tf was this called a clip it's not a fucking pre-schnellfuer mauser c96 IT USES A MAG!!!!
 	//because we're making a BAD DOOM MOD THEMED DOOM MOD and that comes complete with improper terminology.
@@ -1192,6 +1192,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
