@@ -73,14 +73,6 @@ Actor Flamer : DoomWeapon
 		flash2:
 			TNT1 A 3 A_Light1
 			goto LightDone
-		AltFire:
-			KICK A 4 A_GiveInventory("PowerKicking",1)
-			KICK B 5
-			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
-			KICK B 4
-			KICK A 4
-			KICK A 0 A_Refire
-			Goto Ready
 	}
 }
 
@@ -211,14 +203,6 @@ Actor MineLauncher : DoomWeapon //ammo is in human/global.dec
 			PRXG E 8
 			PRXG A 8
 			goto ready
-		AltFire:
-			KICK A 4 A_GiveInventory("PowerKicking",1)
-			KICK B 5
-			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
-			KICK B 4
-			KICK A 4
-			KICK A 0 A_Refire
-			Goto Ready
 	}
 }
 
@@ -438,5 +422,4 @@ actor DebugMine : ProxMine //always explodes
 	}
 
 }
-
 
