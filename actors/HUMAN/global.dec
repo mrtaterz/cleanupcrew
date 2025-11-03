@@ -239,6 +239,25 @@ actor Sensors : Ammo
 
 //guns
 
+//a base weapon
+actor usWeapon : DoomWeapon
+{
+	Weapon.ammoUse2 0
+	+Weapon.noAlert
+	states
+	{
+		AltFire:
+			KICK A 4 A_GiveInventory("PowerKicking",1)
+			KICK B 5
+			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
+			KICK B 4
+			KICK A 4
+			KICK A 0 A_Refire
+			TNT1 A 35 A_Jump(256,"Ready")
+			wait
+	}
+}
+
 //brass knuckles--
 //A melee weapon preferred by many marines under the UAC as a last resort due to
 //its ease of use, and Detachment 4F is no different in their preference.
@@ -1173,6 +1192,7 @@ actor DistantMachineGunMaker : DistantGunMaker
 {
 	PainSound "weapons/machinegundist"
 }
+
 
 
 
