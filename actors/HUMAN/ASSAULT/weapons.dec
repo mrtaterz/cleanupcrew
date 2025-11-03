@@ -43,7 +43,7 @@ actor usGrenade : Grenade replaces Grenade
 	}
 }
 //thump thump tube
-actor usGrenadeLauncher : DoomWeapon
+actor usGrenadeLauncher : usWeapon
 {
 	Weapon.ammoType "usRocketAmmo"
 	Weapon.ammoGive 2
@@ -157,12 +157,12 @@ actor 40MilCaseSpawner : CaseSpawnerBase
 	}
 }
 
-actor MachineGun : DoomWeapon //light machine gun
+actor MachineGun : usWeapon //light machine gun
 {
 	Decal "BulletChip"
 	Weapon.ammoType "usClip"
 	Weapon.ammoUse 1
-	Weapon.Kickback 25
+	Weapon.kickback 25
 	Tag "$TAG_MG"
 	Obituary "$OB_MG"
 	Inventory.icon "MGPPA0"
