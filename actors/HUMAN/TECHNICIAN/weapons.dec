@@ -7,7 +7,7 @@
 //Has special usage for this assignment- the flames left by a burning target
 //reveal their position.
 
-Actor Flamer : DoomWeapon
+Actor Flamer : usWeapon
 {
 	Obituary "$OB_Flamer"
 	Weapon.AmmoType "usCell"
@@ -85,8 +85,6 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	gravity 0.5
 	damage 1
 	ProjectileKickBack 0
-	poisondamage 1, 5, 0
-	poisondamagetype Fire
 	seeSound "weapons/flamer"
 	deathSound "weapons/flamerx"
 	obituary "$OB_Flamer"
@@ -167,7 +165,7 @@ actor FlameSmoke : RevenantTracerSmoke //almost no reason to inherit anymore lma
 //Though it's possible the tones could be heard by someone with, say,
 //artificially enhanced senses...
 
-Actor MineLauncher : DoomWeapon //ammo is in human/global.dec
+Actor MineLauncher : usWeapon //ammo is in human/global.dec
 {
 	weapon.ammouse 1
 	weapon.ammotype "Mines"
@@ -422,4 +420,5 @@ actor DebugMine : ProxMine //always explodes
 	}
 
 }
+
 
