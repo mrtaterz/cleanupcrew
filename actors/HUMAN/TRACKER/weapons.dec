@@ -10,7 +10,7 @@
 //being found beforehand. In the presence of a target, the sensor beeps loudly
 //and flashes, indicating its operator of the location of the threat.
 
-actor proxsensors : doomweapon
+actor proxsensors : usWeapon
 {
 	Weapon.ammoUse 1
 	Weapon.ammoType "Sensors"
@@ -212,14 +212,14 @@ Actor FakePickedSensor : CustomInventory
 
 
 //but of course, just how useful would a shield be without a sword?
-actor AssaultShotgun : DoomWeapon
+actor AssaultShotgun : usWeapon
 {
 	//attacksound "weapons/assaultshotgun"
 	decal "bulletchip"
 	Inventory.icon "SGPPA0"
 	Weapon.ammoType "usShell"
 	Weapon.ammoUse 1
-	Weapon.Kickback 100
+	Weapon.kickback 100
 	tag "$TAG_ASSAULTSHOTGUN"
 	obituary "$OB_ASSAULTSHOTGUN"
 	+Weapon.noAutoFire
@@ -340,6 +340,7 @@ actor 12gCaseSpawner2 : CaseSpawnerBase
 			stop
 	}
 }
+
 
 
 
