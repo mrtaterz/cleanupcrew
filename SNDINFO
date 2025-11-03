@@ -238,6 +238,7 @@ $limit bfgbarrel/charge 0
 $limit bfgbarrel/explode 0
 
 world/cctvwarn "sounds/map/cctvwarn.wav"
+$attenuation world/cctvwarn 0.5
 
 //mercenaries
 $alias mercs/explo weapons/grenlx
@@ -322,3 +323,4 @@ $volume World/Bubbles 0.5
 items/can CANPKUP
 
 misc/flatline flatline
+
