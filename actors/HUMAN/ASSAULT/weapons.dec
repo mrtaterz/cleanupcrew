@@ -9,6 +9,7 @@ actor usGrenade : Grenade replaces Grenade
 	height 8
 	speed 30
 	gravity 0.3
+	damage 20
 	+canbouncewater
 	+usebouncestate
 	+extremedeath
@@ -18,7 +19,6 @@ actor usGrenade : Grenade replaces Grenade
 	damageType "explosive"
 	states
 	{
-		
 		bounce:
 			SGRN A 0 A_JumpIf(args[0] > 0,"null") //failsafe to keep projectile from lingering indefinitely
 			SGRN A 0 A_SetArg(1,args[1]*0.8+random(-40,40))
@@ -39,7 +39,8 @@ actor usGrenade : Grenade replaces Grenade
 		death:
 			SGRN A 0 A_SetArg(0,1)
 			SGRN A 0 A_SpawnItemEx("ExploQuakeMaker")
-			goto super::death
+			MISL B 8 Bright A_Explode(115,150,XF_HURTSOURCE,TRUE,64)
+			goto super::death+1
 	}
 }
 //thump thump tube
@@ -336,6 +337,7 @@ actor LaserBeem //lazor
 	}
 
 }
+
 
 
 
