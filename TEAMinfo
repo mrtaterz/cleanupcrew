@@ -3,7 +3,7 @@
 
 clearteams
 
-Team "Cleanup Crew"
+Team "The Cleaners"
 {
 	PlayerStartThingNumber 5080
 	TextColor "White" //"Detachment"
@@ -20,4 +20,5 @@ Team "The Threat"
 	TextColor "Red"
 	AllowCustomPlayerColor
 	logo "usmen"
+
 }
