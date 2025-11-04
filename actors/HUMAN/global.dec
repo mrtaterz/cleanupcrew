@@ -453,8 +453,9 @@ actor usPistol : usWeapon
 	//Weapon.AmmoType1 "PistolMagazine" //why tf was this called a clip it's not a fucking pre-schnellfuer mauser c96 IT USES A MAG!!!!
 	//because we're making a BAD DOOM MOD THEMED DOOM MOD and that comes complete with improper terminology.
 	//but oh well, you changed it and i'm not gonna change it back LOL
-	Weapon.Kickback 25	
-	Weapon.AmmoType "PistolAmmo"
+	Weapon.kickback 25	
+	Weapon.ammoType "PistolAmmo"
+	Weapon.ammoUse 1
 	//+WEAPON.NOAUTOFIRE
 	Decal "BulletChip"
 	States
