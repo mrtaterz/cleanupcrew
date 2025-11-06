@@ -289,6 +289,12 @@ world/ricochet3 ric3
 $random world/ricochet {world/ricochet1 world/ricochet2 world/ricochet3}
 $limit world/ricochet 0
 
+world/bush1 brusha
+world/bush2 brushb
+world/bush3 brushc
+world/bush4 brushd
+$random world/bush {world/bush1 world/bush2 world/bush3 world/bush4}
+
 //deco
 world/barrelx dsbexp2
 
@@ -323,4 +329,5 @@ $volume World/Bubbles 0.5
 items/can CANPKUP
 
 misc/flatline flatline
+
 
