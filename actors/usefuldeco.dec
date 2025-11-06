@@ -371,12 +371,76 @@ Actor UnseenCameraProp 9657
 		//Speen
 		Spawn:
 			MRC1 B 0 NoDelay A_CheckFlag ("StandStill","Lazy")
-			MRC1 BCDEFGH 6
-			MRC1 HGFEDCB 6
+			xloop:
+			//with the default setting of 34, the camera takes 595 (!) ticks to fully cycle
+			//four times, with a slight discrepancy between the animation and the actual position of the camera
+			//thus, i have to define the animation cycle four times, with slightly varying durations to ensure
+			//proper synchronization of animation and camera position
+			MRC1 BCDEFGHHGFEDCB 22
+			MRC1 BCDEFGHHGFEDCB 22
+			MRC1 BCDEFGH 20
+			MRC1 H 6
+			MRC1 HGFEDCB 20
+			MRC1 B 8
+			MRC1 BCDEFGH 20
+			MRC1 HGFEDCB 20
 			Loop
 		Lazy:
 			MRC1 A -1
 			Loop
+	}
+}
+
+//how idiotic do you think it is that missiles cannot hit shit if they can't move?
+//so much for that use case. we're going a different, far more awful direction.
+actor BushBase : CustomInventory
+{
+	states
+	{
+		pickup:
+			TNT1 A 0 A_JumpIfInventory("PowerBushCooldown",1,"donothing")
+			TNT1 A 0 A_GiveInventory("PowerBushCooldown",1)
+			TNT1 A 0 A_SpawnItemEx("BushNoiseMaker")
+			fail
+		donothing:
+			TNT1 A 0
+			fail
+	}
+}
+
+actor PowerBushCooldown : Powerup
+{
+	Powerup.duration 25
+}
+
+actor BushNoiseMaker : DistantExploMaker
+{
+	states
+	{
+		spawn:
+			TNT1 A 35 NODELAY A_PlaySound("misc/bush")
+			stop
+	}
+}
+
+actor Bush : BushBase 9406
+{
+	//$Title Random Bush
+	//$Category Decoration
+	//$Sprite BUS2A0
+	Radius 24
+	Height 32
+    States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(128, "Spawn2")
+			BUS2 A 1
+			goto xloop
+		Spawn2:
+			BUS2 B 1
+		xloop:
+			"####" "#" -1
+			stop
 	}
 }
 
@@ -439,6 +503,7 @@ actor UnseenCanSpawner
 	}
 }
 
+//TODO: add the tumble animation
 actor UnseenCanProp : SwitchableDecoration 9659
 {
 	//$Title Soda Can

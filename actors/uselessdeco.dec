@@ -118,7 +118,6 @@ actor Grass 9405
 	+NOCLIP
 	+NOINTERACTION
 	+NOTONAUTOMAP
-	+NOBLOCKMAP
 	+FLOORCLIP
 	Height 12
 	Radius 10
@@ -140,26 +139,6 @@ actor Grass 9405
 		Spawn4:
 			GRSS D 1
 			GRSS D -1
-			Stop
-	}
-}
-
-actor Bush : Grass 9406
-{
-	//$Category Decoration
-	//$Sprite BUS2A0
-	Radius 24
-	Height 32
-    States
-	{
-		Spawn:
-			TNT1 A 0 NoDelay A_Jump(128, "Spawn2")
-			BUS2 A 1
-			BUS2 A -1
-			Stop
-		Spawn2:
-			BUS2 B 1
-			BUS2 B -1
 			Stop
 	}
 }
