@@ -418,7 +418,7 @@ actor BushNoiseMaker : DistantExploMaker
 	states
 	{
 		spawn:
-			TNT1 A 35 NODELAY A_PlaySound("misc/bush")
+			TNT1 A 35 NODELAY A_PlaySound("world/bush")
 			stop
 	}
 }
@@ -550,3 +550,4 @@ actor UnseenCanDummy : Health
 		Loop
 	}
 }
+
