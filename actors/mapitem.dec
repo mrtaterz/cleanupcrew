@@ -6,7 +6,7 @@ Actor CorpseGeneric// replaces DeadMarine
 {
 	radius 24
 	height 8
-	health 300
+	health 450
 	damagefactor "None",0
 	//damagefactor "Fire",0 //i heard rockets do fire damage
 	//damagefactor "Poison",0
@@ -762,6 +762,7 @@ actor BlueArmorNuller : Nuller replaces BlueArmor
 
 
 //the rat is in usefuldeco
+
 
 
 
