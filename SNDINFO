@@ -290,11 +290,11 @@ $random world/ricochet {world/ricochet1 world/ricochet2 world/ricochet3}
 $limit world/ricochet 0
 
 
-$random world/bush {world/bush1 world/bush2 world/bush3 world/bush4}
-world/bush1 brusha
-world/bush2 brushb
-world/bush3 brushc
-world/bush4 brushd
+$random misc/bush {bush1 bush2 bush3 bush4}
+bush1 brusha
+bush2 brushb
+bush3 brushc
+bush4 brushd
 
 //deco
 world/barrelx dsbexp2
@@ -330,6 +330,7 @@ $volume World/Bubbles 0.5
 items/can CANPKUP
 
 misc/flatline flatline
+
 
 
 
