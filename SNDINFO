@@ -330,6 +330,7 @@ $volume World/Bubbles 0.5
 items/can CANPKUP
 
 misc/flatline flatline
+$attenuation misc/flatline 2
 
 
 
