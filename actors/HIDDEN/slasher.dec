@@ -29,16 +29,16 @@ actor Slasher : Weapon
 			loop
 		fire:
 			CLAW A 0 A_Jump(128,"fire2") //random animation
-			CLAW BCDE 2
+			CLAW BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
-			CLAW F 2 A_FireBullets(0,0,1,45,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
+			CLAW F 1 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
 			CLAW GHI 1
 			CLAW JKLMNO 2
 			goto ready
 		fire2:
-			CLAL BCDE 2
+			CLAL BCDE 1
 			TNT1 A 0 A_PlaySound("unseen/knife")
-			CLAL F 2 A_FireBullets(0,0,1,45,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
+			CLAL F 1 A_FireBullets(0,0,1,30,"EvilPuff",FBF_Norandom | FBF_Noflash,88)
 			CLAL GHI 1
 			CLAL JKLMNO 2
 			goto ready
@@ -188,6 +188,7 @@ actor SpecialBloodSlow2 : SpecialBloodSlow //with smears
 {
 	decal "bloodsmear"
 }
+
 
 
 
