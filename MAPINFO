@@ -82,6 +82,14 @@ map MAP10 "Habitat"
 	LightMode=8
 }
 
+map MAP31 "The Cargo Warehouse (Flooded)"
+{
+	Sky1="SKY4"
+	Music="D_RUNNIN"
+	LightMode=8
+}
+
+
 
 
 
