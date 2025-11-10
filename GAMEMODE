@@ -17,7 +17,9 @@ TeamLMS {
 		sv_lmscountdowntime = 20
 		sv_itemrespawn = true
 		sv_noidentifytarget = true
+		teamdamage = 1
     }
 
 }
+
 
