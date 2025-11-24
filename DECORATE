@@ -19,4 +19,7 @@
 #include "ACTORS/HUMAN/TRACKER/weapons.dec"
 
 #include "ACTORS/mercs.dec"
+
 #include "ACTORS/demon.dec"
+#include DECORATE/Blood
+#include DECORATE/Puff
