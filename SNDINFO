@@ -332,6 +332,62 @@ items/can CANPKUP
 misc/flatline flatline
 $attenuation misc/flatline 2
 
+$random flesh/hit {dsflesh1 dsflesh2 dsflesh3 dsflesh4 dsflesh4 dsflesh4 dsflesh4 dsflesh5 dsflesh6 dsflesh6 dsflesh7 dsflesh7}
+dsflesh1	dsflesh1
+dsflesh2	dsflesh2
+dsflesh3	dsflesh3
+dsflesh4	dsflesh4
+dsflesh5	dsflesh5
+dsflesh6	dsflesh6
+dsflesh7	dsflesh7
+
+$rolloff flesh/hit 1 576
+$volume flesh/hit 0.6//0.75
+
+//$random flesh/gush {dsblud01 dsblud02 dsblud03 null null null}
+dsblud01	dsblud01
+dsblud02	dsblud02
+dsblud03	dsblud03
+dsblud04	dsblud04
+
+bld/spls1 			dssplat1
+bld/spls2 			dssplat2
+bld/spls3 			dssplat3
+bld/spls4 			dssplat4
+$random bld/spls 		{ bld/spls1 bld/spls2 bld/spls3 bld/spls3 bld/spls4 }
+
+$rolloff bld/spls 8 384
+
+
+
+weapons/trace1                  dssrico1
+weapons/trace2                  dssrico2
+weapons/trace3                  dssrico3
+weapons/trace4                  dssrico4
+weapons/trace5                  dssrico5
+weapons/trace6                  dssrico6
+weapons/trace7                  dssrico7
+weapons/trace8                  dssrico8
+weapons/trace9                  dssrico9
+weapons/trace10                 dssric10
+weapons/trace11                 dssric11
+weapons/trace12                 dssric12
+weapons/trace13                 dssric13
+weapons/trace14                 dssric14
+weapons/trace15                 dssric15
+weapons/trace16                 dssric16
+weapons/trace17                 dssric17
+weapons/trace18                 dssric18
+weapons/trace19                 dssric19
+weapons/trace20                 dssric20
+weapons/trace21                 dssric21
+$random weapons/trace           { weapons/trace2 weapons/trace3 weapons/trace4 weapons/trace5 weapons/trace6 weapons/trace10 weapons/trace11 weapons/trace12 weapons/trace13}
+$rolloff weapons/trace 1 720
+$volume weapons/trace 0.66
+$random puff/ricochet {weapons/trace1 weapons/trace7 weapons/trace8 weapons/trace9 weapons/trace14 weapons/trace15 weapons/trace16 weapons/trace17 weapons/trace18 weapons/trace19 weapons/trace20 weapons/trace21 misc/null misc/null misc/null}
+$rolloff puff/ricochet 32 384
+
+
 
 
 
