@@ -47,3 +47,29 @@ pic MONITOR4 tics 4
 pic MONITOR5 tics 4
 pic MONITOR6 tics 4
 
+//warp texture bloda0
+//warp texture blodb0
+//warp texture blodc0
+//warp2 texture BL0DA0F0
+//warp2 texture BL0DB0G0
+//warp2 texture BL0DC0H0
+
+
+warp texture puf5a0
+warp texture puf5b0
+warp texture puf5c0
+warp texture puf5d0
+warp texture puf5e0
+warp texture puf5f0
+warp texture puf5g0
+warp texture puf5h0
+warp texture puf5i0
+warp texture puf5j0
+warp texture puf5k0
+warp texture puf5l0
+warp texture puf5m0
+warp texture puf5n0
+warp texture puf5o0
+warp texture puf5p0
+
+
