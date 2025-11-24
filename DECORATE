@@ -21,5 +21,6 @@
 #include "ACTORS/mercs.dec"
 
 #include "ACTORS/demon.dec"
-#include DECORATE/Blood
-#include DECORATE/Puff
+#include "ACTORS/Blood.dec"
+#include "ACTORs/Puff.dec"
+
