@@ -43,6 +43,7 @@ Actor Assault : PlayerPawn
 	Player.ColorRange 112, 127
 	player.scoreIcon "ASLTI"
 	Player.Face "STA"
+	Player.RunHealth 20
 	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
 	+USEDAMAGEEVENTSCRIPT
 	States
@@ -105,6 +106,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
