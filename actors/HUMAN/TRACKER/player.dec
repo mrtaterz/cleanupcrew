@@ -42,6 +42,7 @@ Actor Support : PlayerPawn
 	Player.ColorRange 112, 127
 	Player.scoreIcon "TRACI"
 	Player.RunHealth 20
+	Player.SideMove 0.5
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -103,6 +104,7 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
 
 
 
