@@ -37,6 +37,7 @@ Actor Sapper : PlayerPawn
 	Player.scoreIcon "TECHI"
 	Player.Face "STE"
 	Player.RunHealth 20
+	Player.SideMove 0.5
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -98,6 +99,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
