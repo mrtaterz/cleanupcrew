@@ -30,6 +30,7 @@ ACTOR Unseen : PlayerPawn
   Player.StartItem "EvilArmor"
   Player.StartItem "BeastVision", 100 //the activator / indicator
   Player.StartItem "BeastVisionCounter", 2100 //the timer
+  Player.GruntSpeed 4
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
@@ -299,6 +300,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
