@@ -82,6 +82,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 {
 	-noGravity
 	+noDamageThrust
+	+rockettrail
 	gravity 0.5
 	damage 1
 	ProjectileKickBack 0
@@ -420,6 +421,7 @@ actor DebugMine : ProxMine //always explodes
 	}
 
 }
+
 
 
 
