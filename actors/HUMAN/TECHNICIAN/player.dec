@@ -38,6 +38,7 @@ Actor Sapper : PlayerPawn
 	Player.Face "STE"
 	Player.RunHealth 20
 	Player.SideMove 0.8
+	Player.GruntSpeed 8
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -99,6 +100,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
