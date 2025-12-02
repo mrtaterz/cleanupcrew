@@ -36,6 +36,7 @@ Actor Sapper : PlayerPawn
 	Player.ColorRange 112, 127
 	Player.scoreIcon "TECHI"
 	Player.Face "STE"
+	Player.RunHealth 20
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -97,6 +98,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
