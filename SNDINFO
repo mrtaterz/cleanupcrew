@@ -75,7 +75,7 @@ $playersounddup	unseen	male	*pain50		*pain100
 $playersounddup	unseen	male	*pain25		*pain100
 $playeralias	unseen	male	*grunt		unseen/land
 $playersounddup	unseen	male	*land		*grunt
-$playeralias	unseen	male	*jump		dsnone
+$playeralias	unseen	male	*jump   unseen/jump
 $playersound	unseen	male	*jump		dsnone
 $playersound	unseen	male	*fist		dspunch
 $playeralias	unseen	male	*usefail	skeleton/pain
@@ -387,6 +387,7 @@ $rolloff weapons/trace 1 720
 $volume weapons/trace 0.66
 $random puff/ricochet {weapons/trace1 weapons/trace7 weapons/trace8 weapons/trace9 weapons/trace14 weapons/trace15 weapons/trace16 weapons/trace17 weapons/trace18 weapons/trace19 weapons/trace20 weapons/trace21 misc/null misc/null misc/null}
 $rolloff puff/ricochet 32 384
+
 
 
 
