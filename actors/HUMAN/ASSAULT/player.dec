@@ -46,43 +46,45 @@ Actor Assault : PlayerPawn
 	Player.RunHealth 20
 	Player.SideMove 0.8
 	Player.GruntSpeed 8
+	Player.CrouchSprite "PCBC"
 	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
 	Spawn:
-		ASLT A -1
+		PCBN A -1
 		Loop
 	See:
-		ASLT ABCD 4 
+		PCBN ABCD 4 
 		Loop
 	Missile:
-		ASLT E 12
+		PCBN E 12
 		Goto Spawn
 	Melee:
-		ASLT F 2 BRIGHT Light("ZOMBIEATK")
+		PCBN F 2 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		ASLT H 4 A_Quake(1,10,0,1,"none")
-		ASLT H 4 A_Pain
+		PCBN G 4 A_Quake(1,10,0,1,"none")
+		PCBN G 4 A_Pain
 		Goto Spawn
 	death.darken:
-		ASLT H 0 A_CustomMissile("BloodSpiller")
+		PCBN H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		ASLT H 8 A_PlaySound("misc/flatline",16,1)
-		ASLT I 8 A_PlayerScream
-		ASLT J 8 A_NoBlocking
-		ASLT KL 8
-		ASLT M 1 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PCBN H 8 A_PlaySound("misc/flatline",16,1)
+		PCBN I 8 A_PlayerScream
+		PCBN J 8 A_NoBlocking
+		PCBN KL 8
+		PCBN M 2 
+		PCBN N 2 A_SpawnItemEx("DeadAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	XDeath:
-		PGIB A 5 A_Quake(2,32,0,1,"none")
-		PGIB B 5 A_XScream
-		PGIB C 5 A_NoBlocking
-		PGIB D 5
-		PGIB E -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PCBN 0P 5 A_Quake(2,32,0,1,"none")
+		PCBN QR 5 A_XScream
+		PCBN ST 5 A_NoBlocking
+		PCBN UV 5
+		PCBN W -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	}
@@ -108,6 +110,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
