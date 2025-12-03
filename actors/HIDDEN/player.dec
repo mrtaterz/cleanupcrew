@@ -31,12 +31,14 @@ ACTOR Unseen : PlayerPawn
   Player.StartItem "BeastVision", 100 //the activator / indicator
   Player.StartItem "BeastVisionCounter", 2100 //the timer
   Player.GruntSpeed 4
+  Player.ViewHeight 38
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
   RenderStyle "Subtract"
   Alpha 0.03
   player.scoreicon "unsni"
+  Scale 0.9
   +shadow
   +USEDAMAGEEVENTSCRIPT
   States
@@ -300,6 +302,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
