@@ -44,42 +44,43 @@ Actor Support : PlayerPawn
 	Player.RunHealth 20
 	Player.SideMove 0.8
 	Player.GruntSpeed 8
+	Player.CrouchSprite "PL3C"
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
 	Spawn:
-		SPRT A -1
+		PLA3 A -1
 		Loop
 	See:
-		SPRT ABCD 4 
+		PLA3 ABCD 4 
 		Loop
 	Missile:
-		SPRT E 12
+		PLA3 E 12
 		Goto Spawn
 	Melee:
-		SPRT F 2 BRIGHT Light("ZOMBIEATK")
+		PLA3 F 2 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		SPRT H 4 A_Quake(1,10,0,1,"none")
-		SPRT H 4 A_Pain
+		PLA3 G 4 A_Quake(1,10,0,1,"none")
+		PLA3 G 4 A_Pain
 		Goto Spawn
 	death.darken:
-		SPRT H 0 A_CustomMissile("BloodSpiller")
+		PLA3 H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		SPRT H 8 A_PlaySound("misc/flatline",16,1)
-		SPRT I 8 A_PlayerScream
-		SPRT J 8 A_NoBlocking
-		SPRT KL 8
-		SPRT M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PLA3 H 8 A_PlaySound("misc/flatline",16,1)
+		PLA3 I 8 A_PlayerScream
+		PLA3 J 8 A_NoBlocking
+		PLA3 KL 8
+		PLA3 M 1 A_SpawnItemEx("DeadSupport",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	XDeath:
-		PGIB A 5 A_Quake(2,32,0,1,"none")
-		PGIB B 5 A_XScream
-		PGIB C 5 A_NoBlocking
-		PGIB D 5
-		PGIB E -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PLA3 OP 5 A_Quake(2,32,0,1,"none")
+		PLA3 QR 5 A_XScream
+		PLA3 ST 5 A_NoBlocking
+		PLA3 UV 5
+		PLA3 W -1 //A_SpawnItemEx("GibbedAssault",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	}
@@ -90,7 +91,7 @@ Actor DeadSupport : CorpseGeneric
 	states
 	{
 		spawn:
-			SPRT M 1 NoDelay A_GiveInventory("Clip",5)
+			PLA3 M 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
 }
@@ -100,11 +101,12 @@ Actor GibbedSupport : CorpseGeneric
 	states
 	{
 		spawn:
-			SPRT E 1 NoDelay A_GiveInventory("Clip",5)
+			PLA3 E 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
 
 }
+
 
 
 
