@@ -39,42 +39,43 @@ Actor Sapper : PlayerPawn
 	Player.RunHealth 20
 	Player.SideMove 0.8
 	Player.GruntSpeed 8
+	Player.CrouchSprite "PFLC"
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
 	Spawn:
-		SAPR A -1
+		PFLM A -1
 		Loop
 	See:
-		SAPR ABCD 4 
+		PFLM ABCD 4 
 		Loop
 	Missile:
-		SAPR E 12
+		PFLM E 12
 		Goto Spawn
 	Melee:
-		SAPR F 6 BRIGHT Light("ZOMBIEATK")
+		PFLM F 6 BRIGHT Light("ZOMBIEATK")
 		Goto Missile
 	Pain:
-		SAPR G 4 A_Quake(1,10,0,1,"none")
-		SAPR G 4 A_Pain
+		PFLM G 4 A_Quake(1,10,0,1,"none")
+		PFLM G 4 A_Pain
 		Goto Spawn
 	death.darken:
-		SAPR H 0 A_CustomMissile("BloodSpiller")
+		PFLM H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
 	Death:
-		SAPR H 8 A_PlaySound("misc/flatline",16,1)
-		SAPR I 8 A_PlayerScream
-		SAPR J 8 A_NoBlocking
-		SAPR KL 8 //M 8
-		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PFLM H 8 A_PlaySound("misc/flatline",16,1)
+		PFLM I 8 A_PlayerScream
+		PFLM J 8 A_NoBlocking
+		PFLM KL 8 //M 8
+		PFLM N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	XDeath:
-		SAPR O 5 A_Quake(2,32,0,1,"none")
-		SAPR P 5 A_XScream
-		SAPR Q 5 A_NoBlocking
-		SAPR RSTUV 5
-		SAPR W -1 //A_SpawnItemEx("GibbedSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
+		PFLM OP 5 A_Quake(2,32,0,1,"none")
+		PFLM QR 5 A_XScream
+		PFLM ST 5 A_NoBlocking
+		PFLM UV 5
+		PFLM W -1 //A_SpawnItemEx("GibbedSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
 		Stop
 	}
@@ -85,7 +86,7 @@ Actor DeadSapper : CorpseGeneric
 	states
 	{
 		spawn:
-			SAPR N 1 NoDelay A_GiveInventory("Clip",5)
+			PFLM N 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
 }
@@ -95,11 +96,12 @@ Actor GibbedSapper : CorpseGeneric
 	states
 	{
 		spawn:
-			SAPR W 1 NoDelay A_GiveInventory("Clip",5)
+			PFLM W 1 NoDelay A_GiveInventory("Clip",5)
 			goto bedead
 	}
 
 }
+
 
 
 
