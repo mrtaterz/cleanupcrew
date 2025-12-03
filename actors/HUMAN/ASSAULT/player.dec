@@ -80,7 +80,7 @@ Actor Assault : PlayerPawn
 		TNT1 A -1
 		Stop
 	XDeath:
-		PCBN 0P 5 A_Quake(2,32,0,1,"none")
+		PCBN OP 5 A_Quake(2,32,0,1,"none")
 		PCBN QR 5 A_XScream
 		PCBN ST 5 A_NoBlocking
 		PCBN UV 5
@@ -110,6 +110,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
