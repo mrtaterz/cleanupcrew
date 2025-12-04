@@ -70,7 +70,7 @@ Actor Sapper : PlayerPawn
 	Pain.Falling:
 		TNT1 A 0 A_SetSpeed(0.5)
 		PFLM G 8 A_Quake(2,64,0,1,"none")
-		PFLM G 4 A_Pain
+		PFLM G 4 A_PlayerScream
 		PFLM G 2 A_SetSpeed(1.0)
 		Goto Spawn
 	death.darken:
@@ -115,6 +115,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
