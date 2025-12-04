@@ -47,6 +47,8 @@ Actor Assault : PlayerPawn
 	Player.SideMove 0.8
 	Player.GruntSpeed 8
 	Player.CrouchSprite "PCBC"
+	RenderStyle Normal
+	StencilColor green
 	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
 	+USEDAMAGEEVENTSCRIPT
 	States
@@ -67,10 +69,16 @@ Actor Assault : PlayerPawn
 		PCBN G 4 A_Quake(1,10,0,1,"none")
 		PCBN G 4 A_Pain
 		Goto Spawn
+	Pain.BFGSplash:
+		TNT1 A 0 A_SetRenderStyle("STYLE_Stencil")
+		PCBN G 4 A_Quake(2,32,0,1,"none")
+		PCBN G 2 A_Pain
+		PCBN G 2 A_SetRenderStyle("STYLE_Normal")	
+		Goto Spawn
 	Pain.Falling:
 		TNT1 A 0 A_SetSpeed(0.5)
-		PCBN G 8 A_Quake(2,64,0,1,"none")
-		PCBN G 4 A_Pain
+		PCBN G 8 A_Quake(2,32,0,1,"none")
+		PCBN G 4 A_PlayerScream
 		PCBN G 2 A_SetSpeed(1.0)
 		Goto Spawn
 	death.darken:
@@ -86,7 +94,7 @@ Actor Assault : PlayerPawn
 		TNT1 A -1
 		Stop
 	XDeath:
-		PCBN OP 5 A_Quake(2,32,0,1,"none")
+		PCBN OP 5 A_Quake(3,32,0,1,"none")
 		PCBN QR 5 A_XScream
 		PCBN ST 5 A_NoBlocking
 		PCBN UV 5
@@ -116,6 +124,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
