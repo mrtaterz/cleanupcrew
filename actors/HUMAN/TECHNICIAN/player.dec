@@ -40,6 +40,8 @@ Actor Sapper : PlayerPawn
 	Player.SideMove 0.8
 	Player.GruntSpeed 8
 	Player.CrouchSprite "PFLC"
+	RenderStyle Normal
+	StencilColor green
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
@@ -58,6 +60,12 @@ Actor Sapper : PlayerPawn
 	Pain:
 		PFLM G 4 A_Quake(1,10,0,1,"none")
 		PFLM G 4 A_Pain
+		Goto Spawn
+	Pain.BFGSplash:
+		TNT1 A 0 A_SetRenderStyle("STYLE_Stencil")
+		PFLM G 4 A_Quake(2,32,0,1,"none")
+		PFLM G 2 A_Pain
+		PFLM G 2 A_SetRenderStyle("STYLE_Normal")	
 		Goto Spawn
 	Pain.Falling:
 		TNT1 A 0 A_SetSpeed(0.5)
@@ -107,6 +115,7 @@ Actor GibbedSapper : CorpseGeneric
 	}
 
 }
+
 
 
 
