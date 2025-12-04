@@ -67,6 +67,12 @@ Actor Assault : PlayerPawn
 		PCBN G 4 A_Quake(1,10,0,1,"none")
 		PCBN G 4 A_Pain
 		Goto Spawn
+	Pain.Falling:
+		TNT1 A 0 A_SetSpeed(0.5)
+		PCBN G 8 A_Quake(2,64,0,1,"none")
+		PCBN G 4 A_Pain
+		PCBN G 2 A_SetSpeed(1.0)
+		Goto Spawn
 	death.darken:
 		PCBN H 0 A_CustomMissile("BloodSpiller")
 	death.suicide:
@@ -110,6 +116,7 @@ Actor GibbedAssault : CorpseGeneric
 	}
 
 }
+
 
 
 
