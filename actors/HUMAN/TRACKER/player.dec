@@ -75,7 +75,7 @@ Actor Support : PlayerPawn
 	Pain.Falling:
 		TNT1 A 0 A_SetSpeed(0.5)
 		PLA3 G 8 A_Quake(2,64,0,1,"none")
-		PLA3 G 4 A_Pain
+		PLA3 G 4 A_PlayerScream
 		PLA3 G 2 A_SetSpeed(1.0)
 		Goto Spawn
 	death.darken:
@@ -120,6 +120,7 @@ Actor GibbedSupport : CorpseGeneric
 	}
 
 }
+
 
 
 
