@@ -99,6 +99,15 @@ ACTOR Unseen : PlayerPawn
 	SHDT H 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,16)
     SHDT H 4 Bright A_Quake(1,10,0,1,"none")
 	Goto Spawn
+Pain.BFGSplash:
+	TNT1 A 0 A_SetRenderStyle("STYLE_Stencil")
+	SHDT H 4 A_Quake(2,32,0,1,"none")
+	SHDT H 2 A_Pain
+	SHDT H 2 A_SetRenderStyle("STYLE_Shadow")	
+	Goto Spawn
+Pain.Falling:
+	SHDT H 4
+	Goto Spawn
   Death:
     SHDE I 10
 	TNT1 A 0 A_SetTranslucent(1,0)
@@ -303,6 +312,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
