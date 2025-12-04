@@ -39,6 +39,7 @@ ACTOR Unseen : PlayerPawn
   Alpha 0.03
   player.scoreicon "unsni"
   Scale 0.9
+  DamageFactor falling, 0
   +shadow
   +USEDAMAGEEVENTSCRIPT
   States
@@ -302,6 +303,7 @@ actor UnseenGhost
         Stop
     }
 }
+
 
 
 
