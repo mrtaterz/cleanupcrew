@@ -72,7 +72,7 @@ Proximity mine projectiles by Mechadon + 3D Realms
 Proximity mine explosion by Amuscaria
 Chemgun sprites by GooseJelly, and Drakon.
 Flamethrower sprites by Joblez.
-Flares by scallino, and scriptedmarine.
+Flares code by scallino, and scriptedmarine; Sprites by scallino, and XLightningStormL.
 Red Armor sprites by Captain Toenail.
 Bush sprites by iD Software. DECORATE by Gothic.
 Unseen Threat player sprites by Vader, Finalizer and HorrorMovieGuy.
