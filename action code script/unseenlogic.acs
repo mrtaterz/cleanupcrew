@@ -20,6 +20,8 @@ script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostal
 	}
 }
 
+/* //old bad code
+
 int stime; //"smoulder time"
 //bool curfire; //track whether we were already on fire
 
@@ -73,6 +75,8 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 	}
 	TakeInventory("burning",2);
 }
+
+*/
 
 script "activebeastvision" (void) //activate the night vision
 {

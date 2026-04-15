@@ -78,6 +78,7 @@ ACTOR Unseen : PlayerPawn
 	SHDT h 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,350)
     SHDT h 4 Bright A_Quake(1,10,0,1,"none")
 	Goto Spawn
+/* //these shouldn't need to be used for now
   Pain.fire:
   Pain.Burns:
   	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
@@ -86,6 +87,7 @@ ACTOR Unseen : PlayerPawn
 	SHDT H 4 Bright ACS_NamedExecuteAlways("Smoulders",0,175)
     SHDT H 4 Bright A_Quake(1,10,0,1,"none")
 	Goto spawn
+*/
   Pain.Afterburn: //doesn't reveal
 	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
 	SHDT H 0 A_Pain
