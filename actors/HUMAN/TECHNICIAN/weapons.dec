@@ -83,6 +83,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	-noGravity
 	+noDamageThrust
 	+rockettrail
+	+hitTracer
 	gravity 0.5
 	damage 1
 	ProjectileKickBack 0
@@ -123,6 +124,8 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 		FLBL DEF 2 Bright A_Explode(2,32)
 		FLBL EFGH 2
 		stop
+	XDeath:
+		TNT1 A 0 ACS_NamedExecuteWithResult("ApplyAfterburn",35)
 	Death:
 		//FLBL EFG 2 Bright A_Explode(2,32)
 		//FLBL HI 2 Bright
@@ -133,6 +136,11 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 		FLBL GH 2
 		Stop
 	}
+}
+
+actor AfterburnToken : Indicator
+{
+	Inventory.maxAmount 350
 }
 
 actor FlameSmoke : RevenantTracerSmoke //almost no reason to inherit anymore lmao

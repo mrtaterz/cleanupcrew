@@ -20,6 +20,47 @@ script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostal
 	}
 }
 
+script "ApplyAfterburn" (int tics)
+{
+	SetActivator(0,AAPTR_TRACER);
+	if(CheckInventory("AfterburnToken")>0)
+	{
+		GiveInventory("AfterburnToken",tics);
+		terminate;
+	}
+	else
+	{
+		GiveInventory("AfterburnToken",tics);
+		while(CheckInventory("AfterburnToken")>0)
+		{
+			if(CheckInventory("AfterburnToken")%2==0)
+			{
+				Spawn("SmoulderPuff",GetActorX(0)+fixed(random(-16,16)),GetActorY(0)+fixed(random(-16,16)),GetActorZ(0)+fixed(random(0,GetActorProperty(0,APROP_HEIGHT)>>16)));
+				Spawn("FlamerVomitSmoke",GetActorX(0)+fixed(random(-16,16)),GetActorY(0)+fixed(random(-16,16)),GetActorZ(0)+fixed(random(0,GetActorProperty(0,APROP_HEIGHT)>>16)));
+			}
+			if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava"))
+			{
+				Spawn("FlameDieSteam",GetActorX(0),GetActorY(0),GetActorZ(0)+32.0,0);
+				//PrintBold(s:GetActorFloorTerrain(0));
+				PlaySound(0,"unseen/extinguish");
+				Terminate;
+			}
+			if(CheckInventory("AfterburnToken")%35==0 && GetActorProperty(0,APROP_HEALTH) > 0)
+			{	
+				/*
+				burnerTid=UniqueTid(1);
+				SpawnProjectile(0,"UnseenBurner",0,0,0,0,burnerTid);
+				SetActorProperty(burnerTid,APROP_TargetTid,targetTid);
+				SetActorProperty(burnerTid,APROP_TracerTid,selftid);
+				*/
+				SetActorState(0,"pain.afterburn");
+			}
+			TakeInventory("AfterburnToken",1);
+			delay(1);
+		}
+	}
+}
+
 /* //old bad code
 
 int stime; //"smoulder time"
@@ -36,13 +77,13 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 		Terminate;
 	}
 	GiveInventory("burning",1);
-	/*
+	/-*
 	int burnerTid=0;
 	int selftid=ActivatorTid();
 	SetActivator(selftid,AAPTR_Target);
 	int targettid=ActivatorTid();
 	SetActivator(selftid,AAPTR_Default);
-	*/
+	*-/
 	while(timer()<stime)
 	{
 		//delay(5); //no more hacks
@@ -62,12 +103,12 @@ script "smoulders" (int tics) //smouldering particles (similar to reveal)
 		
 		if((stime-timer())%35==0 && GetActorProperty(0,APROP_HEALTH) > 0)
 			{	
-				/*
+				/-*
 				burnerTid=UniqueTid(1);
 				SpawnProjectile(0,"UnseenBurner",0,0,0,0,burnerTid);
 				SetActorProperty(burnerTid,APROP_TargetTid,targetTid);
 				SetActorProperty(burnerTid,APROP_TracerTid,selftid);
-				*/
+				*-/
 				SetActorState(0,"pain.afterburn");
 			}
 		
