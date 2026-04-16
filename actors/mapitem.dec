@@ -174,11 +174,11 @@ actor usStimpack : Stimpack replaces Stimpack 2011
 actor WreckablePickup : CustomInventory
 {
 	Health 5000
-	damagefactor "None",0
-	damagefactor "Fire",0 //i heard rockets do fire damage
+	//damagefactor "None",0
+	//damagefactor "Fire",0 //i heard rockets do fire damage
 	damagefactor "Poison",0
-	damagefactor "Dark",1
-	damagefactor "Darken",1
+	damagefactor "Dark",50
+	//damagefactor "Darken",1
 	mass 10000000
 	painChance 256
 	DeathSound "misc/boxdestroy"
@@ -188,10 +188,17 @@ actor WreckablePickup : CustomInventory
 	+noblood
 	states
 	{
+		TryRecover:
+			"####" "#" 35
+			"####" "#" 0 A_GiveInventory("Health",1)
+			"####" "#" 0 A_JumpIfHealthLower(5000,"TryRecover")
+			"####" "#" 0 A_Jump(256,"Spawn")
 		Spawn:
 			AMMO A -1
 			stop
 		Pain:
+			"####" "#" 0 A_JumpIfHealthLower(4951,"Death")
+			goto TryRecover
 		Death:
 			TNT1 A 0 A_GiveInventory("Health",5000)
 			TNT1 A 0 A_ChangeFlag("special",false)
