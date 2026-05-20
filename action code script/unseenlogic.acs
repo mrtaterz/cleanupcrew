@@ -23,7 +23,7 @@ script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostal
 script "ApplyAfterburn" (int tics)
 {
 	SetActivator(0,AAPTR_TRACER);
-	if(!CheckFlag(0,"monster") && PlayerNumber() == -1) terminate;
+	if(!CheckFlag(0,"isMonster") && PlayerNumber() == -1) terminate;
 	if(CheckInventory("AfterburnToken")>0)
 	{
 		GiveInventory("AfterburnToken",tics);
