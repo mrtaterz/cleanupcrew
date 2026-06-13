@@ -18,6 +18,16 @@ statusbar fullscreen, fullscreenoffsets
 
 	InInventory Slasher
 	{
+		InInventory not PowerBeastVision
+		{
+			DrawMugshot 5, -22 + center, -47;
+		}
+		
+		InInventory PowerBeastVision
+		{
+			DrawMugshot "UFB", 5, -22 + center, -47;
+		}
+		
 	    DrawImage "STIMA0", -117 + center, -30;
 	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
 	
@@ -47,6 +57,18 @@ statusbar normal, fullscreenoffsets
 	
 	InInventory Slasher
 	{
+		InInventory not PowerBeastVision
+		{
+			DrawMugshot 5, -22 + center, -47;
+		}
+		
+		InInventory PowerBeastVision
+		{
+			DrawMugshot "UFB", 5, -22 + center, -47;
+		}
+		
+		DrawMugshot 5, -22 + center, -47;
+		
 	    DrawImage "STIMA0", -117 + center, -30;
 	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
 	
