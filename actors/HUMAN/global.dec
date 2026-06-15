@@ -304,6 +304,8 @@ actor KickPuff : BulletPuff //more knockback
 	damageType "kick"
 	+puffGetsOwner
 	+puffOnActors
+	AttackSound "*fist"
+	SeeSound "skeleton/melee"
 	states
 	{
 		Melee:
