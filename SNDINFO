@@ -2,6 +2,8 @@
 //i guess in the future i'll make a sound mod for my own fucking game
 //because i'm that fucking sad
 
+nullsound dsnone
+
 //new menu sounds
 menu/activate		menuact	    // Activate a new menu
 menu/backup			menuback	// Backup to previous menu
@@ -75,8 +77,8 @@ $playersounddup	unseen	male	*pain50		*pain100
 $playersounddup	unseen	male	*pain25		*pain100
 $playeralias	unseen	male	*grunt		unseen/land
 $playersounddup	unseen	male	*land		*grunt
-$playeralias	unseen	male	*jump   dsnone
-$playersound	unseen	male	*jump		none
+$playeralias	unseen	male	*jump   	nullsound
+$playersound	unseen	male	*jump		nullsnd
 $playersound	unseen	male	*fist		dspunch
 $playeralias	unseen	male	*usefail	skeleton/pain
 // [BC] New player sound for Skulltag: taunt.
