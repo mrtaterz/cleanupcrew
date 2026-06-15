@@ -294,15 +294,15 @@ actor AssaultFist : usFist
 			BPNG A 1 A_WeaponReady
 			loop
 		Fire:
-			BPNG B 4
+			BPNG B 4 
 			BPNG C 4 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
-			BPNG D 5
+			BPNG D 5 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			BPNG C 4
 			BPNG B 5 A_ReFire
 			Goto Ready
 		AltFire:
 			KICK A 4 A_GiveInventory("PowerKicking",1)
-			KICK B 5
+			KICK B 5 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
 			KICK B 4
 			KICK A 4
