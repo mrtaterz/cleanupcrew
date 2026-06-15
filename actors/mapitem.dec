@@ -86,6 +86,65 @@ Actor usDeadDemon : CorpseGeneric replaces DeadDemon
 	}
 }
 
+Actor usDeadCivilian1 : CorpseGeneric 3005
+{
+	states
+	{
+		spawn:
+			PEM1 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian2 : CorpseGeneric 3006
+{
+	states
+	{
+		spawn:
+			PEM2 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian3 : CorpseGeneric 3007
+{
+	states
+	{
+		spawn:
+			PEM3 M -1
+			stop
+	}
+}
+
+Actor usDeadLabcoat1 : CorpseGeneric 3008
+{
+	states
+	{
+		spawn:
+			DOC1 M -1
+			stop
+	}
+}
+
+Actor usDeadLabcoat2 : CorpseGeneric 3009
+{
+	states
+	{
+		spawn:
+			DOC2 M -1
+			stop
+	}
+
+Actor usDeadCivilianSpawner : RandomSpawner 3010
+	{
+    DropItem "usDeadCivilian1"
+    DropItem "usDeadCivilian2"
+    DropItem "usDeadCivilian3"
+	DropItem "usDeadLabcoat1"
+	DropItem "usDeadLabcoat2"
+	}
+
+
 actor usDeadCacodemon : CorpseGeneric replaces DeadCacodemon
 {
 	states
