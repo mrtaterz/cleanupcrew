@@ -278,9 +278,9 @@ actor usFist : Fist
 			PUNG A 1 A_Lower
 			loop
 		Fire:
-			PUNG B 4
+			PUNG B 4 
 			PUNG C 4 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
-			PUNG D 5
+			PUNG D 5 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			PUNG C 4
 			PUNG B 5 A_ReFire
 			Goto Ready
