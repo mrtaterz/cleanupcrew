@@ -62,23 +62,30 @@ map MAP07 "The Bunker"
 	LightMode=8
 }
 //XLightningStormL
-map MAP08 "Administration"
+map MAP08 "The Administrative Halls"
 {
     Sky1="SKY1"
 	Music="d_map08"
 	LightMode=8
 }
-map MAP09 "Recreation Center"
+map MAP09 "The Recreation Center"
 {
 	Sky1="SKY4"
 	Music="d_map09"
 	LightMode=8
 }
 
-map MAP10 "Habitat"
+map MAP10 "The Habitat"
 {
 	Sky1="SKY4"
 	Music="d_map10"
+	LightMode=8
+}
+
+map MAP11 "The Genetics Labs"
+{
+	Sky1="SKY4"
+	Music="d_map11"
 	LightMode=8
 }
 
