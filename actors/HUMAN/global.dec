@@ -286,7 +286,7 @@ actor usFist : Fist
 			Goto Ready
 		AltFire:
 			KICK A 4 A_GiveInventory("PowerKicking",1)
-			KICK B 5
+			KICK B 5 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			KICK C 5 A_CustomPunch(6*random(1,10),1,0,"KickPuff",86)
 			KICK B 4
 			KICK A 4
