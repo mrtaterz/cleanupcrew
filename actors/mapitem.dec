@@ -86,7 +86,7 @@ Actor usDeadDemon : CorpseGeneric replaces DeadDemon
 	}
 }
 
-Actor usDeadCivilian1 : CorpseGeneric 3005
+Actor usDeadCivilian1 : CorpseGeneric 3021
 {
 	states
 	{
@@ -96,7 +96,7 @@ Actor usDeadCivilian1 : CorpseGeneric 3005
 	}
 }
 
-Actor usDeadCivilian2 : CorpseGeneric 3006
+Actor usDeadCivilian2 : CorpseGeneric 3022
 {
 	states
 	{
@@ -106,7 +106,7 @@ Actor usDeadCivilian2 : CorpseGeneric 3006
 	}
 }
 
-Actor usDeadCivilian3 : CorpseGeneric 3007
+Actor usDeadCivilian3 : CorpseGeneric 3023
 {
 	states
 	{
@@ -116,7 +116,57 @@ Actor usDeadCivilian3 : CorpseGeneric 3007
 	}
 }
 
-Actor usDeadLabcoat1 : CorpseGeneric 3008
+Actor usDeadCivilian4 : CorpseGeneric 3024
+{
+	states
+	{
+		spawn:
+			PEM4 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian5 : CorpseGeneric 3025
+{
+	states
+	{
+		spawn:
+			PEF1 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian6 : CorpseGeneric 3026
+{
+	states
+	{
+		spawn:
+			PEF2 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian7 : CorpseGeneric 3027
+{
+	states
+	{
+		spawn:
+			PEF3 M -1
+			stop
+	}
+}
+
+Actor usDeadCivilian8 : CorpseGeneric 3028
+{
+	states
+	{
+		spawn:
+			PEF4 M -1
+			stop
+	}
+}
+
+Actor usDeadLabcoat1 : CorpseGeneric 3029
 {
 	states
 	{
@@ -126,7 +176,7 @@ Actor usDeadLabcoat1 : CorpseGeneric 3008
 	}
 }
 
-Actor usDeadLabcoat2 : CorpseGeneric 3009
+Actor usDeadLabcoat2 : CorpseGeneric 3030
 {
 	states
 	{
@@ -135,13 +185,16 @@ Actor usDeadLabcoat2 : CorpseGeneric 3009
 			stop
 	}
 
-Actor usDeadCivilianSpawner : RandomSpawner 3010
+Actor usDeadCivilianSpawner : RandomSpawner 3031
 	{
     DropItem "usDeadCivilian1"
     DropItem "usDeadCivilian2"
     DropItem "usDeadCivilian3"
-	DropItem "usDeadLabcoat1"
-	DropItem "usDeadLabcoat2"
+	DropItem "usDeadCivilian4"
+	DropItem "usDeadCivilian5"
+	DropItem "usDeadCivilian6"
+	DropItem "usDeadCivilian7"
+	DropItem "usDeadCivilian8"
 	}
 
 
