@@ -75,7 +75,7 @@ $playersounddup	unseen	male	*pain50		*pain100
 $playersounddup	unseen	male	*pain25		*pain100
 $playeralias	unseen	male	*grunt		unseen/land
 $playersounddup	unseen	male	*land		*grunt
-$playeralias	unseen	male	*jump   unseen/jump
+$playeralias	unseen	male	*jump   dsnone
 $playersound	unseen	male	*jump		none
 $playersound	unseen	male	*fist		dspunch
 $playeralias	unseen	male	*usefail	skeleton/pain
