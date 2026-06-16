@@ -9,9 +9,9 @@ actor usDemon : Demon replaces Demon
 	meleeRange 64
 	maxTargetRange 256
 	PainChance "Fire", 255
-	PainChance "Burns", 96
+	PainChance "Burns", 128
 	PainChance "Darken", 255
-	PainChance "Dark", 96
+	PainChance "Dark", 128
 	DamageFactor "Fire", 1.6
 	DamageFactor "Grenade", 0.6
 	DamageFactor "Dark", 1.4
