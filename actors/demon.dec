@@ -8,6 +8,8 @@ actor usDemon : Demon replaces Demon
 	health 500
 	meleeRange 64
 	maxTargetRange 256
+	PainChance "Fire", 255
+	DamageFactor "Fire", 1.8
 	states
 	{
 		forget:
