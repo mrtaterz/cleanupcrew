@@ -5,7 +5,7 @@ actor usDemon : Demon replaces Demon
 	+slidesOnWalls
 	+noTargetSwitch
 	SeeSound ""
-	health 300
+	health 500
 	meleeRange 64
 	maxTargetRange 256
 	states
