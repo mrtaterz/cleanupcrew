@@ -10,7 +10,12 @@ actor usDemon : Demon replaces Demon
 	maxTargetRange 256
 	PainChance "Fire", 255
 	PainChance "Burns", 96
-	DamageFactor "Fire", 1.8
+	PainChance "Darken", 255
+	PainChance "Dark", 96
+	DamageFactor "Fire", 1.6
+	DamageFactor "Grenade", 0.6
+	DamageFactor "Dark", 1.4
+	DamageFactor "Darken", 0.4
 	states
 	{
 		forget:
