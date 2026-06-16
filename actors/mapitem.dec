@@ -184,7 +184,7 @@ Actor usDeadLabcoat2 : CorpseGeneric 3030
 			DOC2 M -1
 			stop
 	}
-
+}
 Actor usDeadCivilianSpawner : RandomSpawner 3031
 	{
     DropItem "usDeadCivilian1"
