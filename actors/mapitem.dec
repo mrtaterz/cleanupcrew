@@ -252,12 +252,14 @@ actor usMedikit : Medikit replaces Medikit
 {
 	+neverrespawn
 	inventory.forbiddento "Unseen"
+	inventory.pickupsound "misc/medikit"
 }
 
 actor usStimpack : Stimpack replaces Stimpack 2011
 {
 	+neverrespawn
 	inventory.forbiddento "Unseen"
+	inventory.pickupsound "misc/stimpack"
 }
 
 //actor MedikitSpawner 2012 //this has to be done to properly spawn items in TLMS
@@ -347,6 +349,7 @@ actor AmmoBag : WreckablePickup Replaces Clipbox 8 //hax!
 	//until zandronum implements alwaysrespawn we can't do that
 	inventory.pickupmessage "$PICKUP_AMMOBAG"
 	inventory.forbiddenTo "unseen"
+	inventory.pickupsound "misc/ammopick"
 	states
 	{
 		spawn:
@@ -434,6 +437,7 @@ actor FlareCrate : WreckablePickup 101
 	//$Category Ammunition
 	inventory.pickupmessage "$PICKUP_FLARECRATE"
 	inventory.forbiddento "unseen"
+	inventory.pickupsound "misc/flarpick"
 	states
 	{
 		spawn:
