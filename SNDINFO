@@ -210,7 +210,10 @@ $alias unseen/extinguish weapons/flamerwater
 misc/prox	dsboop
 misc/proxdie	dssendie
 misc/proxxdie	dssended
-
+misc/flarpick flarpick
+misc/ammopick ammopick
+misc/stimpack stimpack
+misc/medikit medikit
 misc/body1 body1
 misc/body2 body2
 misc/body3 body3
