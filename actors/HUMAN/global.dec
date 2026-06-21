@@ -461,6 +461,7 @@ actor usPistol : usWeapon
 	Weapon.ammoUse 1
 	//+WEAPON.NOAUTOFIRE
 	Decal "BulletChip"
+	tag "Ricotta 10mm"
 	States
 	{
 		Ready:
@@ -521,6 +522,7 @@ actor usPistol : usWeapon
 actor assaultPistol : usPistol
 {
 	Decal "BulletChip"
+	tag "Ricotta 10mm"
 	States
 	{
 		Ready:
