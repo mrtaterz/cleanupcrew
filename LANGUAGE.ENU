@@ -25,7 +25,7 @@ NAME_UNSEEN="The Threat"; //hidden class
 //humans
 NAME_ASSAULT="Assault"; //assault class
 NAME_SUPPORT="Support"; //support class
-NAME_SAPPER="Sapper"; //sapper class
+NAME_SAPPER="Technician"; //sapper class
 
 //obits
 
