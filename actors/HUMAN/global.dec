@@ -462,6 +462,7 @@ actor usPistol : usWeapon
 	//+WEAPON.NOAUTOFIRE
 	Decal "BulletChip"
 	Tag "$TAG_MPPISTOL"
+	Obituary "$OB_MPPISTOL"
 	States
 	{
 		Ready:
