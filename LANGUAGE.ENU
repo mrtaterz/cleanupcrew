@@ -50,7 +50,7 @@ OB_MPCHAINGUN="%k filled the Threat with holes."; //chaingun, unused
 OB_MPROCKET="The last of the Threat's presence was wiped by %k's rocket."; //rockets
 OB_GRENADE = "The last of the Threat's presence was wiped by %k's grenade."; //grenades
 OB_GRENADE_SELF = "%o caught about a pound of Composition A-5 with their face.";
-OB_MPPISTOL="%k's backup weapon proved useful against the Threat."; //handgun, unused
+OB_MPPISTOL="%k's backup weapon proved useful against the Threat."; //handgun
 OB_MPFIST="%k killed the Threat in a final act of desparation."; //fisting
 OB_MPBFG="%k's BFG prototype is on its way to widespread adoption."; //bfg, unused
 
@@ -107,7 +107,7 @@ TAG_HYDROFIST="Hydraulic Gauntlet"; //hydrofist punch thing, unused
 TAG_RIFLE="Rifle"; //semi-auto rifle, unused
 TAG_MG="Machinegun"; //machine gun
 TAG_GRENADEGUN="Grenade Launcher"; //grenade launcher
-
+TAG_MPPISTOL="Handgun"; //pistol
 TAG_SMG="Sub-Machinegun"; //sub-machinegun, unused
 TAG_CHEMGUN="ChemGun"; //poisonous chemical gun, unused
 TAG_SENSOR="Proximity Sensor deployer"; //proximity sensors
