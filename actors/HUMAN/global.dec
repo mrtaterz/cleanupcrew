@@ -469,10 +469,12 @@ actor usPistol : usWeapon
 			APIS A 1 A_WeaponReady(WRF_ALLOWZOOM)
 			Loop
 		Deselect:
+			APIS A 0 NoDelay A_SetCrosshair(5)
 			APIS A 0 A_Lower
 			APIS A 1 A_Lower
 			Loop
 		Select:
+			APIS A 0 NoDelay A_SetCrosshair(3)
 			APIS A 0 A_Raise
 			APIS A 1 A_Raise
 			Loop
