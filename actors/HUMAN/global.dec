@@ -532,10 +532,12 @@ actor assaultPistol : usPistol
 			BPIS A 1 A_WeaponReady
 			Loop
 		Deselect:
+			BPIS A 0 A_SetCrosshair(5)
 			BPIS A 0 A_Lower
 			BPIS A 1 A_Lower
 			Loop
 		Select:
+			BPIS A 0 A_SetCrosshair(3)
 			BPIS A 0 A_Raise
 			BPIS A 1 A_Raise
 			Loop
