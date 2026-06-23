@@ -20,7 +20,7 @@ actor proxsensors : usWeapon
 	states
 	{
 		select:
-			SENL A 0 A_SetCrosshair(5)
+			SENL A 0 A_SetCrosshair(4)
 			SENL A 0 A_Raise
 			SENL A 1 A_Raise
 			loop
@@ -228,10 +228,12 @@ actor AssaultShotgun : usWeapon
 	states
 	{
 		select:
+			ASHT A 0 NoDelay A_SetCrosshair(2)
 			ASHT A 0 A_Raise
 			ASHT A 1 A_Raise
 			loop
 		deselect:
+			ASHT A 0 NoDelay A_SetCrosshair(5)
 			ASHT A 0 A_Lower
 			ASHT A 1 A_Lower
 			loop
