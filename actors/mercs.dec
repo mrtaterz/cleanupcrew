@@ -39,6 +39,7 @@ actor Mercenary
 			"####" A 0 A_Jump(256,"lookloop")
 			goto lookloop
 		Spawn:
+			TNT1 A 0 NoDelay A_GiveInventory("GreenArmor",1)
 			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
 			lookloop: //wander AABBCCDD 3
 			TNT1 A 0 A_Look
