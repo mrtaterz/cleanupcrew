@@ -20,7 +20,7 @@ actor proxsensors : usWeapon
 	states
 	{
 		select:
-			SENL A 0 A_SetCrosshair(4)
+			SENL A 0 A_SetCrosshair(6)
 			SENL A 0 A_Raise
 			SENL A 1 A_Raise
 			loop
