@@ -18,7 +18,7 @@ actor SSTBulletPUFF : BulletPUFF replaces BulletPUFF
   States
   {
   Spawn:
-    PUFF A 0 bright A_Quake(1,4,0,0,"none")
+    PUFF A 0 bright A_Quake(1,4,0,48,"none")
     PUFF A 0 A_Jump(127,"spawn3")
     PUFF A 0 A_Jump(127,"Spawn2")
     TNT1 A 0 A_Playsound("weapons/trace")
