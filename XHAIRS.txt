@@ -1,0 +1,4 @@
+1 "Machine Gun"
+2 "Shotgun"
+3 "Pistol"
+4 "Minigun"
