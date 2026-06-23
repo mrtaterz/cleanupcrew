@@ -27,6 +27,7 @@ actor Grenades : Weapon
 			tnt1 a -1
 			stop
 		select:
+			TNT1 A 0 NoDelay A_SetCrosshair(5)
 			TNT1 A 0 A_JumpIfInventory("doGrenadeHotkey",1,2)
 			TNT1 A 0 A_GiveInventory("hotkeyIgnore",1)
 			TNT1 A 0 A_JumpIfInventory("Nades",1,"realSelect")
