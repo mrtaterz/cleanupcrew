@@ -1,5 +1,6 @@
 1 "Machine Gun"
 2 "Shotgun"
 3 "Pistol"
-4 "Minigun"
+4 "Precision"
 5 "Null"
+6 "Mine Layer and Prox Sensor"
