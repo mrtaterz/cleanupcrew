@@ -42,6 +42,7 @@ MAP07 by GooseJelly, based on Doom 2 MAP01 by Sandy Petersen. Further edits by X
 MAP08 by XLightningStormL, based on Doom E2M5 by Sandy Petersen. Further edits by GooseJelly.
 MAP09 by GooseJelly, based on Doom E1M6 by John Romero. Further edits by XLightningStormL, and inkoalawetrust.
 MAP10 by XLightningStormL. Further edits by GooseJelly, inkoalawetrust, and scriptedmarine.
+MAP11 by XLightningStormL. Further balancing by GooseJelly.
 All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy.
 
 Art
@@ -123,6 +124,7 @@ TVxx by XLightningStormL, based on textures by 3D Realms.
 Arcade textures by kwc.
 All non-MONITORS textures in textures/pc folder by XLightningStormL, based on textures from phobos.wad by Roger Ritenour.
 FL20TINx, and SILVSERx by XLightningStormL, based on textures by Valve, and iD Software.
+FLAT2LT by Andy "eschdoom" Stewart, based on textures by iD Software.
 
 Sounds
 ==
