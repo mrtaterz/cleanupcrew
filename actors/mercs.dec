@@ -40,7 +40,7 @@ actor Mercenary
 			goto lookloop
 		Spawn:
 			TNT1 A 0 NoDelay A_GiveInventory("GreenArmor",1)
-			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			TNT1 A 0 A_GiveInventory("MercToken",1)
 			lookloop: //wander AABBCCDD 3
 			TNT1 A 0 A_Look
 			MERC A 3 A_Wander
@@ -190,7 +190,7 @@ actor DeadMGMerc : CorpseGeneric
 	states
 	{
 		spawn:
-			MERC M 1 NoDelay A_GiveInventory("Clip",5)
+			MERC M 1 A_GiveInventory("Clip",5)
 			goto bedead
 	}
 }
@@ -200,7 +200,7 @@ actor DeadHelmetMerc : CorpseGeneric
 	states
 	{
 		spawn:
-			SOL3 M 1 NoDelay A_GiveInventory("Clip",5)
+			SOL3 M 1 A_GiveInventory("Clip",5)
 			goto bedead
 	}
 }
@@ -225,7 +225,7 @@ actor SGMerc : Mercenary 301
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_GiveInventory("GreenArmor",1)
-			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			TNT1 A 0 A_GiveInventory("MercToken",1)
 			lookloop: //wander AABBCCDD 3
 			TNT1 A 0 A_Look
 			SOL3 A 3 A_Wander
@@ -348,7 +348,7 @@ actor SMGMerc : Mercenary 302
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_GiveInventory("GreenArmor",1)
-			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			TNT1 A 0 A_GiveInventory("MercToken",1)
 			lookloop: //wander AABBCCDD 3
 			TNT1 A 0 A_Look
 			SOL5 A 3 A_Wander
@@ -469,7 +469,7 @@ actor RLMerc : SMGMerc 303
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_GiveInventory("GreenArmor",1)
-			TNT1 A 0 NoDelay A_GiveInventory("MercToken",1)
+			TNT1 A 0 A_GiveInventory("MercToken",1)
 			lookloop: //wander AABBCCDD 3
 			TNT1 A 0 A_JumpIfInventory("ATRLFiredToken",1,"super::lookloop")
 			TNT1 A 0 A_Look
