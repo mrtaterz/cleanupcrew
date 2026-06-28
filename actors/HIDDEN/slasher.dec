@@ -19,7 +19,7 @@ actor Slasher : Weapon
 			TNT1 A -1
 			stop
 		select:
-			CLAW A 0 NoDelay A_SetCrosshair(12)
+			CLAW A 0 A_SetCrosshair(12)
 			CLAW A 1 A_Raise
 			loop
 		deselect:
