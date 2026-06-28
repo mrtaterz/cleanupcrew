@@ -683,6 +683,7 @@ Actor funcMercChase : CustomInventory
 		Pickup:
 			TNT1 A 0 ACS_NamedExecuteWithResult("c_MercChaser")
 			TNT1 A 0 A_JumpIfInventory("ThrustToken",1,"ThrustChase")
+			TNT1 A 0 A_JumpIfCloser(512,"NormalChase")
 			TNT1 A 0 A_JumpIfHealthLower(50,"FrightenedChase")
 			goto NormalChase
 		FrightenedChase:
