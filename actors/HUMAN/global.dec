@@ -35,7 +35,7 @@ actor FlareStick : CustomInventory
 	States
 	{
 		Use:
-			FLAR A 4 NoDelay A_PlaySound("items/flare/light",CHAN_WEAPON)
+			FLAR A 4 A_PlaySound("items/flare/light",CHAN_WEAPON)
 			TNT1 A 0 A_FireCustomMissile("LitFlareStick",0,false)
 			Stop
 	}
@@ -469,12 +469,12 @@ actor usPistol : usWeapon
 			APIS A 1 A_WeaponReady(WRF_ALLOWZOOM)
 			Loop
 		Deselect:
-			APIS A 0 NoDelay A_SetCrosshair(12)
+			APIS A 0 A_SetCrosshair(12)
 			APIS A 0 A_Lower
 			APIS A 1 A_Lower
 			Loop
 		Select:
-			APIS A 0 NoDelay A_SetCrosshair(10)
+			APIS A 0 A_SetCrosshair(10)
 			APIS A 0 A_Raise
 			APIS A 1 A_Raise
 			Loop
