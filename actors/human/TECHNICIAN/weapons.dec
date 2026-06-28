@@ -17,12 +17,12 @@ Actor Flamer : usWeapon
 	states
 	{
 		select:
-			FLRG A 0 A_SetCrosshair(4)
+			FLRG A 0 A_SetCrosshair(11)
 			FLRG A 0 A_Raise
 			FLRG A 1 A_Raise
 			loop
 		deselect:
-			FLRG A 0 A_SetCrosshair(5)
+			FLRG A 0 A_SetCrosshair(12)
 			FLRG A 0 A_Lower
 			FLRG A 1 A_Lower
 			loop
@@ -187,12 +187,12 @@ Actor MineLauncher : usWeapon //ammo is in human/global.dec
 	states
 	{
 		select:
-			PRXG A 0 A_SetCrosshair(6)
+			PRXG A 0 A_SetCrosshair(13)
 			PRXG A 0 A_Raise
 			PRXG A 1 A_Raise
 			loop
 		deselect:
-			PRXG A 0 A_SetCrosshair(5)
+			PRXG A 0 A_SetCrosshair(12)
 			PRXG A 0 A_Lower
 			PRXG A 1 A_Lower
 			loop
