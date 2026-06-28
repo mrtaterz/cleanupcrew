@@ -1,6 +1,7 @@
-1 "Machine Gun"
-2 "Shotgun"
-3 "Pistol"
-4 "Precision"
-5 "Null"
-6 "Mine Layer and Prox Sensor"
+8 "Notch"
+9 "Wedge"
+10 "Dots"
+11 "Sharpshooter"
+12 "Null"
+13 "Lines"
+
