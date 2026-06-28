@@ -55,12 +55,12 @@ actor usGrenadeLauncher : usWeapon
 	states
 	{
 		select:
-			GLAG A 0 A_SetCrosshair(2)
+			GLAG A 0 A_SetCrosshair(9)
 			GLAG A 0 A_Raise
 			GLAG A 1 A_Raise
 			loop
 		deselect:
-			GLAG A 0 A_SetCrosshair(5)
+			GLAG A 0 A_SetCrosshair(12)
 			GLAG A 0 A_Lower
 			GLAG A 1 A_Lower
 			loop
@@ -172,12 +172,12 @@ actor MachineGun : usWeapon //light machine gun
 	States
 	{
 		Select:
-			MCGN A 0 A_SetCrosshair(1)
+			MCGN A 0 A_SetCrosshair(8)
 			MCGN A 0 A_Raise
 			MCGN A 1 A_Raise
 			Loop
 		Deselect:
-			MCGN A 0 A_SetCrosshair(5)
+			MCGN A 0 A_SetCrosshair(12)
 			MCGN A 0 A_Lower
 			MCGN A 1 A_Lower
 			MCGN A 0 A_ZoomFactor(1)
