@@ -394,6 +394,7 @@ $random puff/ricochet {weapons/trace1 weapons/trace7 weapons/trace8 weapons/trac
 $rolloff puff/ricochet 32 384
 
 world/alarm DSKLAXON
+$rolloff world/alarm 1024 2048
 
 
 
