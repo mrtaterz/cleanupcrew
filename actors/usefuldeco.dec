@@ -549,4 +549,45 @@ actor UnseenCanDummy : Health
 	}
 }
 
-
+Actor UnseenAlarm : SwitchableDecoration 4444
+{
+	//$Category Light Sources
+    Radius 8
+    Height 16
+    Health 25
+    Mass 9999999
+    +SpawnCeiling
+    +NoGravity
+    +Solid
+    +DONTFALL
+    //+SHOOTABLE
+    //+NOTAUTOAIMED
+    //+NOBLOOD
+	+NOTONAUTOMAP
+	Activation THINGSPEC_NoDeathSpecial
+	//DeathSound "world/lampbreak"
+	Tag "Alarm"
+    States
+    {
+		Spawn:
+			ALRM F 1
+			TNT1 A 0 A_CheckFlag("Dormant", "Inactive")
+			Goto Active
+		Inactive:
+			TNT1 A 0 A_StopSound(4)
+		InactiveLoop:
+			ALRM F 1
+			Loop
+		Active:
+			TNT1 A 0 A_PlaySound("world/alarm", 4, 0.5, true)
+		ActiveLoop:
+			ALRM AAAABBBBCCCCDDD 1 BRIGHT A_SetAngle(angle -15)
+			ALRM AAAABBBBCCCCDDDAAAABBBBCCCCDDDAAAABBBBCCCCDDDAAAABBBBCCCCDDD 1 BRIGHT A_SetAngle(angle -15)
+			loop
+		/*Death:
+			TNT1 A 0 A_StopSound(4)
+			TNT1 A 0 A_ScreamAndUnblock
+			ALRM E -1
+			Stop*/
+    }
+}
