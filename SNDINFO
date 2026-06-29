@@ -396,6 +396,9 @@ $rolloff puff/ricochet 32 384
 world/alarm DSKLAXON
 $rolloff world/alarm 1024 2048
 
+world/flies dsflies
+$rolloff world/flies 128 256
+
 
 
 
