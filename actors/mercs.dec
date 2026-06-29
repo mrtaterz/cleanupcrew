@@ -713,7 +713,7 @@ Actor funcMercChase : CustomInventory
 			TNT1 A 0 A_TakeInventory("JumpToken",1)
 			TNT1 A 0 A_GiveInventory("ThrustToken",1)
 			TNT1 A 0 A_JumpIfInventory("MercJumpCooldown",1,"end")
-			TNT1 A 0 A_ChangeVelocity(0,0,12)
+			TNT1 A 0 A_ChangeVelocity(0,0,8)
 			TNT1 A 0 A_GiveInventory("MercJumpCooldown",1)
 			end:
 			TNT1 A 0
