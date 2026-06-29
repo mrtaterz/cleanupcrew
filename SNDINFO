@@ -393,7 +393,7 @@ $volume weapons/trace 0.66
 $random puff/ricochet {weapons/trace1 weapons/trace7 weapons/trace8 weapons/trace9 weapons/trace14 weapons/trace15 weapons/trace16 weapons/trace17 weapons/trace18 weapons/trace19 weapons/trace20 weapons/trace21 misc/null misc/null misc/null}
 $rolloff puff/ricochet 32 384
 
-
+world/alarm DSKLAXON
 
 
 

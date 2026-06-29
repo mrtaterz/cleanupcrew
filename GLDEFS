@@ -485,4 +485,17 @@ flickerlight BPUFF2
     chance 0.8
 }
 
+pointlight REDSTROBE
+{
+    color 1.0 0.0 0.0
+    size 48
+    offset 0 0 90
+}
 
+object UnseenAlarm
+{
+    frame ALRMA0 { light REDSTROBE }
+	frame ALRMB0 { light REDSTROBE }
+	frame ALRMC0 { light REDSTROBE }
+	frame ALRMD0 { light REDSTROBE }
+}
