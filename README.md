@@ -1,11 +1,15 @@
 The Clean Up Crew dev team are:
 ===============================
 
-Lead Designer, Balance Lead, Map Design Lead, and Additional Art: Goosejelly
+Creative Director, Co-Founder: Goosejelly
 
-Programming Lead, Second Unit Design, Map Passes, and Additional Art: scriptedmarine! (Discord: scripted_m)
+Development Director, Tech Lead, Co-Founder: scriptedmarine! (Discord: scripted_m)
 
-Additional Support: XLightningStormL, inkoalawetrust, TDRR, Craneo, Tesefy
+Map Art Pass, Additional Programming Support, Art Supervisor: XLightningStormL
+
+Graphic Designer: Craneo
+
+Additional Support: inkoalawetrust, TDRR, Tesefy
 
 there is no "download" for an official release at the moment as everything is currently indev.
 if you somehow got here, download and host at your own risk — a package with an official release
