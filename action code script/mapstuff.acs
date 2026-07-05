@@ -38,3 +38,9 @@ Script "chairspe" (void)
 	delay(24);
 	terminate;
 }
+
+script "fliesound" (void)
+{
+	delay(1050);
+	playsound(0,"world/flies",CHAN_5);
+}

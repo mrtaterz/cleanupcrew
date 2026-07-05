@@ -21,10 +21,11 @@ Actor CorpseGeneric// replaces DeadMarine
 	states
 	{
 		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
+			
 			PLAY N 1 //NoDelay A_GiveInventory("Clip",5) //clips will count how much armor can be taken
 			goto bedead
 		bedead:
+			"####" "#" 0 ACS_NamedExecuteWithResult("fliesound")
 			"####" "#" 0 A_PlaySound("misc/body")
 		verydead:
 			"####" "#" -1
@@ -48,7 +49,7 @@ Actor CorpseGeneric// replaces DeadMarine
 			"####" "#" 0 A_GiveToTarget("ArmorGiver",1)
 			"####" "#" 0 A_TakeInventory("Clip",1)
 			"####" "#" 1 A_ChangeVelocity(0,0,4) //self note: this is the jump target
-			"####" "#" 0 A_StopSound(5)
+			"####" "#" 0 A_StopSound(5) //stop flies
 			PGIB A 3 A_XScream
 			PGIB BCDE 3
 			PGIB E -1 A_NoBlocking //already doesn't block whatever
@@ -64,19 +65,18 @@ Actor CorpseMapPlaced : CorpseGeneric replaces DeadMarine
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
 			PLAY N 1
-			"####" "#" -1
-			stop
+			goto verydead
 	}
 }
 
-Actor usDeadDoomImp : CorpseGeneric replaces DeadDoomImp
+Actor usDeadDoomImpMapPlaced : CorpseGeneric replaces DeadDoomImp
 {
 	states
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			TROO M -1
-			stop
+			TROO M 1
+			goto verydead
 	}
 }
 
@@ -85,9 +85,9 @@ Actor usDeadDemon : CorpseGeneric replaces DeadDemon
 	states
 	{
 		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			SARG N -1
-			stop
+			TNT1 A 0 NODELAY ACS_NamedExecuteWithResult("fliesound") //intentionally different
+			SARG N 1
+			goto verydead
 	}
 }
 
@@ -97,8 +97,8 @@ Actor usDeadCivilian1 : CorpseGeneric 3021
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM1 M -1
-			stop
+			PEM1 M 1
+			goto verydead
 	}
 }
 
@@ -108,8 +108,8 @@ Actor usDeadCivilian2 : CorpseGeneric 3022
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM2 M -1
-			stop
+			PEM2 M 1
+			goto verydead
 	}
 }
 
@@ -119,8 +119,8 @@ Actor usDeadCivilian3 : CorpseGeneric 3023
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM3 M -1
-			stop
+			PEM3 M 1
+			goto verydead
 	}
 }
 
@@ -130,8 +130,8 @@ Actor usDeadCivilian4 : CorpseGeneric 3024
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM4 M -1
-			stop
+			PEM4 M 1
+			goto verydead
 	}
 }
 
@@ -141,8 +141,8 @@ Actor usDeadCivilian5 : CorpseGeneric 3025
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF1 M -1
-			stop
+			PEF1 M 1
+			goto verydead
 	}
 }
 
@@ -152,8 +152,8 @@ Actor usDeadCivilian6 : CorpseGeneric 3026
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF2 M -1
-			stop
+			PEF2 M 1
+			goto verydead
 	}
 }
 
@@ -163,8 +163,8 @@ Actor usDeadCivilian7 : CorpseGeneric 3027
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF3 M -1
-			stop
+			PEF3 M 1
+			goto verydead
 	}
 }
 
@@ -174,8 +174,8 @@ Actor usDeadCivilian8 : CorpseGeneric 3028
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF4 M -1
-			stop
+			PEF4 M 1
+			goto verydead
 	}
 }
 
@@ -185,8 +185,8 @@ Actor usDeadLabcoat1 : CorpseGeneric 3029
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			DOC1 M -1
-			stop
+			DOC1 M 1
+			goto veryead
 	}
 }
 
@@ -196,21 +196,21 @@ Actor usDeadLabcoat2 : CorpseGeneric 3030
 	{
 		spawn:
 			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			DOC2 M -1
-			stop
+			DOC2 M 1
+			goto verydead
 	}
 }
 Actor usDeadCivilianSpawner : RandomSpawner 3031
-	{
-    DropItem "usDeadCivilian1"
-    DropItem "usDeadCivilian2"
-    DropItem "usDeadCivilian3"
+{
+	DropItem "usDeadCivilian1"
+	DropItem "usDeadCivilian2"
+	DropItem "usDeadCivilian3"
 	DropItem "usDeadCivilian4"
 	DropItem "usDeadCivilian5"
 	DropItem "usDeadCivilian6"
 	DropItem "usDeadCivilian7"
 	DropItem "usDeadCivilian8"
-	}
+}
 
 
 actor usDeadCacodemon : CorpseGeneric replaces DeadCacodemon
@@ -258,7 +258,7 @@ Actor DeadPlayer : CorpseGeneric
 	states
 	{
 		spawn:
-			"####" "#" 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
+			"####" "#" 0 NODELAY ACS_NamedExecuteWithResult("fliesound")
 			"####" "#" 0 A_GiveInventory("Clip",5)
 			goto bedead
 	}
