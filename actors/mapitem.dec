@@ -881,8 +881,8 @@ actor ShotgunNuller : Nuller replaces Shotgun
 actor SuperShotgunNuller : Nuller replaces SuperShotgun
 {}
 
-actor ChaingunNuller : Nuller replaces Chaingun
-{}
+//actor ChaingunNuller : Nuller replaces Chaingun
+//{}
 
 //actor RocketLauncherNuller : Nuller replaces RocketLauncher
 //{}
