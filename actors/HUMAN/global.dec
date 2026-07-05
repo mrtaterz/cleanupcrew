@@ -619,7 +619,7 @@ actor 9MilCaseSpawner : CaseSpawnerBase
 	}
 }
 
-actor puffplus : bulletpuff replaces bulletpuff //i forgot why this exists 10/10/22
+actor puffplus : bulletpuff //replaces bulletpuff //i forgot why this exists 10/10/22
 {
 	+puffgetsowner
 	+puffonactors
