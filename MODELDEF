@@ -68,7 +68,11 @@ Model PuffEffect1
    MODEL 0 "tracer.md3"
    Scale 0.2 0.2 0.2
    PITCHFROMMOMENTUM
-   
+   ROTATING
+   Rotation-Speed 37
+   Rotation-Vector 1 0 0
+
+
    FrameIndex PUFF A 0 0
    FrameIndex PUFF B 0 0
    FrameIndex PUFF C 0 0
@@ -82,6 +86,9 @@ Model PuffEffect2
    MODEL 0 "tracer.md3"
    Scale 0.17 0.17 0.17
    PITCHFROMMOMENTUM
+   ROTATING
+   Rotation-Speed 37
+   Rotation-Vector 1 0 0
    
    FrameIndex PUFF A 0 0
    FrameIndex PUFF B 0 0
@@ -96,6 +103,9 @@ Model PuffEffect4
    MODEL 0 "tracer.md3"
    Scale 0.12 0.12 0.12
    PITCHFROMMOMENTUM
+   ROTATING
+   Rotation-Speed 37
+   Rotation-Vector 1 0 0
    
    FrameIndex PUFF A 0 0
 }
