@@ -538,6 +538,7 @@ actor UnseenCanProp : SwitchableDecoration 9659
 actor UnseenCanDummy : Health
 {
 	+INVENTORY.ALWAYSPICKUP
+	inventory.forbiddento "Unseen"
 	Inventory.Amount 1
 	Inventory.MaxAmount 100
 	Inventory.PickupMessage "Picked up a can of soda"
