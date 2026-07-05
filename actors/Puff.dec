@@ -21,20 +21,23 @@ actor SSTBulletPUFF : BulletPUFF replaces BulletPUFF
   States
   {
   Spawn:
-    PUF2 A 0 NoDelay A_Quake(1,4,0,48,"none")
-    PUF2 A 0 A_Jump(127,"spawn3")
-    PUF2 A 0 A_Jump(127,"Spawn2")
+    PUFF A 0 NoDelay A_Quake(1,4,0,48,"none")
+    PUFF A 0 A_FaceTarget
+    PUFF A 0 A_Jump(127,"spawn3")
+    PUFF A 0 A_Jump(127,"Spawn2")
     TNT1 A 0 A_Playsound("weapons/trace")
     PUFF A 1 bright
-	FRTB A 0 A_SpawnItemEx ("Wallsmoke", 0,0,0, 0,0,0, 0, 160, 64) 
+	PUFF A 0 A_CustomMissile("BulletImpactSmoke",0,0,random(-90,90),CMF_AIMDIRECTION,random(0,-90))
+	//FRTB A 0 A_SpawnItemEx ("Wallsmoke", 0,0,0, 0,0,0, 0, 160, 64) 
 	NULL A 0 A_SpawnItemEx ("PUFFEffectSpawner", 0,0,0, 0,0,0, 0, 160) 
     PUFF B 1 bright A_FadeOut(0.1)
     // Intentional fall-through
   Melee:
-    PUF2 CD 1 bright A_FadeOut(0.1)
+    PUFF CD 1 bright A_FadeOut(0.1)
     stop
   Spawn3:
-    //TNT1 A 0 A_PlaySound("PUFF/ricochet")
+    	TNT1 A 0 A_PlaySound("world/ricochet")
+	TNT1 A 0 A_CustomMissile("BulletRicochetSmoke",0,0,random(-90,90),CMF_AIMDIRECTION,random(0,-90))
 	TNT1 A 0 Bright A_SpawnItemEx("ricochetspawner",0,0,0, 0,0,0, 0, SXF_NOCHECKPOSITION|SXF_CLIENTSIDE)
 	goto s2cont
   Spawn2:
@@ -42,7 +45,8 @@ actor SSTBulletPUFF : BulletPUFF replaces BulletPUFF
     TNT1 A 0 A_Playsound("weapons/trace")
     PUF2 A 1 bright A_FadeOut(0.1)
     s2cont: //[sm] ricochets must spawn sparks too!
-	FRTB A 0 A_SpawnItemEx ("Wallsmoke", 0,0,0, 0,0,0, 0, 160, 64) 
+	PUFF AA 0 A_CustomMissile("BulletImpactSmoke",0,0,random(-67.5,67.5),CMF_AIMDIRECTION,random(0,-67.5))
+	//FRTB A 0 A_SpawnItemEx ("Wallsmoke", 0,0,0, 0,0,0, 0, 160, 64) 
 	NULL A 0 A_SpawnItemEx ("PUFFEffectSpawner", 0,0,0, 0,0,0, 0, 160) 
     PUF2 ABCD 1 bright A_FadeOut(0.1)
     stop

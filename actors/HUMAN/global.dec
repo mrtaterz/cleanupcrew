@@ -1097,20 +1097,31 @@ actor BulletImpactSmoke : FlameDieSmoke
 	-clientsideonly
 	scale 1
 	alpha 0
-	speed 2
+	speed 4
 	states
 	{
 		spawn:
+			RSMK A 0 NoDelay A_SetScale(scalex-random(0,1)*scalex*2,scaley)
+			RSMK A 0 A_ChangeVelocity(0,0,frandom(0,3))
+			RSMK A 0 A_ScaleVelocity(frandom(0,1))
+			RSMK AAAAAA 1 A_GiveInventory("funcSmokeStart",1)
+			RSMK BBBBBBBBBBBBCCCCCCCCCCCCDDDDDDDDDDDDEEEEEEEEEEEE 1 A_GiveInventory("funcSmokeGrow",1)
+			stop
+	}
+}
+actor BulletRicochetSmoke : BulletImpactSmoke
+{
+	speed 6
+	scale 1
+	states
+	{
+	spawn:
 			RSMK A 0 NoDelay A_SetScale(scalex-random(0,1)*scalex*2,scaley)
 			TNT1 A 0 A_ChangeVelocity(0,0,frandom(0,3))
 			RSMK AAAAAA 1 A_GiveInventory("funcSmokeStart",1)
 			RSMK BBBBBBCCCCCCDDDDDDEEEEEE 1 A_GiveInventory("funcSmokeGrow",1)
 			stop
 	}
-}
-actor BulletRicochetSmoke : BulletImpactSmoke
-{
-	speed 4
 }
 
 actor funcSmokeStart : CustomInventory
@@ -1119,8 +1130,8 @@ actor funcSmokeStart : CustomInventory
 	states
 	{
 		pickup:
-			TNT1 A 0 A_SetScale(scalex+(scalex/abs(scalex))*0.025,scaley+0.025)
-			TNT1 A 0 A_ChangeVelocity(0,0,-0.125)
+			TNT1 A 0 A_SetScale(scalex+(scalex/abs(scalex))*0.05,scaley+0.05)
+			TNT1 A 0 A_ChangeVelocity(0,0,0.0625)
 			TNT1 A 0 A_FadeIn(0.05)
 			stop
 	}
@@ -1133,8 +1144,9 @@ actor funcSmokeGrow : CustomInventory
 	{
 		pickup:
 			TNT1 A 0 A_SetScale(scalex+(scalex/abs(scalex))*0.025,scaley+0.025)
-			TNT1 A 0 A_ChangeVelocity(0,0,-0.125)
+			TNT1 A 0 A_ChangeVelocity(0,0,-0.0625)
 			TNT1 A 0 A_FadeOut(0.015+frandom(-0.05,0.05))
+			TNT1 A 0 A_SetTics(random(1,2))
 			stop
 	}
 }

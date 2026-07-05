@@ -250,20 +250,21 @@ actor AssaultShotgun : usWeapon
 			ASHF A 0 A_FireBullets(1,1,1,4,"ShotgunPuff",0) //accuslug
 			ASHF A 0 A_Light(10)
 			ASHF A 1 Bright A_FireBullets(5.6,3.73,7,4)
-			ASHF A 0 A_FireCustomMissile("12gCaseSpawner",0,0)
 			ASHF B 1 Bright A_Light(5)
 			ASHF A 0 A_ZoomFactor(1)
 			ASHF CDE 2 A_Light0
 			ASHF A 0 A_ZoomFactor(1)
 			ASHF D 0 
-			goto inspect
+			goto reload
 		inspect:
 			ASHT A 0 A_SetArg(0,1)
 			ASHT A 5 A_SetTics(random(4,10))
 			reload:
 			ASHT BCDE 2
 			ASHT F 1 A_PlaySound("weapons/assaultshotgunpump",CHAN_BODY)
-			ASHT GHIHG 1
+			ASHT GH 1
+			ASHT I 1 A_FireCustomMissile("12gCaseSpawner",0,0)
+			ASHT HG 1
 			ASHT FEDCB 2 
 			ASHT A 2 A_WeaponReady(WRF_NOBOB | WRF_ALLOWRElOAD)
 			goto ready
