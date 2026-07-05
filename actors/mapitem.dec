@@ -490,6 +490,7 @@ actor usExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 {
 	+pushable
 	+bumpspecial
+	+dropped
 	+canpass //stacking ~~paper~~ barrels to the ceiling
 	mass 200
 	height 32
@@ -534,6 +535,7 @@ ACTOR TechBarrel : ExplosiveBarrel 127
 	DamageType "BFGBarrelSplash"
 	+pushable
 	+bumpspecial
+	+dropped
 	+useDamageEventScript
 	mass 400
 	obituary "$OB_TECHBARREL"
