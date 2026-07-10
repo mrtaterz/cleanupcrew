@@ -1,10 +1,10 @@
 object usRocket //the rocket is replaced in unseen to give a self obit, so we have to add gldefs back too
 {
     frame MISLA { light ROCKET    }
-
-    frame MISLB { light ROCKET_X1 }
-    frame MISLC { light ROCKET_X2 }
-    frame MISLD { light ROCKET_X3 }
+	
+	frame MISLB { light BIGROCKET_X1 }
+    frame MISLC { light BIGROCKET_X2 }
+    frame MISLD { light BIGROCKET_X3 }
 }
 
 //same for the grenade
@@ -12,9 +12,12 @@ object usGrenade
 {
     frame SGRN { light GRENADE    }
 
-    frame MISLB { light GRENADE_X1 }
-    frame MISLC { light GRENADE_X2 }
-    frame MISLD { light GRENADE_X3 }
+    frame EXPLA { light ROCKET_X1 }
+    frame EXPLB { light ROCKET_X1 }
+    frame EXPLC { light ROCKET_X2 }
+    frame EXPLD { light ROCKET_X2 }
+	frame EXPLE { light ROCKET_X3 }
+	frame EXPLF { light ROCKET_X3 }
 }
 
 
@@ -135,9 +138,12 @@ object HEATRocket //big exp
 {
     frame MISLA { light ROCKET    }
 
-	frame MISLB { light BIGROCKET_X1 }
-    frame MISLC { light BIGROCKET_X2 }
-    frame MISLD { light BIGROCKET_X3 }
+	frame EXPLA { light BIGROCKET_X1 }
+    frame EXPLB { light BIGROCKET_X1 }
+    frame EXPLC { light BIGROCKET_X2 }
+    frame EXPLD { light BIGROCKET_X2 }
+	frame EXPLE { light BIGROCKET_X3 }
+	frame EXPLF { light BIGROCKET_X3 }
 }
 
 
@@ -155,9 +161,12 @@ object usExplosiveBarrel
 {
     frame BAR1  { light BARREL    }
 
-    frame BEXPC { light ROCKET_X1 }
-    frame BEXPD { light ROCKET_X2 }
-    frame BEXPE { light ROCKET_X3 }
+    frame SEXPD { light ROCKET_X1 }
+	frame SEXPE { light ROCKET_X1 }
+	frame SEXPF { light ROCKET_X2 }
+    frame SEXPG { light ROCKET_X2 }
+    frame SEXPH { light ROCKET_X3 }
+	frame SEXPI { light ROCKET_X3 }
 }
 
 //signal flares
