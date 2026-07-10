@@ -39,8 +39,9 @@ actor usGrenade : Grenade replaces Grenade
 		death:
 			SGRN A 0 A_SetArg(0,1)
 			SGRN A 0 A_SpawnItemEx("ExploQuakeMaker")
-			MISL B 8 Bright A_Explode(115,160,XF_HURTSOURCE,TRUE,64)
-			goto super::death+2
+			EXPL A 5 Bright A_Explode(115,160,XF_HURTSOURCE,TRUE,64)
+			EXPL BCDEF 3 bright
+			Stop
 	}
 }
 //thump thump tube
