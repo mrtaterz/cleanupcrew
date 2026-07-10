@@ -499,3 +499,15 @@ object UnseenAlarm
 	frame ALRMC0 { light REDSTROBE }
 	frame ALRMD0 { light REDSTROBE }
 }
+
+/*
+object NewExplosionGLDEFSExample
+{
+    frame EXPLA { light ROCKET_X1 }
+    frame EXPLB { light ROCKET_X1 }
+    frame EXPLC { light ROCKET_X2 }
+    frame EXPLD { light ROCKET_X2 }
+	frame EXPLE { light ROCKET_X3 }
+	frame EXPLF { light ROCKET_X3 }
+}
+*/
