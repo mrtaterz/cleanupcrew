@@ -233,6 +233,7 @@ misc/chairmove dschair
 misc/chairmove/2 dschair2
 
 misc/boxdestroy dsboxdie
+world/cboxdie dsboxdi2
 $alias misc/chairdestroy misc/boxdestroy
 
 $alias misc/barrelfire vile/firecrkl
