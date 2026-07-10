@@ -45,16 +45,16 @@ actor JohnWooPaperDebris : AmmoWreckDebris //defined in mapitem.dec
 		Spawn:
 			TNT1 A 0 NODELAY A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
 		Spawn1:
-			PAPE A 1 A_Fadeout(0.2)
+			PAPE A 10 A_Fadeout(0.1)
 			Loop
 		Spawn2:
-			PAPE B 1 A_Fadeout(0.2)
+			PAPE B 10 A_Fadeout(0.1)
 			Loop
 		Spawn3:
-			PAPE C 1 A_Fadeout(0.2)
+			PAPE C 10 A_Fadeout(0.1)
 			Loop
 		Spawn4:
-			PAPE D 1 A_Fadeout(0.2)
+			PAPE D 10 A_Fadeout(0.1)
 			Loop
 	}
 }
