@@ -18,10 +18,10 @@ Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedma
 
 Contact those guys on Discord!
 
+Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
 Custom Art: Craneo
 Additional Scripting Help, Additional Programming, Additional Mapping, and Skyboxes: inkoalawetrust (yes, he actually worked on the mod)
 Aditional Scripting Help, Additional Programming (especially for SBARINFO): TDRR.
-Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
 
 =====================================================================================================================================================================
 Below are the extended, and/or specific credits.
@@ -88,9 +88,15 @@ Tables and Chairs by iD Software, and MagicWizard.
 Broken Techlamp sprites by hexereticdoom.
 Grey Lamps by iD Software (damn, really?), and the late Ghastly_Dragon.
 Rat sprites by Raven Software.
-(probably temp) pistol world sprite by GZDoom team.
 Assault mugshot by Craneo
 Technician mugshot by Marcelus
+BOX1A0, and UTRSx0 by 3D Realms.
+PAPEx0 by KontaKommando
+PPILA0 by XLightningStormL
+TCANA0 possibly by Zero X Diamond for their "(Vinesauce) Joel vs the World" mod.
+BOTLx0 by... honestly I don't even know, all I remember the author made a E1 remake and modern weapons with attachments addon for Hideous Destructor.
+EXPLx0 and SEXPx0 by Perkistan for Smooth Doom.
+
 
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
@@ -125,6 +131,7 @@ Arcade textures by kwc.
 All non-MONITORS textures in textures/pc folder by XLightningStormL, based on textures from phobos.wad by Roger Ritenour.
 FL20TINx, and SILVSERx by XLightningStormL, based on textures by Valve, and iD Software.
 FLAT2LT by Andy "eschdoom" Stewart, based on textures by iD Software.
+TUBERAx from Valiant by Paul "skillsaw" DeBruyne
 
 Sounds
 ==
@@ -143,7 +150,7 @@ The Hidden : Source Developers
 Frankie (for helping playtest)
 The Wasteland Discord and it's denizens (The GooseJelly will not be televised Matt!)
 Realm667
-Not Zandronum for being terribly outdated (i go back to GZDoom and Zahl-Script now bye -XLightningStormL + inkoalawetrust)
+Not Zandronum for being terribly outdated (i go back to UZDoom and Zahl-Script now bye -XLightningStormL + inkoalawetrust)
 Ghouls vs Humans (for being so mediocre that it inspires me to do better -GooseJelly)
 
 
