@@ -701,6 +701,7 @@ actor DestroyablePaperPile : DestroyableDecoMaster 9702
 	Health 5
 	Height 8
 	Radius 8
+	+TOUCHY
 	States
 	{
 		Spawn:
@@ -722,6 +723,7 @@ actor DestroyableBinBig : DestroyableDecoMaster 9703
 	Radius 11
 	Scale 0.5
 	DeathSound "misc/boxdestroy"
+	Painchance 256
 	States
 	{
 		Spawn:
