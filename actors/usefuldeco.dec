@@ -18,8 +18,44 @@ actor ShrapnelParticle : AmmoWreckDebris //defined in mapitem.dec
 	States
 	{
 		Spawn:
-			DEB3 ABCDEFGH 2
+			SHRP ABCD 2
 			loop
+	}
+}
+
+actor WoodWreckDebris : AmmoWreckDebris //defined in mapitem.dec
+{
+	scale 0.5
+	alpha 0.5
+	States
+	{
+		Spawn:
+			WOOD ABCD 2
+			loop
+	}
+}
+
+actor JohnWooPaperDebris : AmmoWreckDebris //defined in mapitem.dec
+{
+	scale 0.25
+	gravity 0.15
+	//bouncefactor 0.05
+	States
+	{
+		Spawn:
+			TNT1 A 0 NODELAY A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+		Spawn1:
+			PAPE A 1
+			Loop
+		Spawn2:
+			PAPE B 1
+			Loop
+		Spawn3:
+			PAPE C 1
+			Loop
+		Spawn4:
+			PAPE D 1
+			Loop
 	}
 }
 
@@ -591,4 +627,134 @@ Actor UnseenAlarm : SwitchableDecoration 4444
 			ALRM E -1
 			Stop*/
     }
+}
+
+// Scripted is too lazy, so I'm like the weed man coming up to plug up with the goods
+// Made by XLightningStormL
+
+actor DestroyableDecoMaster
+{
+	Health 1
+	+SHOOTABLE
+	+NOTAUTOAIMED
+	+NOBLOOD
+	+SOLID
+	mass 1000000 //dirty zandronum hack
+	damagefactor "burns", 0.25
+}
+
+actor DestroyableGlass : DestroyableDecoMaster 9700
+{
+	//$Category Decoration/Destroyables
+	//$Sprite BOTLA0
+	Health 5
+	Height 16
+	Radius 3
+	deathSound "world/lampbreak"
+	States
+	{
+		Spawn:
+			TNT1 A 0 NODELAY A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+		Spawn1:
+			BOTL A 1
+			Loop
+		Spawn2:
+			BOTL B 1
+			Loop
+		Spawn3:
+			BOTL C 1
+			Loop
+		Spawn4:
+			BOTL D 1
+			Loop
+		Death:
+			TNT1 A 0 A_SpawnDebris("GlassWreckDebris")
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			Stop
+	}
+}
+
+actor DestroyableBox : DestroyableDecoMaster 9701
+{
+	//$Category Decoration/Destroyables
+	Health 10
+	Height 24
+	Radius 20
+	deathSound "world/cboxdie"
+	States
+	{
+		Spawn:
+			BOX1 A 1
+			Loop
+		Death:
+			TNT1 A 0 A_SpawnDebris("WoodWreckDebris")
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			Stop
+	}
+}
+
+actor DestroyablePaperPile : DestroyableDecoMaster 9702
+{
+	//$Category Decoration/Destroyables
+	Health 5
+	Height 8
+	Radius 8
+	States
+	{
+		Spawn:
+			PPIL A 1
+			Loop
+		Death:
+			TNT1 A 0 A_SpawnDebris("JohnWooPaperDebris", false, 0.8, 0.5)
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			Stop
+	}
+}
+
+actor DestroyableBinBig : DestroyableDecoMaster 9703
+{
+	//$Category Decoration/Destroyables
+	Health 20
+	Height 27
+	Radius 11
+	Scale 0.5
+	DeathSound "misc/boxdestroy"
+	States
+	{
+		Spawn:
+			UTRS D 1
+			Loop
+		Pain:
+			UTRS E 8
+			Goto Spawn
+		Death:
+			TNT1 A 0 A_SpawnDebris("ShrapnelParticle")
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			Stop
+	}
+}
+
+actor DestroyableBinSmall : DestroyableDecoMaster 9704
+{
+	//$Category Decoration/Destroyables
+	Health 20
+	Height 20
+	Radius 9
+	Scale 0.5
+	DeathSound "misc/boxdestroy"
+	States
+	{
+		Spawn:
+			TCAN A 1
+			Loop
+		Death:
+			TNT1 A 0 A_SpawnDebris("ShrapnelParticle")
+			TNT1 A 0 A_Scream
+			TNT1 A 0 A_NoBlocking
+			Stop
+	}
 }
