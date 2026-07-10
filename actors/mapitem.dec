@@ -505,13 +505,14 @@ actor usExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 			BAR1 AAAAAA 1 ACS_NamedExecuteWithResult("waterfloat",13)
 			goto xloop
 		Death:
-			BEXP A 5 Bright A_SetSpecial(0)
-			BEXP B 0 Bright A_SpawnItemEx("DistantExploMaker")
-			BEXP B 5 Bright A_Scream
-			BEXP C 5 Bright
-			BEXP D 0 Bright A_SpawnItemEx("ExploQuakemakerSilent")
-			BEXP D 5 Bright A_Explode
-			BEXP E 10 Bright
+			SEXP A 5 Bright A_SetSpecial(0)
+			SEXP B 0 Bright A_SpawnItemEx("DistantExploMaker")
+			SEXP B 5 Bright A_Scream
+			SEXP CD 2 Bright
+			SEXP D 0 Bright A_SpawnItemEx("ExploQuakemakerSilent")
+			SEXP E 3 Bright A_Explode
+			SEXP EFG 3 Bright
+			SEXP HI 3 Bright
 			TNT1 A 1050 Bright A_BarrelDestroy
 			TNT1 A 5 A_Respawn
 			Wait
