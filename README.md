@@ -5,18 +5,19 @@ A MOD FOR ZANDRONUM INSPIRED BY THE HIDDEN: SOURCE
 The Clean Up Crew dev team are:
 ===============================
 
-Lead Designer, Balance Lead, Map Design Lead, and Additional Art: mrtaterz/Goosejelly
-Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedmarine! (Discord: scripted_m)
+Creative Director, Designer, and Balance Lead: mrtaterz/Goosejelly
+
+Lead Programmer, and Designer: Scriptedmarine! (Discord: scripted_m)
 
 Contact those guys on Discord!
 
-Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
+Art Supervisor, Lead Map Designer, and Programming: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
 
-Custom Art: Craneo
+Primary Artist: Craneo
 
-Additional Scripting Help, Additional Programming, Additional Mapping, and Skyboxes: inkoalawetrust (yes, he actually worked on the mod)
+Programming, and Map Design: inkoalawetrust
 
-Aditional Scripting Help, Additional Programming (especially for SBARINFO): TDRR.
+Programming: TDRR.
 
 BETA NOTICE:
 ===============================
