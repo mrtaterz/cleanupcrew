@@ -401,7 +401,7 @@ $rolloff world/flies 128 256
 // moving healthpack screamers
 innocent/seehu dsinose1
 
-$random innocent/seeus { innocent/activesp/1 innocent/activesp/2 }
+$random innocent/seeus { innocent/seeus/1 innocent/seeus/2 }
 innocent/seeus/1 dsinose2
 innocent/seeus/2 dsinose3
 
