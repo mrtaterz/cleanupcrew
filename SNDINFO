@@ -365,8 +365,6 @@ $random bld/spls 		{ bld/spls1 bld/spls2 bld/spls3 bld/spls3 bld/spls4 }
 
 $rolloff bld/spls 8 384
 
-
-
 weapons/trace1                  dssrico1
 weapons/trace2                  dssrico2
 weapons/trace3                  dssrico3
@@ -400,9 +398,20 @@ $rolloff world/alarm 1024 2048
 world/flies dsflies
 $rolloff world/flies 128 256
 
+// moving healthpack screamers
+innocent/seehu dsinose1
 
+$random innocent/seeus { innocent/activesp/1 innocent/activesp/2 }
+innocent/seeus/1 dsinose2
+innocent/seeus/2 dsinose3
 
+innocent/activeid dsinoat1
 
+$random innocent/activesp { innocent/activesp/1 innocent/activesp/2 }
+innocent/activesp/1 dsinoat2
+innocent/activesp/2 dsinoat3
 
-
-
+$random innocent/pain { innocent/pain/1 innocent/pain/2 innocent/pain/3 }
+innocent/pain/1 dsinopa1
+innocent/pain/2 dsinopa2
+innocent/pain/3 dsinopa3

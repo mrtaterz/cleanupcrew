@@ -19,6 +19,7 @@
 #include "ACTORS/HUMAN/TRACKER/weapons.dec"
 
 #include "ACTORS/mercs.dec"
+#include "ACTORS/innocent.dec"
 
 #include "ACTORS/demon.dec"
 #include "ACTORS/Blood.dec"

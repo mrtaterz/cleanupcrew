@@ -1,0 +1,99 @@
+// Some dumbass civilian that wasn't lucky enough to get slaughtered by the Unseen
+// Now sobs and screams
+// By Lightning
+actor Innocent 7600
+{
+	health 50
+	radius 16
+	height 56
+	speed 16
+	painChance 256
+	damageFactor "merc",0
+	painSound "innocent/pain"
+	deathSound "innocent/activesp"
+	seeSound "innocent/seeus"
+	//active sounds handled by their states
+	activeSound ""
+	monster
+	species "Innocent"
+	+usedamageeventscript
+	+dontharmspecies
+	states
+	{
+		Spawn:
+			TNT1 A 0 A_Jump(224, 2)
+			TNT1 A 0 A_PlaySound("innocent/activeid", CHAN_VOICE)
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO A 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO A 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO B 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO B 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO C 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO C 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO D 4 A_Wander
+			TNT1 A 0 A_LookEx(0, 0, 1280, 1024, 180.0, "See")
+			INNO D 4 A_Wander
+			Loop
+		See:
+			TNT1 A 0 A_SetArg(4,100)
+			TNT1 A 0 A_ChangeFlag("Frightened", true)
+		ChaseLoop:
+			TNT1 A 0 A_Jump(224, 2)
+			TNT1 A 0 A_PlaySound("innocent/activesp", CHAN_VOICE)
+			INNO GGHHIIJJ 2 A_GiveInventory("FuncInnocentChase",1)
+			TNT1 A 0 A_JumpIf(args[4]<=0,"forget")
+			Loop
+		Forget:
+			INNO A 0 A_ClearTarget //become disinterested
+			TNT1 A 0 A_ChangeFlag("Frightened", false)
+			goto Spawn
+		Pain:
+			INNO K 4 A_AlertMonsters(512)
+			Goto ChaseLoop
+		Death:
+			INNO L 6
+			INNO M 6 A_Scream
+			INNO N 6 A_NoBlocking
+			INNO OP 6
+			INNO Q 1 A_SpawnItemEx("DeadInnocent",0,0,0,0,0,0,0,SXF_TransferTranslation)
+			TNT1 A -1
+			Stop
+	}
+}
+
+actor DeadInnocent : CorpseGeneric
+{
+	states
+	{
+		spawn:
+			INNO Q 1
+			goto bedead
+	}
+}
+
+Actor FuncInnocentChase : CustomInventory
+{
+	+Inventory.AlwaysPickup
+	States
+	{
+		Pickup:
+			TNT1 A 0 ACS_NamedExecuteWithResult("c_MercChaser")
+			goto NormalChase
+		NormalChase:
+			TNT1 A 0 A_Chase
+			TNT1 A 0 A_JumpIfTargetInLOS("Remember")
+			goto Forget
+		Remember:
+			TNT1 A 0 A_SetArg(4,100)
+			stop
+		Forget:
+			TNT1 A 0 A_SetArg(4,args[4]-1-(CallACS("shadowtarget")*2))
+			stop
+	}
+}
