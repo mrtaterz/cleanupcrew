@@ -7,11 +7,9 @@ The Clean Up Crew dev team are:
 
 Creative Director, Designer, and Balance Lead: mrtaterz/Goosejelly
 
-Lead Programmer, and Designer: Scriptedmarine! (Discord: scripted_m)
+Lead Programmer, and Designer: Scriptedmarine
 
-Contact those guys on Discord!
-
-Art Supervisor, Lead Map Designer, and Programming: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
+Art Supervisor, Lead Map Designer, and Programming: XLightningStormL
 
 Primary Artist: Craneo
 
