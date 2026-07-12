@@ -91,128 +91,6 @@ Actor usDeadDemon : CorpseGeneric replaces DeadDemon
 	}
 }
 
-Actor usDeadCivilian1 : CorpseGeneric 3021
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM1 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian2 : CorpseGeneric 3022
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM2 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian3 : CorpseGeneric 3023
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM3 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian4 : CorpseGeneric 3024
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEM4 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian5 : CorpseGeneric 3025
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF1 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian6 : CorpseGeneric 3026
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF2 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian7 : CorpseGeneric 3027
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF3 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadCivilian8 : CorpseGeneric 3028
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			PEF4 M 1
-			goto verydead
-	}
-}
-
-Actor usDeadLabcoat1 : CorpseGeneric 3029
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			DOC1 M 1
-			goto veryead
-	}
-}
-
-Actor usDeadLabcoat2 : CorpseGeneric 3030
-{
-	states
-	{
-		spawn:
-			TNT1 A 0 NODELAY A_PlaySound("world/flies", 5, 1.0, true)
-			DOC2 M 1
-			goto verydead
-	}
-}
-Actor usDeadCivilianSpawner : RandomSpawner 3031
-{
-	DropItem "usDeadCivilian1"
-	DropItem "usDeadCivilian2"
-	DropItem "usDeadCivilian3"
-	DropItem "usDeadCivilian4"
-	DropItem "usDeadCivilian5"
-	DropItem "usDeadCivilian6"
-	DropItem "usDeadCivilian7"
-	DropItem "usDeadCivilian8"
-}
-
-
 actor usDeadCacodemon : CorpseGeneric replaces DeadCacodemon
 {
 	states
@@ -396,6 +274,7 @@ actor AmmoBelt : CustomInventory
 {
 	inventory.pickupmessage "$PICKUP_AMMOBELT"
 	inventory.forbiddenTo "unseen"
+	inventory.pickupsound "misc/ammopick"
 	states
 	{
 		spawn:
