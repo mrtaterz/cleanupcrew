@@ -4,6 +4,7 @@ actor usDemon : Demon replaces Demon
 	+missileEvenMore
 	+slidesOnWalls
 	+noTargetSwitch
+	+dropOff
 	SeeSound ""
 	health 750
 	meleeRange 64
