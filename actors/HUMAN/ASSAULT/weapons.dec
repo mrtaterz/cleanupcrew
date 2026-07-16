@@ -38,6 +38,7 @@ actor usGrenade : Grenade replaces Grenade
 			SGRN A 0 A_Stop
 		death:
 			SGRN A 0 A_SetArg(0,1)
+			SGRN A 0 A_NoGravity
 			SGRN A 0 A_SpawnItemEx("ExploQuakeMaker")
 			EXPL A 5 Bright A_Explode(115,160,XF_HURTSOURCE,TRUE,64)
 			EXPL BCDEF 3 bright
