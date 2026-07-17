@@ -1,0 +1,16 @@
+#library "inno"
+#include "zcommon.acs"
+
+int randomNum;
+
+script "InnocentTranslation" (void)
+{
+	CreateTranslation(1, 112:127=96:111); //grey
+	CreateTranslation(2, 112:127=64:79); //brown
+	CreateTranslation(3, 112:127=32:47); //red
+	CreateTranslation(4, 112:127=208:223); //orange
+	CreateTranslation(5, 112:127=192:207); //blue
+	randomNum = random(1, 5);
+	Thing_SetTranslation(0, random(0, 5));
+	randomNum = 0;
+}
