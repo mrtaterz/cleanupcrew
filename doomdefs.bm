@@ -1,0 +1,379 @@
+brightmap sprite sarga1
+{
+	map "brightmaps/sprites/doom/sarga1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarga2a8
+{
+	map "brightmaps/sprites/doom/sarga2a8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarga3a7
+{
+	map "brightmaps/sprites/doom/sarga3a7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarga4a6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarga5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargb1
+{
+	map "brightmaps/sprites/doom/sargb1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargb2b8
+{
+	map "brightmaps/sprites/doom/sargb2b8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargb3b7
+{
+	map "brightmaps/sprites/doom/sargb3b7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargb4b6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargb5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargc1
+{
+	map "brightmaps/sprites/doom/sargc1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargc2c8
+{
+	map "brightmaps/sprites/doom/sargc2c8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargc3c7
+{
+	map "brightmaps/sprites/doom/sargc3c7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargc4c6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargc5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargd1
+{
+	map "brightmaps/sprites/doom/sargd1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargd2d8
+{
+	map "brightmaps/sprites/doom/sargd2d8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargd3d7
+{
+	map "brightmaps/sprites/doom/sargd3d7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargd4d6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargd5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge1
+{
+	map "brightmaps/sprites/doom/sarge1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge2
+{
+	map "brightmaps/sprites/doom/sarge2.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge3
+{
+	map "brightmaps/sprites/doom/sarge3.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge4
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge7
+{
+	map "brightmaps/sprites/doom/sarge7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sarge8
+{
+	map "brightmaps/sprites/doom/sarge8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf1
+{
+	map "brightmaps/sprites/doom/sargf1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf2
+{
+	map "brightmaps/sprites/doom/sargf2.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf3
+{
+	map "brightmaps/sprites/doom/sargf3.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf4
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf7
+{
+	map "brightmaps/sprites/doom/sargf7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargf8
+{
+	map "brightmaps/sprites/doom/sargf8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg1
+{
+	map "brightmaps/sprites/doom/sargg1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg2
+{
+	map "brightmaps/sprites/doom/sargg2.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg3
+{
+	map "brightmaps/sprites/doom/sargg3.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg4
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg7
+{
+	map "brightmaps/sprites/doom/sargg7.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargg8
+{
+	map "brightmaps/sprites/doom/sargg8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh1
+{
+	map "brightmaps/sprites/doom/sargh1.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh2
+{
+	map "brightmaps/sprites/doom/sargh2.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh3
+{
+	map "brightmaps/sprites/doom/sargh3.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh4
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh5
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh6
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh7
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargh8
+{
+	map "brightmaps/sprites/doom/sargh8.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargi0
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargj0
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargk0
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargl0
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargm0
+{
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite sargn0
+{
+	iwad 
+	disablefullbright
+}
+
