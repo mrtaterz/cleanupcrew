@@ -51,7 +51,7 @@ Actor Flamer : usWeapon
 			goto refire
 		hold:
 			FLRG A 0 A_GunFlash
-			//FLRG A 0 A_FireCustomMissile("FlamerVomitSmoke",0,0)
+			FLRG A 0 A_FireCustomMissile("FlamerVomitSmoke",0,0)
 			FLRG E 3 Bright A_FireCustomMissile("FlameBall",0,1,0,0,0,10)
 			//now pick a random offset
 			TNT1 A 0 A_Jump(256,2,3,4,5)
