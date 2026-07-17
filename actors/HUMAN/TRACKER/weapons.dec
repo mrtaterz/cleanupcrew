@@ -88,7 +88,7 @@ Actor ProxSensor : Equipment
 	states
 	{
 		spawn:
-			SENS C 1 ACS_NamedExecuteWithResult("EquipmentUseSpecial")
+			SENS C 1 NoDelay ACS_NamedExecuteWithResult("EquipmentUseSpecial")
 			SENS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 1 A_GiveInventory("funcSensorTick",1) //ACS_NamedExecuteWithResult("waterfloat",20)//34 c
 			SENS D 1 Bright A_PlaySound("misc/prox")
 			SENS D 1 Bright A_GiveInventory("funcSensorTick",1)//ACS_NamedExecuteWithResult("waterfloat",20)
