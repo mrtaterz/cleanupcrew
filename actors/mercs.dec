@@ -593,10 +593,10 @@ actor MercSGPuff : MercPuff
 	obituary "$OB_MERCSHOT"
 }
 
-actor MercKickPuff : BulletPuff
+actor MercKickPuff : KickPuff
 {
 	damageType "melee"
-	seeSound "player/male/fist"
+	//seeSound "player/male/fist"
 	projectileKickBack 500
 	obituary "$OB_MERCKICK"
 	+puffonactors
@@ -612,6 +612,7 @@ actor MercKickPuff : BulletPuff
 
 actor MercPunchPuff : MercKickPuff
 {
+	seeSound "player/male/fist"
 	obituary "$OB_MERCMELEE"
 	projectileKickBack 100
 }
