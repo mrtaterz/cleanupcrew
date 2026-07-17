@@ -2,11 +2,11 @@
 [enu default]
 
 //leave messages
-QUITMSG1 = "please don't leave, there's more demons to toast!";
+QUITMSG1 = "please don't leave, there's more ammo boxes to find!"; //XL
 QUITMSG2 = "let's beat it -- this is turning into a bloodbath!";
-QUITMSG3 = "i wouldn't leave if i were you.dos is much worse.";
-QUITMSG4 = "you're trying to say you like dos better than me, right?";
-QUITMSG5 = "don't leave yet -- there's a demon around that corner!";
+QUITMSG3 = "i wouldn't leave if i were you. your desktop is much worse."; //XL
+QUITMSG4 = "you're trying to say you like ghouls vs humans better than me, right?"; //XL
+QUITMSG5 = "don't leave yet -- there's a ATRL around that corner!"; //XL
 QUITMSG6 = "ya know, next time you come in here i'm gonna toast ya.";
 QUITMSG7 = "go ahead and leave. see if i care.";
 QUITMSG8 = "you want to quit? then, thou hast lost an eighth!";
@@ -14,8 +14,8 @@ QUITMSG9 = "don't go now, there's a dimensional shambler waiting at the dos prom
 QUITMSG10 = "get outta here and go back to your boring programs.";
 QUITMSG11 = "if i were your boss, i'd deathmatch ya in a minute!";
 QUITMSG12 = "look, bud. you leave now and you forfeit your body count!";
-QUITMSG13 = "Hey, Scripted! Can I say 'fuck' in this mod?"; //XL, forked from TLT's Quit Messages
-QUITMSG14 = "Did The Threat scare ya!? Get outta here and go play a Terry Wad, then we'll see who is scary!"; //XL, forked from TLT's Quit Messages
+QUITMSG13 = "Hey, Scripted! Can I say 'fuck' in this mod?"; //XL
+QUITMSG14 = "Did The Threat scare ya!? Get outta here and go look in a mirror, then we'll see who is scary!"; //XL
 
 //class names
 
@@ -26,6 +26,7 @@ NAME_UNSEEN="The Threat"; //hidden class
 NAME_ASSAULT="Assault"; //assault class
 NAME_SUPPORT="Support"; //support class
 NAME_SAPPER="Technician"; //sapper class
+NAME_HUNTER="Thug Hunter"; //Super Secret Class
 
 //obits
 
