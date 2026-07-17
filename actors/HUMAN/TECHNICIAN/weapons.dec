@@ -200,7 +200,7 @@ Actor MineLauncher : usWeapon //ammo is in human/global.dec
 			PRXG A 1 A_WeaponReady
 			loop
 		fire:
-			PRXG A 0 A_JumpIfInventory("MineCount",4,"bsod")
+			PRXG A 0 A_JumpIfInventory("MineCount",3,"bsod")
 			PRXG B 8
 			PRXG C 0 A_GiveInventory("MineCount",1)
 			PRXG C 3 A_FireCustomMissile("FlyingProxMine",0,1)
@@ -270,7 +270,7 @@ Actor ProxMine : Equipment
 	states
 	{
 		spawn:
-			PROX D 1 ACS_NamedExecuteWithResult("EquipmentUseSpecial")//make this thing able to be picked up // A_Log(tid) //fuck!!
+			PROX D 1 NoDelay ACS_NamedExecuteWithResult("EquipmentUseSpecial")//make this thing able to be picked up // A_Log(tid) //fuck!!
 			PROX DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 ACS_NamedExecuteWithResult("waterfloat",10)//49 d
 			PROX C 1 A_PlaySound("weapons/minegun/arming")
 			PROX BA 1 ACS_NamedExecuteWithResult("waterfloat",10)
