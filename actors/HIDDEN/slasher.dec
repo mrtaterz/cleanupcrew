@@ -136,10 +136,10 @@ actor SpecialPuff : BulletPuff //with extra speed and being a different actor
 	states
 	{
 		spawn:
-			PUF2 A 0 Bright NoDelay A_ChangeVelocity(0,0,2)
-			PUF2 A 2 Bright A_ScaleVelocity(frandom(0.5,2))
-			PUF2 B 2 Bright
-			PUF2 CD 2
+			PUFF A 0 Bright NoDelay A_ChangeVelocity(0,0,2)
+			PUFF A 2 Bright A_ScaleVelocity(frandom(0.5,2))
+			PUFF B 2 Bright
+			PUFF CD 2
 		stop
 	}
 }
