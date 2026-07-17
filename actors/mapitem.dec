@@ -184,7 +184,7 @@ actor usStimpack : Stimpack replaces Stimpack 2011
 actor WreckablePickup : CustomInventory
 {
 	Health 5000
-	//damagefactor "None",0
+	damagefactor "None",0
 	//damagefactor "Fire",0 //i heard rockets do fire damage
 	damagefactor "Poison",0
 	damagefactor "Dark",50
