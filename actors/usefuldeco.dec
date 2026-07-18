@@ -41,7 +41,8 @@ actor JohnWooPaperDebris : AmmoWreckDebris //defined in mapitem.dec
 	gravity 0.15
 	//bouncefactor 0.05
 	wallBounceFactor 0.2
-	CeilingBounc	States
+	CeilingBounceFactor 0.2
+	States
 	{
 		Spawn:
 			TNT1 A 0 NODELAY A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
