@@ -383,6 +383,24 @@ brightmap sprite barta0
 	disablefullbright
 }
 
+brightmap sprite barxa0
+{
+	map "brightmaps/BARTA0.png"
+	disablefullbright
+}
+
+brightmap sprite barxb0
+{
+	map "brightmaps/BARTB0.png"
+	disablefullbright
+}
+
+brightmap sprite barxc0
+{
+	map "brightmaps/BARXC0.png"
+	disablefullbright
+}
+
 brightmap sprite SHDTA1
 {
 	map "brightmaps/unseen/SHDTA1.png"
@@ -504,10 +522,12 @@ brightmap sprite BAR1A0
 {
 	map "brightmaps/BAR1A0.png"
 	disablefullbright
+	iwad
 }
 
 brightmap sprite BAR1B0
 {
 	map "brightmaps/BAR1B0.png"
 	disablefullbright
+	iwad
 }
