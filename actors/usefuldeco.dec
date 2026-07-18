@@ -329,8 +329,8 @@ actor WolfTable4 2101
 ACTOR Rat 9656
 {
     Health 10
-    Radius 6
-    Height 6
+    Radius 8
+    Height 8
     Scale 0.5
     Mass 200
     Speed 5
