@@ -382,3 +382,30 @@ brightmap sprite barta0
 	map "brightmaps/BARTA0.png"
 	disablefullbright
 }
+
+brightmap sprite SHDTA1
+{
+	map "brightmaps/unseen/SHDTA1.png"
+}
+
+brightmap sprite SHDTA2A8
+{
+	map "brightmaps/unseen/SHDTA2A8.png"
+}
+
+brightmap sprite SHDTA3A7
+{
+	map "brightmaps/unseen/SHDTA3A7.png"
+}
+
+brightmap sprite FLARA0
+{
+	map "brightmaps/FLARA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLARB0
+{
+	map "brightmaps/FLARB0.png"
+	disablefullbright
+}
