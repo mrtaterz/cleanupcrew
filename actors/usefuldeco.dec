@@ -773,4 +773,5 @@ Actor Palletjack 16603
 		Spawn:
 			PJAK A -1
 			Loop
+	}
 }
