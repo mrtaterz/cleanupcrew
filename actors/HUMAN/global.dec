@@ -280,7 +280,7 @@ actor usFist : Fist
 			loop
 		Fire:
 			PUNG B 2 
-			PUNG C 1 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
+			PUNG C 1 A_CustomPunch(3*random(1,10),1,0,"usPunchPuff")
 			PUNG D 2 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			PUNG C 4
 			PUNG B 4
