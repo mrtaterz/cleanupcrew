@@ -151,7 +151,7 @@ actor usMedikit : Medikit replaces Medikit
 	inventory.pickupsound "misc/medikit"
 }
 
-actor usStimpack : Stimpack replaces Stimpack 2011
+actor usStimpack : Stimpack replaces Stimpack
 {
 	+neverrespawn
 	inventory.forbiddento "Unseen"
@@ -239,7 +239,7 @@ actor WreckablePickup : CustomInventory
 //Ammo can--
 //To assist the detachment in their mission, ammunition is teleported to several
 //pre-designated locations in the site.
-actor AmmoBag : WreckablePickup Replaces Clipbox 8 //hax!
+actor AmmoBag : WreckablePickup Replaces Clipbox //hax!
 {
 	//+inventory.alwaysrespawn
 	//until zandronum implements alwaysrespawn we can't do that
