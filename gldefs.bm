@@ -409,3 +409,105 @@ brightmap sprite FLARB0
 	map "brightmaps/FLARB0.png"
 	disablefullbright
 }
+
+brightmap sprite PROXA0
+{
+	map "brightmaps/PROXA0.png"
+	disablefullbright
+}
+
+brightmap sprite PROXB0
+{
+	map "brightmaps/PROXB0.png"
+	disablefullbright
+}
+
+brightmap sprite PROXC0
+{
+	map "brightmaps/PROXC0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGA0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGB0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGB0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGC0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGD0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite PRXGG0
+{
+	map "brightmaps/PRXGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGA0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGB0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGC0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGD0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGE0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLRGF0
+{
+	map "brightmaps/FLRGA0.png"
+	disablefullbright
+}
+
+brightmap sprite BAR1A0
+{
+	map "brightmaps/BAR1A0.png"
+	disablefullbright
+}
+
+brightmap sprite BAR1B0
+{
+	map "brightmaps/BAR1B0.png"
+	disablefullbright
+}
