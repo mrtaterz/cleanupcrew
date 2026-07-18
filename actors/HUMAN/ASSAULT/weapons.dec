@@ -312,7 +312,7 @@ actor AssaultFist : usFist
 			loop
 		Fire:
 			BPNG B 2 
-			BPNG C 1 A_CustomPunch(4*random(1,10),1,0,"usPunchPuff")
+			BPNG C 1 A_CustomPunch(3*random(1,10),1,0,"usPunchPuff")
 			BPNG D 2 A_PlaySound("*land",CHAN_WEAPON,1,false)
 			BPNG C 4
 			BPNG B 4
