@@ -41,7 +41,6 @@ actor JohnWooPaperDebris : AmmoWreckDebris //defined in mapitem.dec
 	gravity 0.15
 	//bouncefactor 0.05
 	wallBounceFactor 0.2
-	CeilingBounceFactor 0.2
 	States
 	{
 		Spawn:
