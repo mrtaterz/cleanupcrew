@@ -39,14 +39,16 @@ actor usGrenade : Grenade replaces Grenade
 		death:
 			EXPL A 0 A_SetArg(0,1)
 			EXPL A 0 A_NoGravity
-			EXPL AA 0 A_SpawnItemEx("PuffEffectSpawner",0,0,4)
-			EXPL A 0 A_Jump(256,1,2,3,4,5,6,7,8,9,10,11,12)
-			EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SilentRicochetSpawner",0,0,4)
+			//begin fx
+			TNT1 AA 0 A_SpawnItemEx("PuffEffectSpawner",0,0,4)
+			TNT1 A 0 A_Jump(256,1,2,3,4,5,6,7,8,9,10,11,12)
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SilentRicochetSpawner",0,0,4)
 			TNT1 A 0 A_Jump(256,1,2,3) //random 6-8 projectiles
 			TNT1 AAAAAAAA 0 A_CustomMissile("FlameDieSmoke",4,0,random(0,360),CMF_AIMDIRECTION,random(0,-90))
 			TNT1 AAAAAAAAAAAAAAAA 0 A_CustomMissile("SplodeSmoke",4,0,random(0,360),CMF_AIMDIRECTION,random(-45,90))
 			TNT1 AAAAAAAAAAAAAAAA 0 A_CustomMissile("FastSplodeSmoke",4,0,random(0,360),CMF_AIMDIRECTION,random(0,90))
-			EXPL A 0 A_SpawnItemEx("ExploQuakeMaker")
+			TNT1 A 0 A_SpawnItemEx("ExploQuakeMaker")
+			//end fx
 			EXPL A 2 Bright A_Explode(115,160,XF_HURTSOURCE,TRUE,64)
 			EXPL B 2 bright
 			EXPL CD 3 bright
