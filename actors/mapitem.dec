@@ -239,7 +239,7 @@ actor WreckablePickup : CustomInventory
 //Ammo can--
 //To assist the detachment in their mission, ammunition is teleported to several
 //pre-designated locations in the site.
-actor AmmoBag : WreckablePickup Replaces Clipbox //hax!
+actor AmmoBag : WreckablePickup Replaces Backpack //hax!
 {
 	//+inventory.alwaysrespawn
 	//until zandronum implements alwaysrespawn we can't do that
@@ -269,6 +269,8 @@ actor AmmoBag : WreckablePickup Replaces Clipbox //hax!
 		
 	}
 }
+
+actor ammobag2 : ammobag replaces clipbox {} // HACK HACK HACK ALL DAY LONG
 
 actor AmmoBelt : CustomInventory
 {
