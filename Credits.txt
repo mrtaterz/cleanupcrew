@@ -57,7 +57,7 @@ armorcheck edit, and chairspe ACS Scripts by XLightningStormL.
 Rat DECORATE code based on various code sources from Ghastly_dragon, Tormentor667, and TheDoomedArchvile
 Chair DECORATE originally by Ghastly_Dragon, modified by ScriptedMarine, and XLightningStorml. Sprites by iD Software.
 Vending Machine, Soda Can art and code by XLightningStormL. Vending Machine's Robocola texture sourced from Doom 3, and edited by hidfan for Doom 3 textures.
-
+Crosshairs by Half-Life Firearms Team
 Radiation sign and UAC logo decal by id Software
 Staff only, CCTV, and Kilroy decals by inkoalawetrust.
 CCTV camera model made by inkoalawetrust, the textures are stitched together from Doom 2 textures.
