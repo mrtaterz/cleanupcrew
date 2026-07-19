@@ -106,6 +106,7 @@ VENT2 by 3D Realms, and Vostyok.
 SUSEEN by XLightningStormL.
 LEAVES by osjclatchford.
 MIDRAIL, and WFALL5-8 by TeamTNT
+SHAWN4 compiled (and lettering) by XLightningStormL, UAAF Logo/pictograph by id Software from 2013 Romero Pre-release dump.
 SMALMONx, ECOMP32, PLANET2, UACLITE2, SHAWN7, MIDMESH, COMPFUZx, N5BRIKx, and N5BROWNx by Nightmare/NMN, and ELOCKER1 also possibly by Nightmare/NMN.
 MIDGRAYW, GRAY8, and Dopefish by iD Software.
 CCONTxxx, SPW2Cxxx, GRAYTAL3, SUPPRT11, SUPPRT12, SHAWN4, STEP11, VNYTILEx, TILES3, SUPPRT1A, STEP12, STEP17, STEP24, STEP37, STEP38, STEP39, STEP41, STEP42 based on textures by iD Software, made by XLightningStormL.
