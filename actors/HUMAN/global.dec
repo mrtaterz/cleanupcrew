@@ -941,10 +941,12 @@ ACTOR AssaultCannon : Chaingun
 			TTN1 A 0 A_StopSound(CHAN_WEAPON)
 			TNT1 A 0 A_PlaySound("weapons/assaultcannon/stop", CHAN_6)
 			TNT1 A 0 A_TakeInventory("PowerSlowdownHalf", 1)
-			CHAG FEDCB 1
-			CHAG CDCD 1
-			CHAG BCEA 1
-			CHAG BEBEBADADBDBDBD 1 A_WeaponReady
+			CHAG FE 1 Offset(0,40)
+			CHAG DC 1 Offset(0,38)
+			CHAG BC 1 Offset(0,36)
+			CHAG DC 1 Offset(0,34)
+			CHAG DBCEABE 1 Offset(0,33)
+			CHAG BEBADADBDBDBD 1 A_WeaponReady
 			CHAG ACEACEBDFBDFACEBDFACEBDFABCDEFABCDEFABCDEF 1 A_WeaponReady
 			CHAG ABCDEFABCDEFAABBCCDDEEFFAABBCCDDEEFFAABBCCCDDDDEEEEEFFFFFF 1 A_WeaponReady
 			Goto Ready
