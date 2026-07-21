@@ -224,7 +224,6 @@ actor AssaultShotgun : usWeapon
 	Weapon.kickback 150
 	tag "$TAG_ASSAULTSHOTGUN"
 	obituary "$OB_ASSAULTSHOTGUN"
-	+Weapon.noAutoFire
 	states
 	{
 		select:
