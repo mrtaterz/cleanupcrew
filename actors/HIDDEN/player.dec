@@ -37,7 +37,7 @@ ACTOR Unseen : PlayerPawn
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
   RenderStyle "Subtract"
-  Alpha 0.03
+  Alpha 0.05
   player.scoreicon "unsni"
   Scale 0.9
   DamageFactor falling, 0
