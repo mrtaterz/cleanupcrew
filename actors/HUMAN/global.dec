@@ -866,9 +866,9 @@ ACTOR AssaultCannon : Chaingun
 	Weapon.selectionOrder 700
 	Weapon.slotNumber 5
 	Weapon.Kickback 150
-	Inventory.PickupMessage "Picked up an Assault Cannon"
-	Obituary "%k reduced the Threat to a steaming pile of flesh."
-	Tag "Assault Cannon"
+	Inventory.PickupMessage "$PICKUP_ASSAULTCANNON"
+	Obituary "$OB_MPCHAINGUN"
+	Tag "$TAG_ASSAULTCANNON"
 	+Weapon.ammo_optional
 	+inventory.undroppable
 	Decal "BulletChip"
@@ -901,28 +901,28 @@ ACTOR AssaultCannon : Chaingun
 		FireLoop:
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF A 1 Bright A_FireBullets(5.6, 3.55, -1, 7)
+			CHAF A 1 Bright A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(20)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF B 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 Bright A_FireBullets(5.6, 3.55, -1, 7)
+			CHAF C 1 Bright A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(15)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF D 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF E 1 Bright A_FireBullets(5.6, 3.55, -1, 7)
+			CHAF E 1 Bright A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(10)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF F 1
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
-			CHAF C 1 Bright A_FireBullets(5.6, 3.55, -1, 7)
+			CHAF C 1 Bright A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
 			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
 			TNT1 A 0 A_Light(5)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)

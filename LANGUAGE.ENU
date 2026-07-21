@@ -47,7 +47,7 @@ OB_UNSEENMINES="The Threat's recklessness cost it its life."; //self mines
 //vanilla weapon overrides
 OB_MPSHOTGUN="%k spread the Threat apart."; //shotty
 OB_MPSSHOTGUN="%k splattered the Threat's entrails onto the walls."; //super shotty, unused
-OB_MPCHAINGUN="%k filled the Threat with holes."; //chaingun, unused
+OB_MPCHAINGUN="%k reduced the Threat to a pile of steaming flesh."; //chaingun, very used
 OB_MPROCKET="The last of the Threat's presence was wiped by %k's rocket."; //rockets
 OB_GRENADE = "The last of the Threat's presence was wiped by %k's grenade."; //grenades
 OB_GRENADE_SELF = "%o caught about a pound of Composition A-5 with their face.";
@@ -135,6 +135,7 @@ TAG_CELL = "Napalm";
 PICKUP_AMMOBAG="Picked up some ammo."; //counter-intuitively, for the ammo can
 PICKUP_AMMOBELT="Picked a belt with ammo."; //merc-drop ammo belt
 PICKUP_FLARECRATE="Picked up a crate of flares."; //box of flares
+PICKUP_ASSAULTCANNON = "You got the Assault Cannon!"
 GOTFLARE="Picked up a flare."; //single flare
 GOTNADE="\c[w8]THEIR FLESH IS THEIR DEMISE\c-"; //demon heart (ugren)
 
