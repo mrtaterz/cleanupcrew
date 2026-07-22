@@ -89,6 +89,13 @@ map MAP11 "The Genetics Labs"
 	LightMode=8
 }
 
+map MAP11 "The Central Airducts"
+{
+	Sky1="SKY4"
+	Music="d_map12"
+	LightMode=8
+}
+
 map MAP31 "The Cargo Warehouse (Flooded)"
 {
 	Sky1="SKY4"
