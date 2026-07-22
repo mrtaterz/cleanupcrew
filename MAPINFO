@@ -89,7 +89,7 @@ map MAP11 "The Genetics Labs"
 	LightMode=8
 }
 
-map MAP11 "The Central Airducts"
+map MAP12 "The Central Airducts"
 {
 	Sky1="SKY4"
 	Music="d_map12"
