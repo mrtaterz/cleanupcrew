@@ -23,6 +23,7 @@ Actor Support : PlayerPawn
 	Player.StartItem "usFist"
 	Player.StartItem "ProxSensors"
 	Player.StartItem "GreenArmor"
+	Player.StartItem "DirtyHackMugshotToken"
 	//Player.StartItem "Backpack"
 	Player.StartItem "usShell", 20 //4 given by backpack
 	Player.StartItem "usClip", 100 //10 given by backpack
