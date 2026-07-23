@@ -8,7 +8,10 @@ statusbar fullscreen, fullscreenoffsets
 	
 	InInventory not Slasher
 	{
-	    DrawMugshot 5, -22 + center, -47;
+		InInventory DirtyHackMugshotToken
+		{
+			DrawMugshot 5, -22 + center, -47;
+		}
 	
 	    DrawImage armoricon, -47 + center, -17;
 
@@ -36,7 +39,10 @@ statusbar normal, fullscreenoffsets
 	
 	InInventory not Slasher
 	{
-	    DrawMugshot 5, -22 + center, -47;
+		InInventory DirtyHackMugshotToken
+		{
+			DrawMugshot 5, -22 + center, -47;
+		}
 	    
 	    DrawImage armoricon, -47 + center, -17;
 	    
@@ -47,7 +53,10 @@ statusbar normal, fullscreenoffsets
 	
 	InInventory Slasher
 	{
-	    DrawMugshot "UFB", 5, -129 + center, -51;
+		InInventory DirtyHackMugshotToken
+		{
+			DrawMugshot "UFB", 5, -129 + center, -51;
+		}
 	    DrawNumber 3, HUDFONT_DOOM, DarkRed, Health, whennotzero, alignment(left), drawshadow, -107 + center, -42;
 	
 	    DrawImage armoricon, 93 + center, -26;
