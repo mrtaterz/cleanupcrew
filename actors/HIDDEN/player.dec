@@ -30,6 +30,7 @@ ACTOR Unseen : PlayerPawn
   Player.StartItem "EvilArmor"
   Player.StartItem "BeastVision", 100 //the activator / indicator
   Player.StartItem "BeastVisionCounter", 2100 //the timer
+  Player.StartItem "DirtyHackMugshotToken"
   Player.GruntSpeed 4
   Player.ViewHeight 38
   Player.Face "UFA"
@@ -37,7 +38,7 @@ ACTOR Unseen : PlayerPawn
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
   RenderStyle "Subtract"
-  Alpha 0.05
+  Alpha 0.03
   player.scoreicon "unsni"
   Scale 0.9
   DamageFactor falling, 0
