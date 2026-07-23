@@ -34,6 +34,7 @@ Actor Assault : PlayerPawn
 	Player.StartItem "assaultPistol"
 	Player.StartItem "PistolAmmo", 50
 	Player.StartItem "PistolMagazine", 10
+	Player.StartItem "DirtyHackMugshotToken"
 	Player.WeaponSlot 1, AssaultFist
 	Player.WeaponSlot 2, assaultPistol
 	Player.WeaponSlot 3, Machinegun
