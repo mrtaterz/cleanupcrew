@@ -47,6 +47,18 @@ pic MONITOR4 tics 4
 pic MONITOR5 tics 4
 pic MONITOR6 tics 4
 
+texture FAN000
+pic FAN000 tics 1
+pic FAN001 tics 1
+pic FAN002 tics 1
+pic FAN003 tics 1
+pic FAN004 tics 1
+pic FAN005 tics 1
+pic FAN006 tics 1
+pic FAN007 tics 1
+pic FAN008 tics 1
+pic FAN009 tics 1
+
 //warp texture bloda0
 //warp texture blodb0
 //warp texture blodc0
