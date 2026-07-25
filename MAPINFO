@@ -23,71 +23,84 @@ map MAP01 "The Fueling Garrison"
 {
 	Sky1="SKY4"
 	Music="d_map01"
+	LightMode=8
 }
 map MAP02 "The Cargo Warehouse"
 {
 	Sky1="SKY1"
 	Music="d_map02"
+	LightMode=8
 }
 map MAP03 "The Maintenence Halls"
 {
 	Sky1="SKY1"
 	Music="d_map03"
+	LightMode=8
 }
 map MAP04 "The Data Construct"
 {
 	Sky1="SKY4"
 	Music="d_map04"
+	LightMode=8
 }
 map MAP05 "The Hangars"
 {
 	Sky1="SKY4"
 	Music="d_map05"
+	LightMode=8
 }
 map MAP06 "The Treatment Center"
 {
 	Sky1="SKY4"
 	Music="d_map06"
+	LightMode=8
 }
 map MAP07 "The Bunker"
 {
 	Sky1="SKY5"
 	Music="d_map07"
+	LightMode=8
 }
 //XLightningStormL
 map MAP08 "The Administrative Halls"
 {
     Sky1="SKY1"
 	Music="d_map08"
+	LightMode=8
 }
 map MAP09 "The Recreation Center"
 {
 	Sky1="SKY4"
 	Music="d_map09"
+	LightMode=8
 }
 
 map MAP10 "The Habitat"
 {
 	Sky1="SKY4"
 	Music="d_map10"
+	LightMode=8
 }
 
 map MAP11 "The Genetics Labs"
 {
 	Sky1="SKY4"
 	Music="d_map11"
+	LightMode=8
 }
 
 map MAP12 "The Ventilation Conduits"
 {
 	Sky1="SKY4"
 	Music="d_map12"
+	LightMode=8
 }
 
 map MAP31 "The Cargo Warehouse (Flooded)"
 {
 	Sky1="SKY4"
 	Music="D_RUNNIN"
+	LightMode=8
 }
 
 
