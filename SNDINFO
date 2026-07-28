@@ -219,6 +219,10 @@ misc/body2 body2
 misc/body3 body3
 misc/body4 body4
 $random misc/body {misc/body1 misc/body2 misc/body3 misc/body4}
+misc/paper1 paper1
+misc/paper2 paper2
+misc/paper3 paper3
+$random misc/paper {misc/paper1 misc/paper2 misc/paper3}
 
 misc/excessivegore dsgore
 
