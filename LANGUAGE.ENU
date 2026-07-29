@@ -113,6 +113,7 @@ TAG_SMG="Sub-Machinegun"; //sub-machinegun, unused
 TAG_CHEMGUN="ChemGun"; //poisonous chemical gun, unused
 TAG_SENSOR="Proximity Sensor deployer"; //proximity sensors
 TAG_ASSAULTSHOTGUN="Assault shotgun"; //assault shotgun
+TAG_CHAINGUN="Assault Cannon";
 
 TAG_FLAMER="Flame-thrower"; //flame-thrower
 TAG_MINES="Mine launcher"; //proximity mine layer
