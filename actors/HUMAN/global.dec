@@ -868,7 +868,7 @@ ACTOR AssaultCannon : Chaingun
 	Weapon.Kickback 150
 	Inventory.PickupMessage "$PICKUP_ASSAULTCANNON"
 	Obituary "$OB_MPCHAINGUN"
-	Tag "$TAG_ASSAULTCANNON"
+	Tag "$TAG_CHAINGUN"
 	+Weapon.ammo_optional
 	+inventory.undroppable
 	Decal "BulletChip"
