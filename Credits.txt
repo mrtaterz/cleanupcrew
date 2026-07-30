@@ -94,7 +94,7 @@ BOX1A0, and UTRSx0 by 3D Realms.
 PAPEx0 by KontaKommando
 PPILA0 by XLightningStormL
 TCANA0 from CyClones by Raven Software.
-BOTLx0 by... honestly I don't even know, all I remember the author made a E1 remake and modern weapons with attachments addon for Hideous Destructor.
+BOTLx0 by _bryan
 EXPLx0 and SEXPx0 by Perkistan for Smooth Doom.
 Innocent Civilian sprites by OSJClatchford, Craneo, Bjecinst and DeeDeeOZ.
 Demon brightmaps by NightFright
@@ -134,6 +134,7 @@ All non-MONITORS textures in textures/pc folder by XLightningStormL, based on te
 FL20TINx, and SILVSERx by XLightningStormL, based on textures by Valve, and iD Software.
 FLAT2LT by Andy "eschdoom" Stewart, based on textures by iD Software.
 TUBERAx from Valiant by Paul "skillsaw" DeBruyne
+Giant Fan Textures by SgtMarkIV.
 
 Sounds
 ==
