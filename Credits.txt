@@ -43,6 +43,8 @@ MAP08 by XLightningStormL, based on Doom E2M5 by Sandy Petersen. Further edits b
 MAP09 by GooseJelly, based on Doom E1M6 by John Romero. Further edits by XLightningStormL, and inkoalawetrust.
 MAP10 by XLightningStormL. Further edits by GooseJelly, inkoalawetrust, and scriptedmarine.
 MAP11 by XLightningStormL. Further balancing by GooseJelly.
+MAP12 by XLightningStormL. Further edits by GooseJelly.
+MAP13 by Craneo based on Stalkyard from Half-Life DM. Further Edits by XLightningStormL and GooseJelly.
 All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy.
 
 Art
