@@ -99,11 +99,16 @@ map MAP12 "The Ventilation Conduits"
 map MAP31 "The Cargo Warehouse (Flooded)"
 {
 	Sky1="SKY4"
-	Music="D_RUNNIN"
+	Music="d_map02"
 	LightMode=8
 }
 
-
+map MAP13 "Stalkyard"
+{
+	Sky1="SKY4"
+	Music="d_map13"
+	LightMode=8
+}
 
 
 
