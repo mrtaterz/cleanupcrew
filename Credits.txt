@@ -19,8 +19,8 @@ Programming Lead, Second Unit Design, Map Passes, and Additional Art: Scriptedma
 Contact those guys on Discord!
 
 Additional Custom Art, Additional Programming, Additional Custom Sounds, Map Design, Assistance, Credits.txt: XLightningStormL (Age of Mythology Expanded Mod: The Founding of Atlantis coming eventuallyTM)
-Custom Art, Additional Map Design: Craneo
-Additional Scripting Help, Additional Programming, Additional Mapping, and Skyboxes: inkoalawetrust (yes, he actually worked on the mod)
+Custom Art, Additional Map Design, Additional Textures: Craneo
+Additional Scripting Help, Additional Programming, Additional Graphics, Additional Mapping, and Skyboxes: inkoalawetrust (yes, he actually worked on the mod)
 Aditional Scripting Help, Additional Programming (especially for SBARINFO): TDRR.
 
 =====================================================================================================================================================================
@@ -137,6 +137,7 @@ FL20TINx, and SILVSERx by XLightningStormL, based on textures by Valve, and iD S
 FLAT2LT by Andy "eschdoom" Stewart, based on textures by iD Software.
 TUBERAx from Valiant by Paul "skillsaw" DeBruyne
 Giant Fan Textures by SgtMarkIV.
+MEDLABx by Craneo.
 
 Sounds
 ==
