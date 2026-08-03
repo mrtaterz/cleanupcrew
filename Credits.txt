@@ -100,6 +100,7 @@ BOTLx0 by _bryan
 EXPLx0 and SEXPx0 by Perkistan for Smooth Doom.
 Innocent Civilian sprites by OSJClatchford, Craneo, Bjecinst and DeeDeeOZ.
 Demon brightmaps by NightFright
+CRYSx0 by Craneo.
 
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
@@ -137,7 +138,7 @@ FL20TINx, and SILVSERx by XLightningStormL, based on textures by Valve, and iD S
 FLAT2LT by Andy "eschdoom" Stewart, based on textures by iD Software.
 TUBERAx from Valiant by Paul "skillsaw" DeBruyne
 Giant Fan Textures by SgtMarkIV.
-MEDLABx by Craneo.
+MEDLABx, and TRAMx by Craneo.
 
 Sounds
 ==
