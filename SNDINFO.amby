@@ -166,6 +166,9 @@ $ambient 46 amby/hl1grindymachine point continuous 1
 amby/bigassfan giantfan
 $ambient 47 amby/bigassfan point continuous 1
 
+amby/lavaloop lavaloop
+$ambient 48 amby/lavaloop point continuous 1
+
 //gabber!! yes, i know it's terror, shut up!
 //dude nobody fucking cares
 amby/gabberclose gabrclos
