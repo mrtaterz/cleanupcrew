@@ -783,3 +783,72 @@ Actor Palletjack 16603
 			Loop
 	}
 }
+
+//METH
+ACTOR CrystalClusterGiantBlue 12540
+{
+	//$Title Crystal Cluster Giant Blue
+	//$Category Decoration/Crystals/Blue/Floor
+	//$NotAngled
+	//$IsDecoration
+
+	Radius 20
+	Height 64
+	RenderStyle Translucent
+	Alpha 0.9
+	+SOLID
+	
+	States
+	{
+		Spawn:
+			CRYS F 0 NoDelay A_Jump (128, "Flip")
+			CRYS F -1
+			Stop
+		Flip:
+			CRYS N -1
+			Stop
+	}
+}
+
+ACTOR CrystalClusterMediumBlue : CrystalClusterGiantBlue 12542
+{
+	//$Title Crystal Cluster Medium Blue
+	Radius 12
+	Height 26
+	Scale 0.4
+}
+
+ACTOR CrystalClusterGiantCeilingBlue 12544
+{
+	//$Title Crystal Cluster Giant Ceiling Blue
+	//$Category Decoration/Crystals/Blue/Ceiling
+	//$NotAngled
+	//$IsDecoration
+
+	Radius 20
+	Height 64
+	RenderStyle Translucent
+	Alpha 0.9
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	
+	States
+	{
+		Spawn:
+			CRYC F 0 NoDelay A_Jump (128, "Flip")
+			CRYC F -1
+			Stop
+		Flip:
+			CRYC N -1
+			Stop
+	}
+}
+
+ACTOR CrystalClusterMediumCeilingBlue : CrystalClusterGiantCeilingBlue 12546
+{
+	//$Title Crystal Cluster Medium Ceiling Blue
+	Radius 12
+	Height 26
+	Scale 0.4
+}
