@@ -144,11 +144,11 @@ $ambient 41 amby/drips point continuous 1
 
 amby/dopefish DOPEFISH
 $ambient 42 amby/dopefish point random 5.0 60.0 1.0
-$rolloff amby/dopefish 48.0 64.0
+$rolloff amby/dopefish 48 64
 
 amby/imptube imptube
 $ambient 43 amby/imptube point continuous 1
-$rolloff amby/imptube 128.0 192.0
+$rolloff amby/imptube 128 192
 
 $random amby/windrandom { amby/windrandom1 amby/windrandom2 amby/windrandom3 }
 amby/windrandom1 deswind1
