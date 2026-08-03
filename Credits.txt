@@ -39,12 +39,16 @@ MAP04 by GooseJelly, based on Doom E1M2 by John Romero. Further edits by XLightn
 MAP05 by GooseJelly, based on Doom E1M1/E1M2 by John Romero. Further edits by XLightningStormL.
 MAP06 by GooseJelly, based on Doom E1M3 by John Romero. Further edits by XLightningStormL.
 MAP07 by GooseJelly, based on Doom 2 MAP01 by Sandy Petersen. Further edits by XLightningStormL.
-MAP08 by XLightningStormL, based on Doom E2M5 by Sandy Petersen. Further edits by GooseJelly.
+MAP08 by XLightningStormL, based on Doom E2M5 by Sandy Petersen.
 MAP09 by GooseJelly, based on Doom E1M6 by John Romero. Further edits by XLightningStormL, and inkoalawetrust.
-MAP10 by XLightningStormL. Further edits by GooseJelly, inkoalawetrust, and scriptedmarine.
-MAP11 by XLightningStormL. Further balancing by GooseJelly.
+MAP10 by XLightningStormL.
+MAP11 by XLightningStormL.
 MAP12 by XLightningStormL. Further edits by GooseJelly.
-MAP13 by Craneo based on Stalkyard from Half-Life DM. Further Edits by XLightningStormL and GooseJelly.
+MAP13 by Craneo based on Stalkyard from Half-Life DM. Further Edits by XLightningStormL.
+MAP14 by Craneo.
+
+All maps received additional balancing by GooseJelly, and scriptedmarine. Skies and Camera System integration by inkoalawetrust.
+
 All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy. All work, and no play, makes Jack a dull boy.
 
 Art
@@ -100,7 +104,7 @@ BOTLx0 by _bryan
 EXPLx0 and SEXPx0 by Perkistan for Smooth Doom.
 Innocent Civilian sprites by OSJClatchford, Craneo, Bjecinst and DeeDeeOZ.
 Demon brightmaps by NightFright
-CRYSx0 by Craneo.
+CRYSx0 by Captain Toenail.
 
 Moon Textures by 3D Realms.
 BIGPALEx, BIGPLCMx by XLightningStormL based on textures by iD Software, and Rencoret.
