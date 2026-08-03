@@ -146,6 +146,26 @@ amby/dopefish DOPEFISH
 $ambient 42 amby/dopefish point random 5.0 60.0 1.0
 $rolloff amby/dopefish 48.0 64.0
 
+amby/imptube imptube
+$ambient 43 amby/imptube point continuous 1
+$rolloff amby/imptube 128.0 192.0
+
+$random amby/windrandom { amby/windrandom1 amby/windrandom2 amby/windrandom3 }
+amby/windrandom1 deswind1
+amby/windrandom2 deswind2
+amby/windrandom3 deswind3
+
+$ambient 44 amby/windrandom point random 8.0 24.0 1.0
+
+amby/hl1dronemachine2 dronmach
+$ambient 45 amby/hl1dronemachine2 point continuous 1
+
+amby/hl1grindymachine indust3
+$ambient 46 amby/hl1grindymachine point continuous 1
+
+amby/bigassfan giantfan
+$ambient 47 amby/bigassfan point continuous 1
+
 //gabber!! yes, i know it's terror, shut up!
 //dude nobody fucking cares
 amby/gabberclose gabrclos
