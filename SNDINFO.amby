@@ -155,7 +155,7 @@ amby/windrandom1 deswind1
 amby/windrandom2 deswind2
 amby/windrandom3 deswind3
 
-$ambient 44 amby/windrandom point random 8.0 24.0 1.0
+$ambient 44 amby/windrandom surround random 8.0 24.0 1.0
 
 amby/hl1dronemachine2 dronmach
 $ambient 45 amby/hl1dronemachine2 point continuous 1
