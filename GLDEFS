@@ -520,3 +520,44 @@ object NewExplosionGLDEFSExample
 	frame EXPLF { light ROCKET_X3 }
 }
 */
+
+// METH
+pointlight GIANTBLUEGLOW
+{
+    color 0.1 0.1 0.4
+    size 64
+	// dontlightself 1
+}
+
+pointlight MEDIUMBLUEGLOW
+{
+    color 0.1 0.1 0.4
+    size 26
+	// dontlightself 1
+}
+
+// FLOOR
+object CrystalClusterGiantBlue
+{
+    frame CRYSF { light GIANTBLUEGLOW }
+	frame CRYSN { light GIANTBLUEGLOW }
+}
+
+object CrystalClusterMediumBlue
+{
+    frame CRYSF { light MEDIUMBLUEGLOW }
+	frame CRYSN { light MEDIUMBLUEGLOW }
+}
+
+// CEILING
+object CrystalClusterGiantCeilingBlue
+{
+    frame CRYCF { light GIANTBLUEGLOW }
+	frame CRYCN { light GIANTBLUEGLOW }
+}
+
+object CrystalClusterMediumCeilingBlue
+{
+    frame CRYCF { light MEDIUMBLUEGLOW }
+	frame CRYCN { light MEDIUMBLUEGLOW }
+}
