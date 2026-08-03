@@ -169,6 +169,11 @@ $ambient 47 amby/bigassfan point continuous 1
 amby/lavaloop lavaloop
 $ambient 48 amby/lavaloop point continuous 1
 
+$random amby/rockslide { SMLSLID1 SMLSLID2 }
+SMLSLID1 SMLSLID1
+SMLSLID2 SMLSLID2
+$ambient 49 amby/rockslide world random 12.0 32.0 1
+
 //gabber!! yes, i know it's terror, shut up!
 //dude nobody fucking cares
 amby/gabberclose gabrclos
