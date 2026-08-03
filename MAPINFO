@@ -110,7 +110,12 @@ map MAP13 "Stalkyard"
 	LightMode=8
 }
 
-
+map MAP14 "The Crystal Mines"
+{
+	Sky1="SKY5"
+	Music="d_map14"
+	LightMode=8
+}
 
 
 
