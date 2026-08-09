@@ -103,7 +103,7 @@ map MAP31 "The Cargo Warehouse (Flooded)"
 	LightMode=8
 }
 
-map MAP13 "Stalkyard"
+map MAP13 "The Stalkyard"
 {
 	Sky1="SKY4"
 	Music="d_map13"
