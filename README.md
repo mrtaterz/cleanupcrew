@@ -11,11 +11,9 @@ Lead Programmer, and Designer: Scriptedmarine
 
 Art Supervisor, Lead Map Designer, and Programming: XLightningStormL
 
-Primary Artist: Craneo
+Graphic Artist: Craneo
 
-Programming, and Map Design: inkoalawetrust
-
-Programming: TDRR.
+Additional Assistance: TDRR, Tesefy, inkoalawetrust
 
 BETA NOTICE:
 ===============================
