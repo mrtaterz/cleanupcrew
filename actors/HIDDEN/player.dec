@@ -15,7 +15,7 @@ ACTOR Unseen : PlayerPawn
   GibHealth 100 //just for fun
   Player.MaxHealth 300
   Radius 18
-  Height 58
+  Height 56
   Mass 90
   Gravity 0.833333
   Player.JumpZ 16
