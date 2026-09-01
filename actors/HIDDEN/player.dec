@@ -40,7 +40,7 @@ ACTOR Unseen : PlayerPawn
   RenderStyle "Subtract"
   Alpha 0.1
   player.scoreicon "unsni"
-  Scale 0.9
+  Scale 1.2
   DamageFactor falling, 0
   +shadow
   +USEDAMAGEEVENTSCRIPT
