@@ -15,7 +15,7 @@ ACTOR Unseen : PlayerPawn
   GibHealth 100 //just for fun
   Player.MaxHealth 300
   Radius 16
-  Height 52
+  Height 58
   Mass 90
   Gravity 0.833333
   Player.JumpZ 16
@@ -32,7 +32,7 @@ ACTOR Unseen : PlayerPawn
   Player.StartItem "BeastVisionCounter", 2100 //the timer
   Player.StartItem "DirtyHackMugshotToken"
   Player.GruntSpeed 4
-  Player.ViewHeight 38
+  Player.ViewHeight 48
   Player.Face "UFA"
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
