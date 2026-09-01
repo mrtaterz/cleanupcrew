@@ -32,7 +32,7 @@ ACTOR Unseen : PlayerPawn
   Player.StartItem "BeastVisionCounter", 2100 //the timer
   Player.StartItem "DirtyHackMugshotToken"
   Player.GruntSpeed 4
-  Player.ViewHeight 48
+  Player.ViewHeight 52
   Player.Face "UFA"
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
