@@ -45,7 +45,7 @@ MAP10 by XLightningStormL.
 MAP11 by XLightningStormL.
 MAP12 by XLightningStormL. Further edits by GooseJelly.
 MAP13 by Craneo based on Stalkyard from Half-Life DM. Further Edits by XLightningStormL.
-MAP14 by Craneo.
+MAP14 by Craneo. Further Edits by XLightningStormL.
 
 All maps received additional balancing by GooseJelly, and scriptedmarine. Skies and Camera System integration by inkoalawetrust.
 
