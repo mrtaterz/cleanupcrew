@@ -247,9 +247,7 @@ Actor FlyingProxMine
 			TNT1 A 0 A_ChangeFlag("missile",0)
 			TNT1 A 0 A_Stop
 		death:
-			PROX D 1 A_SpawnItemEx("ProxMine",0,0,0,0,0,0,0,SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
-			TNT1 A 0 ACS_NamedExecuteWithResult("TransferTracer",user_selftid)
-			TNT1 A 0 A_TransferPointer(AAPTR_Default,AAPTR_Tracer,AAPTR_Target,AAPTR_FriendPlayer)
+			PROX D 1 A_SpawnItemEx("ProxMine",0,0,0,0,0,0,0,SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS,0,tid)
 			stop
 	}
 }
