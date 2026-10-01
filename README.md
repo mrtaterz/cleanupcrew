@@ -2,7 +2,7 @@
 
 A MOD FOR ZANDRONUM INSPIRED BY THE HIDDEN: SOURCE
 
-The Clean Up Crew dev team are:
+The Clean-Up Crew dev team are:
 ===============================
 
 Creative Director, Designer, and Balance Lead: Goosejelly
