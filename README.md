@@ -1,11 +1,11 @@
-<img width="210" height="28" alt="M_DOOM" src="https://github.com/user-attachments/assets/b5e14369-62e8-4071-87ff-f2e846aa7217" />
+<img width="210" height="28" alt="M_DOOM" src="https://github.com/user-attachments/assets/8bd07b64-40f2-41f5-9282-d32125f41156" />
 
 A MOD FOR ZANDRONUM INSPIRED BY THE HIDDEN: SOURCE
 
 The Clean Up Crew dev team are:
 ===============================
 
-Creative Director, Designer, and Balance Lead: mrtaterz/Goosejelly
+Creative Director, Designer, and Balance Lead: Goosejelly
 
 Lead Programmer, and Designer: Scriptedmarine
 
@@ -15,8 +15,7 @@ Graphic Artist: Craneo
 
 Additional Assistance: TDRR, Tesefy, inkoalawetrust
 
-BETA NOTICE:
-===============================
-There is no "download" for an official release at the moment as everything is currently indev.
-if you somehow got here, download and host at your own risk — a package with an official release
-will be available When It's Done™️ 
+NOTICE
+=================
+The current release of Clean-Up Crew is being released as-is, which means in it's current state
+there is no guarantees, or promises of future updates, repairs, or support.
