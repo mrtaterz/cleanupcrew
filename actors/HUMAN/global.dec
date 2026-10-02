@@ -905,34 +905,48 @@ ACTOR AssaultCannon : Chaingun
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
 			TNT1 A 0 A_Light0
+			TNT1 A 0 A_Quake(0,4,0,16,"none")
+			TNT1 A 0 A_ZoomFactor(1)
 			CHAF A 1 Bright Offset(-2,36) A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
-			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
-			TNT1 A 0 A_Light(20)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawnerCG",0,0)
+			TNT1 A 0 A_FireCustomMissile("CaseLinkSpawner",0,0)			TNT1 A 0 A_Light(20)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
+			TNT1 A 0 A_ZoomFactor(1.01,ZOOM_NOSCALETURNING)
 			CHAF B 1 Offset(-2,33)
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
 			TNT1 A 0 A_Light0
+			TNT1 A 0 A_Quake(0,4,0,16,"none")
+			TNT1 A 0 A_ZoomFactor(1)
 			CHAF C 1 Bright Offset(1,37) A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
-			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawnerCG",0,0)
+			TNT1 A 0 A_FireCustomMissile("CaseLinkSpawner",0,0)
 			TNT1 A 0 A_Light(15)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
+			TNT1 A 0 A_ZoomFactor(1.01,ZOOM_NOSCALETURNING)
 			CHAF D 1 Offset(1,33)
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
 			TNT1 A 0 A_Light0
+			TNT1 A 0 A_Quake(0,4,0,16,"none")
+			TNT1 A 0 A_ZoomFactor(1)
 			CHAF E 1 Bright Offset(-1,38) A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
-			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawnerCG",0,0)
+			TNT1 A 0 A_FireCustomMissile("CaseLinkSpawner",0,0)
 			TNT1 A 0 A_Light(10)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
 			CHAF F 1 Offset(-1,33)
 			TNT1 A 0 A_JumpIfInventory("ChaingunAmmo", 1, 1)
 			Goto Discard
 			TNT1 A 0 A_Light0
+			TNT1 A 0 A_Quake(0,4,0,16,"none")
+			TNT1 A 0 A_ZoomFactor(1)
 			CHAF C 1 Bright Offset(2,37) A_FireBullets((height==56) ? 5.6 : 5, (height==56) ? 3.55 : 3.2, -1, 7)
-			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawner",0,0)
+			TNT1 A 0 A_FireCustomMissile("7MilCaseSpawnerCG",0,0)
+			TNT1 A 0 A_FireCustomMissile("CaseLinkSpawner",0,0)
 			TNT1 A 0 A_Light(5)
 			TNT1 A 0 A_PlaySound("weapons/machinegundist",CHAN_5)
+			TNT1 A 0 A_ZoomFactor(1.01,ZOOM_NOSCALETURNING)
 			CHAF G 1 Offset(1,33)
 			TNT1 A 0 A_ReFire("FireLoop")
 			Goto FireStop
@@ -1043,6 +1057,60 @@ actor DroppedAssaultCannon : CaseBase
 		spawn:
 			CGUN A -1 nodelay ACS_NamedExecuteWithResult("attachcasingsteamer")
 			wait
+	}
+}
+
+actor 7MilCaseSpawnerCG : CaseSpawnerBase
+{
+	speed 5
+	states
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_Stop
+			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+			TNT1 A 1 A_SpawnItemEx("7MilCase",0,0,0,2*cos(angle-100) + velx *1.1 + frandom(-1,1),2*sin(angle-100) + vely*1.1 + frandom(-1,1),frandom(3,5) + velz,0,SXF_ABSOLUTEVELOCITY)
+			stop
+	}
+}
+
+actor CaseLinkSpawner : CaseSpawnerBase
+{
+	speed 5
+	{
+		spawn:
+			TNT1 A 0 NoDelay A_Stop
+			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
+			TNT1 A 1 A_SpawnItemEx("CaseLink",0,0,0,2*cos(angle+90) + velx *1.1 + frandom(-1,1),2*sin(angle+90) + vely*1.1 + frandom(-1,1),frandom(-2,0) + velz,0,SXF_ABSOLUTEVELOCITY)
+			stop
+	}
+}
+
+actor CaseLink : CaseBase
+{
+	scale 0.25
+	bouncesound "weapons/pistol/casebounce"
+	states
+	{
+		spawn:
+			CASL A 0 NoDelay ACS_NamedExecuteWithResult("attachcasingsteamer")
+			CASL A 3 A_Jump(256,"xloop","yloop","zloop")
+		xloop:
+			CASL FGHABCDE 3
+			loop
+		yloop:
+			CASL FGHABCDE 2
+			loop
+		zloop:
+			CASL FGHABCDE 1
+			loop
+		death:
+			CASL C 1 A_Jump(256,"d1","d2")
+		d1:
+			CAS3 C 1
+			goto bedead
+		d2:
+			CAS3 G 1
+			goto bedead
 	}
 }
 
