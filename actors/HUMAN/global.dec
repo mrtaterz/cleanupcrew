@@ -1062,7 +1062,7 @@ actor DroppedAssaultCannon : CaseBase
 
 actor 7MilCaseSpawnerCG : CaseSpawnerBase
 {
-	speed 5
+	speed 6
 	states
 	{
 		spawn:
@@ -1075,13 +1075,13 @@ actor 7MilCaseSpawnerCG : CaseSpawnerBase
 
 actor CaseLinkSpawner : CaseSpawnerBase
 {
-	speed 5
+	speed 6
 	states
 	{
 		spawn:
 			TNT1 A 0 NoDelay A_Stop
 			TNT1 A 0 ACS_NamedExecuteWithResult("inherittargvel")
-			TNT1 A 1 A_SpawnItemEx("CaseLink",0,0,0,2*cos(angle+90) + velx *1.1 + frandom(-1,1),2*sin(angle+90) + vely*1.1 + frandom(-1,1),frandom(-2,0) + velz,0,SXF_ABSOLUTEVELOCITY)
+			TNT1 A 1 A_SpawnItemEx("CaseLink",0,0,0,2*cos(angle+90) + velx *1.1 + frandom(-1,1),2*sin(angle+90) + vely*1.1 + frandom(-1,1),frandom(-2,1) + velz,0,SXF_ABSOLUTEVELOCITY)
 			stop
 	}
 }
@@ -1107,10 +1107,10 @@ actor CaseLink : CaseBase
 		death:
 			CASL C 1 A_Jump(256,"d1","d2")
 		d1:
-			CAS3 C 1
+			CASL C 1
 			goto bedead
 		d2:
-			CAS3 G 1
+			CASL G 1
 			goto bedead
 	}
 }
