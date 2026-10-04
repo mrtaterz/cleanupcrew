@@ -45,7 +45,8 @@ Actor Assault : PlayerPawn
 	player.scoreIcon "ASLTI"
 	Player.Face "STA"
 	Player.RunHealth 20
-	Player.SideMove 0.8
+	Player.ForwardMove 0.75
+	Player.SideMove 0.75
 	Player.GruntSpeed 8
 	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
 	+USEDAMAGEEVENTSCRIPT
