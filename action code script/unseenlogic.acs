@@ -14,7 +14,7 @@ script "revealunseen" (int tics) //reveal the unseen (the hidden, for the nostal
 	Delay(tics); //do the actual waiting
 	if((timer()>timeexpected)&&(GetActorProperty(0,APROP_Health)>0)) //if another reveal happened, make sure not to make them visible again. also make sure they're alive lmao
 	{
-		SetActorProperty(0,APROP_Alpha,0.02); //back to default
+		SetActorProperty(0,APROP_Alpha,0.025); //back to default
 		SetActorProperty(0,APROP_RenderStyle,STYLE_Subtract);
 		NamedExecuteClientScript("c_hideunseen", pnum);
 	}
