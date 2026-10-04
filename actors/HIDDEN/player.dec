@@ -225,7 +225,7 @@ Actor AbhorrentArmor : BasicArmorPickup //blue armor
 Actor VileArmor : BasicArmorPickup //red armor
 {
   Inventory.icon "ARM3A0"
-  Armor.SavePercent 75
+  Armor.SavePercent 66
   Armor.SaveAmount 300
 }
 
