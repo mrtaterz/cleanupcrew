@@ -38,7 +38,8 @@ Actor Sapper : PlayerPawn
 	Player.scoreIcon "TECHI"
 	Player.Face "STE"
 	Player.RunHealth 20
-	Player.SideMove 0.8
+	Player.ForwardMove 0.75
+	Player.SideMove 0.75
 	Player.GruntSpeed 8
 	+USEDAMAGEEVENTSCRIPT
 	States
