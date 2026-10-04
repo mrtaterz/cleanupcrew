@@ -87,7 +87,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	+rockettrail
 	+hitTracer
 	gravity 0.5
-	damage (1*random(1,7))
+	damage (2*random(1,7))
 	ProjectileKickBack 0
 	seeSound "weapons/flamer"
 	deathSound "weapons/flamerx"

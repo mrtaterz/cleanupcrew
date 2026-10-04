@@ -20,7 +20,7 @@ Actor Sapper : PlayerPawn
 	Player.StartItem "usFist"
 	Player.StartItem "MineLauncher"
 	Player.StartItem "usClip", 50
-	Player.StartItem "usCell", 100
+	Player.StartItem "usCell", 150
 	Player.StartItem "Mines", 5
 	Player.StartItem "GreenArmor"
 	Player.StartItem "FlareStick", 5

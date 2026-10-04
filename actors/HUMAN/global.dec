@@ -94,7 +94,7 @@ actor usClip : Ammo
   }
 }
 
-//9mm Ball pistol ammo
+//10mm Hardcast pistol ammo
 actor PistolAmmo : Ammo
 {
 	Inventory.Amount 10
