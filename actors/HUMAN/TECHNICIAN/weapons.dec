@@ -87,7 +87,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	+rockettrail
 	+hitTracer
 	gravity 0.5
-	damage 1
+	damage (1*random(1,7))
 	ProjectileKickBack 0
 	seeSound "weapons/flamer"
 	deathSound "weapons/flamerx"
@@ -127,16 +127,30 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 		FLBL EFGH 2
 		stop
 	XDeath:
-		TNT1 A 0 ACS_NamedExecuteWithResult("ApplyAfterburn",35)
+		TNT1 A 0 ACS_NamedExecuteWithResult("ApplyAfterburn",70,1)
 	Death:
 		//FLBL EFG 2 Bright A_Explode(2,32)
 		//FLBL HI 2 Bright
 		TNT1 A 0 A_Jump(256,1,2,3) //random 2-4 projectiles
 		TNT1 AAAA 0 A_CustomMissile("FlameDieSmoke",0,0,random(0,360),CMF_aimDirection,random(0,-90))
 		smokeless:
+		TNT1 A 0 A_RadiusGive("FlamerSplashAfterburnInflictor",32,RGF_CUBE | RGF_PLAYERS | RGF_MONSTERS)
 		FLBL DEF 2 Bright A_Explode(2,32)
 		FLBL GH 2
 		Stop
+	}
+}
+
+actor FlamerSplashAfterburnInflictor : CustomInventory
+{
+	Inventory.maxAmount 1
+	+Inventory.autoActivate
+	+Inventory.alwaysPickup
+	states
+	{
+		pickup:
+			TNT1 A 0 ACS_NamedExecuteWithResult("ApplyAfterburn",27,0)
+			stop
 	}
 }
 

@@ -207,7 +207,8 @@ Actor powerjustice : powerpoison // slowerer
 	powerup.duration -1
 }
 
-//the unseen, thanks to his cybernetic enhancements, gets better armor from pickups
+//~~the unseen, thanks to his cybernetic enhancements, gets better armor from pickups~~
+//if those pickups existed
 Actor EvilArmor : BasicArmorPickup //green armor
 {
   Inventory.Icon "ARM1A0"

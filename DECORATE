@@ -8,6 +8,7 @@
 #include "ACTORS/HIDDEN/beastvision.dec"
 
 #include "ACTORS/HUMAN/global.dec"
+#include "ACTORs/Puff.dec"
 
 #include "ACTORS/HUMAN/ASSAULT/player.dec"
 #include "ACTORS/HUMAN/ASSAULT/weapons.dec"
@@ -23,5 +24,4 @@
 
 #include "ACTORS/demon.dec"
 #include "ACTORS/Blood.dec"
-#include "ACTORs/Puff.dec"
 
