@@ -10,7 +10,7 @@
 ACTOR Unseen : PlayerPawn
 {
   limitedtoteam 1
-  Speed 2
+  Speed 1.5
   Health 100
   GibHealth 100 //just for fun
   Player.MaxHealth 300
