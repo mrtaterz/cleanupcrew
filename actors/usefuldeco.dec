@@ -135,7 +135,7 @@ actor usTechLamp2 : TechLamp2 replaces TechLamp2
 {
 	+shootable
 	+noblood
-	health 20
+	health 40
 	deathHeight 60
 	damagefactor "burns", 0.25
 	deathSound "world/lampbreak"
@@ -345,6 +345,7 @@ ACTOR Rat 9656
 	SeeSound "Rat/Sight"
 	PainSound "Rat/Pain"
 	DeathSound "Rat/Death"
+    DamageFactor "Burns", 5
     Obituary "$OB_RAT"
     MONSTER
     +DONTHURTSPECIES
