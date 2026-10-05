@@ -255,7 +255,7 @@ flickerlight SPUFF1
 {
     color 1 0.5 0.0
     size 16
-    secondarySize 24
+    secondarySize 48
     chance 0.8
 }
 
@@ -263,7 +263,7 @@ flickerlight SPUFF2
 {
     color 1 0.5 0.0
     size 8
-    secondarySize 12
+    secondarySize 24
     chance 0.8
 }
 
