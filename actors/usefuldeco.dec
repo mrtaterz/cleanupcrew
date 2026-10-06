@@ -108,6 +108,7 @@ actor usTechLamp : TechLamp replaces TechLamp
 	health 20
 	deathHeight 80
 	damagefactor "burns", 0.25
+	damagefactor "dark", 3
 	deathSound "world/lampbreak"
 	mass 10000000
 	//$Arg0Default 0
@@ -138,6 +139,7 @@ actor usTechLamp2 : TechLamp2 replaces TechLamp2
 	health 40
 	deathHeight 60
 	damagefactor "burns", 0.25
+	damagefactor "dark", 3
 	deathSound "world/lampbreak"
 	mass 10000000
 	//$Arg0Default 0
@@ -172,6 +174,7 @@ Actor GreyLamp 2100
 	health 15
 	deathHeight 52
 	damagefactor "burns", 0.25
+	damagefactor "dark", 3
 	deathSound "world/lampbreak"
 	mass 10000000
 	//$Arg0Default 0
