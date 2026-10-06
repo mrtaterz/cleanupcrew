@@ -2,9 +2,11 @@
 
 //it still portrays you as incompotent and it is less bouncy
 //oh, and  it's dangerous.
-actor usGrenade : Grenade replaces Grenade
+actor usGrenade replaces Grenade
 {
 	//bounceCount 2
+	bounceFactor 1
+	wallBounceFactor 1
 	radius 4
 	height 8
 	speed 30
@@ -14,14 +16,36 @@ actor usGrenade : Grenade replaces Grenade
 	+usebouncestate
 	+extremedeath
 	+hittracer
-	+bounceautooffflooronly
-	bounceType "hexen"
-	damageType "explosive"
+	//+bounceautooffflooronly
+	+bounceOnWalls
+	+bounceOnFloors
+	+bounceOnCeilings
+	//defs copied over from Grenade, because Grenade has some hardcoded shit apparently
+ 	Projectile
+ 	-NOGRAVITY
+ 	+RANDOMIZE
+ 	+DEHEXPLOSION
+ 	+GRENADETRAIL
+  	SeeSound "weapons/grenlf"
+ 	DeathSound "weapons/grenlx"
+ 	BounceSound "weapons/grbnce"
+ 	Obituary "$OB_GRENADE"
+	selfObituary "$OB_GRENADE_SELF"
 	states
 	{
+		spawn:
+			SGRN A -1 bright
+			wait
+		bounce.floor: //make our own autooff check. needs to happen before velocity is set.
+			SGRN A 0 A_JumpIf(velz > 3, "bounce")
+			SGRN A 0 A_ChangeFlag("bounceOnWalls",0)
+			SGRN A 0 A_ChangeFlag("bounceOnFloors",0)
+			SGRN A 0 A_ChangeFlag("bounceOnCeilings",0)
 		bounce:
 			SGRN A 0 A_JumpIf(args[0] > 0,"null") //failsafe to keep projectile from lingering indefinitely
 			SGRN A 0 A_SetArg(1,args[1]*0.8+random(-40,40))
+			SGRN A 0 A_ChangeVelocity(velx * (args[2] == 0 ? 0.7 : (args[2] == 1 ? 1 : 0.4)), vely * (args[2] == 0 ? 0.7 : (args[2] == 1 ? 1 : 0.4)), velz * (args[2] == 0 ? 0.7 : (args[2] == 1 ? 1 : 0.4)), CVF_REPLACE)
+			SGRN A 0 A_SetArg(2,args[2]+1)
 			xloop:
 			//hit yourself for splash damage only
 			SGRN A 1 A_JumpIfCloser(20,"die")
