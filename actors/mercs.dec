@@ -3,7 +3,7 @@ actor Mercenary
 {
 	//var int user_memory;
 	var int user_angle;
-	health 100
+	health 50
 	radius 16
 	height 56
 	speed 12
