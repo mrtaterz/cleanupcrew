@@ -15,6 +15,8 @@ actor proxsensors : usWeapon
 	Weapon.ammoUse 1
 	Weapon.ammoType "Sensors"
 	Weapon.selectionOrder 5000
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	tag "$TAG_SENSOR"
 	Inventory.icon "SENPA0"
 	states
@@ -222,6 +224,8 @@ actor AssaultShotgun : usWeapon
 	Weapon.ammoType "usShell"
 	Weapon.ammoUse 1
 	Weapon.kickback 150
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	tag "$TAG_ASSAULTSHOTGUN"
 	obituary "$OB_ASSAULTSHOTGUN"
 	states
