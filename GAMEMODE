@@ -14,9 +14,11 @@ TeamLMS {
 	GameSettings
     {
 		lms_spectatorchat = true
-		sv_lmscountdowntime = 20
+		sv_lmscountdowntime = 10
 		sv_itemrespawn = true
 		sv_noidentifytarget = true
+		sv_aircontrol = 0.2
+		sv_proximityvoicechat = true
 		teamdamage = 1
     }
 
