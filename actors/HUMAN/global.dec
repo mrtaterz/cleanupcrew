@@ -460,6 +460,8 @@ actor usPistol : usWeapon
 	Weapon.kickback 25	
 	Weapon.ammoType "PistolAmmo"
 	Weapon.ammoUse 1
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	//+WEAPON.NOAUTOFIRE
 	Decal "BulletChip"
 	Tag "$TAG_MPPISTOL"
@@ -677,6 +679,8 @@ actor ATRL : RocketLauncher
 	Weapon.selectionOrder 9000 //this is NOT your last resort
 	Weapon.slotNumber 5
 	Weapon.ammoType ""
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	+Weapon.ammo_optional
 	+inventory.undroppable
 	states
@@ -866,6 +870,8 @@ ACTOR AssaultCannon : Chaingun
 	Weapon.selectionOrder 700
 	Weapon.slotNumber 5
 	Weapon.Kickback 150
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	Inventory.PickupMessage "$PICKUP_ASSAULTCANNON"
 	Obituary "$OB_MPCHAINGUN"
 	Tag "$TAG_CHAINGUN"
