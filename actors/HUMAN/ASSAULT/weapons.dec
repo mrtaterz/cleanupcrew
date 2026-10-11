@@ -87,8 +87,6 @@ actor usGrenadeLauncher : usWeapon
 	Weapon.ammoGive 2
 	Weapon.ammoUse 1
     Weapon.Kickback 300
-	Weapon.StillBobRange 0.5
-	Weapon.StillBobSpeed 0.5
 	Inventory.icon "GLPPA0"
 	tag "$TAG_GRENADEGUN"
 	states
@@ -205,8 +203,6 @@ actor MachineGun : usWeapon //light machine gun
 	Weapon.ammoType "usClip"
 	Weapon.ammoUse 1
 	Weapon.kickback 25
-	Weapon.StillBobRange 0.5
-	Weapon.StillBobSpeed 0.5
 	Tag "$TAG_MG"
 	Obituary "$OB_MG"
 	Inventory.icon "MGPPA0"
