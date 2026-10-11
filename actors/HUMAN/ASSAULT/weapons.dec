@@ -87,6 +87,8 @@ actor usGrenadeLauncher : usWeapon
 	Weapon.ammoGive 2
 	Weapon.ammoUse 1
     Weapon.Kickback 300
+	Weapon.StillBobRange 0.5
+	Weapon.StillBobSpeed 0.5
 	Inventory.icon "GLPPA0"
 	tag "$TAG_GRENADEGUN"
 	states
