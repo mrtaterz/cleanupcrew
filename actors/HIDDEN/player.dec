@@ -10,7 +10,7 @@
 ACTOR Unseen : PlayerPawn
 {
   limitedtoteam 1
-  Speed 1.5
+  Speed 1.0
   Health 100
   GibHealth 100 //just for fun
   Player.MaxHealth 300
@@ -35,6 +35,7 @@ ACTOR Unseen : PlayerPawn
   Player.GruntSpeed 4
   Player.ViewHeight 52
   Player.Face "UFA"
+	Player.RejumpDelay 1
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
