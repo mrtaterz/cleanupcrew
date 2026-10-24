@@ -34,7 +34,7 @@ actor usGrenade replaces Grenade
 	states
 	{
 		spawn:
-			SGRN A -1 bright
+			SGRN A 1 bright ACS_NamedExecuteWithResult("waterdie")
 			wait
 		bounce.floor: //make our own autooff check. needs to happen before velocity is set.
 			SGRN A 0 A_JumpIf(velz > 3, "bounce")
@@ -50,12 +50,24 @@ actor usGrenade replaces Grenade
 			//hit yourself for splash damage only
 			SGRN A 1 A_JumpIfCloser(20,"die")
 			SGRN A 0 A_SetAngle(angle + args[1])
+			SGRN A 0 ACS_NamedExecuteWithResult("waterdie")
 			loop
 	//	bounce.ceiling:
 	//		SGRN A 1 A_SetAngle(angle + args[1])
 	//		SGRN A 0 A_JumpIf(velz >= 0,"bounce")
 	//		SGRN A 0 A_ChangeFlag("doomBounce",true)
 	//		goto bounce
+		waterdie: //counterintuitive naming. does not actually die
+			SGRN A 0 A_ChangeFlag("bounceOnWalls",0)
+			SGRN A 0 A_ChangeFlag("bounceOnFloors",0)
+			SGRN A 0 A_ChangeFlag("bounceOnCeilings",0)
+			SGRN A 0 A_ChangeVelocity(velx,vely,velz*0.6,CVF_REPLACE)
+			SGRN A 0 A_SetArg(1,args[1]*0.8+random(-40,40))
+			xloop:
+			SGRN A 0 A_SetArg(1,args[1]*0.95)
+			SGRN A 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz,CVF_REPLACE)
+			SGRN A 1 A_SetAngle(angle + args[1])
+			loop
 		die:
 			SGRN A 0 A_Scream
 			SGRN A 0 A_ChangeFlag("missile",false)
