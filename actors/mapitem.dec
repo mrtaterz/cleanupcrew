@@ -4,7 +4,7 @@
 //a corpse that can be fed off of by the unseen.
 Actor CorpseGeneric// replaces DeadMarine
 {
-	radius 16
+	radius 20
 	height 8
 	health 300
 	damagefactor "None",0
