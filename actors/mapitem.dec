@@ -4,9 +4,9 @@
 //a corpse that can be fed off of by the unseen.
 Actor CorpseGeneric// replaces DeadMarine
 {
-	radius 24
+	radius 16
 	height 8
-	health 225
+	health 300
 	damagefactor "None",0
 	//damagefactor "Fire",0 //i heard rockets do fire damage
 	//damagefactor "Poison",0
