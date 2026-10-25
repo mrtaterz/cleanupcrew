@@ -46,12 +46,13 @@ actor proxsensors : usWeapon
 
 Actor FlyingProxSensor
 {
-	damage 3
+	damage (5*random(1,7))
+	projectileKickback 200
 	SeeSound "weapons/sensorgun"
 	radius 4
 	height 7
 	projectile
-	speed 20
+	speed 25
 	-nogravity
 	obituary "$OB_SENSOR"
 	states

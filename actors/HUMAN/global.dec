@@ -225,9 +225,9 @@ actor Mines : Ammo
 actor Sensors : Ammo
 {
 	Inventory.Amount 1
-	Inventory.MaxAmount 5
+	Inventory.MaxAmount 10
 	Ammo.BackpackAmount 1
-	Ammo.BackpackMaxAmount 10
+	Ammo.BackpackMaxAmount 20
 	Inventory.Icon "SENSD0"
 	tag "$TAG_SENSORAMMO"
 	States
