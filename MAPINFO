@@ -105,14 +105,14 @@ map MAP31 "The Cargo Warehouse (Flooded)"
 
 map MAP13 "The Crystal Mines"
 {
-	Sky1="SKY4"
+	Sky1="SKY5"
 	Music="d_map13"
 	LightMode=8
 }
 
 map MAP14 "The Stalkyard"
 {
-	Sky1="SKY5"
+	Sky1="SKY4"
 	Music="d_map14"
 	LightMode=8
 }
