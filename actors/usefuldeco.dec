@@ -203,7 +203,7 @@ Actor GreyLamp 2100
 
 actor ChairNoiseCooldown : Powerup
 {
-	Powerup.duration 24
+	Powerup.duion 24
 }
 
 //inkoalawetrust: vvvvvvvvvvv Average Doom modding experience vvvvvvvvvvvvvvvvvvvv
@@ -216,7 +216,7 @@ actor ChairNoiseCooldown : Powerup
 
 actor Chair 106
 {
-	//$Category Decoration
+	//$Category Decoion
     Radius 15
     Height 30
     Mass 15
@@ -272,7 +272,7 @@ actor Chair 106
 
 actor WolfChair1 2102
 {
-	//$Category Decoration
+	//$Category Decoion
 	//$Title "Metal Chair"
     Radius 9
     Height 28
@@ -312,7 +312,7 @@ actor WolfChair1 2102
 actor WolfTable4 2101
 {
 	//$Title "Metal Table"
-	//$Category Decoration
+	//$Category Decoion
 	Radius 22
 	Height 26
 	health 80
@@ -350,6 +350,8 @@ ACTOR Rat 9656
 	DeathSound "Rat/Death"
     DamageFactor "Burns", 5
     Obituary "$OB_RAT"
+	MaxStepHeight 32
+	MaxDropOffHeight 32
     MONSTER
     +DONTHURTSPECIES
     //+NOINFIGHTING //they're rats...
