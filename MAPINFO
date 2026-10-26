@@ -33,7 +33,7 @@ map MAP02 "The Cargo Warehouse"
 }
 map MAP03 "The Maintenence Halls"
 {
-	Sky1="SKY1"
+	Sky1="SKY4"
 	Music="d_map03"
 	LightMode=8
 }
