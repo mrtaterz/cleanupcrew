@@ -41,6 +41,7 @@ script "ApplyAfterburn" (int tics,int mode)
 			}
 			if((GetActorProperty(0,APROP_WaterLevel) > 1 && GetActorFloorTerrain(0) != "DoomLava"))
 			{
+				TakeInventory("AfterburnToken",9999);
 				Spawn("FlameDieSteam",GetActorX(0),GetActorY(0),GetActorZ(0)+32.0,0);
 				//PrintBold(s:GetActorFloorTerrain(0));
 				PlaySound(0,"unseen/extinguish");
