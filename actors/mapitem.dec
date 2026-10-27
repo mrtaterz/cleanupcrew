@@ -427,6 +427,7 @@ ACTOR TechBarrel : ExplosiveBarrel 127
 	+pushable
 	+bumpspecial
 	+dropped
+	+dropoff
 	+useDamageEventScript
 	mass 400
 	obituary "$OB_TECHBARREL"
