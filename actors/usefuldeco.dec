@@ -203,7 +203,7 @@ Actor GreyLamp 2100
 
 actor ChairNoiseCooldown : Powerup
 {
-	Powerup.duion 24
+	Powerup.duration 24
 }
 
 //inkoalawetrust: vvvvvvvvvvv Average Doom modding experience vvvvvvvvvvvvvvvvvvvv
