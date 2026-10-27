@@ -1401,6 +1401,20 @@ actor DirtyHackMugshotToken : Inventory
 	}
 }
 
+actor PowerPainDebuff : PowerSpeed
+{
+	+POWERSPEED.NOTRAIL
+	Speed 0.5
+	}
+
+
+actor PowerPainDebuffGiver : PowerUpGiver
+{
+	Powerup.Type PainDebuff
+	Powerup.Duration 10
+	+INVENTORY.AUTOACTIVATE
+	Inventory.MaxAmount 0
+	}
 
 
 
