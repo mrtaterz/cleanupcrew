@@ -872,7 +872,7 @@ ACTOR BrownCloudSmall 3698
 	+BLOODLESSIMPACT
 	PoisonDamage 25
 	Speed 0
-	RenderStyle Additive
+	RenderStyle Add
 	Alpha 0.6
 	States
 	{
