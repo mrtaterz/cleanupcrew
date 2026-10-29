@@ -401,8 +401,8 @@ actor usExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 			//end fx
 			SEXP D 0 Bright A_SpawnItemEx("ExploQuakemakerSilent")
 			SEXP E 3 Bright A_Explode
-			SEXP EFG 3 Bright
-			SEXP HI 3 Bright
+			SEXP EFG 3 Bright A_CustomMissile( "GreenCloudMissile", 12, 0, random( 0, 359 ), 2 )
+			SEXP HI 3 Bright A_CustomMissile( "GreenCloudMissile", 12, 0, random( 0, 359 ), 2 )
 			TNT1 A 1050 Bright A_BarrelDestroy
 			TNT1 A 5 A_Respawn
 			Wait
