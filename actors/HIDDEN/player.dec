@@ -97,14 +97,6 @@ ACTOR Unseen : PlayerPawn
 	SHDT H 0 A_Pain
 	SHDT H 4 A_Quake(1,10,0,1,"none")
 	Goto spawn
-  Pain.Justice: //unused
-  	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
-	SHDT H 0 //A_Pain
-    SHDT A 0 A_TakeInventory("PowerJustice",1)
-  	SHDT A 0 A_GiveInventory("PowerJustice",1)
-	SHDT H 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,16)
-    SHDT H 4 Bright A_Quake(1,10,0,1,"none")
-	Goto Spawn
 Pain.Falling:
 	SHDT H 4
 	Goto Spawn
@@ -176,37 +168,6 @@ Actor smoulderpuff : bulletpuff //smoulder is a separate actor because it is
 			EMBR B 4 A_PlaySound("unseen/burn")
 			goto melee
 	}
-}
-
-Actor powerpoison : powerspeed // poison powerup makes you slower
-{
-	speed 0.5
-	+powerspeed.notrail
-	powerup.duration -10 //duration must be 5 seconds longer than the effect actually lasts
-	powerup.color "green"
-	//powerup.colormap 0,1,0,0,0,0
-}
-
-actor powerpoisongiver : powerupgiver
-{
-	powerup.type "powerpoison"
-	powerup.color "green"
-	inventory.maxAmount 0
-	+inventory.autoActivate
-	+inventory.alwaysPickup
-}
-
-Actor powercripplejump : powerhighjump //poison powerup makes you jump less //unused
-{
-	powerup.strength 0.20833325
-}
-
-
-Actor powerjustice : powerpoison // slowerer
-{
-	speed 0.25
-	powerup.color 0,0,0,0
-	powerup.duration -1
 }
 
 //~~the unseen, thanks to his cybernetic enhancements, gets better armor from pickups~~
