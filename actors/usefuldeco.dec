@@ -862,6 +862,8 @@ ACTOR CrystalClusterMediumCeilingBlue : CrystalClusterGiantCeilingBlue 12546
 //clouds
 ACTOR BrownCloudSmall 3698
 {
+	//$Title Fart Cloud (Small)
+	//$Category Clouds
 	PROJECTILE
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
@@ -883,6 +885,8 @@ ACTOR BrownCloudSmall 3698
 
 ACTOR BrownCloudMedium : BrownCloudSmall 3699
 {
+	//$Title Fart Cloud (Medium)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -894,6 +898,8 @@ ACTOR BrownCloudMedium : BrownCloudSmall 3699
 
 ACTOR BrownCloudLarge : BrownCloudSmall 3700
 {
+	//$Title Fart Cloud (Large)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -943,6 +949,8 @@ ACTOR BrownCloudMissile 3701
 
 ACTOR GreenCloudSmall : BrownCloudSmall 3702
 {
+	//$Title Toxic Cloud (Small)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -954,6 +962,8 @@ ACTOR GreenCloudSmall : BrownCloudSmall 3702
 
 ACTOR GreenCloudMedium : BrownCloudSmall 3703
 {
+	//$Title Toxic Cloud (Medium)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -965,6 +975,8 @@ ACTOR GreenCloudMedium : BrownCloudSmall 3703
 
 ACTOR GreenCloudLarge : BrownCloudSmall 3704
 {
+	//$Title Toxic Cloud (Large)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -978,7 +990,7 @@ ACTOR GreenCloudLarge : BrownCloudSmall 3704
 	}
 }
 
-ACTOR GreenCloudMissile : BrownCloudMissile 3705
+ACTOR GreenCloudMissile : BrownCloudMissile 
 {
 	States
 	{
@@ -1040,7 +1052,7 @@ ACTOR OrangeCloudLarge : BrownCloudSmall 3708
 	}
 }
 
-ACTOR OrangeCloudMissile : BrownCloudMissile 3709
+ACTOR OrangeCloudMissile : BrownCloudMissile 
 {
 	States
 	{
@@ -1102,7 +1114,7 @@ ACTOR RedCloudLarge : BrownCloudSmall 3712
 	}
 }
 
-ACTOR RedCloudMissile : BrownCloudMissile 3713
+ACTOR RedCloudMissile : BrownCloudMissile
 {
 	States
 	{
