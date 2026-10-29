@@ -872,7 +872,7 @@ ACTOR BrownCloudSmall 3698
 	+BLOODLESSIMPACT
 	PoisonDamage 25
 	Speed 0
-	RenderStyle Translucent
+	RenderStyle Additive
 	Alpha 0.6
 	States
 	{
@@ -1017,6 +1017,8 @@ ACTOR GreenCloudMissile : BrownCloudMissile
 
 ACTOR OrangeCloudSmall : BrownCloudSmall 3706
 {
+	//$Title Orange Cloud (Small)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -1028,6 +1030,8 @@ ACTOR OrangeCloudSmall : BrownCloudSmall 3706
 
 ACTOR OrangeCloudMedium : BrownCloudSmall 3707
 {
+	//$Title Orange Cloud (Medium)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -1039,6 +1043,8 @@ ACTOR OrangeCloudMedium : BrownCloudSmall 3707
 
 ACTOR OrangeCloudLarge : BrownCloudSmall 3708
 {
+	//$Title Orange Cloud (Large)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -1079,6 +1085,8 @@ ACTOR OrangeCloudMissile : BrownCloudMissile
 
 ACTOR RedCloudSmall : BrownCloudSmall 3710
 {
+	//$Title Red Cloud (Small)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -1090,6 +1098,8 @@ ACTOR RedCloudSmall : BrownCloudSmall 3710
 
 ACTOR RedCloudMedium : BrownCloudSmall 3711
 {
+	//$Title Red Cloud (Medium)
+	//$Category Clouds
 	States
 	{
 	Spawn:
@@ -1101,6 +1111,8 @@ ACTOR RedCloudMedium : BrownCloudSmall 3711
 
 ACTOR RedCloudLarge : BrownCloudSmall 3712
 {
+	//$Title Red Cloud (Large)
+	//$Category Clouds
 	States
 	{
 	Spawn:
