@@ -1,6 +1,6 @@
 clearplayerclasses
 
-addplayerclass "unseen"
+addplayerclass "unseen" nomenu
 addplayerclass "assault"
 addplayerclass "sapper"
 addplayerclass "support"
