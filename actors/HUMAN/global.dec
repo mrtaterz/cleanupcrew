@@ -50,6 +50,7 @@ actor LitFlareStick
 	Height 4
 	+noblockmap
 	+noblockmonst
+	+WINDTHRUST
 	reactionTime 1050 //30s
 	States
 	{
