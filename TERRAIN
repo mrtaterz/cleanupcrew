@@ -65,10 +65,10 @@ terrain DoomSludge
 	//footclip		10
 	liquid
 	
-	//damageamount	5
-	//damagetype		slime
-	//damagetimemask	34
-	//allowprotection
+	damageamount	5
+	damagetype		poison
+	damagetimemask	34
+	allowprotection
 }
 
 
@@ -95,10 +95,10 @@ terrain DoomLava
 	//footclip		10
 	liquid
 	
-	//damageamount	10
-	//damagetype		lava
-	//damagetimemask	34
-	//allowprotection
+	damageamount	10
+	damagetype		burns
+	damagetimemask	34
+	allowprotection
 }
 
 
