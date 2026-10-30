@@ -92,11 +92,11 @@ splash DoomLava
 terrain DoomLava
 {
 	splash			DoomLava
-	//footclip		10
+	footclip		10
 	liquid
 	
-	damageamount	10
-	damagetype		burns
+	damageamount	20
+	damagetype		fire
 	damagetimemask	31
 	allowprotection
 }
