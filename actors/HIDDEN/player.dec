@@ -60,13 +60,14 @@ ACTOR Unseen : PlayerPawn
   Melee:
     SHDT E 6 BRIGHT
     Goto Missile
+	Pain.explosive:
+	Pain.bfgbarrelsplash:
+	Pain.proxfire:
+TNT1 A 0 A_GiveInventory("PowerPainDebuffGiver",1)
   Pain: //TODO: Replace all SHDE frames with uninverted SHDT frames to make it all skin compat
 	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
 	//goto dontyell
 	//SHDT H 0 A_Jump(192,"dontyell")
-	//Pain.explosive:
-	//Pain.bfgbarrelsplash:
-	//Pain.proxfire:
 	SHDT H 0 A_Pain
 	//dontyell:
     SHDT H 4 Bright ACS_NamedExecuteAlways("RevealUnseen",0,8)
