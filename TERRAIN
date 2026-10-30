@@ -94,7 +94,8 @@ terrain DoomLava
 	splash			DoomLava
 	footclip		10
 	liquid
-	
+
+	friction		0.75
 	damageamount	20
 	damagetype		fire
 	damagetimemask	31
