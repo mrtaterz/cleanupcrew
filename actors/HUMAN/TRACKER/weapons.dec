@@ -85,7 +85,10 @@ Actor ProxSensor : Equipment
 	+skyexplode
 	+shootable
 	+seeinvisible
-	damageFactor "Dark", 0.15
+	damageFactor "Explosive", 0.1
+	damageFactor "Proxfire",0.1
+	damageFactor "BFGBarrelSplash",0.1
+	damageFactor "Dark", 1
 	damageFactor "Darken", 1
 	deathSound "misc/proxdie"
 	states
