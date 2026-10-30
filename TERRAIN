@@ -67,7 +67,7 @@ terrain DoomSludge
 	
 	damageamount	5
 	damagetype		poison
-	damagetimemask	34
+	damagetimemask	31
 	allowprotection
 }
 
@@ -97,7 +97,7 @@ terrain DoomLava
 	
 	damageamount	10
 	damagetype		burns
-	damagetimemask	34
+	damagetimemask	31
 	allowprotection
 }
 
