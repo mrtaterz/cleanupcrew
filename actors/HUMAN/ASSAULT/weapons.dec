@@ -26,6 +26,7 @@ actor usGrenade replaces Grenade
  	+RANDOMIZE
  	+DEHEXPLOSION
  	+GRENADETRAIL
+	+WINDTHRUST
   	SeeSound "weapons/grenlf"
  	DeathSound "weapons/grenlx"
  	BounceSound "weapons/grbnce"
