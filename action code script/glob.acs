@@ -228,6 +228,7 @@ script "GOODBYES" (int pnum) disconnect
 		}
 		//TODO: replace with pickRandomUnseen
 		PrintBold(s:"The Threat spectated, disconnected, or killed themself! A random human has been selected to become the Threat.");
+		SetActivator(-1); //hack courtesy of FusedQyou
 		delay(10);
 		ACS_NamedExecuteWithResult("pickRandomUnseen");
 	}
