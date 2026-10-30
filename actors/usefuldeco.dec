@@ -203,7 +203,7 @@ Actor GreyLamp 2100
 
 actor ChairNoiseCooldown : Powerup
 {
-	Powerup.duion 24
+	Powerup.duration 24
 }
 
 //inkoalawetrust: vvvvvvvvvvv Average Doom modding experience vvvvvvvvvvvvvvvvvvvv
@@ -391,6 +391,9 @@ ACTOR Rat 9656
 		TNT1 A 0 A_PlaySound("Rat/Attack")
 		RATA B 3 A_CustomMeleeAttack(1,0,0,0,0)
 		Goto See
+    Pain.afterburn:
+	TNT1 A 0 A_TakeInventory("Health",2)
+	TNT1 A 0 A_ChangeFlag("FRIGHTENED",false)
     Pain:
         TNT1 A 0 A_Pain
         Goto Chase
@@ -872,7 +875,7 @@ ACTOR BrownCloudSmall 3698
 	+BLOODLESSIMPACT
 	PoisonDamage 25
 	Speed 0
-	RenderStyle Additive
+	RenderStyle Add
 	Alpha 0.6
 	States
 	{
