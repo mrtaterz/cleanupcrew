@@ -43,6 +43,7 @@ Actor Sapper : PlayerPawn
 	Player.GruntSpeed 8
 	Player.RejumpDelay 8
 	DamageFactor Fire, 0.75
+	DamageFactor Falling, 2
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
