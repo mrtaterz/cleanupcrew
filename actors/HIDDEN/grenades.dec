@@ -196,6 +196,7 @@ actor FlyingNade //the projectile grenade.
 	+bounceonceilings
 	+bounceautooff
 	+allowbounceonactors
+	+windthrust
 	seeSound "unseen/toss"
 	deathSound "unseen/boom"
 	bounceSound "unseen/bounce"
