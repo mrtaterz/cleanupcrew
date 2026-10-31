@@ -48,6 +48,7 @@ Actor Support : PlayerPawn
 	Player.GruntSpeed 8
 	Player.Face "BLL"
 	Player.RejumpDelay 8
+	DamageFactor Falling, 2
 	+USEDAMAGEEVENTSCRIPT
 	States
 	{
