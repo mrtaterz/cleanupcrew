@@ -216,7 +216,7 @@ actor ChairNoiseCooldown : Powerup
 
 actor Chair 106
 {
-	//$Category Decoion
+	//$Category Decoration
     Radius 15
     Height 30
     Mass 15
@@ -272,7 +272,7 @@ actor Chair 106
 
 actor WolfChair1 2102
 {
-	//$Category Decoion
+	//$Category Decoration
 	//$Title "Metal Chair"
     Radius 9
     Height 28
@@ -312,7 +312,7 @@ actor WolfChair1 2102
 actor WolfTable4 2101
 {
 	//$Title "Metal Table"
-	//$Category Decoion
+	//$Category Decoration
 	Radius 22
 	Height 26
 	health 80
