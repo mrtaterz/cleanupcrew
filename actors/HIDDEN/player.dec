@@ -36,6 +36,8 @@ ACTOR Unseen : PlayerPawn
   Player.ViewHeight 52
   Player.Face "UFA"
 	Player.RejumpDelay 1
+	Player.DamageScreenColor "honeydew",10,"BFGBarrelSplash"
+	Player.DamageScreenColor "darkorange",1,"burns"
   //Player.StartItem "PowerIdleInvis"
   Player.WeaponSlot 1, Slasher
   Player.WeaponSlot 2, Grenades
@@ -78,7 +80,7 @@ TNT1 A 0 A_GiveInventory("PowerPainDebuffGiver",1)
   	SHDT H 0 ACS_NamedExecuteAlways("ArmorCheck",0)
 	SHDT H 0 A_Pain
 	SHDT H 0 ACS_NamedExecuteAlways("RevealUnseen",0,8)
-	SHDT H 4 Bright ACS_NamedExecuteAlways("Smoulders",0,175)
+	SHDT H 4 Bright //ACS_NamedExecuteAlways("Smoulders",0,175)
     SHDT H 4 Bright A_Quake(1,10,0,1,"none")
 	Goto spawn
   Pain.Afterburn: //doesn't reveal

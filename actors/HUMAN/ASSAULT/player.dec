@@ -49,6 +49,8 @@ Actor Assault : PlayerPawn
 	Player.SideMove 0.75
 	Player.GruntSpeed 8
 	Player.RejumpDelay 8
+	Player.DamageScreenColor "honeydew",10,"BFGBarrelSplash"
+	Player.DamageScreenColor "darkorange",1,"burns"
 	DamageFactor falling, 2
 	damageFactor "shrapnel",0 //don't take damage from own frags (bugfix AND gameplay)
 	+USEDAMAGEEVENTSCRIPT

@@ -42,6 +42,8 @@ Actor Sapper : PlayerPawn
 	Player.SideMove 0.75
 	Player.GruntSpeed 8
 	Player.RejumpDelay 8
+	Player.DamageScreenColor "honeydew",10,"BFGBarrelSplash"
+	Player.DamageScreenColor "darkorange",1,"burns"
 	DamageFactor Fire, 0.75
 	DamageFactor Falling, 2
 	+USEDAMAGEEVENTSCRIPT

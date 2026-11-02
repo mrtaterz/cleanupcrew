@@ -48,6 +48,8 @@ Actor Support : PlayerPawn
 	Player.GruntSpeed 8
 	Player.Face "BLL"
 	Player.RejumpDelay 8
+	Player.DamageScreenColor "honeydew",10,"BFGBarrelSplash"
+	Player.DamageScreenColor "darkorange",1,"burns"
 	DamageFactor Falling, 2
 	+USEDAMAGEEVENTSCRIPT
 	States
