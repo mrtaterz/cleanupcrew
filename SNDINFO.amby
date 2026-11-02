@@ -41,6 +41,14 @@
 40 - Vent fan
 41 - Dripping
 42 - Dope Fish Fart Reverb
+43 - Imp Lab Tube
+44 - Wind Howling periodical
+45 - Machine drone 1
+46 - Machine drone 2
+47 - Machine grind
+48 - Vent fan large
+49 - Rock slide periodical
+50 - Metal squeaks
 
 1000 - Gabber close
 1001 - Gabber far
@@ -173,6 +181,9 @@ $random amby/rockslide { SMLSLID1 SMLSLID2 }
 SMLSLID1 SMLSLID1
 SMLSLID2 SMLSLID2
 $ambient 49 amby/rockslide world random 12.0 32.0 1
+
+amby/squitch squitch
+$ambient 50 amby/squitch point continuous 1
 
 //gabber!! yes, i know it's terror, shut up!
 //dude nobody fucking cares
