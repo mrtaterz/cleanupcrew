@@ -25,3 +25,5 @@
 
 #include "ACTORS/demon.dec"
 #include "ACTORS/Blood.dec"
+
+#include "ACTORS/random.dec"

@@ -87,7 +87,7 @@ Actor FlameBall : PlasmaBall //i oughta do some goddamn gldefs for these
 	+rockettrail
 	+hitTracer
 	gravity 0.5
-	damage (2*random(1,7))
+	damage 2
 	ProjectileKickBack 0
 	seeSound "weapons/flamer"
 	deathSound "weapons/flamerx"
@@ -278,6 +278,7 @@ Actor ProxMine : Equipment
 	+usespecial
 	+seeinvisible
 	damagefactor "proxfire",1
+	damagefactor "burns",1
 	//obituary "$OB_MINES"
 	states
 	{
@@ -356,6 +357,7 @@ Actor ProxMine : Equipment
 			PROX BA 3
 			PROX C 1
 			PROX C 0 A_Die("proxfire") //it'd be quite humiliating to allow picking up explosions
+			death.burns:
 			death.proxfire:
 			PROX C 1 ACS_NamedExecuteWithResult("TakeMineToken")
 			PROX BA 2
