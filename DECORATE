@@ -1,3 +1,4 @@
+#include "ACTORS/fx.dec"
 #include "ACTORS/mapitem.dec"
 #include "ACTORS/uselessdeco.dec"
 #include "ACTORS/usefuldeco.dec"
@@ -24,4 +25,3 @@
 
 #include "ACTORS/demon.dec"
 #include "ACTORS/Blood.dec"
-
