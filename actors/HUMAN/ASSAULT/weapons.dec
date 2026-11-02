@@ -20,6 +20,7 @@ actor usGrenade replaces Grenade
 	+bounceOnWalls
 	+bounceOnFloors
 	+bounceOnCeilings
+	+allowBounceOnActors
 	//defs copied over from Grenade, because Grenade has some hardcoded shit apparently
  	Projectile
  	-NOGRAVITY

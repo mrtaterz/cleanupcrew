@@ -279,6 +279,7 @@ Actor ProxMine : Equipment
 	+seeinvisible
 	damagefactor "proxfire",1
 	damagefactor "burns",1
+	damagefactor "explosive",1
 	//obituary "$OB_MINES"
 	states
 	{
