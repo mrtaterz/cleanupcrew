@@ -130,7 +130,6 @@ actor DrippingBlood : SpecialBlood
 			BLUD A 0 A_CheckFloor("splort")
 			goto super::death
 		splort:
-			BLUD A 0 A_SpawnItemEx("dripsound")
 			BLUD A 0 A_SpawnItemEx("TinyBloodSpot")
 			goto super::death
 	}
