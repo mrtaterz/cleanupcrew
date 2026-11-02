@@ -165,6 +165,10 @@ script "SHITHAPPENS" (int type, int arg1, int arg2) event
 				pnumLastUnseen=-1;	
 			}
 		}
+		else if(killed < 20) //maybe try to bleed them instead
+		{
+			ACS_NamedExecuteWithResult("DoDripBlood");
+		}
 	}
 }
 
@@ -407,4 +411,18 @@ script "HealToFull" (void)
 	SetActorProperty(0,APROP_Health,30);
 }
 
-
+//it does it
+script "DoDripBlood" (void)
+{
+	if(CheckInventory("BleedsToken")>0) terminate;
+	GiveInventory("BleedsToken",1);
+	int healf = GetActorProperty(0,APROP_HEALTH);
+	do
+	{
+		Spawn("DrippingBlood",GetActorX(0),GetActorY(0),GetActorZ(0)+fixed(random(GetActorProperty(0,APROP_HEIGHT)>>18,GetActorProperty(0,APROP_HEIGHT)>>17)));
+		delay(18+healf/4);
+		healf = GetActorProperty(0,APROP_HEALTH);
+	}
+	while(healf > 0 && healf < 20);
+	TakeInventory("BleedsToken",2);
+}

@@ -1,12 +1,12 @@
-#include "ACTORS/fx.dec"
-#include "ACTORS/mapitem.dec"
-#include "ACTORS/uselessdeco.dec"
-#include "ACTORS/usefuldeco.dec"
-
 #include "ACTORS/HIDDEN/player.dec"
 #include "ACTORS/HIDDEN/slasher.dec"
 #include "ACTORS/HIDDEN/grenades.dec"
 #include "ACTORS/HIDDEN/beastvision.dec"
+
+#include "ACTORS/fx.dec"
+#include "ACTORS/mapitem.dec"
+#include "ACTORS/uselessdeco.dec"
+#include "ACTORS/usefuldeco.dec"
 
 #include "ACTORS/HUMAN/global.dec"
 #include "ACTORs/Puff.dec"

@@ -163,8 +163,7 @@ actor SpecialBlood : Blood //with extra speed and being a different blood
 			BLUD A 6
 			stop
 		death:
-			BL0D A 4
-			BL0D BC 4
+			BL0D ABC 4
 			stop
 	}
 }

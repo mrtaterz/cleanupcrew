@@ -117,3 +117,21 @@ ACTOR MudSplash
 		Stop
 	}
 }
+
+//blood dripping effect (otherspecialbloods in slasher file)
+
+actor DrippingBlood : SpecialBlood
+{
+	states
+	{
+		spawn:
+			goto super::spawn+2
+		death:
+			BLUD A 0 A_CheckFloor("splort")
+			goto super::death
+		splort:
+			BLUD A 0 A_SpawnItemEx("dripsound")
+			BLUD A 0 A_SpawnItemEx("TinyBloodSpot")
+			goto super::death
+	}
+}
