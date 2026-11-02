@@ -19,6 +19,7 @@ TeamLMS {
 		sv_noidentifytarget = true
 		sv_aircontrol = 0.2
 		teamdamage = 1
+		compat_dont_stop_player_scripts_on_disconnect = 1
     }
 
 }
