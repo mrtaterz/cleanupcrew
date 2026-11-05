@@ -67,7 +67,7 @@ Actor Sapper : PlayerPawn
 		SAPR G 4 A_Pain
 		Goto Spawn
 	Pain.Fire:
-		SAPR G 4 A_Quake(1,10,0,1,"none")
+		SAPR G 4 A_Quake(2,10,0,1,"none")
 		SAPR G 4 A_Pain
 		Goto Spawn
 	death.darken:
@@ -80,6 +80,15 @@ Actor Sapper : PlayerPawn
 		SAPR KL 8 //M 8
 		SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
 		TNT1 A -1
+		Stop
+	Death.Fire:
+	TNT1 AAAA 0 Bright A_CustomMissile("FlameDieSmoke",4,0,random(0,360),CMF_AIMDIRECTION,random(0,-90))
+	SAPR H 8 A_PlaySound("misc/flatline",16,1)
+	SAPR I 8 A_PlayerScream
+	SAPR J 8 A_NoBlocking
+	SAPR KL 8 //M 8
+	SAPR N 1 A_SpawnItemEx("DeadSapper",0,0,0,0,0,0,0,SXF_TransferTranslation)
+	TNT1 A -1
 		Stop
 	XDeath:
 		SAPR O 5 A_Quake(2,32,0,1,"none")
