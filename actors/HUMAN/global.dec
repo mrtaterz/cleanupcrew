@@ -100,7 +100,7 @@ actor usClip : Ammo
 actor PistolAmmo : Ammo
 {
 	Inventory.Amount 10
-	Inventory.MaxAmount 50
+	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 10
 	Ammo.BackpackMaxAmount 100
 	Inventory.Icon "CLIPA0"
